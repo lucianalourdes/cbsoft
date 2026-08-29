@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBSOFT'27 — Congresso Brasileiro de Software</title>
+<meta name="description" content="CBSOFT 2027, promovido pela Sociedade Brasileira de Computação (SBC), reúne os simpósios SBES, SBMF, SBCARS e SAST em Belo Horizonte, MG, de 27 de setembro a 01 de outubro de 2027.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23160F22'/%3E%3Cpath d='M16 6 26 16 16 26 6 16Z' fill='%23EC0C8C'/%3E%3C/svg%3E">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: ['selector', '[data-theme="dark"]'],
+    theme: {
+      extend: {
+        colors: {
+          ink:'var(--ink)', paper:'var(--paper)', surface:'var(--surface)',
+          brandline:'var(--line)', slate:'var(--slate)'
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="fixed top-0 inset-x-0 z-50" style="background:var(--brand-ink); color:var(--brand-on);">
+  <div class="container-xl flex items-center justify-between h-16 md:h-[4.5rem]">
+    <a href="#top" class="flex items-center gap-3 shrink-0" aria-label="CBSOFT'27 — página inicial">
+      <img src="images/logo-cbsoft-transparent.png" alt="" aria-hidden="true" class="h-9 md:h-10 w-auto shrink-0">
+      <span class="flex flex-col leading-none">
+        <span class="font-display text-lg font-bold tracking-tight">
+          <span style="color:var(--logo-purple);">CB</span><span style="color:var(--logo-pink);">SOFT</span><span style="color:var(--logo-cyan);">’27</span>
+        </span>
+        <span class="font-mono text-[9px] tracking-[.1em] uppercase mt-0.5" style="color:#C6B7D9;" data-en="Brazilian Software Congress">Congresso Brasileiro de Software</span>
+        <span class="hidden sm:block font-mono text-[8px] tracking-[.1em] uppercase mt-0.5" style="color:#8A7A9E;" data-en="Belo Horizonte | Minas Gerais">Belo Horizonte | Minas Gerais</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 font-medium text-sm" aria-label="Navegação principal">
+      <a href="#sobre" class="hover:text-[--logo-pink] transition-colors" style="color:#DCD2E8;" data-en="About">Sobre</a>
+      <a href="#eventos" class="hover:text-[--logo-pink] transition-colors" style="color:#DCD2E8;" data-en="Symposia">Eventos</a>
+      <a href="#cfp" class="hover:text-[--logo-pink] transition-colors" style="color:#DCD2E8;" data-en="Call for Papers">Call for Papers</a>
+      <a href="#palestrantes" class="hover:text-[--logo-pink] transition-colors" style="color:#DCD2E8;" data-en="Keynotes">Palestrantes</a>
+      <a href="#inscricoes" class="hover:text-[--logo-pink] transition-colors" style="color:#DCD2E8;" data-en="Registration">Inscrições</a>
+      <a href="#comite" class="hover:text-[--logo-pink] transition-colors" style="color:#DCD2E8;" data-en="Committee">Comitê</a>
+      <a href="#patrocinio" class="hover:text-[--logo-pink] transition-colors" style="color:#DCD2E8;" data-en="Sponsors">Patrocínio</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <div class="hidden sm:flex items-center border rounded overflow-hidden" style="border-color:rgba(255,255,255,.25);" role="group" aria-label="Seletor de idioma / Language selector">
+        <button type="button" class="lang-btn active" data-lang="pt" style="color:#fff;">PT</button>
+        <span style="color:rgba(255,255,255,.25);">/</span>
+        <button type="button" class="lang-btn" data-lang="en" style="color:#fff;">EN</button>
+      </div>
+      <a href="#inscricoes" class="hidden md:inline-flex btn btn-accent text-xs !py-2 !px-4" data-en="Register">Inscreva-se</a>
+      <!-- Mobile hamburger toggle: wired to #mobile-menu in js/main.js -->
+      <button id="menu-toggle" type="button" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 -mr-2" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="block w-6 h-[2px] bg-white mb-1.5 transition-transform" data-bar="1"></span>
+        <span class="block w-6 h-[2px] bg-white mb-1.5 transition-opacity" data-bar="2"></span>
+        <span class="block w-6 h-[2px] bg-white transition-transform" data-bar="3"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu panel -->
+  <nav id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 opacity-0" style="background:var(--brand-ink-soft);" aria-label="Navegação móvel">
+    <div class="container-xl flex flex-col py-4 gap-1 text-sm font-medium">
+      <a href="#sobre" class="py-2.5 border-b" style="border-color:rgba(255,255,255,.1); color:#DCD2E8;" data-en="About">Sobre</a>
+      <a href="#eventos" class="py-2.5 border-b" style="border-color:rgba(255,255,255,.1); color:#DCD2E8;" data-en="Symposia">Eventos</a>
+      <a href="#cfp" class="py-2.5 border-b" style="border-color:rgba(255,255,255,.1); color:#DCD2E8;" data-en="Call for Papers">Call for Papers</a>
+      <a href="#palestrantes" class="py-2.5 border-b" style="border-color:rgba(255,255,255,.1); color:#DCD2E8;" data-en="Keynotes">Palestrantes</a>
+      <a href="#inscricoes" class="py-2.5 border-b" style="border-color:rgba(255,255,255,.1); color:#DCD2E8;" data-en="Registration">Inscrições</a>
+      <a href="#comite" class="py-2.5 border-b" style="border-color:rgba(255,255,255,.1); color:#DCD2E8;" data-en="Committee">Comitê</a>
+      <a href="#patrocinio" class="py-2.5" style="color:#DCD2E8;" data-en="Sponsors">Patrocínio</a>
+      <div class="flex items-center gap-3 pt-3 mt-1 border-t" style="border-color:rgba(255,255,255,.1);">
+        <span class="font-mono text-[11px]" style="color:#8A7A9E;" data-en="Language:">Idioma:</span>
+        <button type="button" class="lang-btn active" data-lang="pt" style="color:#fff;">PT</button>
+        <button type="button" class="lang-btn" data-lang="en" style="color:#fff;">EN</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ===================== HERO ===================== -->
+<section class="relative overflow-hidden pt-32 md:pt-44" style="background:linear-gradient(180deg, var(--surface) 0%, var(--paper) 100%);">
+  <!-- Hero photo — Praça da Liberdade, Belo Horizonte. Full-bleed layer
+       behind the text, hidden on small screens; visible from lg up.
+       Placed before the text in the DOM so it paints underneath it. -->
+  <div class="hero-photo-bleed hidden lg:block" aria-hidden="true">
+    <img src="images/praca-liberdade.webp" alt="" loading="lazy" onerror="this.classList.add('is-broken')">
+    <div class="hero-photo-fallback">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      <p class="text-xs font-medium leading-relaxed" data-en="Photo pending — add images/praca-liberdade.webp">Foto pendente — adicione o arquivo em images/praca-liberdade.webp</p>
+    </div>
+  </div>
+  <!-- Text column and photo now share one flex row spanning the full
+       section, with a spacer reserved at the exact same width as
+       .hero-photo-bleed. That ties them to the same box model instead
+       of two independently-positioned elements whose gap could shrink
+       to nothing (or invert) at some viewport width — the text simply
+       cannot render past the start of the reserved spacer. -->
+  <div class="relative z-10 flex">
+    <div class="flex-1 min-w-0">
+    <div class="container-xl pb-28 md:pb-36">
+    <div>
+      <p class="eyebrow">29<span class="align-super text-[.6em]">ª</span> EDIÇÃO — SBC</p>
+
+      <!-- Logo detached from the CBSOFT'27 text block: its own column,
+           top-aligned with the H1 and sized to run down to roughly the
+           buttons row. "CBSOFT'27" below is only an alignment reference,
+           not something the logo hangs off of. -->
+      <div class="flex items-start gap-5 sm:gap-6 mt-4">
+        <img src="images/logo-cbsoft-transparent.png" alt="Logotipo CBSOFT'27" class="shrink-0 w-auto h-40 sm:h-48 md:h-56 lg:h-64 object-contain">
+        <div class="min-w-0 max-w-xl lg:max-w-2xl">
+          <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.98]">
+            <span style="color:var(--logo-purple);">CB</span><span style="color:var(--logo-pink);">SOFT</span><span style="color:var(--logo-cyan);">’27</span>
+          </h1>
+          <p class="font-display text-2xl md:text-3xl font-semibold mt-3" style="color:var(--ink);" data-en="Brazilian Software Congress">Congresso Brasileiro de Software</p>
+          <p class="mt-5 text-base md:text-lg max-w-xl leading-relaxed" style="color:var(--slate);">
+            <span data-en="27 September – 1 October 2027 · Belo Horizonte, Minas Gerais, Brazil">27 de setembro a 01 de outubro de 2027 · Belo Horizonte, Minas Gerais</span>
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#cfp" class="btn btn-accent" data-en="Call for Papers (CFP)">Chamada de Trabalhos (CFP)</a>
+            <a href="#inscricoes" class="btn btn-outline" data-en="Register">Inscreva-se</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Countdown to submission deadline -->
+      <div class="mt-12 max-w-xl">
+        <p class="font-mono text-xs uppercase tracking-[.14em]" style="color:var(--slate-soft);" data-en="Countdown · full-paper submission deadline">Contagem regressiva · prazo de submissão de artigos</p>
+        <div id="countdown" class="mt-3 grid grid-cols-4 gap-3 sm:gap-4" role="timer" aria-live="polite" aria-label="Tempo restante até o prazo de submissão">
+          <div class="card rounded-md py-3 text-center">
+            <div class="font-mono num-tabular text-2xl sm:text-3xl font-semibold" style="color:var(--ink);" data-cd="d">00</div>
+            <div class="font-mono text-[10px] uppercase tracking-wider mt-1" style="color:var(--slate-soft);" data-en="days">dias</div>
+          </div>
+          <div class="card rounded-md py-3 text-center">
+            <div class="font-mono num-tabular text-2xl sm:text-3xl font-semibold" style="color:var(--ink);" data-cd="h">00</div>
+            <div class="font-mono text-[10px] uppercase tracking-wider mt-1" style="color:var(--slate-soft);" data-en="hours">horas</div>
+          </div>
+          <div class="card rounded-md py-3 text-center">
+            <div class="font-mono num-tabular text-2xl sm:text-3xl font-semibold" style="color:var(--ink);" data-cd="m">00</div>
+            <div class="font-mono text-[10px] uppercase tracking-wider mt-1" style="color:var(--slate-soft);" data-en="min">min</div>
+          </div>
+          <div class="card rounded-md py-3 text-center">
+            <div class="font-mono num-tabular text-2xl sm:text-3xl font-semibold" style="color:var(--ink);" data-cd="s">00</div>
+            <div class="font-mono text-[10px] uppercase tracking-wider mt-1" style="color:var(--slate-soft);" data-en="sec">seg</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <!-- Reserved spacer, same width/breakpoint as .hero-photo-bleed —
+         the text column above can never render past its left edge. -->
+    <div class="hero-spacer-fade hidden lg:block shrink-0" style="width:44%; min-width:380px;" aria-hidden="true"></div>
+  </div>
+
+  <!-- Decorative wave in the four brand hues, echoing the CBSOFT'27 lockup -->
+  <div class="hero-wave z-20" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,64 C240,110 480,10 720,50 C960,90 1200,20 1440,64 L1440,120 L0,120 Z" style="fill:var(--logo-leaf)" opacity="0.5"/>
+      <path d="M0,80 C240,40 480,120 720,80 C960,40 1200,110 1440,72 L1440,120 L0,120 Z" style="fill:var(--logo-cyan)" opacity="0.55"/>
+      <path d="M0,96 C240,70 480,112 720,90 C960,70 1200,110 1440,88 L1440,120 L0,120 Z" style="fill:var(--logo-purple)" opacity="0.6"/>
+      <path d="M0,108 C240,96 480,118 720,104 C960,92 1200,116 1440,104 L1440,120 L0,120 Z" style="fill:var(--logo-pink)" opacity="0.75"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================== SOBRE ===================== -->
+<section id="sobre" class="py-20 md:py-28">
+  <div class="container-xl">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-16">
+      <div class="md:col-span-5">
+        <p class="eyebrow">// 01 <span data-en="ABOUT">SOBRE</span></p>
+        <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3 leading-tight" data-en="The main forum for Software Engineering &amp; Development in Brazil">O principal fórum de Engenharia e Desenvolvimento de Software do Brasil</h2>
+      </div>
+      <div class="md:col-span-7">
+        <p class="text-base md:text-lg leading-relaxed" style="color:var(--slate);" data-en="Promoted by the Brazilian Computer Society (SBC), CBSOFT brings together, once a year, four national symposia into a single program. Researchers, graduate students and industry professionals share results, discuss open problems and build the research agenda for Software Engineering, Formal Methods, Reusable Architectures and Software Testing in Brazil.">Promovido pela Sociedade Brasileira de Computação (SBC), o CBSOFT reúne anualmente quatro simpósios nacionais em uma única programação. Pesquisadores, estudantes de pós-graduação e profissionais da indústria compartilham resultados, discutem problemas em aberto e constroem a agenda de pesquisa em Engenharia de Software, Métodos Formais, Arquiteturas Reutilizáveis e Testes de Software no Brasil.</p>
+        <p class="mt-4 text-base md:text-lg leading-relaxed" style="color:var(--slate);" data-en="In 2027 the congress arrives in Belo Horizonte — home to the San Pedro Valley, one of Brazil's most active innovation and startup hubs — with a program that mixes scientific tracks, an industry track, tutorials, tool demonstrations and a thesis &amp; dissertation contest.">Em 2027 o congresso chega a Belo Horizonte — sede do San Pedro Valley, um dos polos de inovação e startups mais ativos do Brasil — com uma programação que combina trilhas científicas, trilha de indústria, cursos, sessão de ferramentas e concurso de teses e dissertações.</p>
+
+        <dl class="grid grid-cols-3 gap-6 mt-10 pt-8 rule">
+          <div>
+            <dt class="font-mono text-3xl font-semibold" style="color:var(--purple);">04</dt>
+            <dd class="text-sm mt-1" style="color:var(--slate);" data-en="co-located symposia">simpósios coalocados</dd>
+          </div>
+          <div>
+            <dt class="font-mono text-3xl font-semibold" style="color:var(--purple);">20+</dt>
+            <dd class="text-sm mt-1" style="color:var(--slate);" data-en="years of history">anos de história</dd>
+          </div>
+          <div>
+            <dt class="font-mono text-3xl font-semibold" style="color:var(--purple);">5</dt>
+            <dd class="text-sm mt-1" style="color:var(--slate);" data-en="days of program">dias de programação</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EVENTOS INTEGRADOS ===================== -->
+<section id="eventos" class="py-20 md:py-28" style="background:var(--surface-alt);">
+  <div class="container-xl">
+    <p class="eyebrow">// 02 <span data-en="SYMPOSIA">EVENTOS</span></p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3 max-w-2xl leading-tight" data-en="Four symposia, one program">Quatro simpósios, uma única programação</h2>
+    <p class="mt-4 max-w-2xl leading-relaxed" style="color:var(--slate);" data-en="CBSOFT co-locates the following national symposia, each with its own program committee and proceedings.">O CBSOFT coaloca os seguintes simpósios nacionais, cada um com comitê de programa e anais próprios.</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+      <article class="card p-6 flex flex-col">
+        <span class="tag self-start" style="border-color:var(--purple); color:var(--purple);">MOD.01</span>
+        <h3 class="font-display text-xl font-semibold mt-4">SBES</h3>
+        <p class="text-sm mt-2 leading-relaxed" style="color:var(--slate);" data-en="Brazilian Symposium on Software Engineering — the flagship scientific track.">Simpósio Brasileiro de Engenharia de Software — trilha científica principal do congresso.</p>
+      </article>
+      <article class="card p-6 flex flex-col">
+        <span class="tag self-start" style="border-color:var(--cyan); color:var(--cyan-deep);">MOD.02</span>
+        <h3 class="font-display text-xl font-semibold mt-4">SBMF</h3>
+        <p class="text-sm mt-2 leading-relaxed" style="color:var(--slate);" data-en="Brazilian Symposium on Formal Methods — specification, verification and correctness.">Simpósio Brasileiro de Métodos Formais — especificação, verificação e correção de software.</p>
+      </article>
+      <article class="card p-6 flex flex-col">
+        <span class="tag self-start" style="border-color:var(--leaf); color:var(--leaf-deep);">MOD.03</span>
+        <h3 class="font-display text-xl font-semibold mt-4">SBCARS</h3>
+        <p class="text-sm mt-2 leading-relaxed" style="color:var(--slate);" data-en="Brazilian Symposium on Components, Architectures and Reuse Systems.">Simpósio Brasileiro de Componentes, Arquiteturas e Reutilização de Software.</p>
+      </article>
+      <article class="card p-6 flex flex-col">
+        <span class="tag self-start" style="border-color:var(--pink); color:var(--pink-deep);">MOD.04</span>
+        <h3 class="font-display text-xl font-semibold mt-4">SAST</h3>
+        <p class="text-sm mt-2 leading-relaxed" style="color:var(--slate);" data-en="Brazilian Symposium on Systematic and Automated Software Testing.">Simpósio Brasileiro de Testes Sistemático e Automatizado de Software.</p>
+      </article>
+    </div>
+
+    <p class="font-mono text-xs uppercase tracking-[.12em] mt-12 mb-4" style="color:var(--slate-soft);" data-en="Complementary tracks">Trilhas complementares</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="border rounded-md p-5" style="border-color:var(--line);">
+        <h4 class="font-semibold text-sm" data-en="Industry Track">Trilha de Indústria</h4>
+      </div>
+      <div class="border rounded-md p-5" style="border-color:var(--line);">
+        <h4 class="font-semibold text-sm" data-en="Tools Session">Sessão de Ferramentas</h4>
+      </div>
+      <div class="border rounded-md p-5" style="border-color:var(--line);">
+        <h4 class="font-semibold text-sm" data-en="Courses &amp; Tutorials">Cursos / Tutoriais</h4>
+      </div>
+      <div class="border rounded-md p-5" style="border-color:var(--line);">
+        <h4 class="font-semibold text-sm" data-en="Thesis &amp; Dissertation Contest">Concurso de Teses e Dissertações</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CALL FOR PAPERS ===================== -->
+<section id="cfp" class="py-20 md:py-28">
+  <div class="container-xl">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-4">
+        <p class="eyebrow">// 03 <span data-en="IMPORTANT DATES">DATAS IMPORTANTES</span></p>
+        <h2 class="font-display text-3xl font-semibold mt-3 leading-tight" data-en="Call for Papers">Chamada de Trabalhos</h2>
+        <p class="mt-4 leading-relaxed" style="color:var(--slate);" data-en="Deadlines below are indicative for the general track and may vary slightly per symposium — always confirm on each event's own call for papers.">Os prazos abaixo são indicativos para a trilha geral e podem variar entre os simpósios — confirme sempre na chamada específica de cada evento.</p>
+        <div class="flex flex-col gap-3 mt-7">
+          <a href="#" class="btn btn-accent !text-white justify-center" data-en="Submission guidelines">Diretrizes de submissão</a>
+          <a href="#" class="btn justify-center border" style="border-color:var(--line); color:var(--ink);" data-en="Submit via JEMS / SBC OpenLib">Submeter via JEMS / SBC OpenLib</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-8">
+        <div class="overflow-x-auto border rounded-md" style="border-color:var(--line);">
+          <table class="w-full text-sm min-w-[560px]">
+            <thead>
+              <tr style="background:var(--brand-ink); color:var(--brand-on);">
+                <th class="text-left font-mono font-medium uppercase tracking-wider text-xs py-3 px-4" data-en="Milestone">Etapa</th>
+                <th class="text-left font-mono font-medium uppercase tracking-wider text-xs py-3 px-4" data-en="Date">Data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t" style="border-color:var(--line);">
+                <td class="py-3.5 px-4" data-en="Full paper submission">Submissão de artigos completos</td>
+                <td class="py-3.5 px-4 font-mono num-tabular font-medium">15 mar 2027</td>
+              </tr>
+              <tr class="border-t" style="border-color:var(--line); background:var(--surface-alt);">
+                <td class="py-3.5 px-4" data-en="Rebuttal period">Período de resposta aos revisores</td>
+                <td class="py-3.5 px-4 font-mono num-tabular font-medium">06–10 abr 2027</td>
+              </tr>
+              <tr class="border-t" style="border-color:var(--line);">
+                <td class="py-3.5 px-4" data-en="Acceptance notification">Notificação de aceite</td>
+                <td class="py-3.5 px-4 font-mono num-tabular font-medium">15 mai 2027</td>
+              </tr>
+              <tr class="border-t" style="border-color:var(--line); background:var(--surface-alt);">
+                <td class="py-3.5 px-4" data-en="Camera-ready version">Versão camera-ready</td>
+                <td class="py-3.5 px-4 font-mono num-tabular font-medium">15 jun 2027</td>
+              </tr>
+              <tr class="border-t" style="border-color:var(--line);">
+                <td class="py-3.5 px-4" data-en="Early-bird registration deadline">Prazo de inscrição com desconto (early-bird)</td>
+                <td class="py-3.5 px-4 font-mono num-tabular font-medium">31 ago 2027</td>
+              </tr>
+              <tr class="border-t" style="border-color:var(--line); background:var(--surface-alt);">
+                <td class="py-3.5 px-4 font-semibold" data-en="Conference">Congresso</td>
+                <td class="py-3.5 px-4 font-mono num-tabular font-semibold">27 set – 01 out 2027</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs mt-3" style="color:var(--slate-soft);" data-en="All deadlines end at 23:59 (Brasília time, UTC-3).">Todos os prazos encerram às 23h59 (horário de Brasília, UTC-3).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PALESTRANTES ===================== -->
+<section id="palestrantes" class="py-20 md:py-28" style="background:var(--brand-ink);">
+  <div class="container-xl">
+    <p class="eyebrow" style="color:var(--logo-cyan);">// 04 <span data-en="KEYNOTES">PALESTRANTES</span></p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3 text-white leading-tight" data-en="Invited keynote speakers">Palestrantes convidados</h2>
+    <p class="mt-4 max-w-2xl leading-relaxed" style="color:#C6B7D9;" data-en="The 2027 keynote line-up is being confirmed and will be announced here as speakers accept their invitations.">A programação de palestrantes de 2027 está em confirmação e será divulgada nesta seção assim que os convites forem aceitos.</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+      <article class="card !bg-white/[.04] !border-white/10 p-6">
+        <div class="w-14 h-14 rounded-full avatar-ph !bg-white/10 !border-white/20 flex items-center justify-center font-mono text-sm" style="color:#C6B7D9;">?</div>
+        <h3 class="font-display text-lg font-semibold text-white mt-4" data-en="Speaker to be confirmed">Palestrante a confirmar</h3>
+        <p class="text-sm mt-1" style="color:#8A7A9E;" data-en="Institution to be confirmed">Instituição a confirmar</p>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#C6B7D9;" data-en="Talk track: Software Engineering">Área da palestra: Engenharia de Software</p>
+      </article>
+      <article class="card !bg-white/[.04] !border-white/10 p-6">
+        <div class="w-14 h-14 rounded-full avatar-ph !bg-white/10 !border-white/20 flex items-center justify-center font-mono text-sm" style="color:#C6B7D9;">?</div>
+        <h3 class="font-display text-lg font-semibold text-white mt-4" data-en="Speaker to be confirmed">Palestrante a confirmar</h3>
+        <p class="text-sm mt-1" style="color:#8A7A9E;" data-en="Institution to be confirmed">Instituição a confirmar</p>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#C6B7D9;" data-en="Talk track: Formal Methods">Área da palestra: Métodos Formais</p>
+      </article>
+      <article class="card !bg-white/[.04] !border-white/10 p-6">
+        <div class="w-14 h-14 rounded-full avatar-ph !bg-white/10 !border-white/20 flex items-center justify-center font-mono text-sm" style="color:#C6B7D9;">?</div>
+        <h3 class="font-display text-lg font-semibold text-white mt-4" data-en="Speaker to be confirmed">Palestrante a confirmar</h3>
+        <p class="text-sm mt-1" style="color:#8A7A9E;" data-en="Institution to be confirmed">Instituição a confirmar</p>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#C6B7D9;" data-en="Talk track: Software Architecture &amp; Testing">Área da palestra: Arquitetura e Testes de Software</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INSCRIÇÕES ===================== -->
+<section id="inscricoes" class="py-20 md:py-28">
+  <div class="container-xl">
+    <p class="eyebrow">// 05 <span data-en="REGISTRATION">INSCRIÇÕES</span></p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3 leading-tight" data-en="Registration fees">Valores de inscrição</h2>
+    <p class="mt-4 max-w-2xl leading-relaxed" style="color:var(--slate);" data-en="Fees are per person and grant access to the full program (all symposia, tracks, tutorials and social events). Values in Brazilian reais (BRL).">Os valores são por pessoa e dão acesso à programação completa (todos os simpósios, trilhas, cursos e atividades sociais). Valores em reais (R$).</p>
+
+    <div class="overflow-x-auto border rounded-md mt-10" style="border-color:var(--line);">
+      <table class="w-full text-sm min-w-[640px]">
+        <thead>
+          <tr style="background:var(--logo-purple); color:#fff;">
+            <th class="text-left font-mono font-medium uppercase tracking-wider text-xs py-3 px-4" data-en="Category">Categoria</th>
+            <th class="text-right font-mono font-medium uppercase tracking-wider text-xs py-3 px-4" data-en="Early-bird">Lote 1 (Early Bird)</th>
+            <th class="text-right font-mono font-medium uppercase tracking-wider text-xs py-3 px-4" data-en="Regular">Lote 2</th>
+            <th class="text-right font-mono font-medium uppercase tracking-wider text-xs py-3 px-4" data-en="On-site">No Local</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t" style="border-color:var(--line);">
+            <td class="py-3.5 px-4" data-en="Undergraduate student (SBC member)">Estudante de Graduação (sócio SBC)</td>
+            <td class="py-3.5 px-4 text-right font-mono num-tabular">R$ 450</td>
+            <td class="py-3.5 px-4 text-right font-mono num-tabular">R$ 600</td>
+            <td class="py-3.5 px-4 text-right font-mono num-tabular">R$ 750</td>
+          </tr>
+          <tr class="border-t" style="border-color:var(--line); background:var(--surface-alt);">
+            <td class="py-3.5 px-4" data-en="Graduate student (SBC member)">Estudante de Pós-Graduação (sócio SBC)</td>
+            <td class="py-3.5 px-4 text-right font-mono num-tabular">R$ 600</td>
+            <td class="py-3.5 px-4 text-right font-mono num-tabular">R$ 780</td>
+            <td class="py-3.5 px-4 text-right font-mono num-tabular">R$ 950</td>
+          </tr>
+          <tr class="border-t" style="border-color:var(--line);">
+            <td class="py-3.5 px-4" data-en="Professional (SBC member)">Profissional (sócio SBC)</td>
+            <td class="py-3.5 px-4 text-right font-mono num-tabular">R$ 950</td>
+            <td class="py-3.5 px-4 text-right font-mono num-tabular">R$ 1.200</td>
+            <td class="py-3.5 px-4 text-right font-mono num-tabular">R$ 1.450</td>
+          </tr>
+          <tr class="border-t" style="border-color:var(--line); background:var(--surface-alt);">
+            <td class="py-3.5 px-4" data-en="Professional (non-member)">Profissional (não sócio)</td>
+            <td class="py-3.5 px-4 text-right font-mono num-tabular">R$ 1.250</td>
+            <td class="py-3.5 px-4 text-right font-mono num-tabular">R$ 1.550</td>
+            <td class="py-3.5 px-4 text-right font-mono num-tabular">R$ 1.850</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs mt-3" style="color:var(--slate-soft);" data-en="Student rates require valid enrollment proof. At least one author per accepted paper must register by the camera-ready deadline.">Valores de estudante exigem comprovante de matrícula válido. Ao menos um autor por artigo aceito deve se inscrever até o prazo da versão final.</p>
+  </div>
+</section>
+
+<!-- ===================== COMITÊ ORGANIZADOR ===================== -->
+<section id="comite" class="py-20 md:py-28" style="background:var(--surface-alt);">
+  <div class="container-xl">
+    <p class="eyebrow">// 06 <span data-en="ORGANIZING COMMITTEE">COMITÊ ORGANIZADOR</span></p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3 leading-tight" data-en="Who is organizing CBSOFT 2027">Quem organiza o CBSOFT 2027</h2>
+    <p class="mt-3 max-w-2xl text-sm" style="color:var(--slate-soft);" data-en="Names below are placeholders pending confirmation by SBC and the local organizing institutions.">Os nomes abaixo são indicativos, sujeitos à confirmação pela SBC e pelas instituições organizadoras locais.</p>
+
+    <div class="grid md:grid-cols-3 gap-8 mt-10">
+      <div>
+        <h3 class="font-mono text-xs uppercase tracking-[.12em] pb-3 mb-4 border-b" style="border-color:var(--line); color:var(--purple);" data-en="General Chairs">Coordenação Geral</h3>
+        <ul class="space-y-3 text-sm">
+          <li><span class="font-medium" data-en="Name to be confirmed">Nome a confirmar</span><br><span style="color:var(--slate);" data-en="Local Organizing Institution">Instituição Organizadora Local</span></li>
+          <li><span class="font-medium" data-en="Name to be confirmed">Nome a confirmar</span><br><span style="color:var(--slate);" data-en="SBC">SBC</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-mono text-xs uppercase tracking-[.12em] pb-3 mb-4 border-b" style="border-color:var(--line); color:var(--purple);" data-en="Program Committee Chairs">Coordenação do Programa Científico</h3>
+        <ul class="space-y-3 text-sm">
+          <li><span class="font-medium">SBES</span> — <span style="color:var(--slate);" data-en="chair to be confirmed">coordenação a confirmar</span></li>
+          <li><span class="font-medium">SBMF</span> — <span style="color:var(--slate);" data-en="chair to be confirmed">coordenação a confirmar</span></li>
+          <li><span class="font-medium">SBCARS</span> — <span style="color:var(--slate);" data-en="chair to be confirmed">coordenação a confirmar</span></li>
+          <li><span class="font-medium">SAST</span> — <span style="color:var(--slate);" data-en="chair to be confirmed">coordenação a confirmar</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-mono text-xs uppercase tracking-[.12em] pb-3 mb-4 border-b" style="border-color:var(--line); color:var(--purple);" data-en="Local Committee">Comitê Local</h3>
+        <ul class="space-y-3 text-sm">
+          <li><span class="font-medium" data-en="Infrastructure">Infraestrutura</span> — <span style="color:var(--slate);" data-en="to be confirmed">a confirmar</span></li>
+          <li><span class="font-medium" data-en="Communication">Divulgação</span> — <span style="color:var(--slate);" data-en="to be confirmed">a confirmar</span></li>
+          <li><span class="font-medium" data-en="Sponsorship">Patrocínio</span> — <span style="color:var(--slate);" data-en="to be confirmed">a confirmar</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PATROCÍNIO ===================== -->
+<section id="patrocinio" class="py-20 md:py-28">
+  <div class="container-xl">
+    <p class="eyebrow">// 07 <span data-en="SPONSORSHIP">PATROCÍNIO</span></p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3 leading-tight" data-en="Sponsors &amp; supporters">Patrocinadores e apoiadores</h2>
+    <p class="mt-4 max-w-2xl leading-relaxed" style="color:var(--slate);" data-en="Sponsorship packages for the 2027 edition are open. Contact the local committee through the link in the footer for the full prospectus.">As cotas de patrocínio para a edição de 2027 estão abertas. Fale com o comitê local pelo link no rodapé para receber o prospecto completo.</p>
+
+    <div class="mt-12 space-y-8">
+      <div>
+        <p class="font-mono text-xs uppercase tracking-[.12em] mb-3" style="color:var(--tier-diamond);" data-en="Diamond">Diamante</p>
+        <div class="grid grid-cols-1 gap-3">
+          <div class="sponsor-tile rounded-md h-20 flex items-center justify-center font-mono text-xs" data-en="Diamond slot available">Cota disponível</div>
+        </div>
+      </div>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-[.12em] mb-3" style="color:var(--tier-gold);" data-en="Gold">Ouro</p>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="sponsor-tile rounded-md h-16 flex items-center justify-center font-mono text-xs" data-en="Slot available">Cota disponível</div>
+          <div class="sponsor-tile rounded-md h-16 flex items-center justify-center font-mono text-xs" data-en="Slot available">Cota disponível</div>
+        </div>
+      </div>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-[.12em] mb-3" style="color:var(--tier-silver);" data-en="Silver">Prata</p>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="sponsor-tile rounded-md h-14 flex items-center justify-center font-mono text-xs" data-en="Slot available">Cota disponível</div>
+          <div class="sponsor-tile rounded-md h-14 flex items-center justify-center font-mono text-xs" data-en="Slot available">Cota disponível</div>
+          <div class="sponsor-tile rounded-md h-14 flex items-center justify-center font-mono text-xs" data-en="Slot available">Cota disponível</div>
+        </div>
+      </div>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-[.12em] mb-3" style="color:var(--tier-bronze);" data-en="Bronze">Bronze</p>
+        <div class="grid grid-cols-4 gap-3">
+          <div class="sponsor-tile rounded-md h-12 flex items-center justify-center font-mono text-[11px]" data-en="Slot available">Cota disponível</div>
+          <div class="sponsor-tile rounded-md h-12 flex items-center justify-center font-mono text-[11px]" data-en="Slot available">Cota disponível</div>
+          <div class="sponsor-tile rounded-md h-12 flex items-center justify-center font-mono text-[11px]" data-en="Slot available">Cota disponível</div>
+          <div class="sponsor-tile rounded-md h-12 flex items-center justify-center font-mono text-[11px]" data-en="Slot available">Cota disponível</div>
+        </div>
+      </div>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-[.12em] mb-3" style="color:var(--slate-soft);" data-en="Institutional support">Apoio Institucional</p>
+        <div class="grid grid-cols-4 gap-3">
+          <div class="sponsor-tile rounded-md h-12 flex items-center justify-center font-mono text-[11px]" data-en="Slot available">Cota disponível</div>
+          <div class="sponsor-tile rounded-md h-12 flex items-center justify-center font-mono text-[11px]" data-en="Slot available">Cota disponível</div>
+          <div class="sponsor-tile rounded-md h-12 flex items-center justify-center font-mono text-[11px]" data-en="Slot available">Cota disponível</div>
+          <div class="sponsor-tile rounded-md h-12 flex items-center justify-center font-mono text-[11px]" data-en="Slot available">Cota disponível</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer style="background:var(--brand-ink); color:#C6B7D9;">
+  <div class="container-xl py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <span class="flex items-center gap-2.5">
+        <img src="images/logo-cbsoft-transparent.png" alt="" aria-hidden="true" class="h-8 w-auto shrink-0">
+        <span class="font-display text-lg font-bold">
+          <span style="color:var(--logo-purple);">CB</span><span style="color:var(--logo-pink);">SOFT</span><span style="color:var(--logo-cyan);">’27</span>
+        </span>
+      </span>
+      <p class="text-sm mt-4 leading-relaxed max-w-[220px]" data-en="Promoted by the Brazilian Computer Society.">Promovido pela Sociedade Brasileira de Computação.</p>
+    </div>
+    <div>
+      <h4 class="font-mono text-xs uppercase tracking-[.12em] text-white mb-4" data-en="Quick links">Links rápidos</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="#cfp" class="hover:text-white" data-en="Call for Papers">Call for Papers</a></li>
+        <li><a href="#inscricoes" class="hover:text-white" data-en="Registration">Inscrições</a></li>
+        <li><a href="#comite" class="hover:text-white" data-en="Organizing committee">Comitê organizador</a></li>
+        <li><a href="#patrocinio" class="hover:text-white" data-en="Sponsorship prospectus">Prospecto de patrocínio</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-mono text-xs uppercase tracking-[.12em] text-white mb-4" data-en="Related events">Eventos coalocados</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li>SBES</li>
+        <li>SBMF</li>
+        <li>SBCARS</li>
+        <li>SAST</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-mono text-xs uppercase tracking-[.12em] text-white mb-4" data-en="Follow the event">Acompanhe</h4>
+      <div class="flex gap-3">
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border flex items-center justify-center hover:border-white hover:text-white transition-colors" style="border-color:rgba(255,255,255,.25);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#" aria-label="X / Twitter" class="w-9 h-9 rounded-full border flex items-center justify-center hover:border-white hover:text-white transition-colors" style="border-color:rgba(255,255,255,.25);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22H16.6l-5.2-6.8L5.4 22H2.3l8.1-9.3L1.7 2h6.9l4.7 6.2L18.9 2Zm-1.2 18h1.7L7.4 4H5.6l12.1 16Z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border flex items-center justify-center hover:border-white hover:text-white transition-colors" style="border-color:rgba(255,255,255,.25);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21h-4V9Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="rule" style="border-color:rgba(255,255,255,.12);">
+    <div class="container-xl py-5 flex flex-col sm:flex-row gap-2 justify-between text-xs" style="color:#8A7A9E;">
+      <p>&copy; <span id="year">2027</span> <span data-en="Brazilian Computer Society (SBC). All rights reserved.">Sociedade Brasileira de Computação (SBC). Todos os direitos reservados.</span></p>
+      <p class="font-mono" data-en="Belo Horizonte, MG — Brazil">Belo Horizonte, MG — Brasil</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

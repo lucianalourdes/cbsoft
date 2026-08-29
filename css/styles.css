@@ -1,0 +1,257 @@
+/* ---------- Design tokens — CBSOFT'27 identity ---------- */
+:root{
+  /* brand hues, read off the official CBSOFT'27 logotype:
+     CB = purple, SOFT = pink/magenta, '27 = cyan, stripes add leaf-green */
+  --purple:#6B2C8F;
+  --purple-deep:#4B1F66;
+  --pink:#EC0C8C;
+  --pink-deep:#B80A6C;
+  --cyan:#00AEEF;
+  --cyan-deep:#0089C4;
+  --leaf:#7CB93C;
+  --leaf-deep:#5C9528;
+
+  /* neutrals, tinted toward the identity instead of default grey */
+  --paper:#FAF8FC;
+  --surface:#FFFFFF;
+  --surface-alt:#F4EFF8;
+  --line:#E3DCEC;
+  --line-soft:#EDE7F3;
+  --ink:#1C1330;
+  --slate:#5E5570;
+  --slate-soft:#8A8199;
+
+  --tier-diamond:#3B6FD1;
+  --tier-gold:#B4882E;
+  --tier-silver:#7C8798;
+  --tier-bronze:#A15A2E;
+  --focus:#EC0C8C;
+
+  /* Fixed brand-chrome tokens: header, footer and the keynote band are
+     deliberately dark regardless of theme, so these never flip (unlike
+     --ink/--purple/--pink/--cyan above, which do adapt). This is what
+     keeps their white text readable no matter the visitor's OS theme. */
+  --brand-ink:#160F22;
+  --brand-ink-soft:#241733;
+  --brand-on:#FFFFFF;
+
+  /* Fixed logo colors — the CBSOFT'27 wordmark and building mark keep
+     their true brand hues always, unlike --purple/--pink/--cyan/--leaf
+     above (which lighten in dark mode purely for text contrast). */
+  --logo-purple:#6B2C8F;
+  --logo-pink:#EC0C8C;
+  --logo-cyan:#00AEEF;
+  --logo-leaf:#7CB93C;
+
+  /* Fixed CTA gradient stops — a button's own saturation carries its
+     contrast, so these stay constant across themes too. */
+  --grad-a:#EC0C8C;
+  --grad-b:#6B2C8F;
+  --grad-a-deep:#B80A6C;
+  --grad-b-deep:#4B1F66;
+
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --purple:#C79EE8;
+    --purple-deep:#E4CDF6;
+    --pink:#FF66B3;
+    --pink-deep:#FF9BD1;
+    --cyan:#4DD1FF;
+    --cyan-deep:#8CE3FF;
+    --leaf:#A6D96B;
+    --leaf-deep:#C2E896;
+
+    --paper:#120B1C;
+    --surface:#1C1329;
+    --surface-alt:#241833;
+    --line:#3A2C4C;
+    --line-soft:#2C2039;
+    --ink:#F3EDFA;
+    --slate:#C7BBD6;
+    --slate-soft:#9C8FAE;
+
+    --tier-diamond:#8FB3F2;
+    --tier-gold:#E0BB6C;
+    --tier-silver:#B6C0CE;
+    --tier-bronze:#D08B5B;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --purple:#C79EE8;
+  --purple-deep:#E4CDF6;
+  --pink:#FF66B3;
+  --pink-deep:#FF9BD1;
+  --cyan:#4DD1FF;
+  --cyan-deep:#8CE3FF;
+  --leaf:#A6D96B;
+  --leaf-deep:#C2E896;
+
+  --paper:#120B1C;
+  --surface:#1C1329;
+  --surface-alt:#241833;
+  --line:#3A2C4C;
+  --line-soft:#2C2039;
+  --ink:#F3EDFA;
+  --slate:#C7BBD6;
+  --slate-soft:#9C8FAE;
+
+  --tier-diamond:#8FB3F2;
+  --tier-gold:#E0BB6C;
+  --tier-silver:#B6C0CE;
+  --tier-bronze:#D08B5B;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.font-display{
+  font-family:'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+  text-wrap:balance;
+}
+.font-mono{font-family:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;}
+::selection{background:var(--pink); color:#fff;}
+a:focus-visible, button:focus-visible, summary:focus-visible{
+  outline:2px solid var(--focus);
+  outline-offset:3px;
+  border-radius:2px;
+}
+.container-xl{max-width:1200px; margin-inline:auto; padding-inline:1.25rem;}
+@media (min-width:768px){ .container-xl{padding-inline:2rem;} }
+
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.75rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--pink-deep);
+  font-weight:600;
+}
+.rule{border-top:1px solid var(--line);}
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:.375rem;
+}
+.btn{
+  display:inline-flex; align-items:center; gap:.5rem;
+  font-weight:600; font-size:.9rem;
+  padding:.75rem 1.375rem;
+  border-radius:9999px;
+  transition:transform .15s ease, background-color .15s ease, box-shadow .15s ease, opacity .15s ease;
+  white-space:nowrap;
+}
+.btn:active{transform:translateY(1px);}
+.btn-accent{
+  background:linear-gradient(90deg, var(--grad-a) 0%, var(--grad-b) 100%);
+  color:#fff;
+  box-shadow:0 6px 16px -6px rgba(107,44,143,.45);
+}
+.btn-accent:hover{background:linear-gradient(90deg, var(--grad-a-deep) 0%, var(--grad-b-deep) 100%);}
+.btn-outline{
+  background:transparent;
+  color:var(--purple);
+  border:1.5px solid var(--purple);
+}
+.btn-outline:hover{background:var(--purple); color:#fff;}
+.tag{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.7rem; letter-spacing:.06em;
+  padding:.2rem .5rem;
+  border-radius:.25rem;
+  border:1px solid var(--line);
+  color:var(--slate);
+}
+.num-tabular{font-variant-numeric:tabular-nums;}
+table{border-collapse:separate; border-spacing:0;}
+.lang-btn{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.72rem; font-weight:600; letter-spacing:.04em;
+  padding:.2rem .45rem; border-radius:.25rem;
+  color:var(--slate);
+}
+.lang-btn.active{background:var(--pink); color:#fff;}
+#mobile-menu{transition:max-height .25s ease, opacity .2s ease;}
+.avatar-ph{
+  background:var(--surface-alt);
+  border:1px dashed var(--line);
+  color:var(--slate-soft);
+}
+.sponsor-tile{
+  background:var(--surface-alt);
+  border:1px solid var(--line);
+  color:var(--slate-soft);
+}
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none;} }
+
+/* ---------- Hero ---------- */
+.hero-wave{
+  position:absolute; left:0; right:0; bottom:-1px;
+  line-height:0; pointer-events:none;
+}
+.hero-wave svg{display:block; width:100%; height:auto;}
+
+/* Full-bleed hero photo: no card, no border — it reads as the page
+   itself continuing into the photograph. top/bottom stretch to the
+   full hero section (including behind its own top/bottom padding,
+   since absolute offsets measure from the padding box), and a
+   left-edge mask fades the image to transparent so the section's own
+   background shows through underneath, blending the two smoothly in
+   both directions instead of cutting at a hard edge. */
+.hero-photo-bleed{
+  position:absolute;
+  top:0; right:0; bottom:0;
+  width:44%;
+  min-width:380px;
+  z-index:0;
+}
+.hero-photo-bleed img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  -webkit-mask-image:linear-gradient(to right, transparent 0%, rgba(0,0,0,.5) 18%, black 46%);
+  mask-image:linear-gradient(to right, transparent 0%, rgba(0,0,0,.5) 18%, black 46%);
+}
+/* The photo's own mask fade (above) already reads fine on its own —
+   no scrim layered on the image itself anymore. Putting gray directly
+   against the image, or peaking it exactly on the seam against flat
+   white, both read as a hard edge (a jump, or a "Mach band" ridge at
+   the peak — the eye exaggerates contrast right where a gradient
+   changes direction, even when the values are mathematically
+   continuous). So instead .hero-spacer-fade below places one small,
+   self-contained gray "cloud" entirely inside the white spacer, well
+   clear of the seam: it rises from transparent and eases back to
+   transparent again *before* reaching the photo, so what actually
+   touches the seam is white meeting the photo's own (also transparent
+   there) edge — nothing but white on both sides of that line. */
+.hero-spacer-fade{
+  background:linear-gradient(to right,
+    transparent calc(100% - 220px),
+    color-mix(in srgb, var(--slate-soft) 32%, transparent) calc(100% - 90px),
+    transparent 100%);
+}
+.hero-photo-fallback{
+  position:absolute; inset:0;
+  display:none;
+  flex-direction:column; align-items:center; justify-content:center; gap:.5rem;
+  padding:1.5rem;
+  text-align:center;
+  color:var(--slate-soft);
+  background:var(--surface-alt);
+  -webkit-mask-image:linear-gradient(to right, transparent 0%, rgba(0,0,0,.5) 18%, black 46%);
+  mask-image:linear-gradient(to right, transparent 0%, rgba(0,0,0,.5) 18%, black 46%);
+}
+.hero-photo-bleed img.is-broken{display:none;}
+.hero-photo-bleed img.is-broken ~ .hero-photo-fallback{display:flex;}
