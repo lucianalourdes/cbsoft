@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "about": "About",
+    "events": "Symposia",
+    "cfp": "Call for Papers",
+    "keynotes": "Keynotes",
+    "registration": "Registration",
+    "committee": "Committee",
+    "sponsorship": "Sponsors"
+  },
+  "header": {
+    "homeAria": "CBSOFT'27 — home",
+    "tagline": "Brazilian Software Congress",
+    "location": "Belo Horizonte | Minas Gerais",
+    "register": "Register",
+    "openMenu": "Open menu",
+    "langLabel": "Language:"
+  },
+  "hero": {
+    "eyebrow": "29TH EDITION — SBC",
+    "subtitle": "Brazilian Software Congress",
+    "dates": "27 September – 1 October 2027 · Belo Horizonte, Minas Gerais, Brazil",
+    "ctaCfp": "Call for Papers (CFP)",
+    "ctaRegister": "Register",
+    "countdownLabel": "Countdown · full-paper submission deadline",
+    "countdownAria": "Time remaining until the submission deadline",
+    "photoFallback": "Photo pending — add images/praca-liberdade.webp",
+    "units": { "days": "days", "hours": "hours", "min": "min", "sec": "sec" }
+  },
+  "agenda": {
+    "eyebrow": "KEY DATES",
+    "title": "Key dates by symposium",
+    "intro": "Browse the symposia and click any date to add it to Google Calendar, Outlook 365 or Outlook Live — already filled in. Dates are indicative and may vary per symposium.",
+    "tab": "Symposia",
+    "readMore": "Read more",
+    "allDates": "All important dates",
+    "prevAria": "Previous symposium",
+    "nextAria": "Next symposium",
+    "addToCalendarAria": "Add to calendar"
+  },
+  "about": {
+    "eyebrow": "ABOUT",
+    "title": "The main forum for Software Engineering & Development in Brazil",
+    "p1": "Promoted by the Brazilian Computer Society (SBC), CBSOFT brings together, once a year, four national symposia into a single program. Researchers, graduate students and industry professionals share results, discuss open problems and build the research agenda for Software Engineering, Formal Methods, Reusable Architectures and Software Testing in Brazil.",
+    "p2": "In 2027 the congress arrives in Belo Horizonte, one of Brazil's most active innovation and startup hubs — with a program that mixes scientific tracks, an industry track, tutorials, tool demonstrations and a thesis & dissertation contest.",
+    "statSymposia": "co-located symposia",
+    "statYears": "years of history",
+    "statDays": "days of program"
+  },
+  "events": {
+    "eyebrow": "SYMPOSIA",
+    "title": "Four symposia, one program",
+    "intro": "CBSOFT co-locates the following national symposia, each with its own program committee and proceedings.",
+    "complementary": "Complementary tracks"
+  },
+  "cfp": {
+    "eyebrow": "IMPORTANT DATES",
+    "title": "Call for Papers",
+    "intro": "Deadlines below are indicative for the general track and may vary slightly per symposium — always confirm on each event's own call for papers.",
+    "guidelines": "Submission guidelines",
+    "submit": "Submit via JEMS / SBC OpenLib",
+    "colMilestone": "Milestone",
+    "colDate": "Date",
+    "note": "All deadlines end at 23:59 (Brasília time, UTC-3)."
+  },
+  "keynotes": {
+    "eyebrow": "KEYNOTES",
+    "title": "Invited keynote speakers",
+    "intro": "The 2027 keynote line-up is being confirmed and will be announced here as speakers accept their invitations.",
+    "speakerTbc": "Speaker to be confirmed",
+    "institutionTbc": "Institution to be confirmed",
+    "trackLabel": "Talk track:"
+  },
+  "registration": {
+    "eyebrow": "REGISTRATION",
+    "title": "Registration fees",
+    "intro": "Fees are per person and grant access to the full program (all symposia, tracks, tutorials and social events). Values in Brazilian reais (BRL).",
+    "colCategory": "Category",
+    "colEarly": "Early-bird",
+    "colRegular": "Regular",
+    "colOnsite": "On-site",
+    "note": "Student rates require valid enrollment proof. At least one author per accepted paper must register by the camera-ready deadline."
+  },
+  "committee": {
+    "eyebrow": "ORGANIZING COMMITTEE",
+    "title": "Who is organizing CBSOFT 2027",
+    "note": "Names below are placeholders pending confirmation by SBC and the local organizing institutions.",
+    "generalChairs": "General Chairs",
+    "pcChairs": "Program Committee Chairs",
+    "localCommittee": "Local Committee",
+    "chairTbc": "chair to be confirmed",
+    "tbc": "to be confirmed"
+  },
+  "sponsorship": {
+    "eyebrow": "SPONSORSHIP",
+    "title": "Sponsors & supporters",
+    "intro": "Sponsorship packages for the 2027 edition are open. Contact the local committee through the link in the footer for the full prospectus.",
+    "slotAvailable": "Slot available",
+    "diamond": "Diamond",
+    "gold": "Gold",
+    "silver": "Silver",
+    "bronze": "Bronze",
+    "institutional": "Institutional support"
+  },
+  "footer": {
+    "promotedBy": "Promoted by the Brazilian Computer Society.",
+    "quickLinks": "Quick links",
+    "relatedEvents": "Related events",
+    "follow": "Follow the event",
+    "linkCfp": "Call for Papers",
+    "linkRegistration": "Registration",
+    "linkCommittee": "Organizing committee",
+    "linkProspectus": "Sponsorship prospectus",
+    "rights": "Brazilian Computer Society (SBC). All rights reserved.",
+    "location": "Belo Horizonte, MG — Brazil"
+  }
+}

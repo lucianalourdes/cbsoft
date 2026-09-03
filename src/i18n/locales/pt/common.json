@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "events": "Eventos",
+    "cfp": "Call for Papers",
+    "keynotes": "Palestrantes",
+    "registration": "Inscrições",
+    "committee": "Comitê",
+    "sponsorship": "Patrocínio"
+  },
+  "header": {
+    "homeAria": "CBSOFT'27 — página inicial",
+    "tagline": "Congresso Brasileiro de Software",
+    "location": "Belo Horizonte | Minas Gerais",
+    "register": "Inscreva-se",
+    "openMenu": "Abrir menu",
+    "langLabel": "Idioma:"
+  },
+  "hero": {
+    "eyebrow": "29ª EDIÇÃO — SBC",
+    "subtitle": "Congresso Brasileiro de Software",
+    "dates": "27 de setembro a 01 de outubro de 2027 · Belo Horizonte, Minas Gerais",
+    "ctaCfp": "Chamada de Trabalhos (CFP)",
+    "ctaRegister": "Inscreva-se",
+    "countdownLabel": "Contagem regressiva · prazo de submissão de artigos",
+    "countdownAria": "Tempo restante até o prazo de submissão",
+    "photoFallback": "Foto pendente — adicione o arquivo em images/praca-liberdade.webp",
+    "units": { "days": "dias", "hours": "horas", "min": "min", "sec": "seg" }
+  },
+  "agenda": {
+    "eyebrow": "AGENDA",
+    "title": "Datas importantes por simpósio",
+    "intro": "Navegue pelos simpósios e clique em uma data para adicioná-la ao Google Calendar, Outlook 365 ou Outlook Live — já preenchida. Os prazos são indicativos e podem variar entre os simpósios.",
+    "tab": "Simpósios",
+    "readMore": "Leia mais",
+    "allDates": "Todas as datas importantes",
+    "prevAria": "Simpósio anterior",
+    "nextAria": "Próximo simpósio",
+    "addToCalendarAria": "Adicionar ao calendário"
+  },
+  "about": {
+    "eyebrow": "SOBRE",
+    "title": "O principal fórum de Engenharia e Desenvolvimento de Software do Brasil",
+    "p1": "Promovido pela Sociedade Brasileira de Computação (SBC), o CBSOFT reúne anualmente quatro simpósios nacionais em uma única programação. Pesquisadores, estudantes de pós-graduação e profissionais da indústria compartilham resultados, discutem problemas em aberto e constroem a agenda de pesquisa em Engenharia de Software, Métodos Formais, Arquiteturas Reutilizáveis e Testes de Software no Brasil.",
+    "p2": "Em 2027 o congresso chega a Belo Horizonte — na PUC, um dos polos de inovação e startups mais ativos do Brasil — com uma programação que combina trilhas científicas, trilha de indústria, cursos, sessão de ferramentas e concurso de teses e dissertações.",
+    "statSymposia": "simpósios coalocados",
+    "statYears": "anos de história",
+    "statDays": "dias de programação"
+  },
+  "events": {
+    "eyebrow": "EVENTOS",
+    "title": "Quatro simpósios, uma única programação",
+    "intro": "O CBSOFT coaloca os seguintes simpósios nacionais, cada um com comitê de programa e anais próprios.",
+    "complementary": "Trilhas complementares"
+  },
+  "cfp": {
+    "eyebrow": "DATAS IMPORTANTES",
+    "title": "Chamada de Trabalhos",
+    "intro": "Os prazos abaixo são indicativos para a trilha geral e podem variar entre os simpósios — confirme sempre na chamada específica de cada evento.",
+    "guidelines": "Diretrizes de submissão",
+    "submit": "Submeter via JEMS / SBC OpenLib",
+    "colMilestone": "Etapa",
+    "colDate": "Data",
+    "note": "Todos os prazos encerram às 23h59 (horário de Brasília, UTC-3)."
+  },
+  "keynotes": {
+    "eyebrow": "PALESTRANTES",
+    "title": "Palestrantes convidados",
+    "intro": "A programação de palestrantes de 2027 está em confirmação e será divulgada nesta seção assim que os convites forem aceitos.",
+    "speakerTbc": "Palestrante a confirmar",
+    "institutionTbc": "Instituição a confirmar",
+    "trackLabel": "Área da palestra:"
+  },
+  "registration": {
+    "eyebrow": "INSCRIÇÕES",
+    "title": "Valores de inscrição",
+    "intro": "Os valores são por pessoa e dão acesso à programação completa (todos os simpósios, trilhas, cursos e atividades sociais). Valores em reais (R$).",
+    "colCategory": "Categoria",
+    "colEarly": "Lote 1 (Early Bird)",
+    "colRegular": "Lote 2",
+    "colOnsite": "No Local",
+    "note": "Valores de estudante exigem comprovante de matrícula válido. Ao menos um autor por artigo aceito deve se inscrever até o prazo da versão final."
+  },
+  "committee": {
+    "eyebrow": "COMITÊ ORGANIZADOR",
+    "title": "Quem organiza o CBSOFT 2027",
+    "note": "Os nomes abaixo são provisórios, pendentes de confirmação pela SBC e pelas instituições locais organizadoras.",
+    "generalChairs": "Coordenação Geral",
+    "pcChairs": "Coordenação do Programa Científico",
+    "localCommittee": "Comitê Local",
+    "chairTbc": "coordenação a confirmar",
+    "tbc": "a confirmar"
+  },
+  "sponsorship": {
+    "eyebrow": "PATROCÍNIO",
+    "title": "Patrocinadores e apoiadores",
+    "intro": "As cotas de patrocínio para a edição de 2027 estão abertas. Fale com o comitê local pelo link no rodapé para receber o prospecto completo.",
+    "slotAvailable": "Cota disponível",
+    "diamond": "Diamante",
+    "gold": "Ouro",
+    "silver": "Prata",
+    "bronze": "Bronze",
+    "institutional": "Apoio Institucional"
+  },
+  "footer": {
+    "promotedBy": "Promovido pela Sociedade Brasileira de Computação.",
+    "quickLinks": "Links rápidos",
+    "relatedEvents": "Eventos coalocados",
+    "follow": "Acompanhe",
+    "linkCfp": "Call for Papers",
+    "linkRegistration": "Inscrições",
+    "linkCommittee": "Comitê organizador",
+    "linkProspectus": "Prospecto de patrocínio",
+    "rights": "Sociedade Brasileira de Computação (SBC). Todos os direitos reservados.",
+    "location": "Belo Horizonte, MG — Brasil"
+  }
+}

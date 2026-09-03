@@ -1,0 +1,108 @@
+/* ---------- Design tokens — CBSOFT'27 identity ---------- */
+:root {
+  /* brand hues, read off the official CBSOFT'27 logotype:
+     CB = purple, SOFT = pink/magenta, '27 = cyan, stripes add leaf-green */
+  --purple: #6b2c8f;
+  --purple-deep: #4b1f66;
+  --pink: #ec0c8c;
+  --pink-deep: #b80a6c;
+  --cyan: #00aeef;
+  --cyan-deep: #0089c4;
+  --leaf: #7cb93c;
+  --leaf-deep: #5c9528;
+
+  /* neutrals, tinted toward the identity instead of default grey */
+  --paper: #faf8fc;
+  --surface: #ffffff;
+  --surface-alt: #f4eff8;
+  --line: #e3dcec;
+  --line-soft: #ede7f3;
+  --ink: #1c1330;
+  --slate: #5e5570;
+  --slate-soft: #8a8199;
+
+  --tier-diamond: #3b6fd1;
+  --tier-gold: #b4882e;
+  --tier-silver: #7c8798;
+  --tier-bronze: #a15a2e;
+  --focus: #ec0c8c;
+
+  /* Fixed brand-chrome tokens: header, footer and the keynote band are
+     deliberately dark regardless of theme, so these never flip (unlike
+     --ink/--purple/--pink/--cyan above, which do adapt). This is what
+     keeps their white text readable no matter the visitor's OS theme. */
+  --brand-ink: #160f22;
+  --brand-ink-soft: #241733;
+  --brand-on: #ffffff;
+
+  /* Fixed logo colors — the CBSOFT'27 wordmark and building mark keep
+     their true brand hues always, unlike --purple/--pink/--cyan/--leaf
+     above (which lighten in dark mode purely for text contrast). */
+  --logo-purple: #6b2c8f;
+  --logo-pink: #ec0c8c;
+  --logo-cyan: #00aeef;
+  --logo-leaf: #7cb93c;
+
+  /* Fixed CTA gradient stops — a button's own saturation carries its
+     contrast, so these stay constant across themes too. */
+  --grad-a: #ec0c8c;
+  --grad-b: #6b2c8f;
+  --grad-a-deep: #b80a6c;
+  --grad-b-deep: #4b1f66;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --purple: #c79ee8;
+    --purple-deep: #e4cdf6;
+    --pink: #ff66b3;
+    --pink-deep: #ff9bd1;
+    --cyan: #4dd1ff;
+    --cyan-deep: #8ce3ff;
+    --leaf: #a6d96b;
+    --leaf-deep: #c2e896;
+
+    --paper: #120b1c;
+    --surface: #1c1329;
+    --surface-alt: #241833;
+    --line: #3a2c4c;
+    --line-soft: #2c2039;
+    --ink: #f3edfa;
+    --slate: #c7bbd6;
+    --slate-soft: #9c8fae;
+
+    --tier-diamond: #8fb3f2;
+    --tier-gold: #e0bb6c;
+    --tier-silver: #b6c0ce;
+    --tier-bronze: #d08b5b;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --purple: #c79ee8;
+  --purple-deep: #e4cdf6;
+  --pink: #ff66b3;
+  --pink-deep: #ff9bd1;
+  --cyan: #4dd1ff;
+  --cyan-deep: #8ce3ff;
+  --leaf: #a6d96b;
+  --leaf-deep: #c2e896;
+
+  --paper: #120b1c;
+  --surface: #1c1329;
+  --surface-alt: #241833;
+  --line: #3a2c4c;
+  --line-soft: #2c2039;
+  --ink: #f3edfa;
+  --slate: #c7bbd6;
+  --slate-soft: #9c8fae;
+
+  --tier-diamond: #8fb3f2;
+  --tier-gold: #e0bb6c;
+  --tier-silver: #b6c0ce;
+  --tier-bronze: #d08b5b;
+  color-scheme: dark;
+}
