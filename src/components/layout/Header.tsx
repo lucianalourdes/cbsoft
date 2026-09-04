@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NAV_ITEMS } from '@/data/nav';
 import { IMAGES } from '@/data/config';
-import { Wordmark } from '@/components/ui/Wordmark';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { MobileMenu } from './MobileMenu';
 
@@ -18,26 +17,11 @@ export function Header() {
       <div className="container-xl flex items-center justify-between h-16 md:h-[4.5rem]">
         <a href="#top" className="flex items-center gap-3 shrink-0" aria-label={t('header.homeAria')}>
           <img
-            src={IMAGES.logo}
+            src={IMAGES.logo_horizontal_white}
             alt=""
             aria-hidden="true"
             className="h-9 md:h-10 w-auto shrink-0"
           />
-          <span className="flex flex-col leading-none">
-            <Wordmark className="font-display text-lg font-bold tracking-tight" />
-            <span
-              className="font-mono text-[9px] tracking-[.1em] uppercase mt-0.5"
-              style={{ color: '#C6B7D9' }}
-            >
-              {t('header.tagline')}
-            </span>
-            <span
-              className="hidden sm:block font-mono text-[8px] tracking-[.1em] uppercase mt-0.5"
-              style={{ color: '#8A7A9E' }}
-            >
-              {t('header.location')}
-            </span>
-          </span>
         </a>
 
         <nav
@@ -49,7 +33,6 @@ export function Header() {
               key={item.href}
               href={item.href}
               className="hover:text-[color:var(--logo-pink)] transition-colors"
-              style={{ color: '#DCD2E8' }}
             >
               {t(item.key)}
             </a>

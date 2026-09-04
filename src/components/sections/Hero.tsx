@@ -17,7 +17,7 @@ export function Hero() {
       {/* Full-bleed photo — Praça da Liberdade, Belo Horizonte. */}
       <div className="hero-photo-bleed hidden lg:block" aria-hidden="true">
         <img
-          src={IMAGES.heroPhoto}
+          src={IMAGES.praca}
           alt=""
           loading="lazy"
           className={photoBroken ? 'is-broken' : undefined}
@@ -47,7 +47,7 @@ export function Hero() {
 
               <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-6 mt-4">
                 <img
-                  src={IMAGES.logo}
+                  src={IMAGES.grafismo}
                   alt="Logotipo CBSOFT'27"
                   className="shrink-0 w-auto h-28 sm:h-48 md:h-56 lg:h-64 object-contain"
                 />

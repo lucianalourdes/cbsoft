@@ -2,40 +2,48 @@
 * {
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
+
 body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
+
 h1,
 h2,
 h3,
 .font-display {
-  font-family: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+  font-family: var(--font-display);
   text-wrap: balance;
 }
+
 .font-mono {
   font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
+
 ::selection {
   background: var(--pink);
   color: #fff;
 }
+
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
@@ -43,19 +51,23 @@ summary:focus-visible {
   outline-offset: 3px;
   border-radius: 2px;
 }
+
 .container-xl {
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: 1.25rem;
 }
+
 @media (min-width: 768px) {
   .container-xl {
     padding-inline: 2rem;
   }
 }
+
 .num-tabular {
   font-variant-numeric: tabular-nums;
 }
+
 table {
   border-collapse: separate;
   border-spacing: 0;
@@ -68,10 +80,12 @@ table {
     opacity 0.5s ease,
     transform 0.5s ease;
 }
+
 .reveal.in {
   opacity: 1;
   transform: translateY(0);
 }
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
