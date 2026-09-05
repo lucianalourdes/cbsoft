@@ -11,7 +11,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden pt-32 md:pt-44"
+      className="relative overflow-hidden pt-32 md:pt-28 "
       style={{ background: 'linear-gradient(180deg, var(--surface) 0%, var(--paper) 100%)' }}
     >
       {/* Full-bleed photo — Praça da Liberdade, Belo Horizonte. */}
@@ -93,28 +93,12 @@ export function Hero() {
       </div>
 
       <div className="hero-wave z-20" aria-hidden="true">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path
-            d="M0,64 C240,110 480,10 720,50 C960,90 1200,20 1440,64 L1440,120 L0,120 Z"
-            style={{ fill: 'var(--logo-leaf)' }}
-            opacity="0.5"
-          />
-          <path
-            d="M0,80 C240,40 480,120 720,80 C960,40 1200,110 1440,72 L1440,120 L0,120 Z"
-            style={{ fill: 'var(--logo-cyan)' }}
-            opacity="0.55"
-          />
-          <path
-            d="M0,96 C240,70 480,112 720,90 C960,70 1200,110 1440,88 L1440,120 L0,120 Z"
-            style={{ fill: 'var(--logo-purple)' }}
-            opacity="0.6"
-          />
-          <path
-            d="M0,108 C240,96 480,118 720,104 C960,92 1200,116 1440,104 L1440,120 L0,120 Z"
-            style={{ fill: 'var(--logo-pink)' }}
-            opacity="0.75"
-          />
-        </svg>
+        <img
+          src={IMAGES.grafismo_3}
+          alt=""
+          loading="lazy"
+          className="w-full h-auto"
+        />
       </div>
     </section>
   );

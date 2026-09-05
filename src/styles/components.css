@@ -112,12 +112,11 @@
   pointer-events: none;
 }
 
-.hero-wave svg {
+.hero-wave img {
   display: block;
   width: 100%;
-  height: auto;
+  max-height: 8rem;
 }
-
 /* Full-bleed hero photo: no card, no border — it reads as the page
    itself continuing into the photograph. top/bottom stretch to the
    full hero section (including behind its own top/bottom padding,
