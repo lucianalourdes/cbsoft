@@ -5,19 +5,18 @@ import { IMAGES } from '@/data/config';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { MobileMenu } from './MobileMenu';
 
-export function Header() {
+export function Header( withSeparator = false) {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <header
       className="fixed top-0 inset-x-0 z-50"
-      style={{ background: 'var(--brand-ink)', color: 'var(--brand-on)' }}
+      style={{ background: 'var(--paper)', color: 'var(--brand-on)', borderBottomWidth: "2px", borderColor: 'var(--line)' }}
     >
       <div className="container-xl flex items-center justify-between h-16 md:h-[4.5rem]">
         <a href="#top" className="flex items-center gap-3 shrink-0" aria-label={t('header.homeAria')}>
           <img
-            src={IMAGES.logo_horizontal_white}
+            src={IMAGES.logo_horizontal}
             alt=""
             aria-hidden="true"
             className="h-9 md:h-10 w-auto shrink-0"
@@ -25,18 +24,23 @@ export function Header() {
         </a>
 
         <nav
-          className="hidden lg:flex items-center gap-7 font-medium text-sm"
+          className="hidden lg:flex items-center gap-4 font-medium text-sm"
           aria-label="Navegação principal"
         >
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="hover:text-[color:var(--logo-pink)] transition-colors"
-            >
-              {t(item.key)}
-            </a>
-          ))}
+          {NAV_ITEMS.map((item, i) => (
+            <>{withSeparator && i > 0 && (
+              <span style={{ color: 'var(--line)' }} aria-hidden="true">
+                |
+              </span>
+            )}
+              <a
+                key={item.href}
+                href={item.href}
+                className="hover:text-[color:var(--focus)]  text-[color:var(--brand-ink)] transition-colors"
+              >
+                {t(item.key)}
+              </a>
+            </>))}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -76,6 +80,6 @@ export function Header() {
       </div>
 
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
-    </header>
+    </header >
   );
 }

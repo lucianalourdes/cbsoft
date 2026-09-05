@@ -33,7 +33,7 @@ export const IMAGES = {
   grafismo_4: asset('assets/images/grafismo-4.png'),
   grafismo_5: asset('assets/images/grafismo-5.png'),
   grafismo_6: asset('assets/images/grafismo-6.png'),
-  logo_horiziontal: asset('assets/images/logo-horizontal.png'),
+  logo_horizontal: asset('assets/images/logo-horizontal.png'),
   logo_horizontal_white: asset('assets/images/logo-horizontal-white.png'),
   logo_horizontal_black: asset('assets/images/logo-horizontal-black.png'),
   logo_horizontal_mono: asset('assets/images/logo-horizontal-mono.png'),
