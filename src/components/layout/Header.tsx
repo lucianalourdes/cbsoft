@@ -5,12 +5,12 @@ import { IMAGES } from '@/data/config';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { MobileMenu } from './MobileMenu';
 
-export function Header( withSeparator = false) {
+export function Header() {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header
-      className="fixed top-0 inset-x-0 z-50"
+      className="fixed top-0 inset-x-0 z-50 py-2 px-16"
       style={{ background: 'var(--paper)', color: 'var(--brand-on)', borderBottomWidth: "2px", borderColor: 'var(--line)' }}
     >
       <div className="container-xl flex items-center justify-between h-16 md:h-[4.5rem]">
@@ -19,7 +19,7 @@ export function Header( withSeparator = false) {
             src={IMAGES.logo_horizontal}
             alt=""
             aria-hidden="true"
-            className="h-9 md:h-10 w-auto shrink-0"
+            className="h-10 md:h-10 w-auto"
           />
         </a>
 
@@ -27,20 +27,16 @@ export function Header( withSeparator = false) {
           className="hidden lg:flex items-center gap-4 font-medium text-sm"
           aria-label="Navegação principal"
         >
-          {NAV_ITEMS.map((item, i) => (
-            <>{withSeparator && i > 0 && (
-              <span style={{ color: 'var(--line)' }} aria-hidden="true">
-                |
-              </span>
-            )}
-              <a
-                key={item.href}
-                href={item.href}
-                className="hover:text-[color:var(--focus)]  text-[color:var(--brand-ink)] transition-colors"
-              >
-                {t(item.key)}
-              </a>
-            </>))}
+          {NAV_ITEMS.map((item) => (
+
+            <a
+              key={item.href}
+              href={item.href}
+              className="hover:text-[color:var(--focus)]  text-[color:var(--brand-ink)] transition-colors"
+            >
+              {t(item.key)}
+            </a>
+          ))}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -64,15 +60,15 @@ export function Header( withSeparator = false) {
             onClick={() => setMenuOpen((v) => !v)}
           >
             <span
-              className="block w-6 h-[2px] bg-white mb-1.5 transition-transform"
+              className="block w-6 h-[2px] [background:var(--focus)]  mb-1.5 transition-transform"
               style={menuOpen ? { transform: 'translateY(8px) rotate(45deg)' } : undefined}
             />
             <span
-              className="block w-6 h-[2px] bg-white mb-1.5 transition-opacity"
+              className="block w-6 h-[2px] [background:var(--focus)]  mb-1.5 transition-opacity"
               style={{ opacity: menuOpen ? 0 : 1 }}
             />
             <span
-              className="block w-6 h-[2px] bg-white transition-transform"
+              className="block w-6 h-[2px] [background:var(--focus)] transition-transform"
               style={menuOpen ? { transform: 'translateY(-8px) rotate(-45deg)' } : undefined}
             />
           </button>

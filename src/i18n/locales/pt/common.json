@@ -1,12 +1,12 @@
 {
   "nav": {
-    "about": "Sobre",
-    "events": "Eventos",
-    "cfp": "Call for Papers",
-    "keynotes": "Palestrantes",
-    "registration": "Inscrições",
-    "committee": "Comitê",
-    "sponsorship": "Patrocínio"
+    "cbsoft": "CBSOFT'27",
+    "sbes": "SBES",
+    "sblp": "SBLP",
+    "sbcars": "SBCARS",
+    "sast": "SAST",
+    "workshops": "WORKSHOPS",
+    "more": "MAIS"
   },
   "header": {
     "homeAria": "CBSOFT'27 — página inicial",

@@ -6,11 +6,10 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { href: '#sobre', key: 'nav.about' },
-  { href: '#eventos', key: 'nav.events' },
-  { href: '#cfp', key: 'nav.cfp' },
-  { href: '#palestrantes', key: 'nav.keynotes' },
-  { href: '#inscricoes', key: 'nav.registration' },
-  { href: '#comite', key: 'nav.committee' },
-  { href: '#patrocinio', key: 'nav.sponsorship' },
+  { href: '#cbsoft', key: 'nav.cbsoft' },
+  { href: '#sbes', key: 'nav.sbes' },
+  { href: '#sbcars', key: 'nav.sbcars' },
+  { href: '#sast', key: 'nav.sast' },
+  { href: '#workshops', key: 'nav.workshops' },
+  { href: '#mais', key: 'nav.more' },
 ];

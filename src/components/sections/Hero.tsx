@@ -11,7 +11,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden pt-32 md:pt-28 "
+      className="relative overflow-hidden pt-32 md:pt-32  px-16"
       style={{ background: 'linear-gradient(180deg, var(--surface) 0%, var(--paper) 100%)' }}
     >
       {/* Full-bleed photo — Praça da Liberdade, Belo Horizonte. */}
@@ -46,11 +46,6 @@ export function Hero() {
               <p className="eyebrow">{t('hero.eyebrow')}</p>
 
               <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-6 mt-4">
-                <img
-                  src={IMAGES.grafismo}
-                  alt="Logotipo CBSOFT'27"
-                  className="shrink-0 w-auto h-28 sm:h-48 md:h-56 lg:h-64 object-contain"
-                />
                 <div className="min-w-0 max-w-xl lg:max-w-2xl">
                   <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold leading-[0.98]">
                     <Wordmark />
