@@ -1060,12 +1060,22 @@
 }
 
 /* ---------- Convidados — carrossel ---------- */
+/* Contains the full-bleed track's sub-pixel overhang so it never adds
+   a horizontal scrollbar to the page. */
+.guests-section {
+  overflow-x: clip;
+}
 .guests {
   margin-top: 3rem;
 }
+/* The track breaks out of .container-xl to span the whole viewport,
+   then pads itself back by the same gutter so the first and last
+   cards still line up with the section heading above. */
 .guests-track {
   display: flex;
   gap: 1.5rem;
+  margin-inline: calc(50% - 50vw);
+  padding-inline: calc(50vw - 50%);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-bottom: 0.75rem;
@@ -1164,6 +1174,13 @@
       color-mix(in srgb, var(--purple) 6%, transparent),
       transparent 70%
     );
+}
+/* This section carries a wide two-column panel, so it runs a touch
+   wider than the 1200px body grid once there's gutter to spare. */
+@media (min-width: 1280px) {
+  .venue-section .container-xl {
+    max-width: 1360px;
+  }
 }
 
 /* City line under the section title — pin icon + place. */

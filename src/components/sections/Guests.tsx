@@ -7,7 +7,11 @@ export function Guests() {
   const { t } = useTranslation();
 
   return (
-    <Reveal id="convidados" className="py-20 md:py-28" style={{ background: 'var(--surface-alt)' }}>
+    <Reveal
+      id="convidados"
+      className="guests-section py-20 md:py-28"
+      style={{ background: 'var(--surface-alt)' }}
+    >
       <div className="container-xl">
         <SectionHeading
           eyebrow={t('guests.eyebrow')}

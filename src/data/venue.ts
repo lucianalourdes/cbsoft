@@ -21,22 +21,25 @@ export const VENUE = {
     {
       id: 'metro',
       icon: 'metro',
-      name: { pt: 'Estação Vilarinho', en: 'Vilarinho station' },
+      name: { pt: 'Estação Gameleira', en: 'Gameleira station' },
       meta: { pt: 'Linha 1 do Metrô', en: 'Metro Line 1' },
     },
     {
-      id: 'bus-9110',
+      id: 'bus-9250',
       icon: 'bus',
-      name: { pt: 'Linha 9110', en: 'Bus 9110' },
-      meta: { pt: 'Campus Pampulha — UFMG', en: 'Pampulha campus — UFMG' },
+      name: { pt: 'Linha 9250', en: 'Bus 9250' },
+      meta: {
+        pt: 'PUC Minas — Coração Eucarístico',
+        en: 'PUC Minas — Coração Eucarístico',
+      },
     },
     {
-      id: 'bus-5106',
+      id: 'bus-1103',
       icon: 'bus',
-      name: { pt: 'Linha 5106', en: 'Bus 5106' },
+      name: { pt: 'Linha 1103', en: 'Bus 1103' },
       meta: {
-        pt: 'Pampulha via Antônio Carlos',
-        en: 'Pampulha via Antônio Carlos',
+        pt: 'Coração Eucarístico via Amazonas',
+        en: 'Coração Eucarístico via Amazonas',
       },
     },
   ] satisfies TransitOption[],
