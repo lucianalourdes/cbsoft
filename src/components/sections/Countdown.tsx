@@ -13,35 +13,51 @@ export function Countdown() {
     { value: s, label: t('hero.units.sec') },
   ];
 
+  const spokenTime = cells
+    .map(({ value, label }) => `${value} ${label}`)
+    .join(', ');
+
   return (
-    <div className="mt-12 max-w-xl">
-      <p
-        className="font-mono text-xs uppercase tracking-[.14em]"
-        style={{ color: 'var(--slate-soft)' }}
+    <div className="launch-countdown">
+      <h1
+        id="hero-countdown-title"
+        className="launch-countdown__title"
       >
-        {t('hero.countdownLabel')}
-      </p>
+        {t('hero.countdownTitle')}
+      </h1>
+
       <div
         id="countdown"
-        className="mt-3 grid grid-cols-4 gap-3 sm:gap-4"
+        className="launch-countdown__clock"
         role="timer"
-        aria-live="polite"
-        aria-label={t('hero.countdownAria')}
+        aria-label={`${t('hero.countdownAria')}: ${spokenTime}`}
       >
-        {cells.map((cell) => (
-          <div key={cell.label} className="card rounded-md py-3 text-center">
+        {cells.map((cell, index) => (
+          <div
+            className="launch-countdown__fragment"
+            key={cell.label}
+          >
             <div
-              className="font-mono num-tabular text-2xl sm:text-3xl font-semibold"
-              style={{ color: 'var(--ink)' }}
+              className="launch-countdown__unit"
+              aria-hidden="true"
             >
-              {cell.value}
+              <span className="launch-countdown__label">
+                {cell.label}
+              </span>
+
+              <span className="launch-countdown__value">
+                {cell.value}
+              </span>
             </div>
-            <div
-              className="font-mono text-[10px] uppercase tracking-wider mt-1"
-              style={{ color: 'var(--slate-soft)' }}
-            >
-              {cell.label}
-            </div>
+
+            {index < cells.length - 1 && (
+              <span
+                className="launch-countdown__separator"
+                aria-hidden="true"
+              >
+                :
+              </span>
+            )}
           </div>
         ))}
       </div>

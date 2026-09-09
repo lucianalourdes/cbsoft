@@ -1,52 +1,48 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { HEADER_MENUS, type HeaderMenuId } from '@/data/headerMenu';
 import { NAV_ITEMS } from '@/data/nav';
+import { IMAGES } from '@/data/config';
+import { HeaderMegaMenu } from './HeaderMegaMenu';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface MobileMenuProps {
-  open: boolean;
   onClose: () => void;
 }
 
-/** Collapsible navigation panel for narrow viewports (lg:hidden). */
-export function MobileMenu({ open, onClose }: MobileMenuProps) {
+export function MobileMenu({ onClose }: MobileMenuProps) {
   const { t } = useTranslation();
-  const panelRef = useRef<HTMLDivElement>(null);
-  const [maxHeight, setMaxHeight] = useState('0px');
-
-  useEffect(() => {
-    const panel = panelRef.current;
-    setMaxHeight(open && panel ? `${panel.scrollHeight}px` : '0px');
-  }, [open]);
+  const [activeMenu, setActiveMenu] = useState<HeaderMenuId | null>(null);
 
   return (
-    <nav
-      id="mobile-menu"
-      className="lg:hidden overflow-hidden"
-      style={{ background: 'var(--brand-ink-soft)', maxHeight, opacity: open ? 1 : 0 }}
-      aria-label="Navegação móvel"
-    >
-      <div ref={panelRef} className="container-xl flex flex-col py-4 gap-1 text-sm font-medium">
-        {NAV_ITEMS.map((item, i) => (
-          <a
-            key={item.href}
-            href={item.href}
-            className={i < NAV_ITEMS.length - 1 ? 'py-2.5 border-b' : 'py-2.5'}
-            style={{ borderColor: 'rgba(255,255,255,.1)', color: '#DCD2E8' }}
-            onClick={onClose}
-          >
-            {t(item.key)}
-          </a>
-        ))}
-        <div
-          className="flex items-center gap-3 pt-3 mt-1 border-t"
-          style={{ borderColor: 'rgba(255,255,255,.1)' }}
-        >
-          <span className="font-mono text-[11px]" style={{ color: '#8A7A9E' }}>
-            {t('header.langLabel')}
-          </span>
-          <LanguageSwitcher />
-        </div>
+    <nav id="mobile-menu" className="site-header__mobile-menu" aria-label={t('header.mobileNavAria')}>
+      {NAV_ITEMS.map((item) => {
+        const open = activeMenu === item.id;
+        return (
+          <div className="site-header__mobile-group" key={item.id}>
+            <button
+              id={`mobile-header-trigger-${item.id}`}
+              type="button"
+              className={`site-header__nav-item${open ? ' is-active' : ''}`}
+              aria-expanded={open}
+              aria-controls={`mobile-header-mega-menu-${item.id}`}
+              onClick={() => setActiveMenu(open ? null : item.id)}
+            >
+              <span>{t(item.key)}</span>
+              <img src={IMAGES.chevron_down} width={16} height={16} alt="" aria-hidden="true" />
+            </button>
+            {open && (
+              <HeaderMegaMenu id={item.id} menu={HEADER_MENUS[item.id]} onNavigate={onClose} mobile />
+            )}
+          </div>
+        );
+      })}
+      <a href="#inscricoes" className="site-header__mobile-register" onClick={onClose}>
+        {t('header.register')}
+      </a>
+      <div className="site-header__mobile-language">
+        <span>{t('header.langLabel')}</span>
+        <LanguageSwitcher />
       </div>
     </nav>
   );

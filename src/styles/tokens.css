@@ -1,108 +1,128 @@
-/* ---------- Design tokens — CBSOFT'27 identity ---------- */
+/* ---------- Design tokens - CBSOFT'27 visual identity ---------- */
 :root {
-  /* brand hues, read off the official CBSOFT'27 logotype:
-     CB = purple, SOFT = pink/magenta, '27 = cyan, stripes add leaf-green */
-  --purple: #6b2c8f;
-  --purple-deep: #4b1f66;
-  --pink: #ec0c8c;
-  --pink-deep: #b80a6c;
-  --cyan: #00aeef;
-  --cyan-deep: #0089c4;
-  --leaf: #7cb93c;
-  --leaf-deep: #5c9528;
+  /*
+   * Official palette from the CBSOFT'27 brand manual.
+   * Keep these four tokens unchanged in every theme and use them for
+   * official artwork, graphics and any faithfully reproduced brand mark.
+   */
+  --brand-green: #629109;
+  --brand-magenta: #e60d7e;
+  --brand-purple: #702a82;
+  --brand-cyan: #2cafca;
 
-  /* neutrals, tinted toward the identity instead of default grey */
-  --paper: #faf8fc;
+  /* UI colors. Deep variants are suitable for text and interactive states. */
+  --purple: var(--brand-purple);
+  --purple-deep: #4f1d5c;
+  --pink: var(--brand-magenta);
+  /* Backward-compatible name for magenta. */
+  --pink-deep: #a9075d;
+  --magenta: var(--pink);
+  --magenta-deep: var(--pink-deep);
+  --cyan: var(--brand-cyan);
+  --cyan-deep: #08768b;
+  --leaf: var(--brand-green);
+  /* Backward-compatible name for green. */
+  --leaf-deep: #3d6500;
+  --green: var(--leaf);
+  --green-deep: var(--leaf-deep);
+
+  /* Ronzino is the official CBSOFT'27 typeface. */
+  --font-sans: "Ronzino", Arial, sans-serif;
+  --font-display: "Ronzino", Arial, sans-serif;
+
+  /* Warm, purple-tinted neutrals instead of generic grey. */
+  --paper: #fbfafc;
   --surface: #ffffff;
-  --surface-alt: #f4eff8;
-  --line: #e3dcec;
-  --line-soft: #ede7f3;
-  --ink: #1c1330;
-  --slate: #5e5570;
-  --slate-soft: #8a8199;
+  --surface-alt: #f6f2f7;
+  --line: #ded4e3;
+  --line-soft: #ece5ef;
+  --ink: #17131b;
+  --slate: #5f5664;
+  --slate-soft: #84798a;
 
-  --tier-diamond: #3b6fd1;
-  --tier-gold: #b4882e;
-  --tier-silver: #7c8798;
-  --tier-bronze: #a15a2e;
-  --focus: #ec0c8c;
+  /* Functional colors that are not part of the official brand palette. */
+  --tier-diamond: #3568c8;
+  --tier-gold: #9a711f;
+  --tier-silver: #687585;
+  --tier-bronze: #95502a;
+  --focus: var(--brand-magenta);
 
-  /* Fixed brand-chrome tokens: header, footer and the keynote band are
-     deliberately dark regardless of theme, so these never flip (unlike
-     --ink/--purple/--pink/--cyan above, which do adapt). This is what
-     keeps their white text readable no matter the visitor's OS theme. */
-  --brand-ink: #160f22;
-  --brand-ink-soft: #241733;
+  /* Fixed dark chrome for the header, footer and keynote band. */
+  --brand-ink: #190d1d;
+  --brand-ink-soft: #2b1732;
   --brand-on: #ffffff;
 
-  /* Fixed logo colors — the CBSOFT'27 wordmark and building mark keep
-     their true brand hues always, unlike --purple/--pink/--cyan/--leaf
-     above (which lighten in dark mode purely for text contrast). */
-  --logo-purple: #6b2c8f;
-  --logo-pink: #ec0c8c;
-  --logo-cyan: #00aeef;
-  --logo-leaf: #7cb93c;
+  /* Official logo colors never change with the page theme. */
+  --logo-purple: var(--brand-purple);
+  --logo-pink: var(--brand-magenta);
+  --logo-magenta: var(--brand-magenta);
+  --logo-cyan: var(--brand-cyan);
+  --logo-leaf: var(--brand-green);
+  --logo-green: var(--brand-green);
 
-  /* Fixed CTA gradient stops — a button's own saturation carries its
-     contrast, so these stay constant across themes too. */
-  --grad-a: #ec0c8c;
-  --grad-b: #6b2c8f;
-  --grad-a-deep: #b80a6c;
-  --grad-b-deep: #4b1f66;
+  /* Fixed CTA gradient using official palette endpoints. */
+  --grad-a: var(--brand-magenta);
+  --grad-b: var(--brand-purple);
+  --grad-a-deep: #a9075d;
+  --grad-b-deep: #4f1d5c;
 
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --purple: #c79ee8;
-    --purple-deep: #e4cdf6;
-    --pink: #ff66b3;
-    --pink-deep: #ff9bd1;
-    --cyan: #4dd1ff;
-    --cyan-deep: #8ce3ff;
-    --leaf: #a6d96b;
-    --leaf-deep: #c2e896;
+    /* Accessible UI adaptations; official --brand-* and --logo-* stay exact. */
+    --purple: #d7afe4;
+    --purple-deep: #ecdaf2;
+    --pink: #ff78b6;
+    --pink-deep: #ffa6cf;
+    --cyan: #70d7e8;
+    --cyan-deep: #a6e8f2;
+    --leaf: #a9d85c;
+    --leaf-deep: #cae995;
 
-    --paper: #120b1c;
-    --surface: #1c1329;
-    --surface-alt: #241833;
-    --line: #3a2c4c;
-    --line-soft: #2c2039;
-    --ink: #f3edfa;
-    --slate: #c7bbd6;
-    --slate-soft: #9c8fae;
+    --paper: #120e16;
+    --surface: #1b1520;
+    --surface-alt: #241c2a;
+    --line: #3d3144;
+    --line-soft: #302638;
+    --ink: #f7f3f7;
+    --slate: #d0c6d2;
+    --slate-soft: #a99dad;
 
-    --tier-diamond: #8fb3f2;
-    --tier-gold: #e0bb6c;
-    --tier-silver: #b6c0ce;
-    --tier-bronze: #d08b5b;
+    --tier-diamond: #8eb4f4;
+    --tier-gold: #e5c477;
+    --tier-silver: #bdc7d3;
+    --tier-bronze: #dda073;
+
     color-scheme: dark;
   }
 }
 
 :root[data-theme='dark'] {
-  --purple: #c79ee8;
-  --purple-deep: #e4cdf6;
-  --pink: #ff66b3;
-  --pink-deep: #ff9bd1;
-  --cyan: #4dd1ff;
-  --cyan-deep: #8ce3ff;
-  --leaf: #a6d96b;
-  --leaf-deep: #c2e896;
+  /* Accessible UI adaptations; official --brand-* and --logo-* stay exact. */
+  --purple: #d7afe4;
+  --purple-deep: #ecdaf2;
+  --pink: #ff78b6;
+  --pink-deep: #ffa6cf;
+  --cyan: #70d7e8;
+  --cyan-deep: #a6e8f2;
+  --leaf: #a9d85c;
+  --leaf-deep: #cae995;
 
-  --paper: #120b1c;
-  --surface: #1c1329;
-  --surface-alt: #241833;
-  --line: #3a2c4c;
-  --line-soft: #2c2039;
-  --ink: #f3edfa;
-  --slate: #c7bbd6;
-  --slate-soft: #9c8fae;
+  --paper: #120e16;
+  --surface: #1b1520;
+  --surface-alt: #241c2a;
+  --line: #3d3144;
+  --line-soft: #302638;
+  --ink: #f7f3f7;
+  --slate: #d0c6d2;
+  --slate-soft: #a99dad;
 
-  --tier-diamond: #8fb3f2;
-  --tier-gold: #e0bb6c;
-  --tier-silver: #b6c0ce;
-  --tier-bronze: #d08b5b;
+  --tier-diamond: #8eb4f4;
+  --tier-gold: #e5c477;
+  --tier-silver: #bdc7d3;
+  --tier-bronze: #dda073;
+
   color-scheme: dark;
 }

@@ -1,14 +1,12 @@
 {
   "nav": {
-    "about": "Sobre",
-    "events": "Eventos",
-    "cfp": "Call for Papers",
-    "keynotes": "Palestrantes",
-    "guests": "Convidados",
-    "registration": "Inscrições",
-    "location": "Localização",
-    "committee": "Comitê",
-    "sponsorship": "Patrocínio"
+    "cbsoft": "CBSOFT'27",
+    "sbes": "SBES",
+    "sblp": "SBLP",
+    "sbcars": "SBCARS",
+    "sast": "SAST",
+    "workshops": "WORKSHOPS",
+    "more": "MAIS"
   },
   "header": {
     "homeAria": "CBSOFT'27 — página inicial",
@@ -16,18 +14,22 @@
     "location": "Belo Horizonte | Minas Gerais",
     "register": "Inscreva-se",
     "openMenu": "Abrir menu",
-    "langLabel": "Idioma:"
+    "langLabel": "Idioma:",
+    "navAria": "Navegação principal",
+    "mobileNavAria": "Navegação móvel",
+    "closeMenu": "Fechar menu"
   },
   "hero": {
-    "eyebrow": "29ª EDIÇÃO — SBC",
-    "subtitle": "Congresso Brasileiro de Software",
-    "dates": "27 de setembro a 01 de outubro de 2027 · Belo Horizonte, Minas Gerais",
-    "ctaCfp": "Chamada de Trabalhos (CFP)",
-    "ctaRegister": "Inscreva-se",
-    "countdownLabel": "Contagem regressiva · prazo de submissão de artigos",
+    "countdownTitle": "Faltam",
+    "launchDescription": "Inscreva-se para saber mais sobre o lançamento",
+    "learnMore": "Saiba mais",
     "countdownAria": "Tempo restante até o prazo de submissão",
-    "photoFallback": "Foto pendente — adicione o arquivo em images/praca-liberdade.webp",
-    "units": { "days": "dias", "hours": "horas", "min": "min", "sec": "seg" }
+    "units": {
+      "days": "Dias",
+      "hours": "Horas",
+      "min": "Minutos",
+      "sec": "Segundos"
+    }
   },
   "agenda": {
     "tab": "Simpósios",
@@ -130,5 +132,209 @@
     "linkProspectus": "Prospecto de patrocínio",
     "rights": "Sociedade Brasileira de Computação (SBC). Todos os direitos reservados.",
     "location": "Belo Horizonte, MG — Brasil"
+  },
+  "headerMenu": {
+    "event": {
+      "title": "Evento",
+      "about": {
+        "title": "Sobre",
+        "description": "Conheça o Congresso Brasileiro de Software."
+      },
+      "organization": {
+        "title": "Organização",
+        "description": "Conheça a equipe que organiza o CBSOFT’27."
+      },
+      "speakers": {
+        "title": "Palestrantes",
+        "description": "Conheça quem compartilha ideias e experiências."
+      }
+    },
+    "guide": {
+      "title": "Guia do participante",
+      "venue": {
+        "title": "Local do Evento",
+        "description": "Veja onde acontece o CBSOFT’27 e como chegar."
+      },
+      "map": {
+        "title": "Mapa",
+        "description": "Encontre os espaços e as atividades do evento."
+      },
+      "accommodation": {
+        "title": "Acomodações",
+        "description": "Explore opções de hospedagem em Belo Horizonte."
+      },
+      "social": {
+        "title": "Eventos Sociais",
+        "description": "Encontros para conversar e ampliar conexões."
+      },
+      "experiences": {
+        "title": "Experiências em BH",
+        "description": "Descubra a cultura, os sabores e os passeios de BH."
+      }
+    },
+    "history": {
+      "title": "Histórico",
+      "previous": {
+        "title": "Edições anteriores",
+        "description": "Relembre a trajetória e as edições do CBSOFT."
+      }
+    },
+    "program": {
+      "title": "Programa",
+      "schedule": {
+        "title": "Programação",
+        "description": "Explore os horários e as atividades do congresso."
+      },
+      "articles": {
+        "title": "Artigos aceitos",
+        "description": "Conheça os trabalhos selecionados para o evento."
+      },
+      "special": {
+        "title": "Atividades especiais",
+        "description": "Descubra outras oportunidades de aprendizado."
+      }
+    },
+    "participation": {
+      "title": "Participação",
+      "volunteers": {
+        "title": "Chamada para Voluntários",
+        "description": "Saiba como colaborar com o CBSOFT’27."
+      },
+      "conduct": {
+        "title": "Código de Conduta",
+        "description": "Orientações para um evento respeitoso e inclusivo."
+      }
+    },
+    "sbes": {
+      "tracksTitle": "Trilhas do SBES",
+      "communityTitle": "Ferramentas, indústria e formação",
+      "programTitle": "Programa",
+      "tracks": {
+        "special": {
+          "title": "Trilha Especial SBES",
+          "description": "Reflexões sobre a trajetória e o futuro da Engenharia de Software."
+        },
+        "research": {
+          "title": "Trilha de Pesquisa",
+          "description": "Avanços científicos e resultados de pesquisa em Engenharia de Software."
+        },
+        "education": {
+          "title": "Trilha de Educação",
+          "description": "Experiências e novas práticas para ensinar Engenharia de Software."
+        },
+        "ideas": {
+          "title": "Trilha de Ideias Inovadoras e Resultados Emergentes",
+          "description": "Novas propostas e resultados iniciais para os desafios da área."
+        },
+        "tools": {
+          "title": "Trilha de Ferramentas",
+          "description": "Ferramentas que apoiam o desenvolvimento e a evolução de software."
+        },
+        "industry": {
+          "title": "Trilha da Indústria",
+          "description": "Desafios e experiências que aproximam academia e mercado."
+        },
+        "ctic": {
+          "title": "Concurso de Trabalhos de Iniciação Científica",
+          "description": "Pesquisas de estudantes que iniciam sua trajetória científica."
+        },
+        "ctd": {
+          "title": "Concursos de Teses e Dissertações em Engenharia de Software",
+          "description": "Contribuições de mestrado e doutorado para a Engenharia de Software."
+        }
+      },
+      "program": {
+        "title": "Programação",
+        "description": "Confira as sessões e atividades do SBES."
+      }
+    },
+    "sblp": {
+      "title": "SBLP",
+      "call": {
+        "title": "Chamada de Trabalhos",
+        "description": "Orientações para submeter pesquisas em Linguagens de Programação."
+      },
+      "program": {
+        "title": "Programação",
+        "description": "Confira as sessões e atividades do SBLP."
+      },
+      "papers": {
+        "title": "Artigos Aceitos",
+        "description": "Conheça os trabalhos selecionados para o SBLP."
+      }
+    },
+    "sbcars": {
+      "title": "SBCARS",
+      "call": {
+        "title": "Chamada de Trabalhos",
+        "description": "Submeta trabalhos sobre Componentes, Arquiteturas e Reutilização de Software."
+      },
+      "program": {
+        "title": "Programação",
+        "description": "Confira as sessões e atividades do SBCARS."
+      },
+      "papers": {
+        "title": "Artigos Aceitos",
+        "description": "Conheça os trabalhos selecionados para o SBCARS."
+      }
+    },
+    "sast": {
+      "title": "SAST",
+      "call": {
+        "title": "Chamada de Trabalhos",
+        "description": "Orientações para trabalhos em Teste e Análise de Software."
+      },
+      "program": {
+        "title": "Programação",
+        "description": "Confira as sessões e atividades do SAST."
+      },
+      "papers": {
+        "title": "Artigos Aceitos",
+        "description": "Conheça os trabalhos selecionados para o SAST."
+      }
+    },
+    "workshops": {
+      "title": "Workshops",
+      "call": {
+        "title": "Chamada de Trabalhos",
+        "description": "Conheça as orientações para participar dos workshops."
+      },
+      "accepted": {
+        "title": "Workshops Aceitos",
+        "description": "Explore os workshops e seus temas de discussão."
+      },
+      "program": {
+        "title": "Programação",
+        "description": "Confira os horários e as atividades dos workshops."
+      },
+      "papers": {
+        "title": "Artigos Aceitos",
+        "description": "Conheça os trabalhos selecionados pelos workshops."
+      }
+    },
+    "more": {
+      "communityTitle": "Iniciativas e formação",
+      "eventsTitle": "Outros eventos",
+      "artifacts": {
+        "title": "Artefatos",
+        "description": "Avaliação de artefatos para apoiar a reprodução de pesquisas."
+      },
+      "latam": {
+        "title": "LATAM School",
+        "description": "Aprendizado e intercâmbio em Engenharia de Software na América Latina."
+      },
+      "highSchool": {
+        "title": "Ensino Médio",
+        "description": "Uma aproximação de estudantes com a Computação e a pesquisa."
+      },
+      "aiware": {
+        "title": "AIware",
+        "description": "Encontro sobre Engenharia de Software para sistemas com IA."
+      },
+      "freeSoftware": {
+        "title": "Software Livre",
+        "description": "Conheça iniciativas de desenvolvimento aberto e colaborativo."
+      }
+    }
   }
 }

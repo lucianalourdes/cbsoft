@@ -1,98 +1,184 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { HEADER_MENUS, type HeaderMenuId } from '@/data/headerMenu';
 import { NAV_ITEMS } from '@/data/nav';
 import { IMAGES } from '@/data/config';
-import { Wordmark } from '@/components/ui/Wordmark';
-import { LanguageSwitcher } from './LanguageSwitcher';
+import { useOnClickOutside } from '@/hooks/useOnClickOutside';
+import { HeaderMegaMenu } from './HeaderMegaMenu';
 import { MobileMenu } from './MobileMenu';
 
 export function Header() {
   const { t } = useTranslation();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<HeaderMenuId | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const mobileTriggerRef = useRef<HTMLButtonElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const focusFirstLink = useRef(false);
+
+  function cancelClose() {
+    if (closeTimer.current !== null) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }
+
+  function closeMegaMenu() {
+    cancelClose();
+    focusFirstLink.current = false;
+    setActiveMenu(null);
+  }
+
+  function closeAllMenus() {
+    closeMegaMenu();
+    setMobileMenuOpen(false);
+  }
+
+  useOnClickOutside(headerRef, closeAllMenus, activeMenu !== null || mobileMenuOpen);
+
+  useEffect(() => () => {
+    if (closeTimer.current !== null) clearTimeout(closeTimer.current);
+  }, []);
+
+  useEffect(() => {
+    if (activeMenu && focusFirstLink.current) {
+      headerRef.current
+        ?.querySelector<HTMLElement>(`#header-mega-menu-${activeMenu} a`)
+        ?.focus();
+      focusFirstLink.current = false;
+    }
+  }, [activeMenu]);
+
+  useEffect(() => {
+    const breakpoint = window.matchMedia('(min-width: 1024px)');
+    const onChange = () => {
+      setActiveMenu(null);
+      setMobileMenuOpen(false);
+    };
+    breakpoint.addEventListener('change', onChange);
+    return () => breakpoint.removeEventListener('change', onChange);
+  }, []);
 
   return (
     <header
-      className="fixed top-0 inset-x-0 z-50"
-      style={{ background: 'var(--brand-ink)', color: 'var(--brand-on)' }}
+      ref={headerRef}
+      className="site-header"
+      onKeyDown={(event) => {
+        if (event.key === 'Escape' && mobileMenuOpen) {
+          event.preventDefault();
+          closeAllMenus();
+          mobileTriggerRef.current?.focus();
+        }
+      }}
     >
-      <div className="container-xl flex items-center justify-between h-16 md:h-[4.5rem]">
-        <a href="#top" className="flex items-center gap-3 shrink-0" aria-label={t('header.homeAria')}>
-          <img
-            src={IMAGES.logo}
-            alt=""
-            aria-hidden="true"
-            className="h-9 md:h-10 w-auto shrink-0"
-          />
-          <span className="flex flex-col leading-none">
-            <Wordmark className="font-display text-lg font-bold tracking-tight" />
-            <span
-              className="font-mono text-[9px] tracking-[.1em] uppercase mt-0.5"
-              style={{ color: '#C6B7D9' }}
-            >
-              {t('header.tagline')}
-            </span>
-            <span
-              className="hidden sm:block font-mono text-[8px] tracking-[.1em] uppercase mt-0.5"
-              style={{ color: '#8A7A9E' }}
-            >
-              {t('header.location')}
-            </span>
-          </span>
+      <div className="site-header__inner">
+        <a
+          href="#top"
+          className="site-header__logo-link"
+          aria-label={t('header.homeAria')}
+          onClick={closeAllMenus}
+        >
+          <img className="site-header__logo" src={IMAGES.logo_horizontal} alt="" />
         </a>
 
-        <nav
-          className="hidden lg:flex items-center gap-7 font-medium text-sm"
-          aria-label="Navegação principal"
-        >
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="hover:text-[color:var(--logo-pink)] transition-colors"
-              style={{ color: '#DCD2E8' }}
-            >
-              {t(item.key)}
-            </a>
-          ))}
+        <nav className="site-header__nav" aria-label={t('header.navAria')}>
+          {NAV_ITEMS.map((item) => {
+            const open = activeMenu === item.id;
+
+            return (
+              <div
+                key={item.id}
+                className={`site-header__mega-root site-header__mega-root--${item.id}`}
+                onPointerEnter={(event) => {
+                  if (event.pointerType !== 'mouse') return;
+                  cancelClose();
+                  setActiveMenu(item.id);
+                }}
+                onPointerLeave={(event) => {
+                  if (event.pointerType !== 'mouse') return;
+                  cancelClose();
+                  closeTimer.current = setTimeout(() => {
+                    setActiveMenu((current) => current === item.id ? null : current);
+                    closeTimer.current = null;
+                  }, 150);
+                }}
+                onBlurCapture={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                    closeMegaMenu();
+                  }
+                }}
+                onKeyDown={(event) => {
+                  if (event.key === 'Escape' && open) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    closeMegaMenu();
+                    event.currentTarget.querySelector('button')?.focus();
+                  }
+                }}
+              >
+                <button
+                  id={`header-trigger-${item.id}`}
+                  type="button"
+                  className={`site-header__nav-item${open ? ' is-active' : ''}`}
+                  aria-expanded={open}
+                  aria-controls={`header-mega-menu-${item.id}`}
+                  onClick={() => {
+                    cancelClose();
+                    setActiveMenu((current) => current === item.id ? null : item.id);
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === 'ArrowDown') {
+                      event.preventDefault();
+                      cancelClose();
+                      if (open) {
+                        event.currentTarget.parentElement?.querySelector('a')?.focus();
+                      } else {
+                        focusFirstLink.current = true;
+                        setActiveMenu(item.id);
+                      }
+                    }
+                  }}
+                >
+                  <span>{t(item.key)}</span>
+                  <img src={IMAGES.chevron_down} width={16} height={16} alt="" aria-hidden="true" />
+                </button>
+
+                {open && (
+                  <HeaderMegaMenu
+                    id={item.id}
+                    menu={HEADER_MENUS[item.id]}
+                    onNavigate={closeMegaMenu}
+                  />
+                )}
+              </div>
+            );
+          })}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <LanguageSwitcher
-            withSeparator
-            className="hidden sm:flex items-center border rounded overflow-hidden [border-color:rgba(255,255,255,.25)]"
-          />
-          <a
-            href="#inscricoes"
-            className="hidden md:inline-flex btn btn-accent text-xs !py-2 !px-4"
-          >
-            {t('header.register')}
-          </a>
-          <button
-            id="menu-toggle"
-            type="button"
-            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 -mr-2"
-            aria-label={t('header.openMenu')}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-menu"
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            <span
-              className="block w-6 h-[2px] bg-white mb-1.5 transition-transform"
-              style={menuOpen ? { transform: 'translateY(8px) rotate(45deg)' } : undefined}
-            />
-            <span
-              className="block w-6 h-[2px] bg-white mb-1.5 transition-opacity"
-              style={{ opacity: menuOpen ? 0 : 1 }}
-            />
-            <span
-              className="block w-6 h-[2px] bg-white transition-transform"
-              style={menuOpen ? { transform: 'translateY(-8px) rotate(-45deg)' } : undefined}
-            />
-          </button>
-        </div>
+        <a href="#inscricoes" className="site-header__register" onClick={closeAllMenus}>
+          {t('header.register')}
+        </a>
+
+        <button
+          ref={mobileTriggerRef}
+          id="menu-toggle"
+          type="button"
+          className={`site-header__mobile-toggle${mobileMenuOpen ? ' is-open' : ''}`}
+          aria-label={t(mobileMenuOpen ? 'header.closeMenu' : 'header.openMenu')}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => {
+            closeMegaMenu();
+            setMobileMenuOpen((open) => !open);
+          }}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
 
-      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
+      {mobileMenuOpen && <MobileMenu onClose={() => setMobileMenuOpen(false)} />}
     </header>
   );
 }

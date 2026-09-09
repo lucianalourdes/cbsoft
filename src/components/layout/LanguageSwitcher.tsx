@@ -11,7 +11,6 @@ interface LanguageSwitcherProps {
 
 /** PT / EN toggle — swaps the active language via react-i18next. */
 export function LanguageSwitcher({
-  withSeparator = false,
   className = '',
   groupAriaLabel = 'Seletor de idioma / Language selector',
 }: LanguageSwitcherProps) {
@@ -20,13 +19,8 @@ export function LanguageSwitcher({
 
   return (
     <div className={className} role="group" aria-label={groupAriaLabel}>
-      {SUPPORTED_LANGS.map((lng, i) => (
+      {SUPPORTED_LANGS.map((lng) => (
         <Fragment key={lng}>
-          {withSeparator && i > 0 && (
-            <span style={{ color: 'rgba(255,255,255,.25)' }} aria-hidden="true">
-              /
-            </span>
-          )}
           <button
             type="button"
             className={`lang-btn ${current === lng ? 'active' : ''}`.trim()}
