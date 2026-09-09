@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { HEADER_MENUS, type HeaderMenuId } from '@/data/headerMenu';
 import { NAV_ITEMS } from '@/data/nav';
 import { IMAGES } from '@/data/config';
@@ -73,14 +74,14 @@ export function Header() {
       }}
     >
       <div className="site-header__inner">
-        <a
-          href="#top"
+        <Link
+          to="/"
           className="site-header__logo-link"
           aria-label={t('header.homeAria')}
           onClick={closeAllMenus}
         >
           <img className="site-header__logo" src={IMAGES.logo_horizontal} alt="" />
-        </a>
+        </Link>
 
         <nav className="site-header__nav" aria-label={t('header.navAria')}>
           {NAV_ITEMS.map((item) => {

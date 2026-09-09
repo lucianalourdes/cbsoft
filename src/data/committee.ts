@@ -18,7 +18,7 @@ export const GENERAL_CHAIRS: CommitteePerson[] = [
 ];
 
 /** Program-committee chairs, one line per symposium (chair TBC). */
-export const PC_CHAIR_SYMPOSIA = ['SBES', 'SBMF', 'SBCARS', 'SAST'] as const;
+export const PC_CHAIR_SYMPOSIA = ['SBES', 'SBLP', 'SBCARS', 'SAST'] as const;
 
 /** Comitê Local — role names; the "to be confirmed" tail is added in the UI. */
 export const LOCAL_COMMITTEE_ROLES: Localized[] = [

@@ -1,36 +1,42 @@
-export type SponsorTierId = 'diamond' | 'gold' | 'silver' | 'bronze' | 'institutional';
-
-export interface SponsorTier {
-  id: SponsorTierId;
-  /** CSS custom property for the tier label colour. */
-  colorVar: string;
-  slots: number;
-  /** Tailwind grid-cols-* utility for the slot row. */
-  gridCols: string;
-  /** Tailwind height utility for each slot tile. */
-  tileHeight: string;
-  /** Smaller type on the denser rows. */
-  compact?: boolean;
+/**
+ * "Quem está contribuindo" section.
+ *
+ * 2027 is organised by PUC Minas and UFMG and promoted (realização) by the
+ * SBC. There are no sponsors or supporters confirmed yet, so the sponsorship
+ * tiers are replaced by a call-to-action inviting companies to join.
+ *
+ * Each entry falls back to its short label if the logo file is missing.
+ */
+export interface OrgEntry {
+  id: string;
+  name: string;
+  /** Public path to the logo, e.g. /assets/images/ufmg-logo.png. */
+  logo: string;
+  url?: string;
 }
 
-export const SPONSOR_TIERS: SponsorTier[] = [
-  { id: 'diamond', colorVar: 'var(--tier-diamond)', slots: 1, gridCols: 'grid-cols-1', tileHeight: 'h-20' },
-  { id: 'gold', colorVar: 'var(--tier-gold)', slots: 2, gridCols: 'grid-cols-2', tileHeight: 'h-16' },
-  { id: 'silver', colorVar: 'var(--tier-silver)', slots: 3, gridCols: 'grid-cols-3', tileHeight: 'h-14' },
+/** Organização — host institutions. */
+export const ORGANIZERS: OrgEntry[] = [
   {
-    id: 'bronze',
-    colorVar: 'var(--tier-bronze)',
-    slots: 4,
-    gridCols: 'grid-cols-4',
-    tileHeight: 'h-12',
-    compact: true,
+    id: 'puc-minas',
+    name: 'PUC Minas',
+    logo: '/assets/images/puc-minas-logo.png',
+    url: 'https://www.pucminas.br/',
   },
   {
-    id: 'institutional',
-    colorVar: 'var(--slate-soft)',
-    slots: 4,
-    gridCols: 'grid-cols-4',
-    tileHeight: 'h-12',
-    compact: true,
+    id: 'ufmg',
+    name: 'UFMG',
+    logo: '/assets/images/ufmg-logo.png',
+    url: 'https://ufmg.br/',
+  },
+];
+
+/** Realização — promoting society. */
+export const REALIZATION: OrgEntry[] = [
+  {
+    id: 'sbc',
+    name: 'SBC — Sociedade Brasileira de Computação',
+    logo: '/assets/images/sbc-logo.png',
+    url: 'https://www.sbc.org.br/',
   },
 ];

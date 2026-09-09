@@ -11,11 +11,12 @@ export function Registration() {
   const lang = useLang();
 
   const money = 'font-mono num-tabular';
+  const fee = (value: number | null) => formatFee(value) ?? t('registration.tbd');
   const rows = REGISTRATION_ROWS.map((r) => [
     pick(r.category, lang),
-    formatFee(r.earlyBird),
-    formatFee(r.regular),
-    formatFee(r.onSite),
+    fee(r.earlyBird),
+    fee(r.regular),
+    fee(r.onSite),
   ]);
 
   return (

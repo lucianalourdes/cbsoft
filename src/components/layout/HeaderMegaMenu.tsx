@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import type { HeaderMenuDefinition, HeaderMenuId } from '@/data/headerMenu';
 
 interface HeaderMegaMenuProps {
@@ -35,18 +36,32 @@ export function HeaderMegaMenu({
                                 <h2>{t(section.titleKey)}</h2>
 
                                 <div className="header-mega-menu__links">
-                                    {section.links.map((link) => (
-                                        <a
-                                            key={link.titleKey}
-                                            href={link.href}
-                                            onClick={onNavigate}
-                                            target={link.external ? '_blank' : undefined}
-                                            rel={link.external ? 'noopener noreferrer' : undefined}
-                                        >
-                                            <strong>{t(link.titleKey)}</strong>
-                                            <span>{t(link.descriptionKey)}</span>
-                                        </a>
-                                    ))}
+                                    {section.links.map((link) => {
+                                        const label = (
+                                            <>
+                                                <strong>{t(link.titleKey)}</strong>
+                                                <span>{t(link.descriptionKey)}</span>
+                                            </>
+                                        );
+
+                                        // Route paths ("/sobre") navigate client-side;
+                                        // hash anchors and external URLs stay plain links.
+                                        return link.href.startsWith('/') ? (
+                                            <Link key={link.titleKey} to={link.href} onClick={onNavigate}>
+                                                {label}
+                                            </Link>
+                                        ) : (
+                                            <a
+                                                key={link.titleKey}
+                                                href={link.href}
+                                                onClick={onNavigate}
+                                                target={link.external ? '_blank' : undefined}
+                                                rel={link.external ? 'noopener noreferrer' : undefined}
+                                            >
+                                                {label}
+                                            </a>
+                                        );
+                                    })}
                                 </div>
                             </section>
                         ))}

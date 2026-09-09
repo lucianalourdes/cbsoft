@@ -38,8 +38,8 @@ export const SYMPOSIA: Symposium[] = [
       en: 'Brazilian Symposium on Programming Languages (SBLP)',
     },
     blurb: {
-      pt: 'Simpósio Brasileiro de Métodos Formais — especificação, verificação e correção de software.',
-      en: 'Brazilian Symposium on Formal Methods — specification, verification and correctness.',
+      pt: 'Simpósio Brasileiro de Linguagens de Programação — projeto, implementação e semântica de linguagens.',
+      en: 'Brazilian Symposium on Programming Languages — language design, implementation and semantics.',
     },
   },
   {

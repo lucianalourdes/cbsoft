@@ -6,8 +6,9 @@ export type AgendaKind = 'abstract' | 'full' | 'notification' | 'camera';
 export interface AgendaEvent {
   symposium: SymposiumId;
   kind: AgendaKind;
-  /** ISO 'YYYY-MM-DD' — every agenda entry is an all-day deadline. */
-  date: string;
+  /** ISO 'YYYY-MM-DD' all-day deadline, or `null` while the date is
+   *  still to be announced. */
+  date: string | null;
   title: Localized;
   description: Localized;
   displayDesc: Localized;
@@ -80,7 +81,12 @@ function fill(value: Localized, acronym: string): Localized {
   };
 }
 
-function event(symposium: SymposiumId, acronym: string, kind: AgendaKind, date: string): AgendaEvent {
+function event(
+  symposium: SymposiumId,
+  acronym: string,
+  kind: AgendaKind,
+  date: string | null = null,
+): AgendaEvent {
   const tpl = TEMPLATES[kind];
   return {
     symposium,
@@ -93,31 +99,32 @@ function event(symposium: SymposiumId, acronym: string, kind: AgendaKind, date: 
   };
 }
 
-/** Key dates per symposium, in program order. */
+/** Key dates per symposium, in program order. Dates are still to be
+ *  announced — every entry currently renders as "a definir". */
 export const AGENDA: Record<SymposiumId, AgendaEvent[]> = {
   sbes: [
-    event('sbes', 'SBES', 'abstract', '2027-03-08'),
-    event('sbes', 'SBES', 'full', '2027-03-15'),
-    event('sbes', 'SBES', 'notification', '2027-05-15'),
-    event('sbes', 'SBES', 'camera', '2027-06-15'),
+    event('sbes', 'SBES', 'abstract'),
+    event('sbes', 'SBES', 'full'),
+    event('sbes', 'SBES', 'notification'),
+    event('sbes', 'SBES', 'camera'),
   ],
-  sbmf: [
-    event('sbmf', 'SBMF', 'abstract', '2027-03-15'),
-    event('sbmf', 'SBMF', 'full', '2027-03-22'),
-    event('sbmf', 'SBMF', 'notification', '2027-05-22'),
-    event('sbmf', 'SBMF', 'camera', '2027-06-19'),
+  sblp: [
+    event('sblp', 'SBLP', 'abstract'),
+    event('sblp', 'SBLP', 'full'),
+    event('sblp', 'SBLP', 'notification'),
+    event('sblp', 'SBLP', 'camera'),
   ],
   sbcars: [
-    event('sbcars', 'SBCARS', 'abstract', '2027-03-22'),
-    event('sbcars', 'SBCARS', 'full', '2027-03-29'),
-    event('sbcars', 'SBCARS', 'notification', '2027-05-29'),
-    event('sbcars', 'SBCARS', 'camera', '2027-06-22'),
+    event('sbcars', 'SBCARS', 'abstract'),
+    event('sbcars', 'SBCARS', 'full'),
+    event('sbcars', 'SBCARS', 'notification'),
+    event('sbcars', 'SBCARS', 'camera'),
   ],
   sast: [
-    event('sast', 'SAST', 'abstract', '2027-03-29'),
-    event('sast', 'SAST', 'full', '2027-04-05'),
-    event('sast', 'SAST', 'notification', '2027-06-02'),
-    event('sast', 'SAST', 'camera', '2027-06-25'),
+    event('sast', 'SAST', 'abstract'),
+    event('sast', 'SAST', 'full'),
+    event('sast', 'SAST', 'notification'),
+    event('sast', 'SAST', 'camera'),
   ],
 };
 

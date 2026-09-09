@@ -11,10 +11,10 @@ describe('App', () => {
   it('renders every section anchor the nav points to', () => {
     const { container } = render(<App />);
     for (const id of [
+      'agenda',
       'sobre',
       'eventos',
       'cfp',
-      'convidados',
       'inscricoes',
       'comite',
       'patrocinio',
@@ -42,11 +42,11 @@ describe('App', () => {
     expect(document.documentElement.lang).toBe('en');
   });
 
-  it('renders the four registration categories with BRL fees', () => {
+  it('renders the four registration categories with fees pending', () => {
     render(<App />);
     const registration = document.querySelector('#inscricoes') as HTMLElement;
     expect(within(registration).getByText('Estudante de Graduação (sócio SBC)')).toBeTruthy();
-    expect(within(registration).getAllByText(/R\$/).length).toBeGreaterThanOrEqual(12);
+    expect(within(registration).getAllByText('A definir').length).toBeGreaterThanOrEqual(12);
   });
 
   it('renders the hero countdown timer', () => {

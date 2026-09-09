@@ -44,7 +44,9 @@ export function SymposiumCarousel() {
                 <AddToCalendar
                   key={key}
                   event={event}
-                  displayDate={formatAgendaDate(event.date, lang)}
+                  displayDate={
+                    event.date ? formatAgendaDate(event.date, lang) : t('agenda.tbd')
+                  }
                   isOpen={openKey === key}
                   onToggle={() => setOpenKey((k) => (k === key ? null : key))}
                   onClose={() => setOpenKey((k) => (k === key ? null : k))}

@@ -39,6 +39,20 @@ export function AddToCalendar({ event, displayDate, isOpen, onToggle, onClose }:
 
   useOnClickOutside(itemRef, onClose, isOpen);
 
+  // No date yet — show the row as plain text, with no calendar menu.
+  if (!event.date) {
+    return (
+      <div className="cal-item">
+        <div className="cal-trigger cal-trigger--static">
+          <span className="cal-text">
+            <span className="cal-date">{displayDate}</span>
+            <span className="cal-desc">{event.displayDesc[lang]}</span>
+          </span>
+        </div>
+      </div>
+    );
+  }
+
   const calEvent: CalendarEvent = {
     title: event.title,
     description: event.description,

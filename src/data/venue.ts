@@ -21,25 +21,22 @@ export const VENUE = {
     {
       id: 'metro',
       icon: 'metro',
-      name: { pt: 'Estação Gameleira', en: 'Gameleira station' },
+      name: { pt: 'Estação Central', en: 'Central station' },
       meta: { pt: 'Linha 1 do Metrô', en: 'Metro Line 1' },
     },
     {
-      id: 'bus-9250',
+      id: 'move-raul-soares',
       icon: 'bus',
-      name: { pt: 'Linha 9250', en: 'Bus 9250' },
-      meta: {
-        pt: 'PUC Minas — Coração Eucarístico',
-        en: 'PUC Minas — Coração Eucarístico',
-      },
+      name: { pt: 'Move — Praça Raul Soares', en: 'Move BRT — Praça Raul Soares' },
+      meta: { pt: 'Corredores da Área Central', en: 'Downtown BRT corridors' },
     },
     {
-      id: 'bus-1103',
+      id: 'bus-4403',
       icon: 'bus',
-      name: { pt: 'Linha 1103', en: 'Bus 1103' },
+      name: { pt: 'Linha 4403', en: 'Bus 4403' },
       meta: {
-        pt: 'Coração Eucarístico via Amazonas',
-        en: 'Coração Eucarístico via Amazonas',
+        pt: 'Lourdes / Savassi via Av. Brasil',
+        en: 'Lourdes / Savassi via Av. Brasil',
       },
     },
   ] satisfies TransitOption[],

@@ -54,7 +54,7 @@ export const HEADER_MENUS: Record<HeaderMenuId, HeaderMenuDefinition> = {
                 {
                     titleKey: 'headerMenu.event.title',
                     links: [
-                        link('event.about', '#sobre'),
+                        link('event.about', '/sobre'),
                         link('event.organization', '#comite'),
                         link('event.speakers', '#palestrantes'),
                     ],

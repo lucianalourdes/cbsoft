@@ -1,14 +1,14 @@
 import type { ReactNode } from 'react';
 
 interface SectionHeadingProps {
-  /** Two-digit section index shown after the `//` (omit for the Agenda). */
+  /** Kept for call sites; the eyebrow line is currently not rendered. */
   number?: string;
-  /** Upper-case label in the eyebrow. */
-  eyebrow: string;
+  /** Kept for call sites; the eyebrow line is currently not rendered. */
+  eyebrow?: string;
   title: ReactNode;
   /** Optional lead paragraph under the title. */
   intro?: ReactNode;
-  /** `onDark` recolours the eyebrow/title for the dark keynote band. */
+  /** `onDark` recolours the title for the dark keynote band. */
   tone?: 'default' | 'onDark';
   titleClassName?: string;
   introClassName?: string;
@@ -27,7 +27,7 @@ export function SectionHeading({
   return (
     <div className={className}>
       <h2
-        className={`font-display font-semibold mt-3 leading-tight ${titleClassName}`}
+        className={`font-display font-semibold leading-tight ${titleClassName}`}
         style={{ color: onDark ? '#fff' : 'var(--ink)' }}
       >
         {title}

@@ -33,6 +33,7 @@
   },
   "agenda": {
     "tab": "Symposia",
+    "tbd": "To be announced",
     "readMore": "Read more",
     "allDates": "All important dates",
     "prevAria": "Previous symposium",
@@ -42,11 +43,36 @@
   "about": {
     "eyebrow": "ABOUT",
     "title": "The main forum for Software Engineering & Development in Brazil",
-    "p1": "Promoted by the Brazilian Computer Society (SBC), CBSOFT brings together, once a year, four national symposia into a single program. Researchers, graduate students and industry professionals share results, discuss open problems and build the research agenda for Software Engineering, Formal Methods, Reusable Architectures and Software Testing in Brazil.",
+    "p1": "Promoted by the Brazilian Computer Society (SBC), CBSOFT brings together, once a year, four national symposia into a single program. Researchers, graduate students and industry professionals share results, discuss open problems and build the research agenda for Software Engineering, Programming Languages, Reusable Architectures and Software Testing in Brazil.",
     "p2": "In 2027 the congress arrives in Belo Horizonte, one of Brazil's most active innovation and startup hubs — with a program that mixes scientific tracks, an industry track, tutorials, tool demonstrations and a thesis & dissertation contest.",
     "statSymposia": "co-located symposia",
     "statYears": "years of history",
     "statDays": "days of program"
+  },
+  "aboutPage": {
+    "metaTitle": "About CBSoft — CBSOFT'27",
+    "eyebrow": "About CBSoft",
+    "title": "About CBSoft",
+    "highlightName": "CBSoft 2027",
+    "highlightEditionEmphasis": "18th edition",
+    "highlightEditionRest": "of the Brazilian Conference on Software",
+    "highlightEditionRoman": "XVIII edition of CBSoft",
+    "labelDates": "Dates",
+    "labelLocation": "Location",
+    "tbd": "To be defined",
+    "tbdPlural": "Dates to be defined",
+    "location": "Belo Horizonte — MG",
+    "statEditionLabel": "CBSoft edition",
+    "statDatesLabel": "Event dates",
+    "statSymposiaLabel": "Integrated symposia",
+    "institutionalTitle": "The conference",
+    "symposiaTitle": "Integrated symposia",
+    "activitiesTitle": "Program and activities",
+    "p1": "The Brazilian Conference on Software: Theory and Practice (CBSoft) is held annually by the Brazilian Computer Society (SBC) to foster and encourage the exchange of experiences among researchers and professionals from industry and academia on the latest practical and theoretical research, trends and innovations in software. Held since 2010 as the umbrella event for the Brazilian software symposia promoted by SBC, CBSoft has become one of the leading events of the Brazilian scientific community in Computing.",
+    "p2": "In 2027, the XVIII edition of CBSoft will be held in person in Belo Horizonte, Minas Gerais. The official dates of the event are yet to be defined. This edition brings together four traditional events held annually by the Brazilian Software Engineering community:",
+    "activitiesLead": "The CBSoft program includes technical sessions with scientific paper presentations, keynotes by renowned Brazilian and international researchers, panel discussions, workshops, and tool demonstrations.",
+    "activitiesClosing": "All of these activities, of interest to the Software Engineering community and related areas of software systems development, aim to disseminate knowledge and discuss important questions related to research, development and innovation, both in Brazil and worldwide.",
+    "backHome": "Back to the home page"
   },
   "events": {
     "eyebrow": "SYMPOSIA",
@@ -62,6 +88,7 @@
     "submit": "Submit via JEMS / SBC OpenLib",
     "colMilestone": "Milestone",
     "colDate": "Date",
+    "tbd": "To be announced",
     "note": "All deadlines end at 23:59 (Brasília time, UTC-3)."
   },
   "keynotes": {
@@ -87,11 +114,12 @@
     "colEarly": "Early-bird",
     "colRegular": "Regular",
     "colOnsite": "On-site",
+    "tbd": "To be announced",
     "note": "Student rates require valid enrollment proof. At least one author per accepted paper must register by the camera-ready deadline."
   },
   "location": {
     "eyebrow": "LOCATION",
-    "title": "PUC Minas Coração Eucarístico campus",
+    "title": "PUC Minas Lourdes campus",
     "city": "Belo Horizonte, MG",
     "noticeTitle": "Venue being arranged",
     "notice": "The exact venue and accreditation rooms are still being arranged with the host institution. The details below are provisional and will be updated before the event.",
@@ -111,15 +139,23 @@
     "tbc": "to be confirmed"
   },
   "sponsorship": {
-    "eyebrow": "SPONSORSHIP",
-    "title": "Sponsors & supporters",
-    "intro": "Sponsorship packages for the 2027 edition are open. Contact the local committee through the link in the footer for the full prospectus.",
-    "slotAvailable": "Slot available",
-    "diamond": "Diamond",
-    "gold": "Gold",
-    "silver": "Silver",
-    "bronze": "Bronze",
-    "institutional": "Institutional support"
+    "eyebrow": "WHO IS CONTRIBUTING",
+    "title": "Who is contributing",
+    "intro": "CBSOFT 2027 is organised by PUC Minas and UFMG and promoted by the Brazilian Computer Society. Sponsorship and support packages are open.",
+    "organization": "Organisation",
+    "realization": "Promoted by",
+    "support": "Sponsorship & support",
+    "cta": {
+      "action": "Contact the committee",
+      "sponsor": {
+        "title": "Become a sponsor",
+        "text": "Associate your brand with Brazil's leading software congress and reach researchers and practitioners from across the country."
+      },
+      "supporter": {
+        "title": "Become a supporter",
+        "text": "Support the event with infrastructure, grants or outreach and join the software research community."
+      }
+    }
   },
   "footer": {
     "promotedBy": "Promoted by the Brazilian Computer Society.",

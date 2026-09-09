@@ -33,6 +33,7 @@
   },
   "agenda": {
     "tab": "Simpósios",
+    "tbd": "A definir",
     "readMore": "Leia mais",
     "allDates": "Todas as datas importantes",
     "prevAria": "Simpósio anterior",
@@ -40,11 +41,38 @@
     "addToCalendarAria": "Adicionar ao calendário"
   },
   "about": {
-    "title": "Um dos principais eventos da comunidade científica brasileira na área de Computação.",
-    "p1": "O Congresso Brasileiro de Software: Teoria e Prática (CBSoft) é um evento realizado anualmente pela Sociedade Brasileira de Computação (SBC) desde 2010 como agregador de simpósios brasileiros área de software. O CBSoft tornou-se um dos principais eventos da comunidade científica brasileira na área de Computação.",
+    "eyebrow": "SOBRE",
+    "title": "O principal fórum de Engenharia e Desenvolvimento de Software do Brasil",
+    "p1": "Promovido pela Sociedade Brasileira de Computação (SBC), o CBSOFT reúne anualmente quatro simpósios nacionais em uma única programação. Pesquisadores, estudantes de pós-graduação e profissionais da indústria compartilham resultados, discutem problemas em aberto e constroem a agenda de pesquisa em Engenharia de Software, Linguagens de Programação, Arquiteturas Reutilizáveis e Testes de Software no Brasil.",
+    "p2": "Em 2027 o congresso chega a Belo Horizonte — na PUC, um dos polos de inovação e startups mais ativos do Brasil — com uma programação que combina trilhas científicas, trilha de indústria, cursos, sessão de ferramentas e concurso de teses e dissertações.",
     "statSymposia": "simpósios coalocados",
     "statYears": "anos de história",
     "statDays": "dias de programação"
+  },
+  "aboutPage": {
+    "metaTitle": "Sobre o CBSoft — CBSOFT'27",
+    "eyebrow": "Sobre o CBSoft",
+    "title": "Sobre o CBSoft",
+    "highlightName": "CBSoft 2027",
+    "highlightEditionEmphasis": "18ª edição",
+    "highlightEditionRest": "do Congresso Brasileiro de Software",
+    "highlightEditionRoman": "XVIII edição do CBSoft",
+    "labelDates": "Datas",
+    "labelLocation": "Local",
+    "tbd": "A definir",
+    "tbdPlural": "Datas a definir",
+    "location": "Belo Horizonte — MG",
+    "statEditionLabel": "Edição do CBSoft",
+    "statDatesLabel": "Datas do evento",
+    "statSymposiaLabel": "Simpósios integrados",
+    "institutionalTitle": "O congresso",
+    "symposiaTitle": "Simpósios integrados",
+    "activitiesTitle": "Programação e atividades",
+    "p1": "O Congresso Brasileiro de Software: Teoria e Prática (CBSoft) é um evento realizado anualmente pela Sociedade Brasileira de Computação (SBC) com o objetivo de promover e incentivar a troca de experiências entre pesquisadores e profissionais da indústria e academia sobre as mais recentes pesquisas, tendências e inovações práticas e teóricas sobre software. Realizado desde 2010 como evento agregador de simpósios brasileiros promovidos pela SBC na área de software, o CBSoft tornou-se um dos principais eventos da comunidade científica brasileira na área de Computação.",
+    "p2": "Em 2027, a XVIII edição do CBSoft será realizada presencialmente em Belo Horizonte, Minas Gerais. As datas oficiais do evento ainda serão definidas. A edição integra quatro eventos tradicionais realizados anualmente pela comunidade brasileira em Engenharia de Software:",
+    "activitiesLead": "A programação do CBSoft incluirá sessões técnicas com apresentações de artigos científicos, palestras proferidas por pesquisadores brasileiros e estrangeiros de renome nacional e internacional, painéis de discussão, workshops, e demonstrações de ferramentas.",
+    "activitiesClosing": "Todas essas diversas atividades de interesse da comunidade de Engenharia de Software e de áreas relacionadas ao desenvolvimento de sistemas de software direcionam-se para a difusão do conhecimento e discussão de questões importantes relacionadas à pesquisa, desenvolvimento e inovação, tanto no Brasil quanto no mundo.",
+    "backHome": "Voltar para a página inicial"
   },
   "events": {
     "eyebrow": "EVENTOS",
@@ -60,6 +88,7 @@
     "submit": "Submeter via JEMS / SBC OpenLib",
     "colMilestone": "Etapa",
     "colDate": "Data",
+    "tbd": "A definir",
     "note": "Todos os prazos encerram às 23h59 (horário de Brasília, UTC-3)."
   },
   "keynotes": {
@@ -85,11 +114,12 @@
     "colEarly": "Lote 1 (Early Bird)",
     "colRegular": "Lote 2",
     "colOnsite": "No Local",
+    "tbd": "A definir",
     "note": "Valores de estudante exigem comprovante de matrícula válido. Ao menos um autor por artigo aceito deve se inscrever até o prazo da versão final."
   },
   "location": {
     "eyebrow": "LOCALIZAÇÃO",
-    "title": "Campus Coração Eucarístico da PUC Minas",
+    "title": "Campus Lourdes da PUC Minas",
     "city": "Belo Horizonte, MG",
     "noticeTitle": "Local em definição",
     "notice": "O local exato e as salas de credenciamento ainda estão sendo definidos com a instituição anfitriã. As informações abaixo são provisórias e serão atualizadas antes do evento.",
@@ -109,15 +139,23 @@
     "tbc": "a confirmar"
   },
   "sponsorship": {
-    "eyebrow": "PATROCÍNIO",
-    "title": "Patrocinadores e apoiadores",
-    "intro": "As cotas de patrocínio para a edição de 2027 estão abertas. Fale com o comitê local pelo link no rodapé para receber o prospecto completo.",
-    "slotAvailable": "Cota disponível",
-    "diamond": "Diamante",
-    "gold": "Ouro",
-    "silver": "Prata",
-    "bronze": "Bronze",
-    "institutional": "Apoio Institucional"
+    "eyebrow": "QUEM ESTÁ CONTRIBUINDO",
+    "title": "Quem está contribuindo",
+    "intro": "O CBSOFT 2027 é organizado pela PUC Minas e pela UFMG, com realização da Sociedade Brasileira de Computação. As cotas de patrocínio e apoio estão abertas.",
+    "organization": "Organização",
+    "realization": "Realização",
+    "support": "Patrocínio e apoio",
+    "cta": {
+      "action": "Fale com o comitê",
+      "sponsor": {
+        "title": "Seja nosso patrocinador",
+        "text": "Associe sua marca ao principal congresso brasileiro de software e alcance pesquisadores e profissionais de todo o país."
+      },
+      "supporter": {
+        "title": "Seja nosso apoiador",
+        "text": "Apoie a realização do evento com infraestrutura, bolsas ou divulgação e faça parte da comunidade científica de software."
+      }
+    }
   },
   "footer": {
     "promotedBy": "Promovido pela Sociedade Brasileira de Computação.",

@@ -2,9 +2,10 @@ import type { Localized } from '@/lib/localized';
 
 export interface RegistrationRow {
   category: Localized;
-  earlyBird: number;
-  regular: number;
-  onSite: number;
+  /** Fee in BRL, or `null` while the amount is still to be announced. */
+  earlyBird: number | null;
+  regular: number | null;
+  onSite: number | null;
 }
 
 export const REGISTRATION_ROWS: RegistrationRow[] = [
@@ -13,30 +14,30 @@ export const REGISTRATION_ROWS: RegistrationRow[] = [
       pt: 'Estudante de Graduação (sócio SBC)',
       en: 'Undergraduate student (SBC member)',
     },
-    earlyBird: 450,
-    regular: 600,
-    onSite: 750,
+    earlyBird: null,
+    regular: null,
+    onSite: null,
   },
   {
     category: {
       pt: 'Estudante de Pós-Graduação (sócio SBC)',
       en: 'Graduate student (SBC member)',
     },
-    earlyBird: 600,
-    regular: 780,
-    onSite: 950,
+    earlyBird: null,
+    regular: null,
+    onSite: null,
   },
   {
     category: { pt: 'Profissional (sócio SBC)', en: 'Professional (SBC member)' },
-    earlyBird: 950,
-    regular: 1200,
-    onSite: 1450,
+    earlyBird: null,
+    regular: null,
+    onSite: null,
   },
   {
     category: { pt: 'Profissional (não sócio)', en: 'Professional (non-member)' },
-    earlyBird: 1250,
-    regular: 1550,
-    onSite: 1850,
+    earlyBird: null,
+    regular: null,
+    onSite: null,
   },
 ];
 
@@ -46,7 +47,9 @@ const BRL = new Intl.NumberFormat('pt-BR', {
   maximumFractionDigits: 0,
 });
 
-/** "R$ 450" / "R$ 1.200" — always BRL, as in the original site. */
-export function formatFee(value: number): string {
-  return BRL.format(value).replace(/\s/g, ' ');
+/** "R$ 450" / "R$ 1.200" — always BRL, as in the original site.
+ *  Returns `null` when the fee is not set yet, so the caller can show
+ *  a localized "a definir". */
+export function formatFee(value: number | null): string | null {
+  return value == null ? null : BRL.format(value).replace(/\s/g, ' ');
 }

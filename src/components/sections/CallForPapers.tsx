@@ -11,7 +11,10 @@ export function CallForPapers() {
   const { t } = useTranslation();
   const lang = useLang();
 
-  const rows = CFP_MILESTONES.map((m) => [pick(m.milestone, lang), m.date]);
+  const rows = CFP_MILESTONES.map((m) => [
+    pick(m.milestone, lang),
+    m.date ?? t('cfp.tbd'),
+  ]);
   const strongRows = CFP_MILESTONES.map((m) => Boolean(m.strong));
 
   return (

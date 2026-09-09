@@ -1,35 +1,18 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Hero } from '@/components/sections/Hero';
-import { Agenda } from '@/components/sections/Agenda';
-import { About } from '@/components/sections/About';
-// import { Symposia } from '@/components/sections/Symposia';
-// import { CallForPapers } from '@/components/sections/CallForPapers';
-// import { Keynotes } from '@/components/sections/Keynotes';
-// import { Guests } from '@/components/sections/Guests';
-import { Registration } from '@/components/sections/Registration';
-import { Location } from '@/components/sections/Location';
-// import { Committee } from '@/components/sections/Committee';
-// import { Sponsorship } from '@/components/sections/Sponsorship';
+import { Home } from '@/pages/Home';
+import { AboutPage } from '@/pages/AboutPage';
 
 export function App() {
   return (
-    <>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Header />
-      <main id="top">
-        <Hero />
-        <About />
-        <Agenda />
-        <Location />
-        {/* <Symposia />  */}
-        {/* <Committee /> */}
-        {/*  <CallForPapers /> */}
-        {/* <Keynotes /> */}
-        {/* <Guests />*/}
-        <Registration />
-        {/* <Sponsorship /> */}
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/sobre" element={<AboutPage />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
