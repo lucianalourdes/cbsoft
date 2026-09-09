@@ -8,6 +8,7 @@ export interface NavItem {
 export const NAV_ITEMS: NavItem[] = [
   { href: '#cbsoft', key: 'nav.cbsoft' },
   { href: '#sbes', key: 'nav.sbes' },
+  { href: '#sblp', key: 'nav.sblp' },
   { href: '#sbcars', key: 'nav.sbcars' },
   { href: '#sast', key: 'nav.sast' },
   { href: '#workshops', key: 'nav.workshops' },

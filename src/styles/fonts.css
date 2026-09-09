@@ -1,6 +1,7 @@
 @font-face {
     font-family: "Ronzino";
-    src: url("../assets/fonts/Ronzino-Regular.woff2") format("woff2");
+    src:
+        url("/assets/fonts/Ronzino-Regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -8,15 +9,8 @@
 
 @font-face {
     font-family: "Ronzino";
-    src: url("../assets/fonts/Ronzino-Oblique.woff2") format("woff2");
-    font-weight: 400;
-    font-style: oblique;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Ronzino";
-    src: url("../assets/fonts/Ronzino-Medium.woff2") format("woff2");
+    src:
+        url("/assets/fonts/Ronzino-Medium.woff2") format("woff2");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -24,24 +18,9 @@
 
 @font-face {
     font-family: "Ronzino";
-    src: url("../assets/fonts/Ronzino-MediumOblique.woff2") format("woff2");
-    font-weight: 500;
-    font-style: oblique;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Ronzino";
-    src: url("../assets/fonts/Ronzino-Bold.woff2") format("woff2");
+    src:
+        url("/assets/fonts/Ronzino-Bold.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Ronzino";
-    src: url("../assets/fonts/Ronzino-BoldOblique.woff2") format("woff2");
-    font-weight: 700;
-    font-style: oblique;
     font-display: swap;
 }

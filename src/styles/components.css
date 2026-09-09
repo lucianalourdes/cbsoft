@@ -102,88 +102,544 @@
   color: var(--slate-soft);
 }
 
-/* ---------- Hero ---------- */
-.hero-wave {
-  position: absolute;
-  left: 0;
+/* ---------- Header ---------- */
+:root {
+  --header-height: clamp(5.5rem, 8.333vw, 10rem);
+}
+
+.site-header {
+  position: fixed;
+  z-index: 50;
+  top: 0;
   right: 0;
-  bottom: -1px;
+  left: 0;
+  height: var(--header-height);
+  background: #fbfafc;
+  color: #000;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-inline: clamp(2rem, 6.25vw, 7.5rem);
+}
+
+.site-header__logo-link {
+  display: block;
+  flex: none;
+  width: clamp(7.5rem, 12.031vw, 14.438rem);
+  line-height: 0;
+}
+
+.site-header__logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.65rem, 1.042vw, 1.25rem);
+  margin-left: clamp(3rem, 11.615vw, 13.938rem);
+  white-space: nowrap;
+}
+
+.site-header__mega-root {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.site-header__nav-item {
+  display: inline-flex;
+  align-items: center;
+  gap: min(0.208vw, 0.25rem);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #000;
+  font-family: var(--font-sans);
+  font-size: clamp(0.8rem, 1.25vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: color 0.16s ease;
+}
+
+.site-header__nav-item img {
+  display: block;
+  width: clamp(0.625rem, 0.833vw, 1rem);
+  height: clamp(0.625rem, 0.833vw, 1rem);
+  flex: none;
+  transition: transform 0.18s ease;
+}
+
+.site-header__nav-item:hover,
+.site-header__nav-item:focus-visible,
+.site-header__nav-item.is-active,
+.site-header__mega-root--cbsoft .site-header__nav-item {
+  color: var(--brand-magenta);
+}
+
+.site-header__nav-item.is-active img {
+  transform: rotate(180deg);
+}
+
+.site-header__register {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: clamp(9rem, 14.583vw, 17.5rem);
+  height: clamp(2.75rem, 3.125vw, 3.75rem);
+  margin-left: clamp(2rem, 3.75vw, 4.5rem);
+  border-radius: clamp(0.625rem, 0.833vw, 1rem);
+  background: var(--brand-magenta);
+  color: #fbfafc;
+  font-size: clamp(0.8rem, 1.25vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+  transition:
+    background-color 0.16s ease,
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.site-header__register:hover {
+  background: #c90b6e;
+  box-shadow: 0 0.65rem 1.5rem rgba(130, 4, 76, 0.2);
+  transform: translateY(-1px);
+}
+
+.site-header__mobile-toggle {
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.32rem;
+  cursor: pointer;
+}
+
+.site-header__mobile-toggle span {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--brand-magenta);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.site-header__mobile-toggle.is-open span:nth-child(1) {
+  transform: translateY(0.44rem) rotate(45deg);
+}
+
+.site-header__mobile-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header__mobile-toggle.is-open span:nth-child(3) {
+  transform: translateY(-0.44rem) rotate(-45deg);
+}
+
+/* ---------- Header mega menu ---------- */
+.header-mega-menu {
+  position: absolute;
+  z-index: 60;
+  top: calc(100% + clamp(0.2rem, 0.323vw, 0.388rem));
+  width: min(33.333vw, 40rem);
+  height: auto;
+  padding-top: min(0.793vw, 0.952rem);
+  color: #000;
+  animation: header-mega-menu-in 0.16s ease-out;
+}
+
+.header-mega-menu--cbsoft {
+  left: clamp(-3.2rem, -2.656vw, -1.7rem);
+  height: min(41.484vw, 49.781rem);
+}
+
+.header-mega-menu--wide {
+  left: clamp(-8rem, -6.25vw, -4rem);
+  width: min(38.333vw, 46rem);
+  max-height: calc(100vh - var(--header-height) + 3.5rem);
+}
+
+.header-mega-menu--compact {
+  left: 50%;
+  width: clamp(17rem, 18.75vw, 22.5rem);
+  translate: -50% 0;
+}
+
+.header-mega-menu--more {
+  right: 0;
+  left: auto;
+  width: min(33.333vw, 40rem);
+}
+
+.header-mega-menu__arrow {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: min(3.229vw, 3.875rem);
+  width: 0;
+  height: 0;
+  border-right: min(0.677vw, 0.813rem) solid transparent;
+  border-bottom: min(0.87vw, 1.044rem) solid #fbfafc;
+  border-left: min(0.677vw, 0.813rem) solid transparent;
+}
+
+.header-mega-menu--wide .header-mega-menu__arrow {
+  left: clamp(4.5rem, 6.77vw, 8.125rem);
+}
+
+.header-mega-menu--compact .header-mega-menu__arrow {
+  left: calc(50% - min(0.677vw, 0.813rem));
+}
+
+.header-mega-menu--more .header-mega-menu__arrow {
+  right: min(1.6vw, 1.92rem);
+  left: auto;
+}
+
+.header-mega-menu__content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: min(2.083vw, 2.5rem);
+  width: 100%;
+  height: 100%;
+  padding:
+    min(2.135vw, 2.563rem) min(1.042vw, 1.25rem) min(4.427vw, 5.313rem);
+  border-radius: min(0.833vw, 1rem);
+  background: #fbfafc;
+  box-shadow:
+    0 1.5rem 3.5rem rgba(23, 19, 27, 0.12),
+    0 0.35rem 1rem rgba(23, 19, 27, 0.07);
+  overflow: hidden;
+}
+
+.header-mega-menu--wide .header-mega-menu__content,
+.header-mega-menu--compact .header-mega-menu__content,
+.header-mega-menu--more .header-mega-menu__content {
+  height: auto;
+  max-height: inherit;
+  overflow-y: auto;
+}
+
+.header-mega-menu--compact .header-mega-menu__content {
+  grid-template-columns: minmax(0, 1fr);
+  padding: 2rem;
+}
+
+.header-mega-menu__column {
+  min-width: 0;
+}
+
+.header-mega-menu__section+.header-mega-menu__section {
+  margin-top: min(1.302vw, 1.563rem);
+}
+
+.header-mega-menu--cbsoft .header-mega-menu__column:first-child .header-mega-menu__section:nth-child(2) {
+  margin-top: min(0.885vw, 1.063rem);
+}
+
+.header-mega-menu--cbsoft .header-mega-menu__column:last-child .header-mega-menu__section:nth-child(2) {
+  margin-top: min(1.667vw, 2rem);
+}
+
+.header-mega-menu__section h2 {
+  margin: 0 0 min(0.833vw, 1rem);
+  color: var(--brand-magenta);
+  font-family: var(--font-sans);
+  font-size: clamp(0.625rem, 0.625vw, 0.75rem);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.header-mega-menu__links {
+  display: flex;
+  flex-direction: column;
+  gap: min(0.833vw, 1rem);
+}
+
+.header-mega-menu__links a {
+  display: flex;
+  flex-direction: column;
+  gap: min(0.104vw, 0.125rem);
+  min-width: 0;
+  color: #000;
+  line-height: 1.5;
+}
+
+.header-mega-menu__links strong {
+  font-size: clamp(0.75rem, 0.833vw, 1rem);
+  font-weight: 400;
+  transition: color 0.15s ease;
+}
+
+.header-mega-menu__links span {
+  color: #84798a;
+  font-size: clamp(0.7rem, 0.729vw, 0.875rem);
+  font-weight: 500;
+}
+
+.header-mega-menu__links a:hover strong,
+.header-mega-menu__links a:focus-visible strong {
+  color: var(--brand-magenta);
+}
+
+@keyframes header-mega-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.45rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1023px) {
+  .site-header__inner {
+    padding-inline: 1.25rem;
+  }
+
+  .site-header__logo-link {
+    width: 9rem;
+  }
+
+  .site-header__nav,
+  .site-header__register {
+    display: none;
+  }
+
+  .site-header__mobile-toggle {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-mega-menu {
+    animation: none;
+  }
+}
+
+/* ---------- Hero ---------- */
+.home-hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background: #40516c;
+  color: #fff;
+}
+
+.home-hero__photo,
+.home-hero__shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-hero__photo {
+  z-index: -3;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.home-hero__shade {
+  z-index: -2;
+  background: rgba(112, 42, 130, 0.25);
+}
+
+.home-hero__content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 35.926vh 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.launch-countdown__title {
+  margin: 0 0 min(0.417vw, 0.5rem);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: clamp(1.125rem, 1.875vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.105em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.26);
+}
+
+.launch-countdown__clock {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: #fff;
+}
+
+.launch-countdown__fragment {
+  display: flex;
+  align-items: flex-end;
+}
+
+.launch-countdown__unit {
+  display: flex;
+  min-width: clamp(3.9rem, 8.55vw, 10.25rem);
+  flex-direction: column;
+  align-items: center;
+}
+
+.launch-countdown__label {
+  margin-bottom: min(0.833vw, 1rem);
+  font-size: clamp(0.55rem, 0.729vw, 0.875rem);
+  font-weight: 400;
+  line-height: 1.5;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.launch-countdown__value {
+  font-size: clamp(3rem, 5.208vw, 6.25rem);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+  line-height: 0.79;
+  letter-spacing: -0.035em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.22);
+}
+
+.launch-countdown__separator {
+  width: clamp(0.75rem, 1.2vw, 1.45rem);
+  font-size: clamp(3rem, 5.208vw, 6.25rem);
+  font-weight: 400;
+  line-height: 0.79;
+}
+
+.home-hero__description {
+  margin: min(1.51vw, 1.813rem) 0 0;
+  font-size: clamp(0.7rem, 0.729vw, 0.875rem);
+  line-height: 1.5;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.48);
+}
+
+.home-hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(7.5rem, 8.333vw, 10rem);
+  height: clamp(2.25rem, 2.396vw, 2.875rem);
+  margin-top: min(1.615vw, 1.938rem);
+  padding: 0;
+  border-radius: min(0.521vw, 0.625rem);
+  background: var(--brand-magenta);
+  color: #fff;
+  font-size: clamp(0.75rem, 0.833vw, 1rem);
+  font-weight: 500;
+  line-height: 1;
+  box-shadow: 0 8px 20px rgba(92, 8, 59, 0.22);
+  transition:
+    transform 0.18s ease,
+    background-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.home-hero__button:hover {
+  background: #c90b6e;
+  box-shadow: 0 10px 24px rgba(92, 8, 59, 0.32);
+  transform: translateY(-1px);
+}
+
+.home-hero__button:active {
+  transform: translateY(0);
+}
+
+.home-hero__logo {
+  width: clamp(8.5rem, 10.938vw, 13.125rem);
+  height: auto;
+  margin-top: min(4.792vw, 5.75rem);
+}
+
+.home-hero__wave {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 27.315svh;
+  overflow: hidden;
   line-height: 0;
   pointer-events: none;
 }
 
-.hero-wave img {
+.home-hero__wave img {
   display: block;
   width: 100%;
-  max-height: 8rem;
-}
-/* Full-bleed hero photo: no card, no border — it reads as the page
-   itself continuing into the photograph. top/bottom stretch to the
-   full hero section (including behind its own top/bottom padding,
-   since absolute offsets measure from the padding box), and a
-   left-edge mask fades the image to transparent so the section's own
-   background shows through underneath, blending the two smoothly in
-   both directions instead of cutting at a hard edge. */
-.hero-photo-bleed {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 44%;
-  min-width: 380px;
-  z-index: 0;
+  height: auto;
 }
 
-.hero-photo-bleed img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 18%, black 46%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 18%, black 46%);
-}
+@media (max-width: 640px) {
+  .home-hero__content {
+    padding-top: 31svh;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
 
-/* The photo's own mask fade (above) already reads fine on its own —
-   no scrim layered on the image itself anymore. Putting gray directly
-   against the image, or peaking it exactly on the seam against flat
-   white, both read as a hard edge (a jump, or a "Mach band" ridge at
-   the peak — the eye exaggerates contrast right where a gradient
-   changes direction, even when the values are mathematically
-   continuous). So instead .hero-spacer-fade below places one small,
-   self-contained gray "cloud" entirely inside the white spacer, well
-   clear of the seam: it rises from transparent and eases back to
-   transparent again *before* reaching the photo, so what actually
-   touches the seam is white meeting the photo's own (also transparent
-   there) edge — nothing but white on both sides of that line. */
-.hero-spacer-fade {
-  background: linear-gradient(to right,
-      transparent calc(100% - 220px),
-      color-mix(in srgb, var(--slate-soft) 32%, transparent) calc(100% - 90px),
-      transparent 100%);
-}
+  .launch-countdown__unit {
+    min-width: clamp(3.4rem, 17vw, 4.35rem);
+  }
 
-.hero-photo-fallback {
-  position: absolute;
-  inset: 0;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1.5rem;
-  text-align: center;
-  color: var(--slate-soft);
-  background: var(--surface-alt);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 18%, black 46%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 18%, black 46%);
-}
+  .launch-countdown__title {
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+  }
 
-.hero-photo-bleed img.is-broken {
-  display: none;
-}
+  .launch-countdown__label {
+    margin-bottom: 0.35rem;
+  }
 
-.hero-photo-bleed img.is-broken~.hero-photo-fallback {
-  display: flex;
+  .launch-countdown__separator {
+    width: 0.45rem;
+  }
+
+  .home-hero__description {
+    margin-top: 1rem;
+  }
+
+  .home-hero__button {
+    margin-top: 1rem;
+  }
+
+  .home-hero__logo {
+    margin-top: 3rem;
+  }
+
+  .home-hero__wave {
+    left: 50%;
+    width: 42.5rem;
+    height: 8rem;
+    transform: translateX(-50%);
+  }
 }
 
 /* ---------- Agenda — adicionar ao calendário ---------- */

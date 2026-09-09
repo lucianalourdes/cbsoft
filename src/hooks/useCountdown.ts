@@ -8,25 +8,56 @@ export interface CountdownParts {
 }
 
 function compute(deadline: number): CountdownParts {
-  const diff = Math.max(0, deadline - Date.now());
-  const pad = (n: number) => String(n).padStart(2, '0');
+  const difference = Math.max(0, deadline - Date.now());
+
+  const pad = (value: number) =>
+    String(value).padStart(2, '0');
+
   return {
-    d: pad(Math.floor(diff / 86400000)),
-    h: pad(Math.floor((diff % 86400000) / 3600000)),
-    m: pad(Math.floor((diff % 3600000) / 60000)),
-    s: pad(Math.floor((diff % 60000) / 1000)),
+    d: pad(Math.floor(difference / 86_400_000)),
+
+    h: pad(
+      Math.floor(
+        (difference % 86_400_000) / 3_600_000,
+      ),
+    ),
+
+    m: pad(
+      Math.floor(
+        (difference % 3_600_000) / 60_000,
+      ),
+    ),
+
+    s: pad(
+      Math.floor(
+        (difference % 60_000) / 1_000,
+      ),
+    ),
   };
 }
 
-/** Ticking countdown to `deadline` (ISO string or epoch ms). */
-export function useCountdown(deadline: string | number): CountdownParts {
-  const target = typeof deadline === 'number' ? deadline : new Date(deadline).getTime();
-  const [parts, setParts] = useState<CountdownParts>(() => compute(target));
+export function useCountdown(
+  deadline: string | number,
+): CountdownParts {
+  const target =
+    typeof deadline === 'number'
+      ? deadline
+      : new Date(deadline).getTime();
+
+  const [parts, setParts] = useState<CountdownParts>(
+    () => compute(target),
+  );
 
   useEffect(() => {
     setParts(compute(target));
-    const id = window.setInterval(() => setParts(compute(target)), 1000);
-    return () => window.clearInterval(id);
+
+    const intervalId = window.setInterval(() => {
+      setParts(compute(target));
+    }, 1_000);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
   }, [target]);
 
   return parts;

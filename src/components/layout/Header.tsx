@@ -1,81 +1,119 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { HEADER_MENUS, type HeaderMenuId } from '@/data/headerMenu';
 import { NAV_ITEMS } from '@/data/nav';
 import { IMAGES } from '@/data/config';
-import { LanguageSwitcher } from './LanguageSwitcher';
+import { useOnClickOutside } from '@/hooks/useOnClickOutside';
+import { HeaderMegaMenu } from './HeaderMegaMenu';
 import { MobileMenu } from './MobileMenu';
 
 export function Header() {
   const { t } = useTranslation();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<HeaderMenuId | null>(null);
+  const desktopNavRef = useRef<HTMLElement>(null);
+
+  useOnClickOutside(
+    desktopNavRef,
+    () => setActiveMenu(null),
+    activeMenu !== null,
+  );
+
+  const closeMegaMenu = () => setActiveMenu(null);
+
   return (
-    <header
-      className="fixed top-0 inset-x-0 z-50 py-2 px-16"
-      style={{ background: 'var(--paper)', color: 'var(--brand-on)', borderBottomWidth: "2px", borderColor: 'var(--line)' }}
-    >
-      <div className="container-xl flex items-center justify-between h-16 md:h-[4.5rem]">
-        <a href="#top" className="flex items-center gap-3 shrink-0" aria-label={t('header.homeAria')}>
+    <header className="site-header">
+      <div className="site-header__inner">
+        <a
+          href="#top"
+          className="site-header__logo-link"
+          aria-label={t('header.homeAria')}
+        >
           <img
+            className="site-header__logo"
             src={IMAGES.logo_horizontal}
             alt=""
             aria-hidden="true"
-            className="h-10 md:h-10 w-auto"
           />
         </a>
 
         <nav
-          className="hidden lg:flex items-center gap-4 font-medium text-sm"
-          aria-label="Navegação principal"
+          ref={desktopNavRef}
+          className="site-header__nav"
+          aria-label={t('header.navAria')}
         >
-          {NAV_ITEMS.map((item) => (
+          {NAV_ITEMS.map((item) => {
+            const open = activeMenu === item.id;
 
-            <a
-              key={item.href}
-              href={item.href}
-              className="hover:text-[color:var(--focus)]  text-[color:var(--brand-ink)] transition-colors"
-            >
-              {t(item.key)}
-            </a>
-          ))}
+            return (
+              <div
+                className={`site-header__mega-root site-header__mega-root--${item.id}`}
+                key={item.id}
+                onMouseEnter={() => setActiveMenu(item.id)}
+                onMouseLeave={closeMegaMenu}
+                onFocusCapture={() => setActiveMenu(item.id)}
+                onBlurCapture={(event) => {
+                  if (
+                    !event.currentTarget.contains(
+                      event.relatedTarget as Node | null,
+                    )
+                  ) {
+                    closeMegaMenu();
+                  }
+                }}
+                onKeyDown={(event) => {
+                  if (event.key === 'Escape') {
+                    closeMegaMenu();
+                    event.currentTarget.querySelector('button')?.focus();
+                  }
+                }}
+              >
+                <button
+                  type="button"
+                  className={`site-header__nav-item${open ? ' is-active' : ''}`}
+                  aria-expanded={open}
+                  aria-controls={`header-mega-menu-${item.id}`}
+                  onClick={() => setActiveMenu(open ? null : item.id)}
+                >
+                  <span>{t(item.key)}</span>
+                  <img src={IMAGES.chevron_down} alt="" aria-hidden="true" />
+                </button>
+
+                {open && (
+                  <HeaderMegaMenu
+                    id={item.id}
+                    menu={HEADER_MENUS[item.key as HeaderMenuId]}
+                    onNavigate={closeMegaMenu}
+                  />
+                )}
+              </div>
+            );
+          })}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <LanguageSwitcher
-            withSeparator
-            className="hidden sm:flex items-center border rounded overflow-hidden [border-color:rgba(255,255,255,.25)]"
-          />
-          <a
-            href="#inscricoes"
-            className="hidden md:inline-flex btn btn-accent text-xs !py-2 !px-4"
-          >
-            {t('header.register')}
-          </a>
-          <button
-            id="menu-toggle"
-            type="button"
-            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 -mr-2"
-            aria-label={t('header.openMenu')}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-menu"
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            <span
-              className="block w-6 h-[2px] [background:var(--focus)]  mb-1.5 transition-transform"
-              style={menuOpen ? { transform: 'translateY(8px) rotate(45deg)' } : undefined}
-            />
-            <span
-              className="block w-6 h-[2px] [background:var(--focus)]  mb-1.5 transition-opacity"
-              style={{ opacity: menuOpen ? 0 : 1 }}
-            />
-            <span
-              className="block w-6 h-[2px] [background:var(--focus)] transition-transform"
-              style={menuOpen ? { transform: 'translateY(-8px) rotate(-45deg)' } : undefined}
-            />
-          </button>
-        </div>
+        <a href="#inscricoes" className="site-header__register">
+          {t('header.register')}
+        </a>
+
+        <button
+          id="menu-toggle"
+          type="button"
+          className={`site-header__mobile-toggle${mobileMenuOpen ? ' is-open' : ''}`}
+          aria-label={t('header.openMenu')}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setMobileMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
 
-      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
-    </header >
+      <MobileMenu
+        open={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+      />
+    </header>
   );
 }

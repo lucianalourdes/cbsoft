@@ -46,4 +46,5 @@ export const IMAGES = {
   logo_text_black: asset('assets/images/logo-text-black.png'),
   logo_text_mono: asset('assets/images/logo-text-mono.png'),
   praca: asset('assets/images/praca-liberdade.webp'),
+  chevron_down: asset('assets/icons/chevron-down.png'),
 } as const;

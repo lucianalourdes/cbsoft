@@ -17,15 +17,16 @@
     "langLabel": "Language:"
   },
   "hero": {
-    "eyebrow": "29TH EDITION — SBC",
-    "subtitle": "Brazilian Software Congress",
-    "dates": "27 September – 1 October 2027 · Belo Horizonte, Minas Gerais, Brazil",
-    "ctaCfp": "Call for Papers (CFP)",
-    "ctaRegister": "Register",
-    "countdownLabel": "Countdown · full-paper submission deadline",
+    "countdownTitle": "Coming in",
+    "launchDescription": "Register to learn more about the launch",
+    "learnMore": "Learn more",
     "countdownAria": "Time remaining until the submission deadline",
-    "photoFallback": "Photo pending — add images/praca-liberdade.webp",
-    "units": { "days": "days", "hours": "hours", "min": "min", "sec": "sec" }
+    "units": {
+      "days": "Days",
+      "hours": "Hours",
+      "min": "Minutes",
+      "sec": "Seconds"
+    }
   },
   "agenda": {
     "eyebrow": "KEY DATES",

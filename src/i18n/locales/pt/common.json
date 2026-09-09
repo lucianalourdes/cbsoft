@@ -17,15 +17,16 @@
     "langLabel": "Idioma:"
   },
   "hero": {
-    "eyebrow": "29ª EDIÇÃO — SBC",
-    "subtitle": "Congresso Brasileiro de Software",
-    "dates": "27 de setembro a 01 de outubro de 2027 · Belo Horizonte, Minas Gerais",
-    "ctaCfp": "Chamada de Trabalhos (CFP)",
-    "ctaRegister": "Inscreva-se",
-    "countdownLabel": "Contagem regressiva · prazo de submissão de artigos",
+    "countdownTitle": "Faltam",
+    "launchDescription": "Inscreva-se para saber mais sobre o lançamento",
+    "learnMore": "Saiba mais",
     "countdownAria": "Tempo restante até o prazo de submissão",
-    "photoFallback": "Foto pendente — adicione o arquivo em images/praca-liberdade.webp",
-    "units": { "days": "dias", "hours": "horas", "min": "min", "sec": "seg" }
+    "units": {
+      "days": "Dias",
+      "hours": "Horas",
+      "min": "Minutos",
+      "sec": "Segundos"
+    }
   },
   "agenda": {
     "eyebrow": "AGENDA",
