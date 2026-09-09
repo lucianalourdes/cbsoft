@@ -18,5 +18,8 @@ export default defineConfig({
     environment: 'jsdom',
     include: ['src/**/*.test.{ts,tsx}'],
     setupFiles: ['src/test/setup.ts'],
+    // Full-App renders in jsdom sit around 2–5s each; give them headroom
+    // so the suite doesn't flake on a loaded machine.
+    testTimeout: 15000,
   },
 });

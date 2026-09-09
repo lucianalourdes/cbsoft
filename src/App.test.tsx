@@ -11,11 +11,10 @@ describe('App', () => {
   it('renders every section anchor the nav points to', () => {
     const { container } = render(<App />);
     for (const id of [
-      'agenda',
       'sobre',
       'eventos',
       'cfp',
-      'palestrantes',
+      'convidados',
       'inscricoes',
       'comite',
       'patrocinio',
@@ -27,13 +26,19 @@ describe('App', () => {
   it('shows Portuguese content by default and switches to English', async () => {
     render(<App />);
     expect(
-      screen.getAllByText('Datas importantes por simpósio').length,
+      screen.getAllByText(
+        'O principal fórum de Engenharia e Desenvolvimento de Software do Brasil',
+      ).length,
     ).toBeGreaterThan(0);
 
     await act(async () => {
       await i18n.changeLanguage('en');
     });
-    expect(await screen.findAllByText('Key dates by symposium')).not.toHaveLength(0);
+    expect(
+      await screen.findAllByText(
+        'The main forum for Software Engineering & Development in Brazil',
+      ),
+    ).not.toHaveLength(0);
     expect(document.documentElement.lang).toBe('en');
   });
 

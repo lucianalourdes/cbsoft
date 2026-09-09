@@ -22,7 +22,7 @@ export function Registration() {
     <Reveal id="inscricoes" className="py-20 md:py-28">
       <div className="container-xl">
         <SectionHeading
-          number="05"
+          number="04"
           eyebrow={t('registration.eyebrow')}
           title={t('registration.title')}
           intro={t('registration.intro')}

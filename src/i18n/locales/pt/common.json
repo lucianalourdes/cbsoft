@@ -4,7 +4,9 @@
     "events": "Eventos",
     "cfp": "Call for Papers",
     "keynotes": "Palestrantes",
+    "guests": "Convidados",
     "registration": "Inscrições",
+    "location": "Localização",
     "committee": "Comitê",
     "sponsorship": "Patrocínio"
   },
@@ -28,9 +30,6 @@
     "units": { "days": "dias", "hours": "horas", "min": "min", "sec": "seg" }
   },
   "agenda": {
-    "eyebrow": "AGENDA",
-    "title": "Datas importantes por simpósio",
-    "intro": "Navegue pelos simpósios e clique em uma data para adicioná-la ao Google Calendar, Outlook 365 ou Outlook Live — já preenchida. Os prazos são indicativos e podem variar entre os simpósios.",
     "tab": "Simpósios",
     "readMore": "Leia mais",
     "allDates": "Todas as datas importantes",
@@ -71,6 +70,13 @@
     "institutionTbc": "Instituição a confirmar",
     "trackLabel": "Área da palestra:"
   },
+  "guests": {
+    "eyebrow": "CONVIDADOS",
+    "title": "Convidados de 2027",
+    "intro": "A lista de convidados de 2027 está em confirmação e será divulgada nesta seção assim que os convites forem aceitos. Nomes e instituições abaixo são fictícios.",
+    "prevAria": "Convidados anteriores",
+    "nextAria": "Próximos convidados"
+  },
   "registration": {
     "eyebrow": "INSCRIÇÕES",
     "title": "Valores de inscrição",
@@ -80,6 +86,17 @@
     "colRegular": "Lote 2",
     "colOnsite": "No Local",
     "note": "Valores de estudante exigem comprovante de matrícula válido. Ao menos um autor por artigo aceito deve se inscrever até o prazo da versão final."
+  },
+  "location": {
+    "eyebrow": "LOCALIZAÇÃO",
+    "title": "Campus Pampulha da UFMG",
+    "city": "Belo Horizonte, MG",
+    "noticeTitle": "Local em definição",
+    "notice": "O local exato e as salas de credenciamento ainda estão sendo definidos com a instituição anfitriã. As informações abaixo são provisórias e serão atualizadas antes do evento.",
+    "transitHeading": "Como chegar",
+    "moreInfo": "Mais informações sobre o local",
+    "videoTitle": "CBSOFT 2027 em Belo Horizonte",
+    "playAria": "Reproduzir o vídeo de anúncio do CBSOFT 2027"
   },
   "committee": {
     "eyebrow": "COMITÊ ORGANIZADOR",

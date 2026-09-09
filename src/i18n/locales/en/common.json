@@ -4,7 +4,9 @@
     "events": "Symposia",
     "cfp": "Call for Papers",
     "keynotes": "Keynotes",
+    "guests": "Guests",
     "registration": "Registration",
+    "location": "Location",
     "committee": "Committee",
     "sponsorship": "Sponsors"
   },
@@ -28,9 +30,6 @@
     "units": { "days": "days", "hours": "hours", "min": "min", "sec": "sec" }
   },
   "agenda": {
-    "eyebrow": "KEY DATES",
-    "title": "Key dates by symposium",
-    "intro": "Browse the symposia and click any date to add it to Google Calendar, Outlook 365 or Outlook Live — already filled in. Dates are indicative and may vary per symposium.",
     "tab": "Symposia",
     "readMore": "Read more",
     "allDates": "All important dates",
@@ -71,6 +70,13 @@
     "institutionTbc": "Institution to be confirmed",
     "trackLabel": "Talk track:"
   },
+  "guests": {
+    "eyebrow": "GUESTS",
+    "title": "2027 guests",
+    "intro": "The 2027 guest line-up is being confirmed and will be published in this section as invitations are accepted. Names and affiliations below are fictitious.",
+    "prevAria": "Previous guests",
+    "nextAria": "Next guests"
+  },
   "registration": {
     "eyebrow": "REGISTRATION",
     "title": "Registration fees",
@@ -80,6 +86,17 @@
     "colRegular": "Regular",
     "colOnsite": "On-site",
     "note": "Student rates require valid enrollment proof. At least one author per accepted paper must register by the camera-ready deadline."
+  },
+  "location": {
+    "eyebrow": "LOCATION",
+    "title": "UFMG Pampulha campus",
+    "city": "Belo Horizonte, MG",
+    "noticeTitle": "Venue being arranged",
+    "notice": "The exact venue and accreditation rooms are still being arranged with the host institution. The details below are provisional and will be updated before the event.",
+    "transitHeading": "Getting there",
+    "moreInfo": "More about the venue",
+    "videoTitle": "CBSOFT 2027 in Belo Horizonte",
+    "playAria": "Play the CBSOFT 2027 announcement video"
   },
   "committee": {
     "eyebrow": "ORGANIZING COMMITTEE",
