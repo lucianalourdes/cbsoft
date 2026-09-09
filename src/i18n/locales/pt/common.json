@@ -40,10 +40,8 @@
     "addToCalendarAria": "Adicionar ao calendário"
   },
   "about": {
-    "eyebrow": "SOBRE",
-    "title": "O principal fórum de Engenharia e Desenvolvimento de Software do Brasil",
-    "p1": "Promovido pela Sociedade Brasileira de Computação (SBC), o CBSOFT reúne anualmente quatro simpósios nacionais em uma única programação. Pesquisadores, estudantes de pós-graduação e profissionais da indústria compartilham resultados, discutem problemas em aberto e constroem a agenda de pesquisa em Engenharia de Software, Métodos Formais, Arquiteturas Reutilizáveis e Testes de Software no Brasil.",
-    "p2": "Em 2027 o congresso chega a Belo Horizonte — na PUC, um dos polos de inovação e startups mais ativos do Brasil — com uma programação que combina trilhas científicas, trilha de indústria, cursos, sessão de ferramentas e concurso de teses e dissertações.",
+    "title": "Um dos principais eventos da comunidade científica brasileira na área de Computação.",
+    "p1": "O Congresso Brasileiro de Software: Teoria e Prática (CBSoft) é um evento realizado anualmente pela Sociedade Brasileira de Computação (SBC) desde 2010 como agregador de simpósios brasileiros área de software. O CBSoft tornou-se um dos principais eventos da comunidade científica brasileira na área de Computação.",
     "statSymposia": "simpósios coalocados",
     "statYears": "anos de história",
     "statDays": "dias de programação"

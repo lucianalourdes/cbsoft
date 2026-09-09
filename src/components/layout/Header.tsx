@@ -6,6 +6,7 @@ import { IMAGES } from '@/data/config';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
 import { HeaderMegaMenu } from './HeaderMegaMenu';
 import { MobileMenu } from './MobileMenu';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function Header() {
   const { t } = useTranslation();
@@ -154,6 +155,9 @@ export function Header() {
             );
           })}
         </nav>
+        <div className="language-switcher">
+          <LanguageSwitcher />
+        </div>
 
         <a href="#inscricoes" className="site-header__register" onClick={closeAllMenus}>
           {t('header.register')}

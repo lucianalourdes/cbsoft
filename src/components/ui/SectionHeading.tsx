@@ -16,8 +16,6 @@ interface SectionHeadingProps {
 }
 
 export function SectionHeading({
-  number,
-  eyebrow,
   title,
   intro,
   tone = 'default',
@@ -28,11 +26,6 @@ export function SectionHeading({
   const onDark = tone === 'onDark';
   return (
     <div className={className}>
-      <p className="eyebrow" style={onDark ? { color: 'var(--logo-cyan)' } : undefined}>
-        {'// '}
-        {number ? `${number} ` : ''}
-        <span>{eyebrow}</span>
-      </p>
       <h2
         className={`font-display font-semibold mt-3 leading-tight ${titleClassName}`}
         style={{ color: onDark ? '#fff' : 'var(--ink)' }}

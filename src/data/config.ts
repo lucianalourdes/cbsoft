@@ -47,6 +47,8 @@ export const IMAGES = {
   logo_text_white: asset('assets/images/logo-text-white.png'),
   logo_text_black: asset('assets/images/logo-text-black.png'),
   logo_text_mono: asset('assets/images/logo-text-mono.png'),
-  praca: asset('assets/images/praca-liberdade.webp'),
+  praca: asset('assets/images/praca-liberdade.jpg'),
+  praca2: asset('assets/images/praca-liberdade-2.jpg'),
+  praca3: asset('assets/images/praca-liberdade-3.jpg'),
   chevron_down: asset('assets/icons/chevron-down.png'),
 } as const;

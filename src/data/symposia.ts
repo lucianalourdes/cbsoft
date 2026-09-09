@@ -1,6 +1,6 @@
 import type { Localized } from '@/lib/localized';
 
-export type SymposiumId = 'sbes' | 'sbmf' | 'sbcars' | 'sast';
+export type SymposiumId = 'sbes' | 'sblp' | 'sbcars' | 'sast';
 export type AccentToken = 'purple' | 'cyan' | 'leaf' | 'pink';
 
 export interface Symposium {
@@ -29,13 +29,13 @@ export const SYMPOSIA: Symposium[] = [
     },
   },
   {
-    id: 'sbmf',
-    acronym: 'SBMF',
+    id: 'sblp',
+    acronym: 'SBLP',
     mod: '02',
     accent: 'cyan',
     name: {
-      pt: 'Simpósio Brasileiro de Métodos Formais (SBMF)',
-      en: 'Brazilian Symposium on Formal Methods (SBMF)',
+      pt: 'Simpósio Brasileiro de Linguagens de Programação (SBLP)',
+      en: 'Brazilian Symposium on Programming Languages (SBLP)',
     },
     blurb: {
       pt: 'Simpósio Brasileiro de Métodos Formais — especificação, verificação e correção de software.',
@@ -75,7 +75,6 @@ export const SYMPOSIA: Symposium[] = [
 export const COMPLEMENTARY_TRACKS: Localized[] = [
   { pt: 'Trilha de Indústria', en: 'Industry Track' },
   { pt: 'Sessão de Ferramentas', en: 'Tools Session' },
-  { pt: 'Cursos / Tutoriais', en: 'Courses & Tutorials' },
   { pt: 'Concurso de Teses e Dissertações', en: 'Thesis & Dissertation Contest' },
 ];
 

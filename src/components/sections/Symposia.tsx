@@ -3,7 +3,7 @@ import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { useLang } from '@/hooks/useLang';
 import { pick } from '@/lib/localized';
-import { ACCENT_VARS, COMPLEMENTARY_TRACKS, SYMPOSIA } from '@/data/symposia';
+import { COMPLEMENTARY_TRACKS, SYMPOSIA } from '@/data/symposia';
 
 export function Symposia() {
   const { t } = useTranslation();
@@ -13,8 +13,6 @@ export function Symposia() {
     <Reveal id="eventos" className="py-20 md:py-28" style={{ background: 'var(--surface-alt)' }}>
       <div className="container-xl">
         <SectionHeading
-          number="02"
-          eyebrow={t('events.eyebrow')}
           title={t('events.title')}
           titleClassName="text-3xl md:text-4xl max-w-2xl"
           intro={t('events.intro')}
@@ -22,15 +20,8 @@ export function Symposia() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
           {SYMPOSIA.map((s) => {
-            const accent = ACCENT_VARS[s.accent];
             return (
               <article key={s.id} className="card p-6 flex flex-col">
-                <span
-                  className="tag self-start"
-                  style={{ borderColor: accent.border, color: accent.text }}
-                >
-                  MOD.{s.mod}
-                </span>
                 <h3 className="font-display text-xl font-semibold mt-4">{s.acronym}</h3>
                 <p className="text-sm mt-2 leading-relaxed" style={{ color: 'var(--slate)' }}>
                   {pick(s.blurb, lang)}

@@ -79,6 +79,12 @@
   background: var(--slate);
 }
 
+.language-switcher {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
 .lang-btn.active {
   background: var(--focus);
   color: #fff;
@@ -115,6 +121,7 @@
   background: #fbfafc;
   color: #000;
   font-family: var(--font-sans);
+  border-bottom: var(--brand-magenta) 2px solid;
 }
 
 .site-header__inner {
