@@ -14,7 +14,10 @@
     "location": "Belo Horizonte | Minas Gerais",
     "register": "Register",
     "openMenu": "Open menu",
-    "langLabel": "Language:"
+    "langLabel": "Language:",
+    "navAria": "Main navigation",
+    "mobileNavAria": "Mobile navigation",
+    "closeMenu": "Close menu"
   },
   "hero": {
     "countdownTitle": "Coming in",
@@ -114,5 +117,209 @@
     "linkProspectus": "Sponsorship prospectus",
     "rights": "Brazilian Computer Society (SBC). All rights reserved.",
     "location": "Belo Horizonte, MG — Brazil"
+  },
+  "headerMenu": {
+    "event": {
+      "title": "Event",
+      "about": {
+        "title": "About",
+        "description": "Discover the Brazilian Conference on Software."
+      },
+      "organization": {
+        "title": "Organization",
+        "description": "Meet the team organizing CBSOFT’27."
+      },
+      "speakers": {
+        "title": "Speakers",
+        "description": "Meet the people sharing ideas and experience."
+      }
+    },
+    "guide": {
+      "title": "Participant guide",
+      "venue": {
+        "title": "Venue",
+        "description": "Find out where CBSOFT’27 takes place and how to get there."
+      },
+      "map": {
+        "title": "Map",
+        "description": "Find the event spaces and activities."
+      },
+      "accommodation": {
+        "title": "Accommodation",
+        "description": "Explore places to stay in Belo Horizonte."
+      },
+      "social": {
+        "title": "Social Events",
+        "description": "Meet people, exchange ideas and build connections."
+      },
+      "experiences": {
+        "title": "Experience BH",
+        "description": "Discover Belo Horizonte’s culture, food and attractions."
+      }
+    },
+    "history": {
+      "title": "History",
+      "previous": {
+        "title": "Previous editions",
+        "description": "Explore the history and past editions of CBSOFT."
+      }
+    },
+    "program": {
+      "title": "Program",
+      "schedule": {
+        "title": "Schedule",
+        "description": "Explore the conference timetable and activities."
+      },
+      "articles": {
+        "title": "Accepted Papers",
+        "description": "Discover the papers selected for the event."
+      },
+      "special": {
+        "title": "Special Activities",
+        "description": "Explore more opportunities to learn and connect."
+      }
+    },
+    "participation": {
+      "title": "Participation",
+      "volunteers": {
+        "title": "Call for Volunteers",
+        "description": "Learn how to contribute to CBSOFT’27."
+      },
+      "conduct": {
+        "title": "Code of Conduct",
+        "description": "Guidelines for a respectful and inclusive event."
+      }
+    },
+    "sbes": {
+      "tracksTitle": "SBES tracks",
+      "communityTitle": "Tools, industry and education",
+      "programTitle": "Program",
+      "tracks": {
+        "special": {
+          "title": "SBES Special Track",
+          "description": "Reflections on the history and future of Software Engineering."
+        },
+        "research": {
+          "title": "Research Track",
+          "description": "Scientific advances and research results in Software Engineering."
+        },
+        "education": {
+          "title": "Education Track",
+          "description": "Experiences and new approaches to teaching Software Engineering."
+        },
+        "ideas": {
+          "title": "New Ideas and Emerging Results Track",
+          "description": "New proposals and early results addressing challenges in the field."
+        },
+        "tools": {
+          "title": "Tools Track",
+          "description": "Tools that support software development and evolution."
+        },
+        "industry": {
+          "title": "Industry Track",
+          "description": "Challenges and experiences connecting academia and industry."
+        },
+        "ctic": {
+          "title": "Undergraduate Research Competition",
+          "description": "Research by students beginning their scientific careers."
+        },
+        "ctd": {
+          "title": "Software Engineering Theses and Dissertations Competition",
+          "description": "Master’s and doctoral contributions to Software Engineering."
+        }
+      },
+      "program": {
+        "title": "Schedule",
+        "description": "Explore SBES sessions and activities."
+      }
+    },
+    "sblp": {
+      "title": "SBLP",
+      "call": {
+        "title": "Call for Papers",
+        "description": "Guidelines for submitting Programming Languages research."
+      },
+      "program": {
+        "title": "Schedule",
+        "description": "Explore SBLP sessions and activities."
+      },
+      "papers": {
+        "title": "Accepted Papers",
+        "description": "Discover the papers selected for SBLP."
+      }
+    },
+    "sbcars": {
+      "title": "SBCARS",
+      "call": {
+        "title": "Call for Papers",
+        "description": "Submit research on Software Components, Architectures and Reuse."
+      },
+      "program": {
+        "title": "Schedule",
+        "description": "Explore SBCARS sessions and activities."
+      },
+      "papers": {
+        "title": "Accepted Papers",
+        "description": "Discover the papers selected for SBCARS."
+      }
+    },
+    "sast": {
+      "title": "SAST",
+      "call": {
+        "title": "Call for Papers",
+        "description": "Guidelines for work on Software Testing and Analysis."
+      },
+      "program": {
+        "title": "Schedule",
+        "description": "Explore SAST sessions and activities."
+      },
+      "papers": {
+        "title": "Accepted Papers",
+        "description": "Discover the papers selected for SAST."
+      }
+    },
+    "workshops": {
+      "title": "Workshops",
+      "call": {
+        "title": "Call for Papers",
+        "description": "Find guidelines for participating in the workshops."
+      },
+      "accepted": {
+        "title": "Accepted Workshops",
+        "description": "Explore the workshops and their discussion topics."
+      },
+      "program": {
+        "title": "Schedule",
+        "description": "Explore workshop timetables and activities."
+      },
+      "papers": {
+        "title": "Accepted Papers",
+        "description": "Discover the papers selected by the workshops."
+      }
+    },
+    "more": {
+      "communityTitle": "Community and education",
+      "eventsTitle": "Other events",
+      "artifacts": {
+        "title": "Artifacts",
+        "description": "Artifact evaluation to support reproducible research."
+      },
+      "latam": {
+        "title": "LATAM School",
+        "description": "Software Engineering learning and exchange across Latin America."
+      },
+      "highSchool": {
+        "title": "High School",
+        "description": "Introducing students to Computing and research."
+      },
+      "aiware": {
+        "title": "AIware",
+        "description": "A meeting on Software Engineering for AI-based systems."
+      },
+      "freeSoftware": {
+        "title": "Free Software",
+        "description": "Discover open and collaborative development initiatives."
+      }
+    }
   }
 }

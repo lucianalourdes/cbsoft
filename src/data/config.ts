@@ -27,6 +27,8 @@ export function asset(path: string): string {
 }
 
 export const IMAGES = {
+  // Compatibility with the footer, which still reads IMAGES.logo.
+  logo: asset('assets/images/logo-horizontal-white.png'),
   grafismo: asset('assets/images/grafismo.png'),
   grafismo_2: asset('assets/images/grafismo-2.png'),
   grafismo_3: asset('assets/images/grafismo-3.png'),

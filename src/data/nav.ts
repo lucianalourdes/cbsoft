@@ -1,16 +1,18 @@
-/** Primary navigation — anchors into the single page. `key` indexes
- *  the `nav.*` block in the i18n dictionary. */
+import type { HeaderMenuId } from './headerMenu';
+
+/** `id` selects the menu; `key` selects only its translated label. */
 export interface NavItem {
+  id: HeaderMenuId;
   href: string;
-  key: string;
+  key: `nav.${HeaderMenuId}`;
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { href: '#cbsoft', key: 'nav.cbsoft' },
-  { href: '#sbes', key: 'nav.sbes' },
-  { href: '#sblp', key: 'nav.sblp' },
-  { href: '#sbcars', key: 'nav.sbcars' },
-  { href: '#sast', key: 'nav.sast' },
-  { href: '#workshops', key: 'nav.workshops' },
-  { href: '#mais', key: 'nav.more' },
+  { id: 'cbsoft', href: '#sobre', key: 'nav.cbsoft' },
+  { id: 'sbes', href: '#sbes', key: 'nav.sbes' },
+  { id: 'sblp', href: '#sblp', key: 'nav.sblp' },
+  { id: 'sbcars', href: '#sbcars', key: 'nav.sbcars' },
+  { id: 'sast', href: '#sast', key: 'nav.sast' },
+  { id: 'workshops', href: '#workshops', key: 'nav.workshops' },
+  { id: 'more', href: '#mais', key: 'nav.more' },
 ];
