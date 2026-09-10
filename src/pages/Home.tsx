@@ -6,7 +6,7 @@ import { CallForPapers } from '@/components/sections/CallForPapers';
 // import { Guests } from '@/components/sections/Guests';
 import { Registration } from '@/components/sections/Registration';
 import { Location } from '@/components/sections/Location';
-import { Committee } from '@/components/sections/Committee';
+// import { Committee } from '@/components/sections/Committee';
 import { Sponsorship } from '@/components/sections/Sponsorship';
 
 export function Home() {
