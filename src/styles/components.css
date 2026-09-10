@@ -557,15 +557,18 @@
     rgba(112, 42, 130, 0.22);
 }
 
+/* Flows in normal document order so the hero grows with its content
+   instead of clipping the buttons / wordmark on short viewports. */
 .home-hero__content {
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: 2;
-  padding: 35.926vh 1.25rem 0;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  gap: clamp(1.5rem, 3.5vw, 2.5rem);
+  padding: clamp(6rem, 14vh, 9.5rem) 1.25rem clamp(9rem, 34svh, 17rem);
   text-align: center;
 }
 
@@ -577,6 +580,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .launch-countdown::before {
@@ -614,16 +618,19 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: clamp(1.25rem, 3.5vw, 3.25rem);
+  gap: clamp(0.75rem, 3.5vw, 3.25rem);
+  width: 100%;
+  max-width: 40rem;
   color: #fff;
 }
 
 .launch-countdown__unit {
   display: flex;
+  flex: 1 1 0;
+  min-width: 0;
   flex-direction: column;
   align-items: center;
-  gap: clamp(0.4rem, 0.9vw, 0.7rem);
-  min-width: clamp(3rem, 6vw, 5rem);
+  gap: clamp(0.35rem, 0.9vw, 0.7rem);
 }
 
 .launch-countdown__value {
@@ -649,7 +656,7 @@
 
 .home-hero__description {
   max-width: 46ch;
-  margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
+  margin: 0 auto;
   font-size: clamp(0.9rem, 1vw, 1.075rem);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
@@ -664,7 +671,8 @@
   align-items: center;
   justify-content: center;
   gap: clamp(0.75rem, 1.5vw, 1.25rem);
-  margin-top: clamp(1.75rem, 3vw, 2.75rem);
+  margin-top: clamp(0.25rem, 1vw, 0.75rem);
+  width: 100%;
 }
 
 .home-hero__button,
@@ -726,7 +734,7 @@
 .home-hero__logo {
   width: clamp(8.5rem, 10.938vw, 13.125rem);
   height: auto;
-  margin-top: min(4.792vw, 5.75rem);
+  margin-top: clamp(0.5rem, 2vw, 2rem);
 }
 
 .home-hero__wave {
@@ -749,38 +757,41 @@
 
 @media (max-width: 640px) {
   .home-hero__content {
-    padding-top: 31svh;
-    padding-right: 0.75rem;
-    padding-left: 0.75rem;
+    gap: 1.75rem;
+    padding: 5.5rem 0.9rem 8.5rem;
   }
 
   .launch-countdown__clock {
-    gap: clamp(0.5rem, 4vw, 1.35rem);
-  }
-
-  .launch-countdown__unit {
-    min-width: clamp(3.2rem, 18vw, 4.5rem);
+    gap: clamp(0.35rem, 2.5vw, 0.9rem);
+    max-width: 22rem;
   }
 
   .launch-countdown__value {
-    font-size: clamp(2.6rem, 13vw, 3.6rem);
+    font-size: clamp(2.1rem, 12vw, 3.2rem);
+  }
+
+  .launch-countdown__label {
+    letter-spacing: 0.1em;
+    font-size: clamp(0.5rem, 2.5vw, 0.7rem);
   }
 
   .launch-countdown__title {
     line-height: 1.3;
+    letter-spacing: 0.18em;
+    text-indent: 0.18em;
   }
 
   .home-hero__actions {
     flex-direction: column;
     width: 100%;
     gap: 0.75rem;
-    margin-top: 1.5rem;
+    margin-top: 0.25rem;
   }
 
   .home-hero__button,
   .home-hero__button_2 {
     width: 100%;
-    max-width: 20rem;
+    max-width: 22rem;
   }
 
   .home-hero__logo {
@@ -1668,6 +1679,32 @@ a.contrib-logo:hover {
 
 .contrib-cta:hover .contrib-cta__arrow {
   transform: translateX(4px);
+}
+
+@media (max-width: 640px) {
+  .contrib-row {
+    gap: 1.5rem;
+    padding-block: clamp(2.25rem, 9vw, 3.25rem);
+  }
+
+  .contrib-row__logos {
+    gap: clamp(1.75rem, 9vw, 3rem);
+  }
+
+  .contrib-logo img {
+    height: clamp(3.25rem, 15vw, 5rem);
+    max-width: 68vw;
+  }
+
+  .contrib-logo--ufmg img,
+  .contrib-logo--sbc img {
+    height: clamp(4.25rem, 19vw, 6.25rem);
+  }
+
+  .contrib-patron {
+    margin-top: clamp(2.5rem, 10vw, 3.5rem);
+    padding-top: clamp(2rem, 8vw, 2.75rem);
+  }
 }
 
 /* ---------- About page (/sobre) ---------- */
