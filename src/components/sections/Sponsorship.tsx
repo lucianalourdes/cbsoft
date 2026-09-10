@@ -85,7 +85,7 @@ export function Sponsorship() {
           </h3>
 
           <div className="grid sm:grid-cols-2 gap-4">
-            {(['sponsor', 'supporter'] as const).map((kind) => (
+            {(['sponsor'] as const).map((kind) => (
               <a
                 key={kind}
                 href="#comite"

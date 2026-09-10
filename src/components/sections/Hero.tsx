@@ -33,6 +33,10 @@ export function Hero() {
           {t('hero.learnMore')}
         </a>
 
+        <a className="home-hero__button_2" href="#patrocinio" >
+          {t('sponsorship.cta.sponsor.title')}
+        </a>
+
         <img
           className="home-hero__logo"
           src={IMAGES.logo_text_white}
@@ -43,6 +47,6 @@ export function Hero() {
       <div className="home-hero__wave" aria-hidden="true">
         <img src={IMAGES.grafismo_3} alt="" />
       </div>
-    </section>
+    </section >
   );
 }

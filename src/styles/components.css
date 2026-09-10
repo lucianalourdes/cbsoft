@@ -82,7 +82,8 @@
 .language-switcher {
   display: flex;
   align-items: center;
-  margin-left: 1rem;
+  margin-left: 2rem;
+  margin-right: -1rem;
 }
 
 .lang-btn.active {
@@ -109,15 +110,15 @@
 }
 
 /* ---------- Header ---------- */
-:root {
-  --header-height: clamp(5.5rem, 8.333vw, 10rem);
-}
+
 
 .site-header {
   position: fixed;
   z-index: 50;
   inset: 0 0 auto;
-  height: var(--header-height);
+  height: auto;
+  padding-top: 16px ;
+  padding-bottom: 16px ;
   background: #fbfafc;
   color: #000;
   font-family: var(--font-sans);
@@ -656,6 +657,39 @@
 .home-hero__button:active {
   transform: translateY(0);
 }
+
+.home-hero__button_2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(7.5rem, 8.333vw, 10rem);
+  height: clamp(2.25rem, 2.396vw, 2.875rem);
+  margin-top: min(1.615vw, 1.938rem);
+  padding: 0;
+  border-radius: min(0.521vw, 0.625rem);
+  background-color: var(--paper);
+  color: var(--brand-magenta);
+  font-size: clamp(0.75rem, 0.833vw, 1rem);
+  font-weight: 300;
+  line-height: 1;
+  box-shadow: 0 8px 20px rgba(92, 8, 59, 0.22);
+  transition:
+    transform 0.18s ease,
+    background-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.home-home-hero__button_2:hover {
+  background: var(--brand-magenta);
+  color: var(--paper);
+  box-shadow: 0 10px 24px rgba(92, 8, 59, 0.32);
+  transform: translateY(1px);
+}
+
+.home-home-hero__button_2:active {
+  transform: translateY(0);
+}
+
 
 .home-hero__logo {
   width: clamp(8.5rem, 10.938vw, 13.125rem);

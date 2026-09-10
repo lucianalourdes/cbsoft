@@ -13,6 +13,6 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'sblp', href: '#sblp', key: 'nav.sblp' },
   { id: 'sbcars', href: '#sbcars', key: 'nav.sbcars' },
   { id: 'sast', href: '#sast', key: 'nav.sast' },
-  { id: 'workshops', href: '#workshops', key: 'nav.workshops' },
-  { id: 'more', href: '#mais', key: 'nav.more' },
+  // { id: 'workshops', href: '#workshops', key: 'nav.workshops' },
+  // { id: 'more', href: '#mais', key: 'nav.more' },
 ];

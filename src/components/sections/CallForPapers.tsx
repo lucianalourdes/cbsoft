@@ -31,7 +31,7 @@ export function CallForPapers() {
               introClassName="mt-4 leading-relaxed"
             />
             <div className="flex flex-col gap-3 mt-7">
-              <Button variant="accent" href="#" className="!text-white justify-center">
+              <Button variant="accent" href="#" className="!text-white justify-center" style={{ backgroundColor: 'var(--magenta)', color: 'var(--ink)' }}>
                 {t('cfp.guidelines')}
               </Button>
               <Button
