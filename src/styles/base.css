@@ -25,6 +25,9 @@ body {
   color: var(--ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  /* Safety net: nothing on this site scrolls horizontally, so clip any
+     stray sub-pixel / wide-element overflow rather than let the page pan. */
+  overflow-x: hidden;
 }
 
 h1,

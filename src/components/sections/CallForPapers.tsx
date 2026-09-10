@@ -21,7 +21,7 @@ export function CallForPapers() {
     <Reveal id="cfp" className="py-20 md:py-28">
       <div className="container-xl">
         <div className="grid lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4 min-w-0">
             <SectionHeading
               number="03"
               eyebrow={t('cfp.eyebrow')}
@@ -44,7 +44,7 @@ export function CallForPapers() {
             </div>
           </div>
 
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-8 min-w-0">
             <DataTable
               minWidth="560px"
               headStyle={{ background: 'var(--brand-ink)', color: 'var(--brand-on)' }}

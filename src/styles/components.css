@@ -30,7 +30,10 @@
     background-color 0.15s ease,
     box-shadow 0.15s ease,
     opacity 0.15s ease;
-  white-space: nowrap;
+  /* Long labels (e.g. "Submeter via JEMS / SBC OpenLibrary") must wrap
+     instead of forcing the page wider than the viewport on mobile. */
+  text-align: center;
+  text-wrap: balance;
 }
 
 .btn:active {
