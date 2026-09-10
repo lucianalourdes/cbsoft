@@ -32,32 +32,10 @@ export function Countdown() {
         role="timer"
         aria-label={`${t('hero.countdownAria')}: ${spokenTime}`}
       >
-        {cells.map((cell, index) => (
-          <div
-            className="launch-countdown__fragment"
-            key={cell.label}
-          >
-            <div
-              className="launch-countdown__unit"
-              aria-hidden="true"
-            >
-              <span className="launch-countdown__label">
-                {cell.label}
-              </span>
-
-              <span className="launch-countdown__value">
-                {cell.value}
-              </span>
-            </div>
-
-            {index < cells.length - 1 && (
-              <span
-                className="launch-countdown__separator"
-                aria-hidden="true"
-              >
-                :
-              </span>
-            )}
+        {cells.map((cell) => (
+          <div className="launch-countdown__unit" aria-hidden="true" key={cell.label}>
+            <span className="launch-countdown__value">{cell.value}</span>
+            <span className="launch-countdown__label">{cell.label}</span>
           </div>
         ))}
       </div>

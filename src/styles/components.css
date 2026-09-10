@@ -103,12 +103,6 @@
   color: var(--slate-soft);
 }
 
-.sponsor-tile {
-  background: var(--surface-alt);
-  border: 1px solid var(--line);
-  color: var(--slate-soft);
-}
-
 /* ---------- Header ---------- */
 
 
@@ -547,9 +541,20 @@
   object-position: center center;
 }
 
+/* Vertical depth for legibility — deeper at the top (title) and bottom
+   (buttons / wordmark), lighter across the middle so the photo still reads.
+   Keeps the existing purple identity wash underneath. */
 .home-hero__shade {
   z-index: -2;
-  background: rgba(112, 42, 130, 0.25);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(16, 9, 22, 0.5) 0%,
+      rgba(16, 9, 22, 0.26) 38%,
+      rgba(16, 9, 22, 0.32) 66%,
+      rgba(16, 9, 22, 0.62) 100%
+    ),
+    rgba(112, 42, 130, 0.22);
 }
 
 .home-hero__content {
@@ -564,93 +569,133 @@
   text-align: center;
 }
 
-.launch-countdown__title {
-  margin: 0 0 min(0.417vw, 0.5rem);
-  color: #fff;
-  font-family: var(--font-sans);
-  font-size: clamp(1.125rem, 1.875vw, 2.25rem);
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0.105em;
-  text-transform: uppercase;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.26);
-}
-
-.launch-countdown__clock {
+/* Title + clock sit over a soft, feathered pool of shade — no border,
+   no panel edge, so the block reads as part of the hero, not a card. */
+.launch-countdown {
+  position: relative;
+  z-index: 0;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  color: #fff;
-}
-
-.launch-countdown__fragment {
-  display: flex;
-  align-items: flex-end;
-}
-
-.launch-countdown__unit {
-  display: flex;
-  min-width: clamp(3.9rem, 8.55vw, 10.25rem);
   flex-direction: column;
   align-items: center;
 }
 
-.launch-countdown__label {
-  margin-bottom: min(0.833vw, 1rem);
-  font-size: clamp(0.55rem, 0.729vw, 0.875rem);
-  font-weight: 400;
-  line-height: 1.5;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+.launch-countdown::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  width: min(92vw, 62rem);
+  height: 150%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(10, 6, 16, 0.55) 0%,
+    rgba(10, 6, 16, 0.32) 42%,
+    rgba(10, 6, 16, 0) 72%
+  );
+  pointer-events: none;
+}
+
+.launch-countdown__title {
+  margin: 0 0 clamp(0.9rem, 1.6vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.4vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.26em;
+  text-indent: 0.26em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+
+.launch-countdown__clock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(1.25rem, 3.5vw, 3.25rem);
+  color: #fff;
+}
+
+.launch-countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.4rem, 0.9vw, 0.7rem);
+  min-width: clamp(3rem, 6vw, 5rem);
 }
 
 .launch-countdown__value {
-  font-size: clamp(3rem, 5.208vw, 6.25rem);
-  font-weight: 400;
+  font-size: clamp(3.25rem, 6vw, 6rem);
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
   font-feature-settings: 'tnum';
-  line-height: 0.79;
-  letter-spacing: -0.035em;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.22);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.45),
+    0 6px 28px rgba(0, 0, 0, 0.5);
 }
 
-.launch-countdown__separator {
-  width: clamp(0.75rem, 1.2vw, 1.45rem);
-  font-size: clamp(3rem, 5.208vw, 6.25rem);
-  font-weight: 400;
-  line-height: 0.79;
+.launch-countdown__label {
+  font-size: clamp(0.6rem, 0.85vw, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .home-hero__description {
-  margin: min(1.51vw, 1.813rem) 0 0;
-  font-size: clamp(0.7rem, 0.729vw, 0.875rem);
-  line-height: 1.5;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.48);
+  max-width: 46ch;
+  margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
+  font-size: clamp(0.9rem, 1vw, 1.075rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
 }
 
-.home-hero__button {
+/* Actions sit as one row directly under the support text, so they read
+   as part of the countdown block rather than a stray stack. */
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  margin-top: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.home-hero__button,
+.home-hero__button_2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: clamp(7.5rem, 8.333vw, 10rem);
-  height: clamp(2.25rem, 2.396vw, 2.875rem);
-  margin-top: min(1.615vw, 1.938rem);
-  padding: 0;
+  min-width: clamp(8rem, 9vw, 11rem);
+  height: clamp(2.75rem, 3vw, 3.25rem);
+  padding-inline: clamp(1.25rem, 2vw, 1.9rem);
   border-radius: min(0.521vw, 0.625rem);
-  background: var(--brand-magenta);
-  color: #fff;
-  font-size: clamp(0.75rem, 0.833vw, 1rem);
-  font-weight: 500;
+  font-size: clamp(0.8rem, 0.9vw, 1rem);
   line-height: 1;
-  box-shadow: 0 8px 20px rgba(92, 8, 59, 0.22);
   transition:
     transform 0.18s ease,
     background-color 0.18s ease,
+    border-color 0.18s ease,
     box-shadow 0.18s ease;
+}
+
+/* Primary — solid brand magenta, carries the visual weight. */
+.home-hero__button {
+  background: var(--brand-magenta);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 10px 26px rgba(92, 8, 59, 0.3);
 }
 
 .home-hero__button:hover {
   background: #c90b6e;
-  box-shadow: 0 10px 24px rgba(92, 8, 59, 0.32);
+  box-shadow: 0 12px 30px rgba(92, 8, 59, 0.4);
   transform: translateY(-1px);
 }
 
@@ -658,38 +703,25 @@
   transform: translateY(0);
 }
 
+/* Secondary — quiet glass outline so the hierarchy stays clear. */
 .home-hero__button_2 {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(7.5rem, 8.333vw, 10rem);
-  height: clamp(2.25rem, 2.396vw, 2.875rem);
-  margin-top: min(1.615vw, 1.938rem);
-  padding: 0;
-  border-radius: min(0.521vw, 0.625rem);
-  background-color: var(--paper);
-  color: var(--brand-magenta);
-  font-size: clamp(0.75rem, 0.833vw, 1rem);
-  font-weight: 300;
-  line-height: 1;
-  box-shadow: 0 8px 20px rgba(92, 8, 59, 0.22);
-  transition:
-    transform 0.18s ease,
-    background-color 0.18s ease,
-    box-shadow 0.18s ease;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-weight: 500;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
-.home-home-hero__button_2:hover {
-  background: var(--brand-magenta);
-  color: var(--paper);
-  box-shadow: 0 10px 24px rgba(92, 8, 59, 0.32);
-  transform: translateY(1px);
+.home-hero__button_2:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #fff;
+  transform: translateY(-1px);
 }
 
-.home-home-hero__button_2:active {
+.home-hero__button_2:active {
   transform: translateY(0);
 }
-
 
 .home-hero__logo {
   width: clamp(8.5rem, 10.938vw, 13.125rem);
@@ -722,29 +754,33 @@
     padding-left: 0.75rem;
   }
 
+  .launch-countdown__clock {
+    gap: clamp(0.5rem, 4vw, 1.35rem);
+  }
+
   .launch-countdown__unit {
-    min-width: clamp(3.4rem, 17vw, 4.35rem);
+    min-width: clamp(3.2rem, 18vw, 4.5rem);
+  }
+
+  .launch-countdown__value {
+    font-size: clamp(2.6rem, 13vw, 3.6rem);
   }
 
   .launch-countdown__title {
-    margin-bottom: 0.4rem;
-    line-height: 1.2;
+    line-height: 1.3;
   }
 
-  .launch-countdown__label {
-    margin-bottom: 0.35rem;
+  .home-hero__actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
   }
 
-  .launch-countdown__separator {
-    width: 0.45rem;
-  }
-
-  .home-hero__description {
-    margin-top: 1rem;
-  }
-
-  .home-hero__button {
-    margin-top: 1rem;
+  .home-hero__button,
+  .home-hero__button_2 {
+    width: 100%;
+    max-width: 20rem;
   }
 
   .home-hero__logo {
@@ -1479,6 +1515,159 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--ink);
+}
+
+/* ---------- Quem está contribuindo ---------- */
+/* Partners sit as a quiet institutional grid — marks straight on the
+   page, hairline divisions, no cards or shadows. */
+.contrib-inst {
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.contrib-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(2.25rem, 5vw, 3.75rem);
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.contrib-row__label {
+  margin: 0;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+.contrib-row__logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(3rem, 9vw, 7rem);
+}
+
+.contrib-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+a.contrib-logo {
+  transition: opacity 0.18s ease;
+}
+
+a.contrib-logo:hover {
+  opacity: 0.6;
+}
+
+.contrib-logo img {
+  width: auto;
+  height: clamp(5rem, 11vw, 8.5rem);
+  max-width: clamp(15rem, 40vw, 26rem);
+  object-fit: contain;
+}
+
+/* UFMG and SBC are square seals — nudged up so they read at the same
+   optical weight as the horizontal PUC Minas lockup. */
+.contrib-logo--ufmg img,
+.contrib-logo--sbc img {
+  height: clamp(6.5rem, 14vw, 10.5rem);
+}
+
+.contrib-logo__fallback {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* Sponsorship call — an editorial horizontal division, not a boxed CTA. */
+.contrib-patron {
+  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  padding-top: clamp(2.75rem, 5vw, 3.75rem);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+}
+
+@media (min-width: 768px) {
+  .contrib-patron {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+}
+
+.contrib-patron__body {
+  max-width: 52ch;
+}
+
+.contrib-patron__kicker {
+  margin: 0;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+.contrib-patron__title {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.contrib-patron__text {
+  margin: 0.85rem 0 0;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--slate);
+}
+
+.contrib-cta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  align-self: start;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: clamp(0.9rem, 1.35vw, 1.05rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--purple);
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--purple) 30%, transparent);
+  transition:
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+@media (min-width: 768px) {
+  .contrib-cta {
+    align-self: end;
+  }
+}
+
+.contrib-cta__arrow {
+  transition: transform 0.18s ease;
+}
+
+.contrib-cta:hover {
+  color: var(--pink-deep);
+  border-bottom-color: currentColor;
+}
+
+.contrib-cta:hover .contrib-cta__arrow {
+  transform: translateX(4px);
 }
 
 /* ---------- About page (/sobre) ---------- */

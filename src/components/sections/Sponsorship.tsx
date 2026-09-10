@@ -5,34 +5,26 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { asset } from '@/data/config';
 import { ORGANIZERS, REALIZATION, type OrgEntry } from '@/data/sponsors';
 
-/** Logo tile that falls back to the entry's name if the image is missing. */
-function LogoTile({ entry }: { entry: OrgEntry }) {
+/** A single partner mark, sitting directly on the page — no card, no frame.
+ *  Falls back to the institution's name if the logo file is missing. */
+function Logo({ entry }: { entry: OrgEntry }) {
   const [broken, setBroken] = useState(false);
 
   const inner = broken ? (
-    <span className="font-mono text-xs uppercase tracking-[.12em] text-center px-3">
-      {entry.name}
-    </span>
+    <span className="contrib-logo__fallback">{entry.name}</span>
   ) : (
     <img
       src={asset(entry.logo)}
       alt={entry.name}
       loading="lazy"
-      className="max-h-20 max-w-[85%] object-contain"
       onError={() => setBroken(true)}
     />
   );
 
-  const className =
-    'sponsor-tile rounded-md h-32 w-full flex items-center justify-center p-5';
+  const className = `contrib-logo contrib-logo--${entry.id}`;
 
   return entry.url ? (
-    <a
-      href={entry.url}
-      target="_blank"
-      rel="noreferrer"
-      className={`${className} transition-opacity hover:opacity-80`}
-    >
+    <a href={entry.url} target="_blank" rel="noreferrer" className={className}>
       {inner}
     </a>
   ) : (
@@ -40,18 +32,14 @@ function LogoTile({ entry }: { entry: OrgEntry }) {
   );
 }
 
-function Group({ title, entries }: { title: string; entries: OrgEntry[] }) {
+/** One line of the partner grid: small purple label + the marks it covers. */
+function Row({ label, entries }: { label: string; entries: OrgEntry[] }) {
   return (
-    <div>
-      <h3
-        className="font-mono text-xs uppercase tracking-[.12em] pb-3 mb-4 border-b"
-        style={{ borderColor: 'var(--line)', color: 'var(--purple)' }}
-      >
-        {title}
-      </h3>
-      <div className="grid grid-cols-2 gap-3 max-w-md">
+    <div className="contrib-row">
+      <p className="contrib-row__label">{label}</p>
+      <div className="contrib-row__logos">
         {entries.map((entry) => (
-          <LogoTile key={entry.id} entry={entry} />
+          <Logo key={entry.id} entry={entry} />
         ))}
       </div>
     </div>
@@ -64,48 +52,39 @@ export function Sponsorship() {
   return (
     <Reveal id="patrocinio" className="py-20 md:py-28">
       <div className="container-xl">
-        <SectionHeading
-          number="07"
-          eyebrow={t('sponsorship.eyebrow')}
-          title={t('sponsorship.title')}
-          intro={t('sponsorship.intro')}
-        />
-
-        <div className="grid md:grid-cols-2 gap-8 mt-12">
-          <Group title={t('sponsorship.organization')} entries={ORGANIZERS} />
-          <Group title={t('sponsorship.realization')} entries={REALIZATION} />
+        <div className="grid md:grid-cols-12 gap-10 md:gap-16">
+          <SectionHeading
+            className="md:col-span-5"
+            titleClassName="text-4xl md:text-5xl"
+            title={t('sponsorship.title')}
+          />
+          <div className="md:col-span-7">
+            <p
+              className="text-lg md:text-xl leading-relaxed"
+              style={{ color: 'var(--slate)' }}
+            >
+              {t('sponsorship.intro')}
+            </p>
+          </div>
         </div>
 
-        <div className="mt-16">
-          <h3
-            className="font-mono text-xs uppercase tracking-[.12em] pb-3 mb-4 border-b"
-            style={{ borderColor: 'var(--line)', color: 'var(--purple)' }}
-          >
-            {t('sponsorship.support')}
-          </h3>
+        <div className="contrib-inst">
+          <Row label={t('sponsorship.organization')} entries={ORGANIZERS} />
+          <Row label={t('sponsorship.realization')} entries={REALIZATION} />
+        </div>
 
-          <div className="grid sm:grid-cols-2 gap-4">
-            {(['sponsor'] as const).map((kind) => (
-              <a
-                key={kind}
-                href="#comite"
-                className="sponsor-tile rounded-md p-6 flex flex-col gap-2 transition-colors hover:border-[var(--purple)]"
-              >
-                <span className="font-display text-lg font-semibold" style={{ color: 'var(--ink)' }}>
-                  {t(`sponsorship.cta.${kind}.title`)}
-                </span>
-                <span className="text-sm" style={{ color: 'var(--slate)' }}>
-                  {t(`sponsorship.cta.${kind}.text`)}
-                </span>
-                <span
-                  className="font-mono text-xs uppercase tracking-[.12em] mt-2"
-                  style={{ color: 'var(--purple)' }}
-                >
-                  {t('sponsorship.cta.action')} →
-                </span>
-              </a>
-            ))}
+        <div className="contrib-patron">
+          <div className="contrib-patron__body">
+            <p className="contrib-patron__kicker">{t('sponsorship.support')}</p>
+            <p className="contrib-patron__title">{t('sponsorship.cta.sponsor.title')}</p>
+            <p className="contrib-patron__text">{t('sponsorship.cta.sponsor.text')}</p>
           </div>
+          <a href="#comite" className="contrib-cta">
+            {t('sponsorship.cta.action')}
+            <span className="contrib-cta__arrow" aria-hidden="true">
+              →
+            </span>
+          </a>
         </div>
       </div>
     </Reveal>

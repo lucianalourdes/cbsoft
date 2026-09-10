@@ -36,7 +36,7 @@ export const REALIZATION: OrgEntry[] = [
   {
     id: 'sbc',
     name: 'SBC — Sociedade Brasileira de Computação',
-    logo: '/assets/images/sbc-logo.png',
+    logo: '/assets/images/sbc.png',
     url: 'https://www.sbc.org.br/',
   },
 ];

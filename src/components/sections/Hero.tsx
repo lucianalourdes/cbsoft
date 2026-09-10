@@ -29,13 +29,15 @@ export function Hero() {
           {t('hero.launchDescription')}
         </p>
 
-        <a className="home-hero__button" href="#sobre">
-          {t('hero.learnMore')}
-        </a>
+        <div className="home-hero__actions">
+          <a className="home-hero__button" href="#sobre">
+            {t('hero.learnMore')}
+          </a>
 
-        <a className="home-hero__button_2" href="#patrocinio" >
-          {t('sponsorship.cta.sponsor.title')}
-        </a>
+          <a className="home-hero__button_2" href="#patrocinio">
+            {t('sponsorship.cta.sponsor.title')}
+          </a>
+        </div>
 
         <img
           className="home-hero__logo"
