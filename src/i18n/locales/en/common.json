@@ -74,6 +74,132 @@
     "activitiesClosing": "All of these activities, of interest to the Software Engineering community and related areas of software systems development, aim to disseminate knowledge and discuss important questions related to research, development and innovation, both in Brazil and worldwide.",
     "backHome": "Back to the home page"
   },
+  "workshopsCallPage": {
+    "metaTitle": "Call for Papers — Workshops — CBSOFT'27",
+    "contextTitle": "Context and Goals",
+    "contextP1": "The Brazilian Congress on Software: Theory and Practice (CBSoft) is an annual event promoted by the Brazilian Computer Society (SBC) to foster the exchange of experiences among researchers and practitioners from industry and academia on recent research, trends and innovations in software. Held since 2010 as an umbrella event for the Brazilian symposia promoted by SBC in the software area, CBSoft has become one of the main events of the Computing community in Brazil.",
+    "contextP2": "In 2027, the eighteenth edition of CBSoft will be held in person in Belo Horizonte (MG), with dates to be announced, bringing together four traditional annual events:",
+    "contextP3": "In addition, CBSoft includes workshops related to the topics of these events. The goal is to create a space where members of academia and industry can exchange and discuss experiences and ideas. Workshops traditionally held at CBSoft may be promoted to pre-approved workshops (see details below).",
+    "datesTitle": "Important Dates",
+    "milestones": {
+      "proposals": "Workshop proposal submission",
+      "notification": "Acceptance notification",
+      "finalVersion": "Final version of papers (for Workshop Chairs)"
+    },
+    "tbd": "To be announced",
+    "backHome": "Back to the home page",
+    "generalTitle": "General Information",
+    "generalIntro": "The selection of workshops for CBSoft 2027 will be based on the submitted proposals. Proposals will be evaluated considering:",
+    "criteria": [
+      "Relevance of the workshop's main topic",
+      "Experience of the workshop organizer",
+      "Suitability of the Program Committee",
+      "Evaluation of previous editions, when applicable"
+    ],
+    "duration": "Workshops may last <b>3 hours (half day)</b> or <b>6 hours (full day)</b>.",
+    "schedule": "Workshops will be held in person, on dates to be announced.",
+    "preferredDate": "Organizers may indicate a preferred date, but the final schedule will be defined by the Workshops Committee in coordination with the CBSoft 2027 organization.",
+    "importantLabel": "IMPORTANT:",
+    "important": "The workshop proceedings will be prepared jointly by the workshop organizers and the CBSoft proceedings chairs. The deadlines for sending workshop papers to the CBSoft organization must be followed.",
+    "submissionTitle": "Submission Instructions",
+    "submissionPreApproved": "(See the next section for pre-approved workshops.)",
+    "submissionWhere": "Workshop proposals must be submitted at:",
+    "submissionLinkTbd": "link to be announced",
+    "submissionMustInclude": "The proposal must include (in Portuguese or English):",
+    "submissionItems": [
+      {
+        "text": "Workshop name"
+      },
+      {
+        "text": "Duration: 3 or 6 hours"
+      },
+      {
+        "text": "Preferred date (workshop dates are still to be announced)"
+      },
+      {
+        "text": "Description of the main topic and its relevance"
+      },
+      {
+        "text": "Workshop history (participants, submissions, acceptance rate)"
+      },
+      {
+        "text": "Workshop format, including:",
+        "sub": [
+          "Topics of interest",
+          "Acceptance criteria",
+          "Presentation format",
+          "Activities to foster debate and community engagement"
+        ]
+      },
+      {
+        "text": "Invited speakers"
+      },
+      {
+        "text": "Expected audience and maximum number of participants"
+      },
+      {
+        "text": "Program committee"
+      },
+      {
+        "text": "Support and equipment needed from the local organization"
+      },
+      {
+        "text": "Name, contact information and CV of the workshop organizer",
+        "sub": [
+          "If Brazilian: link to the Lattes CV",
+          "If from abroad: short CV included in the proposal"
+        ]
+      }
+    ],
+    "preApprovedTitle": "Submission Instructions for Pre-Approved Workshops",
+    "preApprovedIntro": "Workshops are considered <i>pre-approved</i> if:",
+    "preApprovedCriteria": [
+      "Their first edition took place in 2026, or",
+      "They have held at least three editions"
+    ],
+    "preApprovedWhere": "Pre-approved workshops must submit a simplified proposal at:",
+    "preApprovedMustInclude": "The simplified proposal must include:",
+    "preApprovedItems": [
+      {
+        "text": "Workshop name"
+      },
+      {
+        "text": "Duration: 3 or 6 hours"
+      },
+      {
+        "text": "Preferred date (workshop dates are still to be announced)"
+      },
+      {
+        "text": "Organizing committee"
+      },
+      {
+        "text": "Steering committee (if applicable)"
+      },
+      {
+        "text": "Name, contact information and CV of the workshop organizer",
+        "sub": [
+          "Lattes CV if Brazilian; otherwise, a short CV"
+        ]
+      },
+      {
+        "text": "For workshops with 3 or more editions: statistics from the last three editions",
+        "sub": [
+          "Number of participants",
+          "Number of submissions",
+          "Acceptance rate"
+        ]
+      }
+    ],
+    "preApprovedOutcome": "Pre-approved workshops are automatically accepted once the required information is submitted. The Workshops Evaluation Committee may provide feedback or revoke the pre-approved status based on a drop in the number of submissions or other factors.",
+    "ethicsTitle": "Publication Ethics and Conduct",
+    "ethics": "All submitted papers must comply with the <a>Code of Conduct for Authors in Publications of the Brazilian Computer Society (SBC)</a>.",
+    "organizationTitle": "Organization",
+    "chairsTitle": "Workshops Committee Chairs",
+    "edition": "18th edition",
+    "editionAria": "CBSoft 2027 highlights",
+    "introEyebrow": "Workshops — CBSoft 2027",
+    "introTagline": "Connecting researchers, practitioners and the Brazilian software industry."
+  },
   "events": {
     "eyebrow": "SYMPOSIA",
     "title": "Four symposia, one program",
