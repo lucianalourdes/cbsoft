@@ -39,6 +39,8 @@
   --ink: #17131b;
   --slate: #5f5664;
   --slate-soft: #84798a;
+  /* Long-form reading text: darker than --slate for comfortable contrast. */
+  --text-body: #45414a;
 
   /* Functional colors that are not part of the official brand palette. */
   --tier-diamond: #3568c8;
@@ -89,6 +91,7 @@
     --ink: #f7f3f7;
     --slate: #d0c6d2;
     --slate-soft: #a99dad;
+    --text-body: #e4dce6;
 
     --tier-diamond: #8eb4f4;
     --tier-gold: #e5c477;
@@ -118,6 +121,7 @@
   --ink: #f7f3f7;
   --slate: #d0c6d2;
   --slate-soft: #a99dad;
+  --text-body: #e4dce6;
 
   --tier-diamond: #8eb4f4;
   --tier-gold: #e5c477;

@@ -2069,6 +2069,316 @@ a.contrib-logo:hover {
   color: var(--pink-deep);
 }
 
+/* Workshops call page (/workshops/chamada) ------------------------------ */
+/* No page header here, so clear the fixed site header directly. */
+.wcall-top {
+  padding-top: clamp(8rem, 14vw, 10rem);
+}
+/* Short opening between the site header and the page content. */
+.wcall-intro {
+  margin-bottom: clamp(1.75rem, 3vw, 2.25rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2rem);
+  border-bottom: 1px solid var(--line-soft);
+}
+.wcall-intro__tagline {
+  max-width: 44ch;
+  margin: 1rem 0 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--pink);
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.wcall-layout {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+@media (min-width: 1024px) {
+  .wcall-layout {
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    align-items: start;
+  }
+}
+.wcall-main {
+  min-width: 0;
+}
+/* ~72 characters per line for comfortable academic reading. */
+.wcall-prose {
+  max-width: 72ch;
+  color: var(--text-body);
+  margin-top: 1.25rem;
+}
+.wcall-h2 {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--line-soft);
+}
+/* Logo-stripe mark above each heading (see BrandStripes). */
+.wcall-mark {
+  display: block;
+  margin-bottom: 0.85rem;
+}
+/* "18ª edição • Belo Horizonte — MG • 2027" highlight, with a vertical bar
+   in the logo's four stripe colours. */
+.wcall-edition {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.75rem 0 0;
+  position: relative;
+  overflow: hidden;
+  padding: 0.85rem 1.25rem 0.85rem 1.5rem;
+  border-radius: 0.75rem;
+  background: var(--surface-alt);
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-weight: 600;
+  color: var(--ink);
+}
+.wcall-edition::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(
+    180deg,
+    var(--logo-leaf) 0 25%,
+    var(--logo-cyan) 25% 50%,
+    var(--logo-purple) 50% 75%,
+    var(--logo-pink) 75% 100%
+  );
+}
+.wcall-edition__dot {
+  color: var(--pink);
+}
+.wcall-prose strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.wcall-note {
+  margin-inline: 0;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 3px solid var(--pink);
+  font-style: italic;
+}
+/* Four co-located symposia as small cards. */
+.wcall-symposia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0.875rem;
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+.wcall-symposium {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.1rem 1.15rem 1.4rem;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: 0.6rem;
+  background: var(--surface);
+}
+.wcall-symposium__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--accent);
+}
+.wcall-symposium__icon svg {
+  width: 100%;
+  height: 100%;
+}
+.wcall-symposium__acronym {
+  margin-top: 0.25rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.wcall-symposium__name {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  text-wrap: balance;
+  color: var(--slate);
+}
+.wcall-list {
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+.wcall-list li + li {
+  margin-top: 0.35rem;
+}
+.wcall-list--sub {
+  margin-top: 0.35rem;
+  list-style: circle;
+}
+.wcall-link {
+  color: var(--pink-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+
+.wcall-dates {
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--surface);
+  overflow: hidden;
+}
+/* Both side cards (dates + organization) scroll together. */
+.wcall-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media (min-width: 1024px) {
+  .wcall-side {
+    position: sticky;
+    top: 7rem;
+  }
+}
+.wcall-dates__title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 1.1rem 1.5rem;
+  background: var(--brand-ink);
+  color: var(--brand-on);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.wcall-dates__title-icon {
+  display: inline-flex;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: none;
+}
+.wcall-dates__title-icon svg,
+.wcall-side__icon svg {
+  width: 100%;
+  height: 100%;
+}
+/* Four-colour hairline in the logo's stripe order under the dark header. */
+.wcall-dates__title::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--logo-leaf) 0 25%,
+    var(--logo-cyan) 25% 50%,
+    var(--logo-purple) 50% 75%,
+    var(--logo-pink) 75% 100%
+  );
+}
+
+/* Round icon badge leading each date / chair row. */
+.wcall-side__icon {
+  display: inline-flex;
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.5rem;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  color: var(--purple);
+}
+
+.wcall-dates__list {
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+}
+.wcall-dates__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.1rem 1.5rem;
+}
+.wcall-dates__item + .wcall-dates__item {
+  border-top: 1px solid var(--line-soft);
+}
+.wcall-dates__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-width: 0;
+}
+.wcall-dates__label {
+  color: var(--ink);
+  line-height: 1.45;
+}
+/* Date shown as a soft pill ("A definir" until confirmed). */
+.wcall-dates__date {
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--pink-deep);
+}
+
+.wcall-org {
+  padding: 1.35rem 1.5rem 1.5rem;
+}
+.wcall-org__subtitle {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+.wcall-org__list {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.wcall-org__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.wcall-org__item + .wcall-org__item {
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line-soft);
+}
+.wcall-org__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.wcall-org__name {
+  font-weight: 600;
+  color: var(--ink);
+}
+.wcall-org__name span {
+  font-weight: 400;
+  color: var(--slate);
+}
+.wcall-org__affiliation,
+.wcall-org__email {
+  color: var(--slate);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .about-card,
   .about-actcard {

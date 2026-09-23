@@ -130,10 +130,10 @@ export const HEADER_MENUS: Record<HeaderMenuId, HeaderMenuDefinition> = {
         columns: [[{
             titleKey: 'headerMenu.workshops.title',
             links: [
-                link('workshops.call', '#cfp'),
-                link('workshops.accepted', '#workshops-aceitos'),
-                link('workshops.program', '#agenda'),
-                link('workshops.papers', '#artigos-aceitos'),
+                link('workshops.call', '/workshops/chamada'),
+                // link('workshops.accepted', '#workshops-aceitos'),
+                // link('workshops.program', '#agenda'),
+                // link('workshops.papers', '#artigos-aceitos'),
             ],
         }]],
     },

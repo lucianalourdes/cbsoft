@@ -74,6 +74,132 @@
     "activitiesClosing": "Todas essas diversas atividades de interesse da comunidade de Engenharia de Software e de áreas relacionadas ao desenvolvimento de sistemas de software direcionam-se para a difusão do conhecimento e discussão de questões importantes relacionadas à pesquisa, desenvolvimento e inovação, tanto no Brasil quanto no mundo.",
     "backHome": "Voltar para a página inicial"
   },
+  "workshopsCallPage": {
+    "metaTitle": "Chamada de Trabalhos — Workshops — CBSOFT'27",
+    "contextTitle": "Contexto e Objetivo",
+    "contextP1": "O Congresso Brasileiro de Software: Teoria e Prática (CBSoft) é um evento promovido anualmente pela Sociedade Brasileira de Computação (SBC), com o objetivo de promover a troca de experiências entre pesquisadores e profissionais da indústria e da academia sobre pesquisas recentes, tendências e inovações em software. Realizado desde 2010 como um evento agregador dos simpósios brasileiros promovidos pela SBC na área de software, o CBSoft tornou-se um dos principais eventos da comunidade de Computação no Brasil.",
+    "contextP2": "Em 2027, a décima oitava edição do CBSoft será realizada presencialmente em Belo Horizonte (MG), com datas a definir, integrando quatro eventos anuais tradicionais:",
+    "contextP3": "Além disso, o CBSoft inclui workshops relacionados aos temas desses eventos. O objetivo é criar um espaço para que membros da academia e da indústria troquem e discutam experiências e ideias. Workshops tradicionalmente realizados no CBSoft podem ser promovidos a workshops pré-aprovados (ver detalhes abaixo).",
+    "datesTitle": "Datas Importantes",
+    "milestones": {
+      "proposals": "Submissão de propostas de workshop",
+      "notification": "Notificação de aceitação",
+      "finalVersion": "Versão final dos artigos (para Chairs de Workshops)"
+    },
+    "tbd": "A definir",
+    "backHome": "Voltar para a página inicial",
+    "generalTitle": "Informações Gerais",
+    "generalIntro": "A seleção de workshops para o CBSoft 2027 será baseada nas propostas submetidas. As propostas serão avaliadas considerando:",
+    "criteria": [
+      "Relevância do tema principal do workshop",
+      "Experiência do coordenador do workshop",
+      "Adequação do Comitê de Programa",
+      "Avaliação de edições anteriores, quando aplicável"
+    ],
+    "duration": "Os workshops podem ter duração de <b>3 horas (meio período)</b> ou <b>6 horas (período completo)</b>.",
+    "schedule": "Os workshops serão realizados presencialmente, em datas a definir.",
+    "preferredDate": "Os organizadores podem indicar uma data preferencial, mas a programação final será definida pelo Comitê de Workshops em coordenação com a organização do CBSoft 2027.",
+    "importantLabel": "IMPORTANTE:",
+    "important": "Os anais dos workshops serão preparados em conjunto pelos organizadores do workshop e pelos chairs dos anais do CBSoft. Os prazos para envio dos artigos dos workshops à organização do CBSoft devem ser seguidos.",
+    "submissionTitle": "Instruções de Submissão",
+    "submissionPreApproved": "(Consulte a próxima seção para workshops pré-aprovados.)",
+    "submissionWhere": "As propostas de workshop devem ser submetidas em:",
+    "submissionLinkTbd": "link a ser divulgado",
+    "submissionMustInclude": "A proposta deve incluir (em português ou inglês):",
+    "submissionItems": [
+      {
+        "text": "Nome do workshop"
+      },
+      {
+        "text": "Duração: 3 ou 6 horas"
+      },
+      {
+        "text": "Data preferencial (as datas dos workshops ainda serão definidas)"
+      },
+      {
+        "text": "Descrição do tema principal e sua relevância"
+      },
+      {
+        "text": "Histórico do workshop (participantes, submissões, taxa de aceitação)"
+      },
+      {
+        "text": "Formato do workshop, incluindo:",
+        "sub": [
+          "Tópicos de interesse",
+          "Critérios de aceitação",
+          "Formato das apresentações",
+          "Atividades para promover debate e engajamento da comunidade"
+        ]
+      },
+      {
+        "text": "Palestrantes convidados"
+      },
+      {
+        "text": "Público esperado e número máximo de participantes"
+      },
+      {
+        "text": "Comitê de programa"
+      },
+      {
+        "text": "Suporte e equipamentos necessários da organização local"
+      },
+      {
+        "text": "Nome, informações de contato e currículo do coordenador do workshop",
+        "sub": [
+          "Se brasileiro: link para o Currículo Lattes",
+          "Se estrangeiro: breve currículo incluído na proposta"
+        ]
+      }
+    ],
+    "preApprovedTitle": "Instruções de Submissão para Workshops Pré-Aprovados",
+    "preApprovedIntro": "Workshops são considerados <i>pré-aprovados</i> se:",
+    "preApprovedCriteria": [
+      "Sua primeira edição ocorreu em 2026, ou",
+      "Já realizaram pelo menos três edições"
+    ],
+    "preApprovedWhere": "Workshops pré-aprovados devem submeter uma proposta simplificada em:",
+    "preApprovedMustInclude": "A proposta simplificada deve incluir:",
+    "preApprovedItems": [
+      {
+        "text": "Nome do workshop"
+      },
+      {
+        "text": "Duração: 3 ou 6 horas"
+      },
+      {
+        "text": "Data preferencial (as datas dos workshops ainda serão definidas)"
+      },
+      {
+        "text": "Comitê organizador"
+      },
+      {
+        "text": "Comitê diretivo (se aplicável)"
+      },
+      {
+        "text": "Nome, informações de contato e currículo do coordenador do workshop",
+        "sub": [
+          "Currículo Lattes, se brasileiro; caso contrário, um breve currículo"
+        ]
+      },
+      {
+        "text": "Para workshops com 3 ou mais edições: estatísticas das três últimas edições",
+        "sub": [
+          "Número de participantes",
+          "Número de submissões",
+          "Taxa de aceitação"
+        ]
+      }
+    ],
+    "preApprovedOutcome": "Workshops pré-aprovados são automaticamente aceitos após o envio das informações requeridas. O Comitê de Avaliação de Workshops pode fornecer feedback ou revogar o status de pré-aprovado com base em queda no número de submissões ou outros fatores.",
+    "ethicsTitle": "Ética e Conduta na Publicação",
+    "ethics": "Todos os trabalhos submetidos devem estar em conformidade com o <a>Código de Conduta para Autores em Publicações da Sociedade Brasileira de Computação (SBC)</a>.",
+    "organizationTitle": "Organização",
+    "chairsTitle": "Coordenadores do Comitê de Workshops",
+    "edition": "18ª edição",
+    "editionAria": "Destaques do CBSoft 2027",
+    "introEyebrow": "Workshops — CBSoft 2027",
+    "introTagline": "Conectando pesquisadores, profissionais e a indústria brasileira de software."
+  },
   "events": {
     "eyebrow": "EVENTOS",
     "title": "Quatro simpósios, uma única programação",
