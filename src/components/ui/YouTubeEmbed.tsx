@@ -7,45 +7,47 @@ interface YouTubeEmbedProps {
   title: string;
   /** Accessible label for the play button before the player mounts. */
   playAria: string;
+  /** Link remains available if the player cannot load. */
+  fallbackLabel: string;
 }
 
 /** Lightweight YouTube facade: shows YouTube's own poster frame and
  *  only mounts the real iframe once the viewer hits play, so the page
  *  never loads the player up front. Falls back to a brand panel if the
  *  poster image is missing. */
-export function YouTubeEmbed({ id, title, playAria }: YouTubeEmbedProps) {
+export function YouTubeEmbed({ id, title, playAria, fallbackLabel }: YouTubeEmbedProps) {
   const [playing, setPlaying] = useState(false);
   const [posterBroken, setPosterBroken] = useState(false);
 
-  if (playing) {
-    return (
-      <div className="yt-embed">
-        <iframe
-          src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
-          title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
-    );
-  }
-
   return (
-    <button
-      type="button"
-      className={`yt-embed yt-facade${posterBroken ? ' is-bare' : ''}`}
-      aria-label={playAria}
-      onClick={() => setPlaying(true)}
-    >
-      {!posterBroken && (
-        <img
-          className="yt-poster"
-          src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          onError={() => setPosterBroken(true)}
-        />
+    <>
+      {playing ? (
+        <div className="yt-embed">
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      ) : (
+        <button
+          type="button"
+          className={`yt-embed yt-facade${posterBroken ? ' is-bare' : ''}`}
+          aria-label={playAria}
+          onClick={() => setPlaying(true)}
+        >
+          {!posterBroken && (
+            <img
+              className="yt-poster"
+              src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              onError={() => setPosterBroken(true)}
+            />
       )}
 
       <span className="yt-scrim" aria-hidden="true" />
@@ -60,5 +62,10 @@ export function YouTubeEmbed({ id, title, playAria }: YouTubeEmbedProps) {
         </svg>
       </span>
     </button>
+      )}
+      <a className="venue-source yt-fallback" href={`https://www.youtube.com/watch?v=${id}`} target="_blank" rel="noopener noreferrer">
+        {fallbackLabel}
+      </a>
+    </>
   );
 }

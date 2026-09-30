@@ -254,14 +254,29 @@
   },
   "location": {
     "eyebrow": "LOCALIZAÇÃO",
-    "title": "Campus Lourdes da PUC Minas",
     "city": "Belo Horizonte, MG",
-    "noticeTitle": "Local em definição",
-    "notice": "O local exato e as salas de credenciamento ainda estão sendo definidos com a instituição anfitriã. As informações abaixo são provisórias e serão atualizadas antes do evento.",
+    "noticeTitle": "Orientações do evento a confirmar",
+    "notice": "O campus está confirmado. Prédio, salas, credenciamento e entrada recomendada para o CBSOFT 2027 serão divulgados após confirmação da organização.",
+    "unconfirmed": "Local a confirmar",
+    "unconfirmedNotice": "O nome e o endereço do local serão publicados após confirmação da organização.",
     "transitHeading": "Como chegar",
-    "moreInfo": "Mais informações sobre o local",
+    "moreInfo": "Endereço, orientações e mapa",
     "videoTitle": "CBSOFT 2027 em Belo Horizonte",
-    "playAria": "Reproduzir o vídeo de anúncio do CBSOFT 2027"
+    "playAria": "Reproduzir o vídeo do CBSOFT 2027",
+    "videoFallback": "Vídeo não carregou? Assistir no YouTube",
+    "consultTransport": "Consultar transporte ↗",
+    "transitSource": "Referências de transporte divulgadas pela PUC Minas ↗",
+    "transitNote": "As referências acima atendem a região do campus. Confirme pontos, itinerários e horários antes da viagem; o acesso específico do evento ainda será informado."
+  },
+  "locationPage": {
+    "metaTitle": "Local do evento | CBSOFT 2027",
+    "title": "Local do evento",
+    "mapTitle": "Mapa e navegação",
+    "mapDescription": "Use o endereço do campus como destino no Google Maps. A rota depende do seu ponto de partida. A entrada, o prédio e as salas do evento ainda serão confirmados.",
+    "directions": "Traçar rota no Google Maps ↗",
+    "openMap": "Abrir mapa do campus ↗",
+    "officialLocation": "Conferir endereço no site oficial da PUC Minas ↗",
+    "backHome": "Voltar para a página inicial"
   },
   "committee": {
     "eyebrow": "COMITÊ ORGANIZADOR",
