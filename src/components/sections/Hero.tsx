@@ -93,11 +93,6 @@ export function Hero() {
               disabled={controlsDisabled} onClick={() => carousel.move(1)}>
               <span aria-hidden="true">›</span>
             </button>
-            <button type="button" className="home-hero__rotation"
-              disabled={carousel.reducedMotion || controlsDisabled}
-              onClick={() => carousel.setPaused(!carousel.paused)}>
-              {t(carousel.paused || carousel.reducedMotion ? 'hero.carousel.play' : 'hero.carousel.pause')}
-            </button>
             <span className="sr-only" aria-live={carousel.rotating ? 'off' : 'polite'} aria-atomic="true">
               {t('hero.carousel.position', { number: carousel.active + 1, total: PHOTOS.length })}
             </span>

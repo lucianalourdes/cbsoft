@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const HERO_SLIDE_INTERVAL = 6_000;
+export const HERO_SLIDE_INTERVAL = 8_000;
 const REDUCED_MOTION = '(prefers-reduced-motion: reduce)';
 
 /** Keep the previous photo visible while the requested photo loads. */
