@@ -24,6 +24,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   /* Safety net: nothing on this site scrolls horizontally, so clip any
      stray sub-pixel / wide-element overflow rather than let the page pan. */
@@ -39,7 +40,8 @@ h3,
 }
 
 .font-mono {
-  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* Legacy numeric labels use the official family; .num-tabular handles figures. */
+  font-family: var(--font-sans);
 }
 
 ::selection {

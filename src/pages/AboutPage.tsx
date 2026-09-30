@@ -60,13 +60,8 @@ export function AboutPage() {
   const lang = useLang();
 
   useEffect(() => {
-    const previous = document.title;
-    document.title = t('aboutPage.metaTitle');
     window.scrollTo(0, 0);
-    return () => {
-      document.title = previous;
-    };
-  }, [t]);
+  }, []);
 
   const facts = [
     { value: ABOUT_CONGRESS.editionOrdinal, label: t('aboutPage.statEditionLabel'), accent: true },
