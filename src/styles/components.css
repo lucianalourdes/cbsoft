@@ -529,6 +529,7 @@
   color: #fff;
 }
 
+.home-hero__photos,
 .home-hero__photo,
 .home-hero__shade {
   position: absolute;
@@ -537,76 +538,64 @@
   height: 100%;
 }
 
-.home-hero__photo {
+.home-hero__photos {
   z-index: -3;
+}
+
+.home-hero__photo {
+  opacity: 0;
+  transition: opacity 0.6s ease;
   display: block;
   object-fit: cover;
   object-position: center center;
 }
 
-/* Vertical depth for legibility — deeper at the top (title) and bottom
-   (buttons / wordmark), lighter across the middle so the photo still reads.
-   Keeps the existing purple identity wash underneath. */
+/* A uniform wash guarantees white text contrast even over the brightest
+   photo, without adding a shadow or panel behind the countdown. */
+.home-hero__photo.is-visible {
+  opacity: 1;
+}
 .home-hero__shade {
   z-index: -2;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(16, 9, 22, 0.5) 0%,
-      rgba(16, 9, 22, 0.26) 38%,
-      rgba(16, 9, 22, 0.32) 66%,
-      rgba(16, 9, 22, 0.62) 100%
-    ),
-    rgba(112, 42, 130, 0.22);
+  background: rgba(16, 9, 22, 0.62);
 }
 
-/* Flows in normal document order so the hero grows with its content
-   instead of clipping the buttons / wordmark on short viewports. */
+/* The first grid line anchors the countdown's center at half the viewport.
+   The details stay in flow so short screens grow without clipping controls. */
 .home-hero__content {
   position: relative;
   z-index: 2;
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(1.5rem, 3.5vw, 2.5rem);
-  padding: clamp(6rem, 14vh, 9.5rem) 1.25rem clamp(9rem, 34svh, 17rem);
+  display: grid;
+  grid-template-rows: 50svh auto;
+  align-content: start;
+  justify-items: center;
+  padding-inline: 1.25rem;
   text-align: center;
 }
 
-/* Title + clock sit over a soft, feathered pool of shade — no border,
-   no panel edge, so the block reads as part of the hero, not a card. */
+.home-hero__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  width: 100%;
+  padding-top: clamp(5rem, 8vw, 7rem);
+  padding-bottom: clamp(5rem, 12svh, 8rem);
+}
+
 .launch-countdown {
-  position: relative;
-  z-index: 0;
+  align-self: end;
+  transform: translateY(50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.launch-countdown::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  left: 50%;
-  top: 50%;
-  width: min(92vw, 62rem);
-  height: 150%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    ellipse at center,
-    rgba(10, 6, 16, 0.55) 0%,
-    rgba(10, 6, 16, 0.32) 42%,
-    rgba(10, 6, 16, 0) 72%
-  );
-  pointer-events: none;
-}
-
 .launch-countdown__title {
   margin: 0 0 clamp(0.9rem, 1.6vw, 1.5rem);
-  color: rgba(255, 255, 255, 0.9);
+  color: #fff;
   font-family: var(--font-sans);
   font-size: clamp(0.95rem, 1.4vw, 1.5rem);
   font-weight: 600;
@@ -614,7 +603,6 @@
   letter-spacing: 0.26em;
   text-indent: 0.26em;
   text-transform: uppercase;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
 }
 
 .launch-countdown__clock {
@@ -643,9 +631,6 @@
   font-feature-settings: 'tnum';
   line-height: 0.85;
   letter-spacing: -0.02em;
-  text-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.45),
-    0 6px 28px rgba(0, 0, 0, 0.5);
 }
 
 .launch-countdown__label {
@@ -653,8 +638,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.82);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 
 .home-hero__description {
@@ -662,8 +646,7 @@
   margin: 0 auto;
   font-size: clamp(0.9rem, 1vw, 1.075rem);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+  color: #fff;
 }
 
 /* Actions sit as one row directly under the support text, so they read
@@ -696,16 +679,16 @@
     box-shadow 0.18s ease;
 }
 
-/* Primary — solid brand magenta, carries the visual weight. */
+/* Deeper magenta keeps white CTA text above 4.5:1 contrast. */
 .home-hero__button {
-  background: var(--brand-magenta);
+  background: #a9075d;
   color: #fff;
   font-weight: 600;
   box-shadow: 0 10px 26px rgba(92, 8, 59, 0.3);
 }
 
 .home-hero__button:hover {
-  background: #c90b6e;
+  background: #8b064d;
   box-shadow: 0 12px 30px rgba(92, 8, 59, 0.4);
   transform: translateY(-1px);
 }
@@ -716,7 +699,7 @@
 
 /* Secondary — quiet glass outline so the hierarchy stays clear. */
 .home-hero__button_2 {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(16, 9, 22, 0.18);
   color: #fff;
   font-weight: 500;
   border: 1.5px solid rgba(255, 255, 255, 0.6);
@@ -725,7 +708,7 @@
 }
 
 .home-hero__button_2:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(16, 9, 22, 0.3);
   border-color: #fff;
   transform: translateY(-1px);
 }
@@ -737,7 +720,7 @@
 .home-hero__logo {
   width: clamp(8.5rem, 10.938vw, 13.125rem);
   height: auto;
-  margin-top: clamp(0.5rem, 2vw, 2rem);
+  object-fit: contain;
 }
 
 .home-hero__wave {
@@ -746,7 +729,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  height: 27.315svh;
+  height: clamp(3rem, 6svh, 5rem);
   overflow: hidden;
   line-height: 0;
   pointer-events: none;
@@ -760,8 +743,7 @@
 
 @media (max-width: 640px) {
   .home-hero__content {
-    gap: 1.75rem;
-    padding: 5.5rem 0.9rem 8.5rem;
+    padding-inline: 0.9rem;
   }
 
   .launch-countdown__clock {
@@ -797,15 +779,72 @@
     max-width: 22rem;
   }
 
-  .home-hero__logo {
-    margin-top: 3rem;
-  }
-
   .home-hero__wave {
     left: 50%;
     width: 42.5rem;
-    height: 8rem;
+    height: 3.5rem;
     transform: translateX(-50%);
+  }
+}
+
+/* Native buttons provide keyboard activation and 44px touch targets. */
+.home-hero__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  max-width: 100%;
+}
+
+.home-hero__controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background: #24132d;
+  color: #fff;
+  font: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.home-hero__controls button:hover {
+  background: #4f1d5c;
+}
+
+.home-hero__controls button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.home-hero__controls .home-hero__rotation {
+  padding-inline: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.home-hero__indicator span {
+  width: 0.625rem;
+  height: 0.625rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.home-hero__indicator[aria-current='true'] span {
+  background: #fff;
+}
+
+.home-hero a:focus-visible,
+.home-hero button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__photo {
+    transition: none;
   }
 }
 
