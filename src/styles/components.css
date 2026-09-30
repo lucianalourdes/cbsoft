@@ -114,8 +114,8 @@
   z-index: 50;
   inset: 0 0 auto;
   height: auto;
-  padding-top: 16px ;
-  padding-bottom: 16px ;
+  padding-top: 16px;
+  padding-bottom: 16px;
   background: #fbfafc;
   color: #000;
   font-family: var(--font-sans);
@@ -523,12 +523,13 @@
 .home-hero {
   position: relative;
   min-height: 100svh;
-  overflow: hidden;
+  overflow: visible;
   isolation: isolate;
   background: #40516c;
   color: #fff;
 }
 
+.home-hero__photos,
 .home-hero__photo,
 .home-hero__shade {
   position: absolute;
@@ -537,76 +538,65 @@
   height: 100%;
 }
 
-.home-hero__photo {
+.home-hero__photos {
   z-index: -3;
+}
+
+.home-hero__photo {
+  opacity: 0;
+  transition: opacity 0.6s ease;
   display: block;
   object-fit: cover;
   object-position: center center;
 }
 
-/* Vertical depth for legibility — deeper at the top (title) and bottom
-   (buttons / wordmark), lighter across the middle so the photo still reads.
-   Keeps the existing purple identity wash underneath. */
-.home-hero__shade {
-  z-index: -2;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(16, 9, 22, 0.5) 0%,
-      rgba(16, 9, 22, 0.26) 38%,
-      rgba(16, 9, 22, 0.32) 66%,
-      rgba(16, 9, 22, 0.62) 100%
-    ),
-    rgba(112, 42, 130, 0.22);
+/* A uniform wash guarantees white text contrast even over the brightest
+   photo, without adding a shadow or panel behind the countdown. */
+.home-hero__photo.is-visible {
+  opacity: 1;
 }
 
-/* Flows in normal document order so the hero grows with its content
-   instead of clipping the buttons / wordmark on short viewports. */
+.home-hero__shade {
+  z-index: -2;
+  background: rgba(16, 9, 22, 0.40);
+}
+
+/* The first grid line anchors the countdown's center at half the viewport.
+   The details stay in flow so short screens grow without clipping controls. */
 .home-hero__content {
   position: relative;
   z-index: 2;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(1.5rem, 3.5vw, 2.5rem);
-  padding: clamp(6rem, 14vh, 9.5rem) 1.25rem clamp(9rem, 34svh, 17rem);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 40svh auto;
+  align-content: start;
+  justify-items: center;
+  padding-inline: 1.25rem;
   text-align: center;
 }
 
-/* Title + clock sit over a soft, feathered pool of shade — no border,
-   no panel edge, so the block reads as part of the hero, not a card. */
+.home-hero__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  width: 100%;
+  padding-top: clamp(5rem, 8vw, 7rem);
+  padding-bottom: clamp(5rem, 12svh, 8rem);
+}
+
 .launch-countdown {
-  position: relative;
-  z-index: 0;
+  align-self: end;
+  transform: translateY(50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.launch-countdown::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  left: 50%;
-  top: 50%;
-  width: min(92vw, 62rem);
-  height: 150%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    ellipse at center,
-    rgba(10, 6, 16, 0.55) 0%,
-    rgba(10, 6, 16, 0.32) 42%,
-    rgba(10, 6, 16, 0) 72%
-  );
-  pointer-events: none;
-}
-
 .launch-countdown__title {
   margin: 0 0 clamp(0.9rem, 1.6vw, 1.5rem);
-  color: rgba(255, 255, 255, 0.9);
+  color: #fff;
   font-family: var(--font-sans);
   font-size: clamp(0.95rem, 1.4vw, 1.5rem);
   font-weight: 600;
@@ -614,7 +604,6 @@
   letter-spacing: 0.26em;
   text-indent: 0.26em;
   text-transform: uppercase;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
 }
 
 .launch-countdown__clock {
@@ -643,9 +632,6 @@
   font-feature-settings: 'tnum';
   line-height: 0.85;
   letter-spacing: -0.02em;
-  text-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.45),
-    0 6px 28px rgba(0, 0, 0, 0.5);
 }
 
 .launch-countdown__label {
@@ -653,8 +639,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.82);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 
 .home-hero__description {
@@ -662,8 +647,7 @@
   margin: 0 auto;
   font-size: clamp(0.9rem, 1vw, 1.075rem);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+  color: #fff;
 }
 
 /* Actions sit as one row directly under the support text, so they read
@@ -696,16 +680,16 @@
     box-shadow 0.18s ease;
 }
 
-/* Primary — solid brand magenta, carries the visual weight. */
+/* Deeper magenta keeps white CTA text above 4.5:1 contrast. */
 .home-hero__button {
-  background: var(--brand-magenta);
+  background: #a9075d;
   color: #fff;
   font-weight: 600;
   box-shadow: 0 10px 26px rgba(92, 8, 59, 0.3);
 }
 
 .home-hero__button:hover {
-  background: #c90b6e;
+  background: #8b064d;
   box-shadow: 0 12px 30px rgba(92, 8, 59, 0.4);
   transform: translateY(-1px);
 }
@@ -716,7 +700,7 @@
 
 /* Secondary — quiet glass outline so the hierarchy stays clear. */
 .home-hero__button_2 {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(5, 9, 32, 0.18);
   color: #fff;
   font-weight: 500;
   border: 1.5px solid rgba(255, 255, 255, 0.6);
@@ -725,7 +709,7 @@
 }
 
 .home-hero__button_2:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(16, 9, 22, 0.3);
   border-color: #fff;
   transform: translateY(-1px);
 }
@@ -737,7 +721,7 @@
 .home-hero__logo {
   width: clamp(8.5rem, 10.938vw, 13.125rem);
   height: auto;
-  margin-top: clamp(0.5rem, 2vw, 2rem);
+  object-fit: contain;
 }
 
 .home-hero__wave {
@@ -746,7 +730,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  height: 27.315svh;
+  height: 16rem;
   overflow: hidden;
   line-height: 0;
   pointer-events: none;
@@ -760,8 +744,7 @@
 
 @media (max-width: 640px) {
   .home-hero__content {
-    gap: 1.75rem;
-    padding: 5.5rem 0.9rem 8.5rem;
+    padding-inline: 0.9rem;
   }
 
   .launch-countdown__clock {
@@ -797,15 +780,75 @@
     max-width: 22rem;
   }
 
-  .home-hero__logo {
-    margin-top: 3rem;
-  }
-
   .home-hero__wave {
     left: 50%;
+    right: auto;
     width: 42.5rem;
-    height: 8rem;
+    height: auto;
     transform: translateX(-50%);
+  }
+}
+
+/* Native buttons provide keyboard activation and 44px touch targets. */
+.home-hero__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  max-width: 100%;
+}
+
+.home-hero__controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.75rem;
+  min-height: 2.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background: rgba(5, 9, 32, 0);
+  color: #fff;
+  font: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.home-hero__controls button:hover {
+  background: #e60d7e2e;
+  
+  transition: ease-in-out 0.2s;
+}
+
+.home-hero__controls button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.home-hero__controls .home-hero__rotation {
+  padding-inline: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.home-hero__indicator span {
+  width: 0.625rem;
+  height: 0.625rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.home-hero__indicator[aria-current='true'] span {
+  background: #fff;
+}
+
+.home-hero a:focus-visible,
+.home-hero button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__photo {
+    transition: none;
   }
 }
 
@@ -835,10 +878,12 @@
   appearance: none;
   cursor: pointer;
 }
+
 /* Row with no announced date — no menu, no interaction. */
 .cal-trigger--static {
   cursor: default;
 }
+
 .cal-trigger--static .cal-date {
   color: var(--slate);
 }
@@ -1163,9 +1208,11 @@
 .guests-section {
   overflow-x: clip;
 }
+
 .guests {
   margin-top: 3rem;
 }
+
 /* The track breaks out of .container-xl to span the whole viewport,
    then pads itself back by the same gutter so the first and last
    cards still line up with the section heading above. */
@@ -1180,15 +1227,18 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
+
 .guests-track::-webkit-scrollbar {
   display: none;
 }
+
 .guest-card {
   flex: 0 0 auto;
   width: 12.5rem;
   scroll-snap-align: start;
   text-align: center;
 }
+
 .guest-avatar {
   width: 100%;
   aspect-ratio: 1;
@@ -1205,23 +1255,27 @@
   background: var(--surface-alt);
   box-shadow: 0 18px 40px -20px rgba(28, 19, 48, 0.55);
 }
+
 .guest-name {
   margin-top: 1rem;
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--ink);
 }
+
 .guest-affil {
   margin-top: 0.25rem;
   font-size: 0.85rem;
   line-height: 1.35;
   color: var(--slate);
 }
+
 .guests-nav {
   display: flex;
   gap: 0.6rem;
   margin-top: 1.75rem;
 }
+
 .guests-arrow {
   width: 2.75rem;
   height: 2.75rem;
@@ -1238,19 +1292,23 @@
     border-color 0.15s ease,
     color 0.15s ease;
 }
+
 .guests-arrow svg {
   width: 1.1rem;
   height: 1.1rem;
 }
+
 .guests-arrow:hover {
   background: var(--purple);
   border-color: var(--purple);
   color: #fff;
 }
+
 @media (max-width: 640px) {
   .guest-card {
     width: 10rem;
   }
+
   .guest-avatar {
     font-size: 2rem;
   }
@@ -1262,17 +1320,14 @@
 .venue-section {
   position: relative;
   background:
-    radial-gradient(
-      42rem 24rem at 88% -4%,
+    radial-gradient(42rem 24rem at 88% -4%,
       color-mix(in srgb, var(--pink) 6%, transparent),
-      transparent 70%
-    ),
-    radial-gradient(
-      38rem 22rem at 0% 104%,
+      transparent 70%),
+    radial-gradient(38rem 22rem at 0% 104%,
       color-mix(in srgb, var(--purple) 6%, transparent),
-      transparent 70%
-    );
+      transparent 70%);
 }
+
 /* This section carries a wide two-column panel, so it runs a touch
    wider than the 1200px body grid once there's gutter to spare. */
 @media (min-width: 1280px) {
@@ -1290,6 +1345,7 @@
   font-size: 0.95rem;
   color: var(--slate);
 }
+
 .venue-place svg {
   width: 1.05rem;
   height: 1.05rem;
@@ -1306,17 +1362,21 @@
   box-shadow: 0 1px 2px rgba(28, 19, 48, 0.04);
   overflow: hidden;
 }
+
 .venue-grid {
   display: grid;
 }
+
 @media (min-width: 960px) {
   .venue-grid {
     grid-template-columns: 1.15fr 1fr;
   }
 }
+
 .venue-info {
   padding: 1.75rem;
 }
+
 .venue-media {
   display: flex;
   flex-direction: column;
@@ -1326,12 +1386,15 @@
   border-top: 1px solid var(--line-soft);
   background: var(--surface-alt);
 }
+
 @media (min-width: 640px) {
+
   .venue-info,
   .venue-media {
     padding: 2.25rem;
   }
 }
+
 @media (min-width: 960px) {
   .venue-media {
     border-top: 0;
@@ -1349,19 +1412,23 @@
   border-radius: 0.6rem;
   background: color-mix(in srgb, var(--pink) 5%, var(--surface));
 }
+
 .venue-alert-icon {
   flex: none;
   color: var(--pink-deep);
 }
+
 .venue-alert-icon svg {
   width: 1.25rem;
   height: 1.25rem;
 }
+
 .venue-alert-title {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--ink);
 }
+
 .venue-alert-text {
   margin-top: 0.25rem;
   font-size: 0.85rem;
@@ -1385,6 +1452,7 @@
   flex-direction: column;
   gap: 0.6rem;
 }
+
 .venue-transit-item {
   display: flex;
   align-items: center;
@@ -1398,11 +1466,13 @@
     border-color 0.15s ease,
     box-shadow 0.15s ease;
 }
+
 .venue-transit-item:hover {
   transform: translateY(-1px);
   border-color: color-mix(in srgb, var(--pink) 32%, var(--line));
   box-shadow: 0 8px 20px -14px rgba(28, 19, 48, 0.35);
 }
+
 .venue-transit-icon {
   flex: none;
   width: 2.25rem;
@@ -1413,20 +1483,24 @@
   background: var(--surface-alt);
   color: var(--purple);
 }
+
 .venue-transit-icon svg {
   width: 1.15rem;
   height: 1.15rem;
 }
+
 .venue-transit-body {
   display: flex;
   flex-direction: column;
   line-height: 1.3;
 }
+
 .venue-transit-name {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--ink);
 }
+
 .venue-transit-meta {
   font-size: 0.8rem;
   color: var(--slate);
@@ -1436,15 +1510,18 @@
 .venue-cta {
   margin-top: 1.75rem;
 }
+
 .venue-cta .venue-cta-arrow {
   width: 1.05rem;
   height: 1.05rem;
   transition: transform 0.15s ease;
 }
+
 .venue-cta:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 24px -12px rgba(107, 44, 143, 0.5);
 }
+
 .venue-cta:hover .venue-cta-arrow {
   transform: translateX(3px);
 }
@@ -1459,18 +1536,21 @@
   background: var(--brand-ink);
   box-shadow: 0 12px 30px -18px rgba(28, 19, 48, 0.35);
 }
+
 .yt-embed iframe {
   width: 100%;
   height: 100%;
   border: 0;
   display: block;
 }
+
 .yt-facade {
   display: block;
   padding: 0;
   border: 0;
   cursor: pointer;
 }
+
 .yt-poster {
   position: absolute;
   inset: 0;
@@ -1478,18 +1558,22 @@
   height: 100%;
   object-fit: cover;
 }
+
 .yt-scrim {
   position: absolute;
   inset: 0;
   background: rgba(20, 13, 34, 0.18);
   transition: background 0.15s ease;
 }
+
 .yt-facade:hover .yt-scrim {
   background: rgba(20, 13, 34, 0.28);
 }
+
 .yt-facade.is-bare .yt-scrim {
   background: linear-gradient(140deg, var(--grad-a) 0%, var(--grad-b) 100%);
 }
+
 .yt-play {
   position: absolute;
   inset: 0;
@@ -1497,27 +1581,33 @@
   width: 68px;
   height: 48px;
 }
+
 .yt-play svg {
   width: 100%;
   height: 100%;
 }
+
 .yt-play-bg {
   fill: #f00;
   opacity: 0.9;
   transition: opacity 0.15s ease;
 }
+
 .yt-facade:hover .yt-play-bg {
   opacity: 1;
 }
+
 .yt-play-arrow {
   fill: #fff;
 }
+
 .venue-video-cap {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
   margin-top: 0.9rem;
 }
+
 .venue-video-org {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.68rem;
@@ -1525,6 +1615,7 @@
   text-transform: uppercase;
   color: var(--slate-soft);
 }
+
 .venue-video-title {
   font-size: 0.9rem;
   font-weight: 600;
@@ -1719,10 +1810,12 @@ a.contrib-logo:hover {
 .about-section {
   padding-block: clamp(3.5rem, 9vw, 7.5rem);
 }
+
 .about-section--alt {
   background: var(--surface-alt);
 }
-.about-section + .about-section {
+
+.about-section+.about-section {
   border-top: 1px solid var(--line-soft);
 }
 
@@ -1767,7 +1860,8 @@ a.contrib-logo:hover {
   font-size: 1.05rem;
   line-height: 1.72;
 }
-.about-prose > * + * {
+
+.about-prose>*+* {
   margin-top: 1.15rem;
 }
 
@@ -1775,6 +1869,7 @@ a.contrib-logo:hover {
 .about-header {
   text-align: center;
 }
+
 .about-header .about-lead {
   margin-inline: auto;
 }
@@ -1788,15 +1883,18 @@ a.contrib-logo:hover {
   overflow: hidden;
   background: var(--surface);
 }
+
 .about-fact {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: clamp(1.15rem, 2.6vw, 1.85rem);
 }
-.about-fact + .about-fact {
+
+.about-fact+.about-fact {
   border-left: 1px solid var(--line-soft);
 }
+
 .about-fact__value {
   font-family: var(--font-display);
   font-weight: 600;
@@ -1805,18 +1903,22 @@ a.contrib-logo:hover {
   color: var(--ink);
   letter-spacing: -0.01em;
 }
+
 .about-fact__label {
   font-size: 0.82rem;
   line-height: 1.4;
   color: var(--slate-soft);
 }
+
 .about-fact--accent {
   background: var(--purple);
 }
+
 .about-fact--accent .about-fact__value {
   color: #fff;
   font-size: clamp(2rem, 4.6vw, 2.85rem);
 }
+
 .about-fact--accent .about-fact__label {
   color: rgba(255, 255, 255, 0.82);
 }
@@ -1825,18 +1927,22 @@ a.contrib-logo:hover {
   .about-facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   .about-fact:nth-child(2n + 1) {
     border-left: 0;
   }
+
   .about-fact:nth-child(n + 3) {
     border-top: 1px solid var(--line-soft);
   }
 }
+
 @media (max-width: 480px) {
   .about-facts {
     grid-template-columns: 1fr;
   }
-  .about-fact + .about-fact {
+
+  .about-fact+.about-fact {
     border-left: 0;
     border-top: 1px solid var(--line-soft);
   }
@@ -1847,17 +1953,20 @@ a.contrib-logo:hover {
   display: grid;
   gap: clamp(1.75rem, 4vw, 3.25rem);
 }
+
 @media (min-width: 900px) {
   .about-split {
     grid-template-columns: 35fr 65fr;
     align-items: start;
   }
 }
+
 .about-split__aside {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .about-split__index {
   font-family: var(--font-display);
   font-weight: 600;
@@ -1865,6 +1974,7 @@ a.contrib-logo:hover {
   line-height: 1;
   color: var(--line);
 }
+
 .about-split__rule {
   width: 3rem;
   height: 3px;
@@ -1879,6 +1989,7 @@ a.contrib-logo:hover {
   background: var(--surface);
   padding: clamp(1.6rem, 4vw, 3rem);
 }
+
 .about-highlight__name {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.75rem;
@@ -1887,6 +1998,7 @@ a.contrib-logo:hover {
   text-transform: uppercase;
   color: var(--pink-deep);
 }
+
 .about-highlight__edition {
   margin: 0.6rem 0 0;
   font-family: var(--font-display);
@@ -1895,16 +2007,19 @@ a.contrib-logo:hover {
   line-height: 1.15;
   color: var(--ink);
 }
+
 .about-highlight__edition em {
   font-style: normal;
   color: var(--purple);
 }
+
 .about-highlight__roman {
   margin: 0.35rem 0 0;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.9rem;
   color: var(--slate);
 }
+
 .about-highlight__grid {
   display: grid;
   gap: clamp(1.1rem, 3vw, 2rem);
@@ -1912,11 +2027,13 @@ a.contrib-logo:hover {
   padding-top: clamp(1.5rem, 3.5vw, 2.25rem);
   border-top: 1px solid var(--line-soft);
 }
+
 @media (min-width: 640px) {
   .about-highlight__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
 .about-highlight__k {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.7rem;
@@ -1924,6 +2041,7 @@ a.contrib-logo:hover {
   text-transform: uppercase;
   color: var(--slate-soft);
 }
+
 .about-highlight__v {
   margin-top: 0.4rem;
   font-family: var(--font-display);
@@ -1938,22 +2056,27 @@ a.contrib-logo:hover {
   gap: clamp(1rem, 2.4vw, 1.5rem);
   margin-top: clamp(2rem, 4vw, 3rem);
 }
+
 .about-grid--2 {
   grid-template-columns: 1fr;
 }
+
 @media (min-width: 700px) {
   .about-grid--2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 .about-grid--3 {
   grid-template-columns: 1fr;
 }
+
 @media (min-width: 620px) {
   .about-grid--3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 @media (min-width: 940px) {
   .about-grid--3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1974,11 +2097,13 @@ a.contrib-logo:hover {
     border-color 0.24s ease,
     box-shadow 0.24s ease;
 }
+
 .about-card:hover {
   transform: translateY(-3px);
   border-color: color-mix(in srgb, var(--purple) 45%, var(--line));
   box-shadow: 0 12px 28px -20px rgba(23, 19, 27, 0.5);
 }
+
 .about-card__index {
   position: absolute;
   top: -0.75rem;
@@ -1992,12 +2117,14 @@ a.contrib-logo:hover {
   pointer-events: none;
   user-select: none;
 }
+
 .about-card__accent {
   width: 1.75rem;
   height: 3px;
   background: var(--pink);
   margin-bottom: 1.1rem;
 }
+
 .about-card__title {
   margin: 0;
   font-family: var(--font-display);
@@ -2006,6 +2133,7 @@ a.contrib-logo:hover {
   line-height: 1.25;
   color: var(--ink);
 }
+
 .about-card__text {
   margin: 0.65rem 0 0;
   color: var(--slate);
@@ -2022,16 +2150,19 @@ a.contrib-logo:hover {
     transform 0.24s ease,
     border-color 0.24s ease;
 }
+
 .about-actcard:hover {
   transform: translateY(-3px);
   border-color: color-mix(in srgb, var(--purple) 45%, var(--line));
 }
+
 .about-actcard__icon {
   display: block;
   width: 1.85rem;
   height: 1.85rem;
   color: var(--purple);
 }
+
 .about-actcard__title {
   margin: 0.8rem 0 0;
   font-family: var(--font-display);
@@ -2039,6 +2170,7 @@ a.contrib-logo:hover {
   font-size: 1rem;
   color: var(--ink);
 }
+
 .about-actcard__text {
   margin: 0.4rem 0 0;
   font-size: 0.88rem;
@@ -2065,6 +2197,7 @@ a.contrib-logo:hover {
   text-transform: uppercase;
   color: var(--purple);
 }
+
 .about-back:hover {
   color: var(--pink-deep);
 }
@@ -2074,12 +2207,14 @@ a.contrib-logo:hover {
 .wcall-top {
   padding-top: clamp(8rem, 14vw, 10rem);
 }
+
 /* Short opening between the site header and the page content. */
 .wcall-intro {
   margin-bottom: clamp(1.75rem, 3vw, 2.25rem);
   padding-bottom: clamp(1.5rem, 3vw, 2rem);
   border-bottom: 1px solid var(--line-soft);
 }
+
 .wcall-intro__tagline {
   max-width: 44ch;
   margin: 1rem 0 0;
@@ -2091,35 +2226,42 @@ a.contrib-logo:hover {
   line-height: 1.35;
   color: var(--ink);
 }
+
 .wcall-layout {
   display: grid;
   gap: clamp(2rem, 4vw, 3.5rem);
 }
+
 @media (min-width: 1024px) {
   .wcall-layout {
     grid-template-columns: minmax(0, 1fr) 20rem;
     align-items: start;
   }
 }
+
 .wcall-main {
   min-width: 0;
 }
+
 /* ~72 characters per line for comfortable academic reading. */
 .wcall-prose {
   max-width: 72ch;
   color: var(--text-body);
   margin-top: 1.25rem;
 }
+
 .wcall-h2 {
   margin-top: clamp(2.5rem, 5vw, 3.5rem);
   padding-top: clamp(2.5rem, 5vw, 3.5rem);
   border-top: 1px solid var(--line-soft);
 }
+
 /* Logo-stripe mark above each heading (see BrandStripes). */
 .wcall-mark {
   display: block;
   margin-bottom: 0.85rem;
 }
+
 /* "18ª edição • Belo Horizonte — MG • 2027" highlight, with a vertical bar
    in the logo's four stripe colours. */
 .wcall-edition {
@@ -2140,32 +2282,35 @@ a.contrib-logo:hover {
   font-weight: 600;
   color: var(--ink);
 }
+
 .wcall-edition::before {
   content: '';
   position: absolute;
   inset: 0 auto 0 0;
   width: 4px;
-  background: linear-gradient(
-    180deg,
-    var(--logo-leaf) 0 25%,
-    var(--logo-cyan) 25% 50%,
-    var(--logo-purple) 50% 75%,
-    var(--logo-pink) 75% 100%
-  );
+  background: linear-gradient(180deg,
+      var(--logo-leaf) 0 25%,
+      var(--logo-cyan) 25% 50%,
+      var(--logo-purple) 50% 75%,
+      var(--logo-pink) 75% 100%);
 }
+
 .wcall-edition__dot {
   color: var(--pink);
 }
+
 .wcall-prose strong {
   color: var(--ink);
   font-weight: 600;
 }
+
 .wcall-note {
   margin-inline: 0;
   padding: 0.25rem 0 0.25rem 1.25rem;
   border-left: 3px solid var(--pink);
   font-style: italic;
 }
+
 /* Four co-located symposia as small cards. */
 .wcall-symposia {
   display: grid;
@@ -2175,6 +2320,7 @@ a.contrib-logo:hover {
   padding: 0;
   list-style: none;
 }
+
 .wcall-symposium {
   display: flex;
   flex-direction: column;
@@ -2185,15 +2331,18 @@ a.contrib-logo:hover {
   border-radius: 0.6rem;
   background: var(--surface);
 }
+
 .wcall-symposium__icon {
   width: 1.5rem;
   height: 1.5rem;
   color: var(--accent);
 }
+
 .wcall-symposium__icon svg {
   width: 100%;
   height: 100%;
 }
+
 .wcall-symposium__acronym {
   margin-top: 0.25rem;
   font-family: var(--font-display);
@@ -2201,23 +2350,28 @@ a.contrib-logo:hover {
   font-weight: 600;
   color: var(--ink);
 }
+
 .wcall-symposium__name {
   font-size: 0.85rem;
   line-height: 1.45;
   text-wrap: balance;
   color: var(--slate);
 }
+
 .wcall-list {
   padding-left: 1.25rem;
   list-style: disc;
 }
-.wcall-list li + li {
+
+.wcall-list li+li {
   margin-top: 0.35rem;
 }
+
 .wcall-list--sub {
   margin-top: 0.35rem;
   list-style: circle;
 }
+
 .wcall-link {
   color: var(--pink-deep);
   text-decoration: underline;
@@ -2231,18 +2385,21 @@ a.contrib-logo:hover {
   background: var(--surface);
   overflow: hidden;
 }
+
 /* Both side cards (dates + organization) scroll together. */
 .wcall-side {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
+
 @media (min-width: 1024px) {
   .wcall-side {
     position: sticky;
     top: 7rem;
   }
 }
+
 .wcall-dates__title {
   position: relative;
   display: flex;
@@ -2258,30 +2415,31 @@ a.contrib-logo:hover {
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
+
 .wcall-dates__title-icon {
   display: inline-flex;
   width: 1.1rem;
   height: 1.1rem;
   flex: none;
 }
+
 .wcall-dates__title-icon svg,
 .wcall-side__icon svg {
   width: 100%;
   height: 100%;
 }
+
 /* Four-colour hairline in the logo's stripe order under the dark header. */
 .wcall-dates__title::after {
   content: '';
   position: absolute;
   inset: auto 0 0;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--logo-leaf) 0 25%,
-    var(--logo-cyan) 25% 50%,
-    var(--logo-purple) 50% 75%,
-    var(--logo-pink) 75% 100%
-  );
+  background: linear-gradient(90deg,
+      var(--logo-leaf) 0 25%,
+      var(--logo-cyan) 25% 50%,
+      var(--logo-purple) 50% 75%,
+      var(--logo-pink) 75% 100%);
 }
 
 /* Round icon badge leading each date / chair row. */
@@ -2301,15 +2459,18 @@ a.contrib-logo:hover {
   padding: 0.5rem 0;
   list-style: none;
 }
+
 .wcall-dates__item {
   display: flex;
   align-items: flex-start;
   gap: 0.9rem;
   padding: 1.1rem 1.5rem;
 }
-.wcall-dates__item + .wcall-dates__item {
+
+.wcall-dates__item+.wcall-dates__item {
   border-top: 1px solid var(--line-soft);
 }
+
 .wcall-dates__body {
   display: flex;
   flex-direction: column;
@@ -2317,10 +2478,12 @@ a.contrib-logo:hover {
   gap: 0.5rem;
   min-width: 0;
 }
+
 .wcall-dates__label {
   color: var(--ink);
   line-height: 1.45;
 }
+
 /* Date shown as a soft pill ("A definir" until confirmed). */
 .wcall-dates__date {
   padding: 0.2rem 0.65rem;
@@ -2335,6 +2498,7 @@ a.contrib-logo:hover {
 .wcall-org {
   padding: 1.35rem 1.5rem 1.5rem;
 }
+
 .wcall-org__subtitle {
   margin: 0;
   font-size: 0.8rem;
@@ -2343,11 +2507,13 @@ a.contrib-logo:hover {
   text-transform: uppercase;
   color: var(--slate);
 }
+
 .wcall-org__list {
   margin: 1rem 0 0;
   padding: 0;
   list-style: none;
 }
+
 .wcall-org__item {
   display: flex;
   align-items: flex-start;
@@ -2355,35 +2521,42 @@ a.contrib-logo:hover {
   font-size: 0.95rem;
   line-height: 1.45;
 }
-.wcall-org__item + .wcall-org__item {
+
+.wcall-org__item+.wcall-org__item {
   margin-top: 1.1rem;
   padding-top: 1.1rem;
   border-top: 1px solid var(--line-soft);
 }
+
 .wcall-org__body {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
   min-width: 0;
 }
+
 .wcall-org__name {
   font-weight: 600;
   color: var(--ink);
 }
+
 .wcall-org__name span {
   font-weight: 400;
   color: var(--slate);
 }
+
 .wcall-org__affiliation,
 .wcall-org__email {
   color: var(--slate);
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .about-card,
   .about-actcard {
     transition: none;
   }
+
   .about-card:hover,
   .about-actcard:hover {
     transform: none;

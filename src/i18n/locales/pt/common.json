@@ -29,6 +29,15 @@
       "hours": "Horas",
       "min": "Minutos",
       "sec": "Segundos"
+    },
+    "carousel": {
+      "label": "Fotos da Praça da Liberdade",
+      "previous": "Foto anterior",
+      "next": "Próxima foto",
+      "goTo": "Mostrar foto {{number}}",
+      "pause": "Pausar",
+      "play": "Reproduzir",
+      "position": "Foto {{number}} de {{total}}"
     }
   },
   "agenda": {
