@@ -1,52 +1,72 @@
 import type { Localized } from '@/lib/localized';
 
-/** Which vector glyph fronts a transit option — keys map to the icon
- *  set in Location.tsx. */
 export type TransitIcon = 'metro' | 'bus';
 
-/** One public-transport option shown in the "Como chegar" list. */
 export interface TransitOption {
   id: string;
   icon: TransitIcon;
-  /** Line / station name — the primary, semibold label. */
   name: Localized;
-  /** Route detail shown smaller under the name. */
   meta: Localized;
+  url: string;
 }
 
-/** Host institution + how to get there. Provisional until the local
- *  committee confirms the 2027 venue and accreditation rooms. */
-export const VENUE = {
+interface Venue {
+  /** Set to null if the venue confirmation is withdrawn. */
+  name: Localized | null;
+  address: Localized | null;
+  infoUrl: string;
+  officialUrl: string;
+  mapsUrl: string;
+  directionsUrl: string;
+  transitSourceUrl: string;
+  transit: TransitOption[];
+  video: { id: string };
+}
+
+const destination = encodeURIComponent(
+  'PUC Minas Coração Eucarístico, Avenida Dom José Gaspar, 500, Belo Horizonte, MG, Brasil',
+);
+
+/** Campus and video confirmed by the organizing team in issue #9.
+ * Address: PUC Minas, Localização e Acesso.
+ * Regional transit: PUC Minas, Concertos Dominicais Peter Lund (28/05/2026).
+ * Buildings, rooms and the event entrance remain unconfirmed.
+ */
+export const VENUE: Venue = {
+  name: {
+    pt: 'PUC Minas — Campus Coração Eucarístico',
+    en: 'PUC Minas — Coração Eucarístico Campus',
+  },
+  address: {
+    pt: 'Av. Dom José Gaspar, 500 — Coração Eucarístico, Belo Horizonte — MG, CEP 30535-901, Brasil',
+    en: 'Av. Dom José Gaspar, 500 — Coração Eucarístico, Belo Horizonte — MG, 30535-901, Brazil',
+  },
+  infoUrl: '/local',
+  officialUrl: 'https://www.pucminas.br/central/Paginas/localizacao.aspx',
+  mapsUrl: `https://www.google.com/maps/search/?api=1&query=${destination}`,
+  directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${destination}`,
+  transitSourceUrl: 'https://www.pucminas.br/sala-imprensa/eventos/Paginas/Concertos-Dominicais-Peter-Lund-1.aspx',
   transit: [
     {
       id: 'metro',
       icon: 'metro',
-      name: { pt: 'Estação Central', en: 'Central station' },
-      meta: { pt: 'Linha 1 do Metrô', en: 'Metro Line 1' },
-    },
-    {
-      id: 'move-raul-soares',
-      icon: 'bus',
-      name: { pt: 'Move — Praça Raul Soares', en: 'Move BRT — Praça Raul Soares' },
-      meta: { pt: 'Corredores da Área Central', en: 'Downtown BRT corridors' },
-    },
-    {
-      id: 'bus-4403',
-      icon: 'bus',
-      name: { pt: 'Linha 4403', en: 'Bus 4403' },
+      name: { pt: 'Metrô — Estação Gameleira', en: 'Metro — Gameleira station' },
       meta: {
-        pt: 'Lourdes / Savassi via Av. Brasil',
-        en: 'Lourdes / Savassi via Av. Brasil',
+        pt: 'Referência para a região do campus. Consulte a operação do metrô e planeje o trecho até o endereço do evento.',
+        en: 'A reference for the campus area. Check metro services and plan the onward journey to the event address.',
       },
+      url: 'https://www.metrobh.com.br/va-de-metro/',
     },
-  ] satisfies TransitOption[],
-
-  /** "Mais informações" target — swap for the real venue page. */
-  infoUrl: '#',
-
-  video: {
-    /** TODO: substituir pelo ID real do vídeo de anúncio do CBSOFT'27. */
-    id: 'aq5_9pMwkV0',
-    channel: 'SBC — Sociedade Brasileira de Computação',
-  },
-} as const;
+    {
+      id: 'bus',
+      icon: 'bus',
+      name: { pt: 'Ônibus — 5401, 9410, 4110 e 4111', en: 'Bus — 5401, 9410, 4110 and 4111' },
+      meta: {
+        pt: 'Linhas indicadas pela PUC Minas para a região. Consulte os pontos e itinerários atualizados na Prefeitura de Belo Horizonte.',
+        en: 'Routes listed by PUC Minas for the area. Check current stops and routes with Belo Horizonte City Hall.',
+      },
+      url: 'https://prefeitura.pbh.gov.br/sumob/onibus/pontos-de-onibus',
+    },
+  ],
+  video: { id: 'HPzwyRFs37I' },
+};
