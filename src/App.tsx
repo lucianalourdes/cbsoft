@@ -4,10 +4,12 @@ import { Footer } from '@/components/layout/Footer';
 import { Home } from '@/pages/Home';
 import { AboutPage } from '@/pages/AboutPage';
 import { WorkshopsCallPage } from '@/pages/WorkshopsCallPage';
+import { PageMetadata } from '@/components/layout/PageMetadata';
 
 export function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <PageMetadata />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
