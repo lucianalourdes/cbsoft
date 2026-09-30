@@ -2562,3 +2562,69 @@ a.contrib-logo:hover {
     transform: none;
   }
 }
+/* Confirmed campus address and locality page. */
+.venue-address {
+  margin-bottom: 1.25rem;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.venue-source {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--purple);
+}
+
+.venue-source a,
+.yt-fallback,
+.venue-transit-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.venue-transit-link {
+  margin-top: 0.45rem;
+  font-size: 0.8rem;
+  color: var(--purple);
+}
+
+.venue-info,
+.venue-media,
+.venue-transit-body {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.venue-panel--page {
+  margin-top: 0;
+}
+
+.venue-map {
+  margin-top: 3rem;
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+  scroll-margin-top: 7rem;
+}
+
+.venue-map .about-prose {
+  margin-top: 1rem;
+}
+
+.venue-map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.venue-map-actions .btn,
+.venue-cta {
+  white-space: normal;
+  text-align: center;
+}
