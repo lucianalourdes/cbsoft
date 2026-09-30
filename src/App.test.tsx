@@ -8,15 +8,14 @@ beforeEach(async () => {
 });
 
 describe('App', () => {
-  it('renders every section anchor the nav points to', () => {
+  it('renders the sections currently enabled on the home page', () => {
     const { container } = render(<App />);
     for (const id of [
       'agenda',
       'sobre',
-      'eventos',
       'cfp',
       'inscricoes',
-      'comite',
+      'local',
       'patrocinio',
     ]) {
       expect(container.querySelector(`#${id}`)).not.toBeNull();
@@ -27,7 +26,7 @@ describe('App', () => {
     render(<App />);
     expect(
       screen.getAllByText(
-        'O principal fórum de Engenharia e Desenvolvimento de Software do Brasil',
+        'O Que é o CBSoft?',
       ).length,
     ).toBeGreaterThan(0);
 
