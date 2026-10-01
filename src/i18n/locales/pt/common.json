@@ -2,7 +2,7 @@
   "nav": {
     "cbsoft": "CBSOFT'27",
     "sbes": "SBES",
-    "sblp": "SBLP",
+    "sbmf": "SBMF",
     "sbcars": "SBCARS",
     "sast": "SAST",
     "workshops": "WORKSHOPS",
@@ -59,6 +59,17 @@
     "statSymposia": "simpósios coalocados",
     "statYears": "anos de história",
     "statDays": "dias de programação"
+  },
+  "registrationPage": {
+    "metaTitle": "Inscrições — CBSOFT'27",
+    "title": "Inscrições",
+    "cta": "Inscreva-se aqui",
+    "ctaSoon": "Inscrições em breve",
+    "p1": "O Congresso Brasileiro de Software (CBSoft) é um evento realizado pela <sbc>Sociedade Brasileira de Computação (SBC)</sbc>. A SBC é uma associação civil sem fins lucrativos que reúne estudantes, professores, profissionais, pesquisadores e entusiastas em Computação de todo o Brasil, sendo a maior sociedade científica da área na América do Sul.",
+    "p2": "Fundada em 1978, a SBC estimula o desenvolvimento científico e tecnológico no país, promovendo a inclusão digital, incentivando atividades de ensino, pesquisa e desenvolvimento em Computação no Brasil e contribuindo para a formação do profissional de Computação com responsabilidade social.",
+    "p3": "Os valores de inscrição no <b>CBSoft 2027</b> estão listados a seguir.",
+    "p4": "Estudantes e profissionais não associados à SBC podem se associar ou renovar sua associação durante o processo de inscrição com desconto.",
+    "p5": "A opção <b>combo (inscrição + associação à SBC)</b> é a mais vantajosa, pois oferece menor custo total e acesso aos benefícios da associação."
   },
   "aboutPage": {
     "metaTitle": "Sobre o CBSoft — CBSOFT'27",
@@ -380,13 +391,8 @@
     },
     "sbes": {
       "tracksTitle": "Trilhas do SBES",
-      "communityTitle": "Ferramentas, indústria e formação",
       "programTitle": "Programa",
       "tracks": {
-        "special": {
-          "title": "Trilha Especial SBES",
-          "description": "Reflexões sobre a trajetória e o futuro da Engenharia de Software."
-        },
         "research": {
           "title": "Trilha de Pesquisa",
           "description": "Avanços científicos e resultados de pesquisa em Engenharia de Software."
@@ -419,21 +425,23 @@
       "program": {
         "title": "Programação",
         "description": "Confira as sessões e atividades do SBES."
-      }
+      },
+      "trackCall": "Chamada de Trabalhos",
+      "trackPapers": "Artigos Aceitos"
     },
-    "sblp": {
-      "title": "SBLP",
+    "sbmf": {
+      "title": "SBMF",
       "call": {
         "title": "Chamada de Trabalhos",
-        "description": "Orientações para submeter pesquisas em Linguagens de Programação."
+        "description": "Orientações para submeter pesquisas em Métodos Formais."
       },
       "program": {
         "title": "Programação",
-        "description": "Confira as sessões e atividades do SBLP."
+        "description": "Confira as sessões e atividades do SBMF."
       },
       "papers": {
         "title": "Artigos Aceitos",
-        "description": "Conheça os trabalhos selecionados para o SBLP."
+        "description": "Conheça os trabalhos selecionados para o SBMF."
       }
     },
     "sbcars": {
@@ -509,5 +517,82 @@
         "description": "Conheça iniciativas de desenvolvimento aberto e colaborativo."
       }
     }
+  },
+  "conductPage": {
+    "metaTitle": "Código de Conduta — CBSOFT'27",
+    "title": "Código de Conduta",
+    "p1": "A troca aberta de ideias e a liberdade de pensamento e expressão são fundamentais para os objetivos do CBSoft. Isso requer um ambiente que reconheça o valor inerente de cada pessoa e grupo, que promova a dignidade, a compreensão e o respeito mútuo e que envolva a diversidade. Por essas razões, o CBSoft dedica-se a proporcionar uma experiência livre de assédio aos participantes do evento e em seus canais oficiais de comunicação, incluindo mídias sociais. A meta é que todo e qualquer participante sinta-se bem-vindo, incluído, respeitado e seguro. Não há qualquer tipo de tolerância para comportamento hostil ou indesejado ou para discurso que intimide, crie desconforto ou interfira na participação de alguém no evento.",
+    "p2": "<b>Comportamentos inaceitáveis incluem:</b> linguagem abusiva ou degradante, interrupção prolongada de uma palestra, discussão ou outra atividade, discriminação, intimidação deliberada, perseguição, gravação de vídeo ou imagens com viés de assédio, contato físico inapropriado, imagens sexuais ou atenção sexual indesejada.",
+    "p3": "<b>Assédio inclui:</b> comentários pejorativos, escritos ou ações relacionadas a raça, cor, sexo, gênero, orientação sexual, identidade de gênero ou expressão, idade, estado civil, religião, nacionalidade, deficiência, gravidez, condições médicas, status de veterano ou qualquer outro status protegido pelas leis brasileiras.",
+    "p4": "Qualquer pessoa que testemunhe ou seja vítima de comportamento inaceitável ou assédio deve notificar um membro do Comitê Organizador do CBSoft 2027 ou segurança do evento. Respostas do tipo que o participante estava \"brincando\" ou que o comportamento em questão tenha sido uma \"brincadeira\" não serão aceitas. Os indivíduos que violarem esses padrões poderão ser punidos ou excluídos de participarem do evento, sem qualquer tipo de reembolso ou compensação, a critério do Comitê Organizador do CBSoft 2027."
+  },
+  "volunteersPage": {
+    "metaTitle": "Chamada para Voluntários — CBSOFT'27",
+    "title": "Chamada para Voluntários",
+    "presentationTitle": "Apresentação",
+    "p1": "O CBSoft 2027 convida alunos de graduação e pós-graduação a se inscreverem para atuarem como voluntários.",
+    "p2": "Os voluntários desempenham um papel fundamental no sucesso das atividades do evento. Ser voluntário é uma excelente oportunidade para conhecer pesquisadores e profissionais da área de Engenharia de Software.",
+    "p3": "O voluntariado no CBSoft 2027 está aberto a alunos de todo o Brasil. Estamos procurando voluntários para atuar presencialmente durante o evento, que acontecerá na cidade de Belo Horizonte.",
+    "benefitsTitle": "Benefícios",
+    "benefits": [
+      "Inscrição gratuita no CBSoft 2027.",
+      "Camiseta de aluno voluntário do CBSoft 2027, além de todos os brindes destinados aos participantes, almoço no dia que estiver trabalhando no evento e coffee breaks durante o congresso.",
+      "Uma ótima oportunidade para conhecer e conversar sobre pesquisa ou sobre seus interesses com pesquisadores e profissionais da indústria.",
+      "Possibilidade de estabelecer conexões com futuros colegas em sua carreira."
+    ],
+    "datesTitle": "Datas Importantes",
+    "milestones": {
+      "forms": "Submissão dos formulários",
+      "results": "Notificação dos resultados"
+    },
+    "tbd": "A definir",
+    "responsibilitiesTitle": "Responsabilidades",
+    "preparation": "No dia anterior ao início do evento: preparação (montagem dos kits, preparação dos crachás, etc.).",
+    "duringIntro": "Durante o evento, as responsabilidades incluem:",
+    "responsibilities": [
+      "atividades relacionadas ao credenciamento (auxiliar participantes durante o registro);",
+      "suporte técnico aos palestrantes e participantes;",
+      "orientação sobre como chegar aos diferentes espaços do evento;",
+      "apoio à equipe de organização do evento;",
+      "contribuição para o bom andamento geral do evento."
+    ],
+    "socialMedia": "Alguns voluntários poderão participar da cobertura do evento nas redes sociais, produzindo fotos e vídeos de palestras, sessões técnicas, atividades sociais e outros momentos do congresso.",
+    "requirementsTitle": "Requisitos para participação",
+    "requirements": [
+      "Estar regularmente matriculado em um curso de graduação ou de pós-graduação durante o evento.",
+      "Não é necessário ter experiência prévia como aluno voluntário, mas estamos procurando pessoas motivadas e comprometidas."
+    ],
+    "procedureTitle": "Procedimentos para inscrição",
+    "procedureIntro": "A inscrição é composta por duas partes:",
+    "applicationForm": "Um <b>formulário de inscrição</b> a ser preenchido pelo aluno:",
+    "recommendationForm": "Um <b>formulário de recomendação</b> a ser preenchido pelo orientador do aluno ou por algum professor de sua instituição:",
+    "recommendationNote": "A recomendação deve abordar as habilidades de organização e de comunicação do aluno e qualquer outra informação que possa contribuir para sua seleção como voluntário.",
+    "linkTbd": "link a ser divulgado",
+    "datesSectionTitle": "Datas importantes",
+    "milestonesLong": {
+      "forms": "Prazo para submissão de ambos os formulários",
+      "results": "Notificações de resultado serão enviadas até"
+    },
+    "coordinationTitle": "Coordenação de voluntários",
+    "questions": "Em caso de dúvidas, por favor, entre em contato conosco.",
+    "closing": "Esperamos receber sua inscrição e encontrá-lo em Belo Horizonte!"
+  },
+  "search": {
+    "title": "Não encontrou o que procurava?",
+    "text": "Pesquise por palestras, eventos, inscrições, submissões e outros conteúdos do CBSoft.",
+    "label": "Buscar no site",
+    "placeholder": "O que você está procurando?",
+    "empty": "Nenhum resultado para “{{query}}”."
+  },
+  "acceptedPapersPage": {
+    "metaTitle": "Artigos Aceitos — {{track}} — SBES — CBSOFT'27",
+    "eyebrow": "SBES 2027",
+    "title": "Artigos Aceitos",
+    "pending": "A lista de artigos aceitos nesta trilha será divulgada após a notificação dos autores.",
+    "otherTracks": "Outras trilhas do SBES",
+    "notFound": "Trilha não encontrada.",
+    "generalMetaTitle": "Artigos Aceitos — CBSOFT'27",
+    "generalEyebrow": "CBSoft 2027",
+    "generalPending": "A lista de artigos aceitos será divulgada após a notificação dos autores."
   }
 }

@@ -1,11 +1,13 @@
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { IMAGES, SOCIAL_LINKS, type SocialLink } from '@/data/config';
+import { CALL_FOR_PAPERS_PATH } from '@/data/headerMenu';
 import { SYMPOSIA } from '@/data/symposia';
 
 const QUICK_LINKS: { href: string; key: string }[] = [
-  { href: '#cfp', key: 'footer.linkCfp' },
-  { href: '#inscricoes', key: 'footer.linkRegistration' },
+  { href: CALL_FOR_PAPERS_PATH, key: 'footer.linkCfp' },
+  { href: '/inscricoes', key: 'footer.linkRegistration' },
   { href: '#comite', key: 'footer.linkCommittee' },
   { href: '#patrocinio', key: 'footer.linkProspectus' },
 ];
@@ -57,9 +59,16 @@ export function Footer() {
           <ul className="space-y-2.5 text-sm">
             {QUICK_LINKS.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="hover:text-white">
-                  {t(link.key)}
-                </a>
+                {/* Route paths navigate client-side; hash anchors stay plain links. */}
+                {link.href.startsWith('/') ? (
+                  <Link to={link.href} className="hover:text-white">
+                    {t(link.key)}
+                  </Link>
+                ) : (
+                  <a href={link.href} className="hover:text-white">
+                    {t(link.key)}
+                  </a>
+                )}
               </li>
             ))}
           </ul>

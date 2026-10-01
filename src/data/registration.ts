@@ -8,6 +8,11 @@ export interface RegistrationRow {
   onSite: number | null;
 }
 
+/** Link to the SBC registration system; `null` until registrations open. */
+export const REGISTRATION_URL: string | null = null;
+
+export const SBC_URL = 'https://www.sbc.org.br/';
+
 export const REGISTRATION_ROWS: RegistrationRow[] = [
   {
     category: {

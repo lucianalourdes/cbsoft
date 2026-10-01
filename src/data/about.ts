@@ -43,14 +43,14 @@ export const ABOUT_SYMPOSIA: AboutSymposium[] = [
     },
   },
   {
-    id: 'sblp',
+    id: 'sbmf',
     name: {
-      pt: 'XXXI Simpósio Brasileiro de Linguagens de Programação',
-      en: '31st Brazilian Symposium on Programming Languages',
+      pt: 'XXX Simpósio Brasileiro de Métodos Formais',
+      en: '30th Brazilian Symposium on Formal Methods',
     },
     description: {
-      pt: 'que possui enfoque no estudo teórico e prático de linguagens de programação',
-      en: 'focused on the theoretical and practical study of programming languages',
+      pt: 'que reúne pesquisadores e profissionais interessados no desenvolvimento e na aplicação de métodos formais na construção de software e sistemas',
+      en: 'bringing together researchers and practitioners interested in developing and applying formal methods to build software and systems',
     },
   },
   {

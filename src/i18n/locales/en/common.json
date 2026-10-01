@@ -2,7 +2,7 @@
   "nav": {
     "cbsoft": "CBSOFT'27",
     "sbes": "SBES",
-    "sblp": "SBLP",
+    "sbmf": "SBMF",
     "sbcars": "SBCARS",
     "sast": "SAST",
     "workshops": "WORKSHOPS",
@@ -54,11 +54,22 @@
   "about": {
     "eyebrow": "ABOUT",
     "title": "The main forum for Software Engineering & Development in Brazil",
-    "p1": "Promoted by the Brazilian Computer Society (SBC), CBSOFT brings together, once a year, four national symposia into a single program. Researchers, graduate students and industry professionals share results, discuss open problems and build the research agenda for Software Engineering, Programming Languages, Reusable Architectures and Software Testing in Brazil.",
+    "p1": "Promoted by the Brazilian Computer Society (SBC), CBSOFT brings together, once a year, four national symposia into a single program. Researchers, graduate students and industry professionals share results, discuss open problems and build the research agenda for Software Engineering, Formal Methods, Reusable Architectures and Software Testing in Brazil.",
     "p2": "In 2027 the congress arrives in Belo Horizonte, one of Brazil's most active innovation and startup hubs — with a program that mixes scientific tracks, an industry track, tutorials, tool demonstrations and a thesis & dissertation contest.",
     "statSymposia": "co-located symposia",
     "statYears": "years of history",
     "statDays": "days of program"
+  },
+  "registrationPage": {
+    "metaTitle": "Registration — CBSOFT'27",
+    "title": "Registration",
+    "cta": "Register here",
+    "ctaSoon": "Registration opening soon",
+    "p1": "The Brazilian Conference on Software (CBSoft) is held by the <sbc>Brazilian Computer Society (SBC)</sbc>. SBC is a non-profit civil association that brings together students, teachers, professionals, researchers and Computing enthusiasts from all over Brazil, and is the largest scientific society in the field in South America.",
+    "p2": "Founded in 1978, SBC fosters scientific and technological development in the country, promoting digital inclusion, encouraging teaching, research and development in Computing in Brazil and contributing to the education of socially responsible Computing professionals.",
+    "p3": "Registration fees for <b>CBSoft 2027</b> are listed below.",
+    "p4": "Students and professionals who are not SBC members can join or renew their membership at a discount during registration.",
+    "p5": "The <b>combo option (registration + SBC membership)</b> is the best deal, offering the lowest total cost plus the benefits of membership."
   },
   "aboutPage": {
     "metaTitle": "About CBSoft — CBSOFT'27",
@@ -380,13 +391,8 @@
     },
     "sbes": {
       "tracksTitle": "SBES tracks",
-      "communityTitle": "Tools, industry and education",
       "programTitle": "Program",
       "tracks": {
-        "special": {
-          "title": "SBES Special Track",
-          "description": "Reflections on the history and future of Software Engineering."
-        },
         "research": {
           "title": "Research Track",
           "description": "Scientific advances and research results in Software Engineering."
@@ -419,21 +425,23 @@
       "program": {
         "title": "Schedule",
         "description": "Explore SBES sessions and activities."
-      }
+      },
+      "trackCall": "Call for Papers",
+      "trackPapers": "Accepted Papers"
     },
-    "sblp": {
-      "title": "SBLP",
+    "sbmf": {
+      "title": "SBMF",
       "call": {
         "title": "Call for Papers",
-        "description": "Guidelines for submitting Programming Languages research."
+        "description": "Guidelines for submitting Formal Methods research."
       },
       "program": {
         "title": "Schedule",
-        "description": "Explore SBLP sessions and activities."
+        "description": "Explore SBMF sessions and activities."
       },
       "papers": {
         "title": "Accepted Papers",
-        "description": "Discover the papers selected for SBLP."
+        "description": "Discover the papers selected for SBMF."
       }
     },
     "sbcars": {
@@ -509,5 +517,82 @@
         "description": "Discover open and collaborative development initiatives."
       }
     }
+  },
+  "conductPage": {
+    "metaTitle": "Code of Conduct — CBSOFT'27",
+    "title": "Code of Conduct",
+    "p1": "The open exchange of ideas and the freedom of thought and expression are central to the goals of CBSoft. This requires an environment that recognizes the inherent worth of every person and group, that fosters dignity, understanding and mutual respect, and that embraces diversity. For these reasons, CBSoft is dedicated to providing a harassment-free experience for participants at the event and on its official communication channels, including social media. The goal is for every participant to feel welcome, included, respected and safe. There is zero tolerance for hostile or unwelcome behavior, or for speech that intimidates, creates discomfort or interferes with anyone's participation in the event.",
+    "p2": "<b>Unacceptable behavior includes:</b> abusive or degrading language, sustained disruption of a talk, discussion or other activity, discrimination, deliberate intimidation, stalking, harassing photography or recording, inappropriate physical contact, sexual imagery or unwelcome sexual attention.",
+    "p3": "<b>Harassment includes:</b> derogatory comments, writings or actions related to race, color, sex, gender, sexual orientation, gender identity or expression, age, marital status, religion, nationality, disability, pregnancy, medical conditions, veteran status or any other status protected by Brazilian law.",
+    "p4": "Anyone who witnesses or is subjected to unacceptable behavior or harassment should notify a member of the CBSoft 2027 Organizing Committee or event security. Responses that the participant was \"joking\" or that the behavior was \"just a joke\" will not be accepted. Individuals who violate these standards may be sanctioned or excluded from the event, without any refund or compensation, at the discretion of the CBSoft 2027 Organizing Committee."
+  },
+  "volunteersPage": {
+    "metaTitle": "Call for Volunteers — CBSOFT'27",
+    "title": "Call for Volunteers",
+    "presentationTitle": "Overview",
+    "p1": "CBSoft 2027 invites undergraduate and graduate students to apply to serve as volunteers.",
+    "p2": "Volunteers play a key role in the success of the event's activities. Volunteering is an excellent opportunity to meet researchers and professionals in Software Engineering.",
+    "p3": "Volunteering at CBSoft 2027 is open to students from all over Brazil. We are looking for volunteers to work on site during the event, which will take place in Belo Horizonte.",
+    "benefitsTitle": "Benefits",
+    "benefits": [
+      "Free registration for CBSoft 2027.",
+      "A CBSoft 2027 student volunteer T-shirt, plus all the goodies given to participants, lunch on the days you work at the event and coffee breaks throughout the conference.",
+      "A great opportunity to meet and talk about research or your interests with researchers and industry professionals.",
+      "A chance to build connections with future colleagues in your career."
+    ],
+    "datesTitle": "Important Dates",
+    "milestones": {
+      "forms": "Application forms due",
+      "results": "Notification of results"
+    },
+    "tbd": "To be announced",
+    "responsibilitiesTitle": "Responsibilities",
+    "preparation": "On the day before the event starts: preparation (assembling kits, preparing badges, etc.).",
+    "duringIntro": "During the event, responsibilities include:",
+    "responsibilities": [
+      "registration-related activities (helping participants check in);",
+      "technical support for speakers and participants;",
+      "directions to the different event spaces;",
+      "support for the event organization team;",
+      "contributing to the overall smooth running of the event."
+    ],
+    "socialMedia": "Some volunteers may take part in the event's social media coverage, producing photos and videos of talks, technical sessions, social activities and other moments of the conference.",
+    "requirementsTitle": "Requirements",
+    "requirements": [
+      "Be enrolled in an undergraduate or graduate program during the event.",
+      "No previous volunteering experience is required, but we are looking for motivated and committed people."
+    ],
+    "procedureTitle": "How to apply",
+    "procedureIntro": "The application has two parts:",
+    "applicationForm": "An <b>application form</b> to be filled in by the student:",
+    "recommendationForm": "A <b>recommendation form</b> to be filled in by the student's advisor or another professor at their institution:",
+    "recommendationNote": "The recommendation should address the student's organizational and communication skills and any other information that may support their selection as a volunteer.",
+    "linkTbd": "link to be announced",
+    "datesSectionTitle": "Important dates",
+    "milestonesLong": {
+      "forms": "Deadline for submitting both forms",
+      "results": "Notifications of results will be sent by"
+    },
+    "coordinationTitle": "Volunteer coordination",
+    "questions": "If you have any questions, please get in touch.",
+    "closing": "We look forward to your application and to meeting you in Belo Horizonte!"
+  },
+  "search": {
+    "title": "Couldn't find what you were looking for?",
+    "text": "Search for talks, events, registration, submissions and other CBSoft content.",
+    "label": "Search the site",
+    "placeholder": "What are you looking for?",
+    "empty": "No results for “{{query}}”."
+  },
+  "acceptedPapersPage": {
+    "metaTitle": "Accepted Papers — {{track}} — SBES — CBSOFT'27",
+    "eyebrow": "SBES 2027",
+    "title": "Accepted Papers",
+    "pending": "The list of papers accepted in this track will be published after authors are notified.",
+    "otherTracks": "Other SBES tracks",
+    "notFound": "Track not found.",
+    "generalMetaTitle": "Accepted Papers — CBSOFT'27",
+    "generalEyebrow": "CBSoft 2027",
+    "generalPending": "The list of accepted papers will be published after authors are notified."
   }
 }

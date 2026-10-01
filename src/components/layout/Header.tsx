@@ -65,6 +65,35 @@ export function Header() {
     return () => breakpoint.removeEventListener('change', onChange);
   }, []);
 
+  // Publish how far the fixed header reaches down the viewport (main bar,
+  // plus the SBC strip while it is shown) as --site-header-offset, so sticky
+  // content such as the call-page sidebars can stop just below it. Measured
+  // from the main bar, not the header box, so an open mega menu is ignored.
+  useEffect(() => {
+    const header = headerRef.current;
+    const strip = header?.querySelector<HTMLElement>('.site-header__sbc');
+    const bar = header?.querySelector<HTMLElement>('.site-header__inner');
+    if (!header || !strip || !bar) return;
+
+    const update = () => {
+      const style = getComputedStyle(header);
+      const bottom =
+        bar.offsetTop +
+        bar.offsetHeight +
+        parseFloat(style.paddingBottom) +
+        parseFloat(style.borderBottomWidth) -
+        (sbcHidden ? strip.offsetHeight : 0);
+      document.documentElement.style.setProperty('--site-header-offset', `${bottom}px`);
+    };
+
+    update();
+    if (typeof ResizeObserver === 'undefined') return;
+    const observer = new ResizeObserver(update);
+    observer.observe(strip);
+    observer.observe(bar);
+    return () => observer.disconnect();
+  }, [sbcHidden]);
+
   return (
     <header
       ref={headerRef}
@@ -186,9 +215,9 @@ export function Header() {
           <LanguageSwitcher />
         </div>
 
-        <a href="#inscricoes" className="site-header__register" onClick={closeAllMenus}>
+        <Link to="/inscricoes" className="site-header__register" onClick={closeAllMenus}>
           {t('header.register')}
-        </a>
+        </Link>
 
         <button
           ref={mobileTriggerRef}

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { HEADER_MENUS, type HeaderMenuId } from '@/data/headerMenu';
 import { NAV_ITEMS } from '@/data/nav';
 import { IMAGES } from '@/data/config';
@@ -37,9 +38,9 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
           </div>
         );
       })}
-      <a href="#inscricoes" className="site-header__mobile-register" onClick={onClose}>
+      <Link to="/inscricoes" className="site-header__mobile-register" onClick={onClose}>
         {t('header.register')}
-      </a>
+      </Link>
       <div className="site-header__mobile-language">
         <span>{t('header.langLabel')}</span>
         <LanguageSwitcher />

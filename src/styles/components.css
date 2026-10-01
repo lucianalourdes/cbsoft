@@ -360,9 +360,9 @@
   left: clamp(-3.2rem, -2.656vw, -1.7rem);
 }
 
-.header-mega-menu--wide {
-  left: clamp(-8rem, -6.25vw, -4rem);
-  width: clamp(38rem, 38.333vw, 46rem);
+.header-mega-menu--tracks {
+  left: clamp(-3.2rem, -2.656vw, -1.7rem);
+  width: clamp(20rem, 22vw, 26rem);
 }
 
 .header-mega-menu--compact {
@@ -388,8 +388,8 @@
   border-left: 0.813rem solid transparent;
 }
 
-.header-mega-menu--wide .header-mega-menu__arrow {
-  left: clamp(4.5rem, 6.77vw, 8.125rem);
+.header-mega-menu--tracks .header-mega-menu__arrow {
+  left: clamp(2.2rem, 3.229vw, 3.875rem);
 }
 
 .header-mega-menu--compact .header-mega-menu__arrow {
@@ -424,7 +424,8 @@
   padding-bottom: clamp(2rem, 4.427vw, 5.313rem);
 }
 
-.header-mega-menu--compact .header-mega-menu__content {
+.header-mega-menu--compact .header-mega-menu__content,
+.header-mega-menu--tracks .header-mega-menu__content {
   grid-template-columns: minmax(0, 1fr);
   padding: 1.75rem;
 }
@@ -479,6 +480,92 @@
 .header-mega-menu__links a:hover strong,
 .header-mega-menu__links a:focus-visible strong {
   color: var(--brand-magenta);
+}
+
+.header-mega-menu--tracks .header-mega-menu__links {
+  gap: 0.125rem;
+}
+
+.header-mega-menu__group-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0.6rem;
+  margin-inline: -0.6rem;
+  width: calc(100% + 1.2rem);
+  border-radius: 0.5rem;
+  color: #000;
+  line-height: 1.4;
+  text-align: left;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.header-mega-menu__group-trigger strong {
+  font-size: clamp(0.875rem, 0.833vw, 1rem);
+  font-weight: 400;
+}
+
+.header-mega-menu__group-trigger span {
+  flex: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #84798a;
+}
+
+.header-mega-menu__group-trigger:hover,
+.header-mega-menu__group-trigger:focus-visible,
+.header-mega-menu__group-trigger.is-open {
+  background: var(--surface-alt);
+  color: var(--brand-magenta);
+}
+
+.header-mega-menu__group-trigger.is-open span {
+  color: var(--brand-magenta);
+}
+
+/* Side panel with a track's links ("Chamada de Trabalhos", "Artigos Aceitos"). */
+.header-mega-menu__flyout {
+  position: absolute;
+  left: calc(100% + 0.5rem);
+  width: 15rem;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  background: #fbfafc;
+  box-shadow:
+    0 1.5rem 3.5rem rgba(23, 19, 27, 0.12),
+    0 0.35rem 1rem rgba(23, 19, 27, 0.07);
+  animation: header-mega-menu-in 0.12s ease-out;
+}
+
+.header-mega-menu__flyout a,
+.header-mega-menu__sublinks a {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  color: #000;
+  font-size: clamp(0.875rem, 0.833vw, 1rem);
+  line-height: 1.4;
+}
+
+.header-mega-menu__flyout a + a,
+.header-mega-menu__sublinks a + a {
+  border-top: 1px solid var(--line-soft);
+}
+
+.header-mega-menu__flyout a:hover,
+.header-mega-menu__flyout a:focus-visible,
+.header-mega-menu__sublinks a:hover,
+.header-mega-menu__sublinks a:focus-visible {
+  background: var(--surface-alt);
+  color: var(--brand-magenta);
+}
+
+/* Mobile: the links open inline under the track instead. */
+.header-mega-menu__sublinks {
+  margin: 0.25rem 0 0.5rem 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--line-soft);
 }
 
 @keyframes header-mega-menu-in {
@@ -597,7 +684,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-header {
+  .site-header,
+  .wcall-side {
     transition: none;
   }
 
@@ -1123,7 +1211,7 @@
   --symp-accent: var(--purple);
 }
 
-.symp-card[data-symp='sblp'] {
+.symp-card[data-symp='sbmf'] {
   background: color-mix(in srgb, var(--cyan) 13%, var(--surface));
   --symp-accent: var(--cyan-deep);
 }
@@ -1976,6 +2064,138 @@ a.contrib-logo--puc-minas:hover {
   height: auto;
 }
 
+/* ---------- Busca "Não encontrou o que procurava?" (home) ---------- */
+.site-search__intro {
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.site-search__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.site-search__text {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.site-search__box {
+  max-width: 56rem;
+  margin: clamp(2rem, 4vw, 3rem) auto 0;
+}
+
+.site-search__field {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+  cursor: text;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.site-search__field:focus-within {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pink) 20%, transparent);
+}
+
+.site-search__icon {
+  flex: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: none;
+  stroke: var(--slate);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.site-search__field input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.site-search__field input::placeholder {
+  color: var(--slate);
+}
+
+.site-search__keys {
+  display: none;
+  gap: 0.35rem;
+}
+
+@media (min-width: 640px) {
+  .site-search__keys {
+    display: flex;
+  }
+}
+
+.site-search__keys kbd {
+  min-width: 1.9rem;
+  padding: 0.2rem 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: var(--surface-alt);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--slate);
+}
+
+.site-search__results {
+  margin-top: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.site-search__results li+li {
+  border-top: 1px solid var(--line-soft);
+}
+
+.site-search__results a {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.9rem 1.25rem;
+  color: var(--text-body);
+}
+
+.site-search__results a:hover,
+.site-search__results a:focus-visible {
+  background: var(--surface-alt);
+}
+
+.site-search__results strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.site-search__results span {
+  font-size: 0.92rem;
+  color: var(--slate);
+}
+
+.site-search__empty {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--slate);
+}
+
 /* ---------- About page (/sobre) ---------- */
 .about-page {
   /* Comfortable measure for running paragraphs, narrower than the container. */
@@ -2071,6 +2291,104 @@ a.contrib-logo--puc-minas:hover {
 
 .about-back:hover {
   color: var(--pink-deep);
+}
+
+/* Inscrições (/inscricoes) — reuses the about-page shell. */
+.registration-cta {
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+}
+
+.registration-cta .btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.registration-cta .btn.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.registration-cta .btn.is-disabled:hover {
+  background-color: transparent;
+  color: var(--pink);
+}
+
+/* Voluntários (/voluntarios) — reuses the workshops-call layout. */
+.volunteers-layout {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.volunteers-dates {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  color: var(--text-body);
+  font-size: 1.05rem;
+}
+
+.volunteers-dates__row {
+  display: grid;
+  gap: 0.15rem 2rem;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--pink);
+  background: var(--paper);
+}
+
+@media (min-width: 640px) {
+  .volunteers-dates__row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
+
+.volunteers-dates__row dd {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.volunteers-closing {
+  margin-top: 2rem !important;
+}
+
+/* Artigos Aceitos (/artigos-aceitos, /sbes/:track/artigos-aceitos) */
+.papers-title {
+  margin-top: 0.75rem;
+}
+
+.papers-pending {
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--pink);
+  background: var(--surface-alt);
+  color: var(--text-body);
+  font-size: 1.05rem;
+}
+
+.papers-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  padding-left: 1.5rem;
+  list-style: decimal;
+  color: var(--text-body);
+}
+
+.papers-list li > * {
+  display: block;
+}
+
+.papers-list strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.papers-tracks {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  list-style: disc;
 }
 
 /* Identidade Visual (/sobre) ------------------------------------------- */
@@ -2322,6 +2640,10 @@ a.contrib-logo--puc-minas:hover {
   margin-top: 0.35rem;
 }
 
+.wcall-list--ordered {
+  list-style: decimal;
+}
+
 .wcall-list--sub {
   margin-top: 0.35rem;
   list-style: circle;
@@ -2351,7 +2673,9 @@ a.contrib-logo--puc-minas:hover {
 @media (min-width: 1024px) {
   .wcall-side {
     position: sticky;
-    top: 7rem;
+    /* Just below the fixed header; Header.tsx keeps the offset current. */
+    top: calc(var(--site-header-offset, 7rem) + 1.5rem);
+    transition: top 0.25s ease;
   }
 }
 
