@@ -50,5 +50,6 @@ export const IMAGES = {
   praca: asset('assets/images/praca-liberdade.jpg'),
   praca2: asset('assets/images/praca-liberdade-2.jpg'),
   praca3: asset('assets/images/praca-liberdade-3.jpg'),
+  edificio_niemeyer: asset('assets/images/edificio-niemeyer.jpg'),
   chevron_down: asset('assets/icons/chevron-down.png'),
 } as const;

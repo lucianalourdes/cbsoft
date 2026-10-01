@@ -77,50 +77,7 @@ export const ABOUT_SYMPOSIA: AboutSymposium[] = [
   },
 ];
 
-/** Icon key resolved to an inline SVG in AboutPage.tsx. */
-export type ActivityIcon = 'paper' | 'talk' | 'panel' | 'workshop' | 'tools';
-
-/**
- * Activities that make up the CBSoft program. Titles and detail clauses are
- * taken verbatim from the "programação" paragraph on the page — this is a
- * visual breakdown of that text, not new copy.
- */
-export interface AboutActivity {
-  id: string;
-  icon: ActivityIcon;
-  title: Localized;
-  text: Localized;
-}
-
-export const ABOUT_ACTIVITIES: AboutActivity[] = [
-  {
-    id: 'technical-sessions',
-    icon: 'paper',
-    title: { pt: 'Sessões técnicas', en: 'Technical sessions' },
-    text: {
-      pt: 'com apresentações de artigos científicos',
-      en: 'with scientific paper presentations',
-    },
-  },
-  {
-    id: 'keynotes',
-    icon: 'talk',
-    title: { pt: 'Palestras', en: 'Keynotes' },
-    text: {
-      pt: 'proferidas por pesquisadores brasileiros e estrangeiros de renome nacional e internacional',
-      en: 'by renowned Brazilian and international researchers',
-    },
-  },
-  {
-    id: 'panels',
-    icon: 'panel',
-    title: { pt: 'Painéis de discussão', en: 'Panel discussions' },
-    text: { pt: '', en: '' },
-  },
-  {
-    id: 'tool-demos',
-    icon: 'tools',
-    title: { pt: 'Demonstrações de ferramentas', en: 'Tool demonstrations' },
-    text: { pt: '', en: '' },
-  },
-];
+/** Links in the "Sobre a SBC" section. The 2026 site pointed to a misspelt
+ *  /comissoes-especiasis/ URL (404); this is the working address. */
+export const SBC_SPECIAL_COMMITTEES_URL = 'https://www.sbc.org.br/comissoes-especiais/';
+export const SBC_MEMBERSHIP_URL = 'https://centraldesistemas.sbc.org.br/mom';

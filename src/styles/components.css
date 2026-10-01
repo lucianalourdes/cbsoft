@@ -1808,11 +1808,7 @@ a.contrib-logo:hover {
 }
 
 .about-section {
-  padding-block: clamp(3.5rem, 9vw, 7.5rem);
-}
-
-.about-section--alt {
-  background: var(--surface-alt);
+  padding-block: clamp(3rem, 6vw, 5rem);
 }
 
 .about-section+.about-section {
@@ -1828,15 +1824,6 @@ a.contrib-logo:hover {
   color: var(--pink-deep);
 }
 
-.about-title {
-  margin: 0.9rem 0 0;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(2.25rem, 5vw, 3.25rem);
-  line-height: 1.08;
-  color: var(--ink);
-}
-
 .about-h2 {
   margin: 0;
   font-family: var(--font-display);
@@ -1844,14 +1831,6 @@ a.contrib-logo:hover {
   font-size: clamp(1.5rem, 3.2vw, 2.125rem);
   line-height: 1.15;
   color: var(--ink);
-}
-
-.about-lead {
-  max-width: var(--about-measure);
-  margin: 1.75rem auto 0;
-  color: var(--slate);
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
-  line-height: 1.7;
 }
 
 .about-prose {
@@ -1865,325 +1844,42 @@ a.contrib-logo:hover {
   margin-top: 1.15rem;
 }
 
-/* Header block ------------------------------------------------------ */
-.about-header {
-  text-align: center;
+/* Single "Sobre o CBSoft" section; clears the fixed site header. */
+.about-top {
+  padding-top: clamp(8rem, 14vw, 10rem);
 }
 
-.about-header .about-lead {
-  margin-inline: auto;
-}
-
-/* Quick-facts strip ---------------------------------------------------- */
-.about-facts {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border: 1px solid var(--line);
-  border-radius: 0.625rem;
-  overflow: hidden;
-  background: var(--surface);
-}
-
-.about-fact {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: clamp(1.15rem, 2.6vw, 1.85rem);
-}
-
-.about-fact+.about-fact {
-  border-left: 1px solid var(--line-soft);
-}
-
-.about-fact__value {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  line-height: 1;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-}
-
-.about-fact__label {
-  font-size: 0.82rem;
-  line-height: 1.4;
-  color: var(--slate-soft);
-}
-
-.about-fact--accent {
-  background: var(--purple);
-}
-
-.about-fact--accent .about-fact__value {
-  color: #fff;
-  font-size: clamp(2rem, 4.6vw, 2.85rem);
-}
-
-.about-fact--accent .about-fact__label {
-  color: rgba(255, 255, 255, 0.82);
-}
-
-@media (max-width: 860px) {
-  .about-facts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .about-fact:nth-child(2n + 1) {
-    border-left: 0;
-  }
-
-  .about-fact:nth-child(n + 3) {
-    border-top: 1px solid var(--line-soft);
-  }
-}
-
-@media (max-width: 480px) {
-  .about-facts {
-    grid-template-columns: 1fr;
-  }
-
-  .about-fact+.about-fact {
-    border-left: 0;
-    border-top: 1px solid var(--line-soft);
-  }
-}
-
-/* Institutional two-column ------------------------------------------- */
-.about-split {
-  display: grid;
-  gap: clamp(1.75rem, 4vw, 3.25rem);
-}
-
-@media (min-width: 900px) {
-  .about-split {
-    grid-template-columns: 35fr 65fr;
-    align-items: start;
-  }
-}
-
-.about-split__aside {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.about-split__index {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(2.75rem, 7vw, 4.5rem);
-  line-height: 1;
-  color: var(--line);
-}
-
-.about-split__rule {
-  width: 3rem;
-  height: 3px;
-  background: var(--pink);
-}
-
-/* 2027 highlight band ---------------------------------------------------- */
-.about-highlight {
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--pink);
-  border-radius: 0.625rem;
-  background: var(--surface);
-  padding: clamp(1.6rem, 4vw, 3rem);
-}
-
-.about-highlight__name {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--pink-deep);
-}
-
-.about-highlight__edition {
-  margin: 0.6rem 0 0;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.5rem, 3.4vw, 2.25rem);
-  line-height: 1.15;
-  color: var(--ink);
-}
-
-.about-highlight__edition em {
-  font-style: normal;
-  color: var(--purple);
-}
-
-.about-highlight__roman {
-  margin: 0.35rem 0 0;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.9rem;
-  color: var(--slate);
-}
-
-.about-highlight__grid {
-  display: grid;
-  gap: clamp(1.1rem, 3vw, 2rem);
-  margin-top: clamp(1.5rem, 3.5vw, 2.25rem);
-  padding-top: clamp(1.5rem, 3.5vw, 2.25rem);
-  border-top: 1px solid var(--line-soft);
-}
-
-@media (min-width: 640px) {
-  .about-highlight__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.about-highlight__k {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--slate-soft);
-}
-
-.about-highlight__v {
-  margin-top: 0.4rem;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
-  color: var(--ink);
-}
-
-/* Card grids ---------------------------------------------------------- */
-.about-grid {
-  display: grid;
-  gap: clamp(1rem, 2.4vw, 1.5rem);
-  margin-top: clamp(2rem, 4vw, 3rem);
-}
-
-.about-grid--2 {
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 700px) {
-  .about-grid--2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.about-grid--3 {
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 620px) {
-  .about-grid--3 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 940px) {
-  .about-grid--3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.about-card {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 0.5rem;
-  padding: clamp(1.5rem, 3.2vw, 2.15rem);
-  transition:
-    transform 0.24s ease,
-    border-color 0.24s ease,
-    box-shadow 0.24s ease;
-}
-
-.about-card:hover {
-  transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--purple) 45%, var(--line));
-  box-shadow: 0 12px 28px -20px rgba(23, 19, 27, 0.5);
-}
-
-.about-card__index {
-  position: absolute;
-  top: -0.75rem;
-  right: 0.5rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 5rem;
-  line-height: 1;
-  color: var(--purple);
-  opacity: 0.07;
-  pointer-events: none;
-  user-select: none;
-}
-
-.about-card__accent {
-  width: 1.75rem;
-  height: 3px;
-  background: var(--pink);
-  margin-bottom: 1.1rem;
-}
-
-.about-card__title {
+.about-title {
   margin: 0;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.1rem;
-  line-height: 1.25;
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  line-height: 1.08;
   color: var(--ink);
 }
 
-.about-card__text {
-  margin: 0.65rem 0 0;
-  color: var(--slate);
-  font-size: 0.96rem;
-  line-height: 1.62;
+.about-text {
+  /* Full container width, like the original CBSoft page. */
+  max-width: none;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  color: var(--text-body);
 }
 
-.about-actcard {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 0.5rem;
-  padding: clamp(1.15rem, 2.6vw, 1.6rem);
-  transition:
-    transform 0.24s ease,
-    border-color 0.24s ease;
+.about-symposia {
+  display: grid;
+  gap: 0.75rem;
+  padding-left: 1.25rem;
+  list-style: disc;
 }
 
-.about-actcard:hover {
-  transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--purple) 45%, var(--line));
+.about-symposia li::marker {
+  color: var(--pink);
 }
 
-.about-actcard__icon {
-  display: block;
-  width: 1.85rem;
-  height: 1.85rem;
-  color: var(--purple);
-}
-
-.about-actcard__title {
-  margin: 0.8rem 0 0;
-  font-family: var(--font-display);
+.about-text strong,
+.about-symposia strong {
   font-weight: 600;
-  font-size: 1rem;
   color: var(--ink);
-}
-
-.about-actcard__text {
-  margin: 0.4rem 0 0;
-  font-size: 0.88rem;
-  line-height: 1.55;
-  color: var(--slate);
-}
-
-.about-closing {
-  max-width: var(--about-measure);
-  margin: clamp(2rem, 4vw, 3rem) 0 0;
-  color: var(--slate);
-  font-size: 1.02rem;
-  line-height: 1.7;
 }
 
 .about-back {
@@ -2200,6 +1896,87 @@ a.contrib-logo:hover {
 
 .about-back:hover {
   color: var(--pink-deep);
+}
+
+/* Identidade Visual (/sobre) ------------------------------------------- */
+.brand-id__intro {
+  max-width: 72ch;
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--text-body);
+}
+
+.brand-id__layout {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+@media (min-width: 900px) {
+  .brand-id__layout {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    align-items: center;
+  }
+}
+
+.brand-id__photo {
+  margin: 0;
+}
+
+.brand-id__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 543 / 749;
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+
+/* Thin bar in the four brand colours under the photo, as in the manual. */
+.brand-id__photo figcaption {
+  position: relative;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--slate);
+}
+
+.brand-id__photo figcaption::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 4.5rem;
+  height: 3px;
+  background: linear-gradient(90deg,
+      var(--logo-leaf) 0 25%,
+      var(--logo-cyan) 25% 50%,
+      var(--logo-purple) 50% 75%,
+      var(--logo-pink) 75% 100%);
+}
+
+.brand-id__concept {
+  min-width: 0;
+}
+
+.brand-id__logo {
+  display: block;
+  width: min(100%, 26rem);
+  height: auto;
+}
+
+.brand-id__h3 {
+  margin: clamp(2rem, 4vw, 2.75rem) 0 1rem;
+  padding-top: clamp(2rem, 4vw, 2.75rem);
+  border-top: 1px solid var(--line-soft);
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.brand-id__concept .about-prose {
+  color: var(--text-body);
 }
 
 /* Workshops call page (/workshops/chamada) ------------------------------ */
@@ -2256,9 +2033,11 @@ a.contrib-logo:hover {
   border-top: 1px solid var(--line-soft);
 }
 
-/* Logo-stripe mark above each heading (see BrandStripes). */
+/* Official logo symbol above each heading (see BrandStripes). */
 .wcall-mark {
   display: block;
+  width: auto;
+  height: 2.75rem;
   margin-bottom: 0.85rem;
 }
 
@@ -2548,17 +2327,4 @@ a.contrib-logo:hover {
 .wcall-org__affiliation,
 .wcall-org__email {
   color: var(--slate);
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-  .about-card,
-  .about-actcard {
-    transition: none;
-  }
-
-  .about-card:hover,
-  .about-actcard:hover {
-    transform: none;
-  }
 }

@@ -60,28 +60,28 @@
   },
   "aboutPage": {
     "metaTitle": "About CBSoft — CBSOFT'27",
-    "eyebrow": "About CBSoft",
     "title": "About CBSoft",
-    "highlightName": "CBSoft 2027",
-    "highlightEditionEmphasis": "18th edition",
-    "highlightEditionRest": "of the Brazilian Conference on Software",
-    "highlightEditionRoman": "XVIII edition of CBSoft",
-    "labelDates": "Dates",
-    "labelLocation": "Location",
-    "tbd": "To be defined",
-    "tbdPlural": "Dates to be defined",
-    "location": "Belo Horizonte — MG",
-    "statEditionLabel": "CBSoft edition",
-    "statDatesLabel": "Event dates",
-    "statSymposiaLabel": "Integrated symposia",
-    "institutionalTitle": "The conference",
-    "symposiaTitle": "Integrated symposia",
-    "activitiesTitle": "Program and activities",
     "p1": "The Brazilian Conference on Software: Theory and Practice (CBSoft) is held annually by the Brazilian Computer Society (SBC) to foster and encourage the exchange of experiences among researchers and professionals from industry and academia on the latest practical and theoretical research, trends and innovations in software. Held since 2010 as the umbrella event for the Brazilian software symposia promoted by SBC, CBSoft has become one of the leading events of the Brazilian scientific community in Computing.",
     "p2": "In 2027, the XVIII edition of CBSoft will be held in person in Belo Horizonte, Minas Gerais. The official dates of the event are yet to be defined. This edition brings together four traditional events held annually by the Brazilian Software Engineering community:",
-    "activitiesLead": "The CBSoft program includes technical sessions with scientific paper presentations, keynotes by renowned Brazilian and international researchers, panel discussions, workshops, and tool demonstrations.",
-    "activitiesClosing": "All of these activities, of interest to the Software Engineering community and related areas of software systems development, aim to disseminate knowledge and discuss important questions related to research, development and innovation, both in Brazil and worldwide.",
-    "backHome": "Back to the home page"
+    "listAnd": "; and",
+    "program": "The CBSoft program includes technical sessions with scientific paper presentations, keynotes by renowned Brazilian and international researchers, panel discussions, workshops, and tool demonstrations. All of these activities, of interest to the Software Engineering community and related areas of software systems development, aim to disseminate knowledge and discuss important questions related to research, development and innovation, both in Brazil and worldwide."
+  },
+  "visualIdentity": {
+    "title": "CBSOFT 2027 Visual Identity",
+    "intro": "The CBSOFT 2027 visual identity connects technology, architecture and the identity of Belo Horizonte. Inspired by the Niemeyer Building, the brand uses its curves to represent movement, creativity, innovation and connection with the city.",
+    "photoAlt": "The Niemeyer Building in Belo Horizonte, with its curved façade and flowering trees in the foreground",
+    "photoCaption": "Niemeyer Building — Oscar Niemeyer, 1954 · Belo Horizonte, MG",
+    "logoAlt": "Official CBSOFT'27 logo — Brazilian Conference on Software, Belo Horizonte, Minas Gerais",
+    "conceptTitle": "Brand concept",
+    "conceptP1": "The brand's main visual inspiration is the Niemeyer Building, designed by Oscar Niemeyer in 1954 and located near Praça da Liberdade, in the heart of Belo Horizonte. Its curved lines echo the lightness and fluidity of modernist architecture and evoke the silhouette of the mountains of Minas Gerais.",
+    "conceptP2": "This balance between softness and structure reflects the very nature of software: a field that demands technical robustness, but also creativity, adaptability and constant innovation."
+  },
+  "aboutSbc": {
+    "title": "About SBC",
+    "p1": "The <b>Brazilian Computer Society (SBC)</b> is a non-profit scientific society, founded in July 1978, that brings together students, professors, professionals, researchers and enthusiasts in Computing and Informatics from all over the country.",
+    "p2": "SBC's role is to foster access to information and culture through computing, promote digital inclusion, encourage research and teaching in computing in Brazil, and contribute to the education of socially responsible computing professionals.",
+    "p3": "To organise and promote scientific, technical, educational and political activities, actions and events, SBC maintains three types of Thematic Groups (GT): the Major Areas (GA), the Special Committees (CE) and the Interest Groups (GI). These groups bring together members with common interests in subfields of computing.",
+    "p4": "You are visiting the website of an event of one of <b>SBC's Special Committees (CE)</b>, each representing a group of SBC members who share interests and values in a given area of Computing. Current members can subscribe to the <lists>Special Committees (CE) mailing lists</lists> for the area they wish to follow. If you are not yet a member or wish to renew your membership, <join>click here</join> and become part of the largest and most important scientific society in computing in Latin America!"
   },
   "workshopsCallPage": {
     "metaTitle": "Call for Papers — Workshops — CBSOFT'27",
