@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IMAGES, SOCIAL_LINKS, type SocialLink } from '@/data/config';
 import { SYMPOSIA } from '@/data/symposia';
-import { Wordmark } from '@/components/ui/Wordmark';
 
 const QUICK_LINKS: { href: string; key: string }[] = [
   { href: '#cfp', key: 'footer.linkCfp' },
@@ -39,10 +38,15 @@ export function Footer() {
     <footer style={{ background: 'var(--brand-ink)', color: '#C6B7D9' }}>
       <div className="container-xl py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
-          <span className="flex items-center gap-2.5">
-            <img src={IMAGES.logo} alt="" aria-hidden="true" className="h-8 w-auto shrink-0" />
-            <Wordmark className="font-display text-lg font-bold" />
-          </span>
+          {/* Type-only version: the full logo would fall below the manual's
+              220px minimum here. */}
+          <img
+            src={IMAGES.logo_text_white}
+            alt="CBSOFT'27"
+            width={2059}
+            height={728}
+            className="site-footer__logo"
+          />
           <p className="text-sm mt-4 leading-relaxed max-w-[220px]">{t('footer.promotedBy')}</p>
         </div>
 

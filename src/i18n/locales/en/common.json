@@ -17,7 +17,9 @@
     "langLabel": "Language:",
     "navAria": "Main navigation",
     "mobileNavAria": "Mobile navigation",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "organizedBy": "Organised by:",
+    "sbcAria": "Brazilian Computer Society (opens in a new tab)"
   },
   "hero": {
     "countdownTitle": "Coming in",

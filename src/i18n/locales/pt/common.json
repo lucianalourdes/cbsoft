@@ -17,7 +17,9 @@
     "langLabel": "Idioma:",
     "navAria": "Navegação principal",
     "mobileNavAria": "Navegação móvel",
-    "closeMenu": "Fechar menu"
+    "closeMenu": "Fechar menu",
+    "organizedBy": "Realização:",
+    "sbcAria": "Sociedade Brasileira de Computação (abre em nova aba)"
   },
   "hero": {
     "countdownTitle": "Faltam",

@@ -35,6 +35,7 @@ export const IMAGES = {
   grafismo_4: asset('assets/images/grafismo-4.png'),
   grafismo_5: asset('assets/images/grafismo-5.png'),
   grafismo_6: asset('assets/images/grafismo-6.png'),
+  grafismo_icon: asset('assets/images/grafismo-icon.png'),
   logo_horizontal: asset('assets/images/logo-horizontal.png'),
   logo_horizontal_white: asset('assets/images/logo-horizontal-white.png'),
   logo_horizontal_black: asset('assets/images/logo-horizontal-black.png'),
@@ -51,5 +52,6 @@ export const IMAGES = {
   praca2: asset('assets/images/praca-liberdade-2.jpg'),
   praca3: asset('assets/images/praca-liberdade-3.jpg'),
   edificio_niemeyer: asset('assets/images/edificio-niemeyer.jpg'),
+  sbc_logo: asset('assets/images/sbc-logo.svg'),
   chevron_down: asset('assets/icons/chevron-down.png'),
 } as const;

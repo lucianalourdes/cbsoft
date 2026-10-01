@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { HEADER_MENUS, type HeaderMenuId } from '@/data/headerMenu';
 import { NAV_ITEMS } from '@/data/nav';
 import { IMAGES } from '@/data/config';
+import { useHideOnScrollDown } from '@/hooks/useHideOnScrollDown';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
 import { HeaderMegaMenu } from './HeaderMegaMenu';
 import { MobileMenu } from './MobileMenu';
@@ -17,6 +18,9 @@ export function Header() {
   const mobileTriggerRef = useRef<HTMLButtonElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const focusFirstLink = useRef(false);
+  const scrolledDown = useHideOnScrollDown();
+  // Keep the SBC strip in place while a menu is open, so nothing jumps.
+  const sbcHidden = scrolledDown && activeMenu === null && !mobileMenuOpen;
 
   function cancelClose() {
     if (closeTimer.current !== null) {
@@ -64,7 +68,7 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className="site-header"
+      className={`site-header${sbcHidden ? ' is-sbc-hidden' : ''}`}
       onKeyDown={(event) => {
         if (event.key === 'Escape' && mobileMenuOpen) {
           event.preventDefault();
@@ -73,6 +77,23 @@ export function Header() {
         }
       }}
     >
+      {/* "Realização: SBC" strip — slides away while scrolling down. */}
+      <div className="site-header__sbc" aria-hidden={sbcHidden || undefined}>
+        <div className="site-header__sbc-inner">
+          <span className="site-header__sbc-label">{t('header.organizedBy')}</span>
+          <a
+            href="https://www.sbc.org.br/"
+            className="site-header__sbc-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t('header.sbcAria')}
+            tabIndex={sbcHidden ? -1 : undefined}
+          >
+            <img src={IMAGES.sbc_logo} alt="" width={597} height={288} />
+          </a>
+        </div>
+      </div>
+
       <div className="site-header__inner">
         <Link
           to="/"
@@ -80,7 +101,12 @@ export function Header() {
           aria-label={t('header.homeAria')}
           onClick={closeAllMenus}
         >
-          <img className="site-header__logo" src={IMAGES.logo_horizontal} alt="" />
+          {/* Brand manual: the full logo needs at least 220px, which only wide
+              screens have room for. Smaller screens show just the symbol. */}
+          <picture>
+            <source media="(min-width: 1280px)" srcSet={IMAGES.logo_horizontal} />
+            <img className="site-header__logo" src={IMAGES.grafismo_icon} alt="" />
+          </picture>
         </Link>
 
         <nav className="site-header__nav" aria-label={t('header.navAria')}>

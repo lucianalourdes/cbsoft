@@ -1,7 +1,7 @@
 import { Hero } from '@/components/sections/Hero';
 import { Agenda } from '@/components/sections/Agenda';
 import { About } from '@/components/sections/About';
-import { CallForPapers } from '@/components/sections/CallForPapers';
+// import { CallForPapers } from '@/components/sections/CallForPapers';
 // import { Keynotes } from '@/components/sections/Keynotes';
 // import { Guests } from '@/components/sections/Guests';
 import { Registration } from '@/components/sections/Registration';
@@ -15,7 +15,7 @@ export function Home() {
       <Hero />
       <Agenda />
       <About />
-      <CallForPapers />
+      {/* <CallForPapers /> */}
       {/* <Keynotes /> */}
       {/* <Guests /> */}
       <Registration />

@@ -13,13 +13,14 @@ describe('App', () => {
     for (const id of [
       'agenda',
       'sobre',
-      'cfp',
       'inscricoes',
       'local',
       'patrocinio',
     ]) {
       expect(container.querySelector(`#${id}`)).not.toBeNull();
     }
+    // The Call for Papers section is currently hidden.
+    expect(container.querySelector('#cfp')).toBeNull();
   });
 
   it('shows Portuguese content by default and switches to English', async () => {

@@ -109,17 +109,73 @@
 /* ---------- Header ---------- */
 
 
+:root {
+  /* Height of the "Realização: SBC" strip above the header's main bar. */
+  --sbc-strip-height: 4.75rem;
+}
+
 .site-header {
   position: fixed;
   z-index: 50;
   inset: 0 0 auto;
   height: auto;
-  padding-top: 16px;
   padding-bottom: 16px;
   background: #fbfafc;
   color: #000;
   font-family: var(--font-sans);
   border-bottom: var(--brand-magenta) 2px solid;
+  transition: transform 0.25s ease;
+}
+
+/* Scrolling down slides the whole header up by the strip's height, so only
+   the main bar stays on screen; scrolling up brings the strip back. */
+.site-header.is-sbc-hidden {
+  transform: translateY(calc(-1 * var(--sbc-strip-height)));
+}
+
+/* Pages start below the strip too (the fixed header already overlaps them
+   by the main bar's height, which each page accounts for). */
+.site-header~main {
+  margin-top: var(--sbc-strip-height);
+}
+
+.site-header__sbc {
+  height: var(--sbc-strip-height);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.site-header__sbc-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+  width: 100%;
+  max-width: 120rem;
+  height: 100%;
+  margin-inline: auto;
+  padding-inline: clamp(2rem, 6.25vw, 7.5rem);
+}
+
+.site-header__sbc-label {
+  font-size: 0.68rem;
+  line-height: 1;
+  color: var(--slate);
+}
+
+.site-header__sbc-link {
+  display: block;
+  width: fit-content;
+  line-height: 0;
+}
+
+.site-header__sbc-link img {
+  display: block;
+  width: auto;
+  height: 2.75rem;
+}
+
+.site-header__sbc+.site-header__inner {
+  padding-top: 16px;
 }
 
 .site-header__inner {
@@ -132,10 +188,14 @@
   padding-inline: clamp(2rem, 6.25vw, 7.5rem);
 }
 
+/* Below 1280px the header shows only the logo symbol (see Header.tsx).
+   The nav sits after margin-left:auto, so this margin is the minimum gap. */
 .site-header__logo-link {
+  --logo-w: 3.5rem;
   display: block;
   flex: none;
-  width: clamp(7.5rem, 12.031vw, 14.438rem);
+  width: var(--logo-w);
+  margin-right: 2rem;
   line-height: 0;
 }
 
@@ -143,6 +203,22 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* No pink focus ring around the logo (it read as a border on the header). */
+.site-header__logo-link:focus,
+.site-header__logo-link:focus-visible {
+  outline: none;
+}
+
+/* Full logo from 1280px, never below the manual's 220px minimum. */
+/* Brand manual: clear space of 2X around the full logo, X being the width
+   of its letter "O" (about 8% of the logo's width). */
+@media (min-width: 1280px) {
+  .site-header__logo-link {
+    --logo-w: clamp(13.75rem, 12.031vw, 14.438rem);
+    margin-right: calc(var(--logo-w) * 0.16);
+  }
 }
 
 .site-header__nav {
@@ -422,16 +498,27 @@
 }
 
 @media (max-width: 1023px) {
-  .site-header__inner {
+  :root {
+    --sbc-strip-height: 3.75rem;
+  }
+
+  .site-header__inner,
+  .site-header__sbc-inner {
     padding-inline: 1.25rem;
   }
 
-  .site-header__logo-link {
-    width: 9rem;
+  .site-header__sbc-link img {
+    height: 2.1rem;
   }
 
+  .site-header__logo-link {
+    --logo-w: 3.25rem;
+  }
+
+  /* On small screens the language switcher lives inside the mobile menu. */
   .site-header__nav,
-  .site-header__register {
+  .site-header__register,
+  .language-switcher {
     display: none;
   }
 
@@ -510,6 +597,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .site-header {
+    transition: none;
+  }
+
   .header-mega-menu {
     animation: none;
   }
@@ -523,7 +614,11 @@
 .home-hero {
   position: relative;
   min-height: 100svh;
+  /* Vertical overflow stays visible (the countdown hangs below the hero);
+     horizontal overflow — the wider wave on phones — is clipped, otherwise
+     mobile browsers zoom the whole page out to fit it. */
   overflow: visible;
+  overflow-x: clip;
   isolation: isolate;
   background: #40516c;
   color: #fff;
@@ -1677,10 +1772,81 @@ a.contrib-logo:hover {
 }
 
 /* UFMG and SBC are square seals — nudged up so they read at the same
-   optical weight as the horizontal PUC Minas lockup. */
+   optical weight as the other marks. */
 .contrib-logo--ufmg img,
 .contrib-logo--sbc img {
   height: clamp(6.5rem, 14vw, 10.5rem);
+}
+
+/* "Organização" row — UFMG and PUC Minas side by side, each following its
+   own brand manual.
+
+   UFMG: full mark at 180px (140px on tablets, 120px on phones — never less),
+   always width + height:auto. Clear area of 4x on every side, x being the
+   height of the bar under the "M" (6.15% of the mark's width).
+
+   PUC Minas (2025, p. 30): partner marks sit to the left of the brasão,
+   aligned on the base, at a distance equal to three letters "U" of the
+   logotype. U ≈ 12.3% of the brasão's width; the brasão is 0.727 as wide as
+   it is tall; never narrower than 18mm (≈68px).
+
+   Both distances are made the same: the brasão's height follows the UFMG
+   width (0.916 × width), so the gap is exactly 3U and exactly 4x. */
+.contrib-row--organizers {
+  --ufmg-w: 180px;
+  --ufmg-4x: calc(var(--ufmg-w) * 0.246);
+  --puc-h: calc(var(--ufmg-w) * 0.916);
+}
+
+.contrib-row--organizers .contrib-row__logos {
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  gap: var(--ufmg-4x);
+  /* Keep 4x free between the marks and the row label above. */
+  padding-top: var(--ufmg-4x);
+}
+
+.contrib-row--organizers .contrib-logo img {
+  display: block;
+  max-width: none;
+}
+
+.contrib-row--organizers .contrib-logo--puc-minas img {
+  width: auto;
+  height: var(--puc-h);
+}
+
+.contrib-row--organizers .contrib-logo--ufmg img {
+  width: var(--ufmg-w);
+  height: auto;
+  object-fit: contain;
+}
+
+/* UFMG: no effects on the mark — no hover fade — and the keyboard focus
+   ring is drawn outside its 4x clear area instead of inside it. */
+a.contrib-logo--ufmg:hover {
+  opacity: 1;
+}
+
+a.contrib-logo--ufmg:focus-visible {
+  outline-offset: var(--ufmg-4x);
+}
+
+@media (max-width: 768px) {
+  .contrib-row--organizers {
+    --ufmg-w: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contrib-row--organizers {
+    --ufmg-w: 120px;
+  }
+}
+
+/* Shown exactly as supplied: no fade on hover. */
+a.contrib-logo--puc-minas:hover {
+  opacity: 1;
 }
 
 .contrib-logo__fallback {
@@ -1782,7 +1948,7 @@ a.contrib-logo:hover {
   }
 
   .contrib-row__logos {
-    gap: clamp(1.75rem, 9vw, 3rem);
+    gap: clamp(2.5rem, 9vw, 3rem);
   }
 
   .contrib-logo img {
@@ -1795,10 +1961,19 @@ a.contrib-logo:hover {
     height: clamp(4.25rem, 19vw, 6.25rem);
   }
 
+
   .contrib-patron {
     margin-top: clamp(2.5rem, 10vw, 3.5rem);
     padding-top: clamp(2rem, 8vw, 2.75rem);
   }
+}
+
+/* ---------- Footer ---------- */
+/* Type-only logo; it stays at a size where the subtitle is still legible. */
+.site-footer__logo {
+  display: block;
+  width: 11rem;
+  height: auto;
 }
 
 /* ---------- About page (/sobre) ---------- */
@@ -1966,7 +2141,8 @@ a.contrib-logo:hover {
 }
 
 .brand-id__h3 {
-  margin: clamp(2rem, 4vw, 2.75rem) 0 1rem;
+  /* At least 2X (≈16% of the logo width) of clear space below the logo. */
+  margin: clamp(3.5rem, 8vw, 4.25rem) 0 1rem;
   padding-top: clamp(2rem, 4vw, 2.75rem);
   border-top: 1px solid var(--line-soft);
   font-weight: 600;
