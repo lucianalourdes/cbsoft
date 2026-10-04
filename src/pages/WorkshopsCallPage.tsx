@@ -35,10 +35,10 @@ const SYMPOSIUM_ICONS: Record<SymposiumId, ReactNode> = {
       <path d="m3 13 9 5 9-5" />
     </svg>
   ),
-  // Programming Languages: code brackets.
-  sblp: (
+  // Formal Methods: the "for all" quantifier.
+  sbmf: (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke}>
-      <path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" />
+      <path d="m5 4 7 16 7-16M8.1 11h7.8" />
     </svg>
   ),
   // Components & Architecture: connected blocks.

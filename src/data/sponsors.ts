@@ -10,24 +10,29 @@
 export interface OrgEntry {
   id: string;
   name: string;
-  /** Public path to the logo, e.g. /assets/images/ufmg-logo.png. */
+  /** Public path to the logo, e.g. /assets/images/sbc.png. */
   logo: string;
   url?: string;
 }
 
-/** Organização — host institutions. */
+/** Organização — host institutions.
+ *
+ *  PUC Minas brand manual (2025): use the new brasão in its institutional
+ *  colours (assinatura principal, exported from the manual), and place
+ *  partner brands external to the university to its left — so UFMG first. */
 export const ORGANIZERS: OrgEntry[] = [
-  {
-    id: 'puc-minas',
-    name: 'PUC Minas',
-    logo: '/assets/images/puc-minas-logo.png',
-    url: 'https://www.pucminas.br/',
-  },
   {
     id: 'ufmg',
     name: 'UFMG',
-    logo: '/assets/images/ufmg-logo.png',
+    // Cropped to the mark itself, so it can sit on the PUC Minas baseline.
+    logo: '/assets/images/ufmg-logo-trim.png',
     url: 'https://ufmg.br/',
+  },
+  {
+    id: 'puc-minas',
+    name: 'PUC Minas',
+    logo: '/assets/images/puc-minas-brasao.png',
+    url: 'https://www.pucminas.br/',
   },
 ];
 

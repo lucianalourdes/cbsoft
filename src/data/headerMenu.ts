@@ -1,17 +1,26 @@
 export type HeaderMenuId =
     | 'cbsoft'
     | 'sbes'
-    | 'sblp'
+    | 'sbmf'
     | 'sbcars'
     | 'sast'
     | 'workshops'
     | 'more';
+
+import { SBES_TRACKS, type SbesTrackId } from './sbesTracks';
+
+export interface HeaderMenuSubLink {
+    href: string;
+    titleKey: string;
+}
 
 export interface HeaderMenuLink {
     href: string;
     titleKey: string;
     descriptionKey: string;
     external?: boolean;
+    /** When set, the item is a group label and these are its links. */
+    children?: HeaderMenuSubLink[];
 }
 
 export interface HeaderMenuSection {
@@ -20,7 +29,7 @@ export interface HeaderMenuSection {
 }
 
 export interface HeaderMenuDefinition {
-    variant: 'cbsoft' | 'wide' | 'compact' | 'more';
+    variant: 'cbsoft' | 'compact' | 'more' | 'tracks';
     columns: HeaderMenuSection[][];
 }
 
@@ -32,14 +41,31 @@ const link = (key: string, href: string, external = false): HeaderMenuLink => ({
     external,
 });
 
-const symposiumMenu = (id: 'sblp' | 'sbcars' | 'sast'): HeaderMenuDefinition => ({
+/** Every "Chamada de Trabalhos" link points here for now — the only call
+ *  page so far. Swap in per-symposium/track pages once they exist. */
+export const CALL_FOR_PAPERS_PATH = '/workshops/chamada';
+
+/** Likewise, every "Artigos Aceitos" link shares one page for now; the
+ *  per-track pages (/sbes/<slug>/artigos-aceitos) are ready for later. */
+export const ACCEPTED_PAPERS_PATH = '/artigos-aceitos';
+
+/** An SBES track: its call for papers and its accepted-papers page. */
+const sbesTrack = (id: SbesTrackId): HeaderMenuLink => ({
+    ...link(`sbes.tracks.${id}`, CALL_FOR_PAPERS_PATH),
+    children: [
+        { href: CALL_FOR_PAPERS_PATH, titleKey: 'headerMenu.sbes.trackCall' },
+        { href: ACCEPTED_PAPERS_PATH, titleKey: 'headerMenu.sbes.trackPapers' },
+    ],
+});
+
+const symposiumMenu = (id: 'sbmf' | 'sbcars' | 'sast'): HeaderMenuDefinition => ({
     variant: 'compact',
     columns: [[{
         titleKey: `headerMenu.${id}.title`,
         links: [
-            link(`${id}.call`, '#cfp'),
+            link(`${id}.call`, CALL_FOR_PAPERS_PATH),
             link(`${id}.program`, '#agenda'),
-            link(`${id}.papers`, '#artigos-aceitos'),
+            link(`${id}.papers`, ACCEPTED_PAPERS_PATH),
         ],
     }]],
 });
@@ -77,50 +103,35 @@ export const HEADER_MENUS: Record<HeaderMenuId, HeaderMenuDefinition> = {
                     titleKey: 'headerMenu.program.title',
                     links: [
                         link('program.schedule', '#agenda'),
-                        link('program.articles', '#artigos-aceitos'),
+                        link('program.articles', ACCEPTED_PAPERS_PATH),
                         link('program.special', '#eventos'),
                     ],
                 },
                 {
                     titleKey: 'headerMenu.participation.title',
                     links: [
-                        link('participation.volunteers', '#voluntarios'),
-                        link('participation.conduct', '#codigo-de-conduta'),
+                        link('participation.volunteers', '/voluntarios'),
+                        link('participation.conduct', '/codigo-de-conduta'),
                     ],
                 },
             ],
         ],
     },
+    // One list of tracks; each opens a side flyout with its two links.
     sbes: {
-        variant: 'wide',
-        columns: [
-            [{
+        variant: 'tracks',
+        columns: [[
+            {
                 titleKey: 'headerMenu.sbes.tracksTitle',
-                links: [
-                    link('sbes.tracks.special', '#cfp'),
-                    link('sbes.tracks.research', '#cfp'),
-                    link('sbes.tracks.education', '#cfp'),
-                    link('sbes.tracks.ideas', '#cfp'),
-                ],
-            }],
-            [
-                {
-                    titleKey: 'headerMenu.sbes.communityTitle',
-                    links: [
-                        link('sbes.tracks.tools', '#cfp'),
-                        link('sbes.tracks.industry', '#cfp'),
-                        link('sbes.tracks.ctic', '#cfp'),
-                        link('sbes.tracks.ctd', '#cfp'),
-                    ],
-                },
-                {
-                    titleKey: 'headerMenu.sbes.programTitle',
-                    links: [link('sbes.program', '#agenda')],
-                },
-            ],
-        ],
+                links: SBES_TRACKS.map((track) => sbesTrack(track.id)),
+            },
+            {
+                titleKey: 'headerMenu.sbes.programTitle',
+                links: [link('sbes.program', '#agenda')],
+            },
+        ]],
     },
-    sblp: symposiumMenu('sblp'),
+    sbmf: symposiumMenu('sbmf'),
     sbcars: symposiumMenu('sbcars'),
     sast: symposiumMenu('sast'),
     workshops: {
