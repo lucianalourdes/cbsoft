@@ -12,13 +12,8 @@ export function AboutPage() {
   const lang = useLang();
 
   useEffect(() => {
-    const previous = document.title;
-    document.title = t('aboutPage.metaTitle');
     window.scrollTo(0, 0);
-    return () => {
-      document.title = previous;
-    };
-  }, [t]);
+  }, []);
 
   // "…; " between items, "…; e" before the last one, "." at the end.
   const last = ABOUT_SYMPOSIA.length - 1;

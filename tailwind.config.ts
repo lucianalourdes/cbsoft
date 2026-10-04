@@ -8,6 +8,12 @@ export default {
   darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-sans)'],
+        display: ['var(--font-display)'],
+        // Keep legacy numeric labels in Ronzino after Tailwind's utilities load.
+        mono: ['var(--font-sans)'],
+      },
       colors: {
         ink: 'var(--ink)',
         paper: 'var(--paper)',

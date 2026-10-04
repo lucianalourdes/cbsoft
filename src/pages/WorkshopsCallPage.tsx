@@ -123,13 +123,8 @@ export function WorkshopsCallPage() {
   const lang = useLang();
 
   useEffect(() => {
-    const previous = document.title;
-    document.title = t('workshopsCallPage.metaTitle');
     window.scrollTo(0, 0);
-    return () => {
-      document.title = previous;
-    };
-  }, [t]);
+  }, []);
 
   const criteria = t('workshopsCallPage.criteria', { returnObjects: true }) as string[];
   const submissionItems = t('workshopsCallPage.submissionItems', {

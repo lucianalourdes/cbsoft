@@ -5,6 +5,7 @@ import { LocationPage } from '@/pages/LocationPage';
 import { Home } from '@/pages/Home';
 import { AboutPage } from '@/pages/AboutPage';
 import { WorkshopsCallPage } from '@/pages/WorkshopsCallPage';
+import { PageMetadata } from '@/components/layout/PageMetadata';
 import { RegistrationPage } from '@/pages/RegistrationPage';
 import { ConductPage } from '@/pages/ConductPage';
 import { VolunteersPage } from '@/pages/VolunteersPage';
@@ -13,6 +14,7 @@ import { AcceptedPapersPage } from '@/pages/AcceptedPapersPage';
 export function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <PageMetadata />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

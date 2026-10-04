@@ -76,6 +76,10 @@
     "title": "Sobre o CBSoft",
     "p1": "O Congresso Brasileiro de Software: Teoria e Prática (CBSoft) é um evento realizado anualmente pela Sociedade Brasileira de Computação (SBC) com o objetivo de promover e incentivar a troca de experiências entre pesquisadores e profissionais da indústria e academia sobre as mais recentes pesquisas, tendências e inovações práticas e teóricas sobre software. Realizado desde 2010 como evento agregador de simpósios brasileiros promovidos pela SBC na área de software, o CBSoft tornou-se um dos principais eventos da comunidade científica brasileira na área de Computação.",
     "p2": "Em 2027, a XVIII edição do CBSoft será realizada presencialmente em Belo Horizonte, Minas Gerais. As datas oficiais do evento ainda serão definidas. A edição integra quatro eventos tradicionais realizados anualmente pela comunidade brasileira em Engenharia de Software:",
+    "activitiesLead": "A programação do CBSoft incluirá sessões técnicas com apresentações de artigos científicos, palestras proferidas por pesquisadores brasileiros e estrangeiros de renome nacional e internacional, painéis de discussão, workshops, e demonstrações de ferramentas.",
+    "activitiesClosing": "Todas essas diversas atividades de interesse da comunidade de Engenharia de Software e de áreas relacionadas ao desenvolvimento de sistemas de software direcionam-se para a difusão do conhecimento e discussão de questões importantes relacionadas à pesquisa, desenvolvimento e inovação, tanto no Brasil quanto no mundo.",
+    "backHome": "Voltar para a página inicial",
+    "metaDescription": "Conheça o CBSoft, o Congresso Brasileiro de Software: Teoria e Prática, seus simpósios integrados e as atividades da edição de 2027 em Belo Horizonte."
     "listAnd": "; e",
     "program": "A programação do CBSoft incluirá sessões técnicas com apresentações de artigos científicos, palestras proferidas por pesquisadores brasileiros e estrangeiros de renome nacional e internacional, painéis de discussão, workshops, e demonstrações de ferramentas. Todas essas diversas atividades de interesse da comunidade de Engenharia de Software e de áreas relacionadas ao desenvolvimento de sistemas de software direcionam-se para a difusão do conhecimento e discussão de questões importantes relacionadas à pesquisa, desenvolvimento e inovação, tanto no Brasil quanto no mundo."
   },
@@ -220,7 +224,8 @@
     "edition": "18ª edição",
     "editionAria": "Destaques do CBSoft 2027",
     "introEyebrow": "Workshops — CBSoft 2027",
-    "introTagline": "Conectando pesquisadores, profissionais e a indústria brasileira de software."
+    "introTagline": "Conectando pesquisadores, profissionais e a indústria brasileira de software.",
+    "metaDescription": "Confira a chamada de trabalhos dos workshops do CBSOFT 2027, com orientações para propostas, submissões, critérios de seleção e datas importantes."
   },
   "events": {
     "eyebrow": "EVENTOS",
@@ -533,6 +538,14 @@
       }
     }
   },
+  "language": {
+    "selector": "Selecionar idioma",
+    "pt": "Português (Brasil) — PT",
+    "en": "English — EN"
+  },
+  "homePage": {
+    "metaTitle": "CBSOFT'27 — Congresso Brasileiro de Software",
+    "metaDescription": "CBSOFT 2027, promovido pela Sociedade Brasileira de Computação (SBC), reúne os simpósios SBES, SBLP, SBCARS e SAST em Belo Horizonte, MG."
   "conductPage": {
     "metaTitle": "Código de Conduta — CBSOFT'27",
     "title": "Código de Conduta",
