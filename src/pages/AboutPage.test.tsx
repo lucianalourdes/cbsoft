@@ -17,29 +17,45 @@ function renderPage() {
 }
 
 describe('AboutPage', () => {
-  it('renders the header, the four symposia cards and the activity cards', () => {
+  it('renders a single "Sobre o CBSoft" section with the four symposia', () => {
     const { container } = renderPage();
     expect(screen.getByRole('heading', { level: 1, name: 'Sobre o CBSoft' })).toBeTruthy();
 
-    expect(container.querySelectorAll('.about-facts .about-fact')).toHaveLength(4);
-    expect(container.querySelectorAll('.about-grid--2 .about-card')).toHaveLength(4);
-    expect(container.querySelectorAll('.about-grid--3 .about-actcard')).toHaveLength(4);
+    const items = container.querySelectorAll('.about-symposia li');
+    expect(items).toHaveLength(4);
+    expect(items[0].textContent).toMatch(/^XLI Simpósio Brasileiro de Engenharia de Software, .*;$/);
+    expect(items[2].textContent).toMatch(/; e$/);
+    expect(items[3].textContent).toMatch(/^XII Simpósio Brasileiro de Teste de Software.*\.$/);
 
-    expect(screen.getByText(/XLI Simpósio Brasileiro de Engenharia de Software/)).toBeTruthy();
-    expect(screen.getByText(/XII Simpósio Brasileiro de Teste de Software/)).toBeTruthy();
-    expect(screen.getByText('Sessões técnicas')).toBeTruthy();
-    expect(screen.getByRole('link', { name: /Voltar para a página inicial/ })).toBeTruthy();
+    expect(screen.getByText(/A programação do CBSoft incluirá/)).toBeTruthy();
   });
 
-  it('makes the 18th edition prominent and keeps every date "A definir"', () => {
-    const { container } = renderPage();
-    expect(screen.getByText('18ª')).toBeTruthy();
-    expect(screen.getByText('18ª edição')).toBeTruthy();
-    expect(screen.getByText('XVIII edição do CBSoft')).toBeTruthy();
-    expect(screen.getAllByText('A definir').length).toBeGreaterThanOrEqual(2);
+  it('renders the visual identity section with the photo and logo', () => {
+    renderPage();
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Identidade Visual do CBSOFT 2027' }),
+    ).toBeTruthy();
+    expect(screen.getByAltText(/Edifício Niemeyer/)).toBeTruthy();
+    expect(screen.getByAltText(/Logo oficial do CBSOFT'27/)).toBeTruthy();
+  });
 
+  it('renders the "Sobre a SBC" section with working SBC links', () => {
+    renderPage();
+    expect(screen.getByRole('heading', { level: 2, name: 'Sobre a SBC' })).toBeTruthy();
+    expect(screen.getByText(/fundada em julho de 1978/)).toBeTruthy();
+    expect(
+      screen.getByRole('link', { name: 'listas de e-mail das Comissões Especiais (CE)' }).getAttribute('href'),
+    ).toBe('https://www.sbc.org.br/comissoes-especiais/');
+    expect(screen.getByRole('link', { name: 'clique aqui' }).getAttribute('href')).toBe(
+      'https://centraldesistemas.sbc.org.br/mom',
+    );
+  });
+
+  it('presents the 2027 edition without confirmed dates', () => {
+    const { container } = renderPage();
     const text = container.textContent ?? '';
-    expect(text).not.toMatch(/27 de setembro|1º de outubro|1\.? de outubro/i);
-    expect(text).not.toMatch(/\bde 27\b|\boutubro de 2027\b/i);
+    expect(text).toMatch(/XVIII edição do CBSoft/);
+    expect(text).toMatch(/Belo Horizonte/);
+    expect(text).not.toMatch(/27 de setembro|1º de outubro|outubro de 2027/i);
   });
 });

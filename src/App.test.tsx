@@ -1,4 +1,4 @@
-import { act, render, screen, within } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import i18n from './i18n';
 import { App } from './App';
@@ -13,13 +13,14 @@ describe('App', () => {
     for (const id of [
       'agenda',
       'sobre',
-      'cfp',
-      'inscricoes',
       'local',
       'patrocinio',
     ]) {
       expect(container.querySelector(`#${id}`)).not.toBeNull();
     }
+    // The Call for Papers section is currently hidden, and registration has its own page.
+    expect(container.querySelector('#cfp')).toBeNull();
+    expect(container.querySelector('#inscricoes')).toBeNull();
   });
 
   it('shows Portuguese content by default and switches to English', async () => {
@@ -39,13 +40,6 @@ describe('App', () => {
       ),
     ).not.toHaveLength(0);
     expect(document.documentElement.lang).toBe('en');
-  });
-
-  it('renders the four registration categories with fees pending', () => {
-    render(<App />);
-    const registration = document.querySelector('#inscricoes') as HTMLElement;
-    expect(within(registration).getByText('Estudante de Graduação (sócio SBC)')).toBeTruthy();
-    expect(within(registration).getAllByText('A definir').length).toBeGreaterThanOrEqual(12);
   });
 
   it('renders the hero countdown timer', () => {

@@ -33,9 +33,17 @@ function Logo({ entry }: { entry: OrgEntry }) {
 }
 
 /** One line of the partner grid: small purple label + the marks it covers. */
-function Row({ label, entries }: { label: string; entries: OrgEntry[] }) {
+function Row({
+  label,
+  entries,
+  modifier,
+}: {
+  label: string;
+  entries: OrgEntry[];
+  modifier?: string;
+}) {
   return (
-    <div className="contrib-row">
+    <div className={`contrib-row${modifier ? ` contrib-row--${modifier}` : ''}`}>
       <p className="contrib-row__label">{label}</p>
       <div className="contrib-row__logos">
         {entries.map((entry) => (
@@ -69,7 +77,11 @@ export function Sponsorship() {
         </div>
 
         <div className="contrib-inst">
-          <Row label={t('sponsorship.organization')} entries={ORGANIZERS} />
+          <Row
+            label={t('sponsorship.organization')}
+            entries={ORGANIZERS}
+            modifier="organizers"
+          />
           <Row label={t('sponsorship.realization')} entries={REALIZATION} />
         </div>
 

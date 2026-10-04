@@ -108,11 +108,11 @@ export const AGENDA: Record<SymposiumId, AgendaEvent[]> = {
     event('sbes', 'SBES', 'notification'),
     event('sbes', 'SBES', 'camera'),
   ],
-  sblp: [
-    event('sblp', 'SBLP', 'abstract'),
-    event('sblp', 'SBLP', 'full'),
-    event('sblp', 'SBLP', 'notification'),
-    event('sblp', 'SBLP', 'camera'),
+  sbmf: [
+    event('sbmf', 'SBMF', 'abstract'),
+    event('sbmf', 'SBMF', 'full'),
+    event('sbmf', 'SBMF', 'notification'),
+    event('sbmf', 'SBMF', 'camera'),
   ],
   sbcars: [
     event('sbcars', 'SBCARS', 'abstract'),

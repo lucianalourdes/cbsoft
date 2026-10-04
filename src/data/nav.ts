@@ -10,7 +10,7 @@ export interface NavItem {
 export const NAV_ITEMS: NavItem[] = [
   { id: 'cbsoft', href: '#sobre', key: 'nav.cbsoft' },
   { id: 'sbes', href: '#sbes', key: 'nav.sbes' },
-  { id: 'sblp', href: '#sblp', key: 'nav.sblp' },
+  { id: 'sbmf', href: '#sbmf', key: 'nav.sbmf' },
   { id: 'sbcars', href: '#sbcars', key: 'nav.sbcars' },
   { id: 'sast', href: '#sast', key: 'nav.sast' },
   { id: 'workshops', href: '#workshops', key: 'nav.workshops' },
