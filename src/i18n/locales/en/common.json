@@ -267,14 +267,29 @@
   },
   "location": {
     "eyebrow": "LOCATION",
-    "title": "PUC Minas Lourdes campus",
-    "city": "Belo Horizonte, MG",
-    "noticeTitle": "Venue being arranged",
-    "notice": "The exact venue and accreditation rooms are still being arranged with the host institution. The details below are provisional and will be updated before the event.",
+    "city": "Belo Horizonte, MG, Brazil",
+    "noticeTitle": "Event access details to be confirmed",
+    "notice": "The campus is confirmed. The building, rooms, registration desk and recommended entrance for CBSOFT 2027 will be announced after confirmation by the organizers.",
+    "unconfirmed": "Venue to be confirmed",
+    "unconfirmedNotice": "The venue name and address will be published after confirmation by the organizers.",
     "transitHeading": "Getting there",
-    "moreInfo": "More about the venue",
+    "moreInfo": "Address, directions and map",
     "videoTitle": "CBSOFT 2027 in Belo Horizonte",
-    "playAria": "Play the CBSOFT 2027 announcement video"
+    "playAria": "Play the CBSOFT 2027 video",
+    "videoFallback": "Video not loading? Watch on YouTube",
+    "consultTransport": "Check transport services ↗",
+    "transitSource": "Transport references published by PUC Minas ↗",
+    "transitNote": "These references serve the campus area. Check stops, routes and timetables before travelling; event-specific access details will be announced."
+  },
+  "locationPage": {
+    "metaTitle": "Event venue | CBSOFT 2027",
+    "title": "Event venue",
+    "mapTitle": "Map and directions",
+    "mapDescription": "Use the campus address as your destination in Google Maps. Directions depend on your starting point. The event entrance, building and rooms are still to be confirmed.",
+    "directions": "Get directions on Google Maps ↗",
+    "openMap": "Open the campus map ↗",
+    "officialLocation": "Check the address on the official PUC Minas website ↗",
+    "backHome": "Back to the home page"
   },
   "committee": {
     "eyebrow": "ORGANIZING COMMITTEE",
