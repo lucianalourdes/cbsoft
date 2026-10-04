@@ -1,49 +1,49 @@
 {
-  "hash": "7e0a83b1",
-  "configHash": "7c6209b0",
-  "lockfileHash": "2567ed22",
-  "browserHash": "4ead14dd",
+  "hash": "e46e690e",
+  "configHash": "80d38c4d",
+  "lockfileHash": "86a118c3",
+  "browserHash": "ab5e1b7e",
   "optimized": {
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "c036e792",
+      "fileHash": "df9da102",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "d4227106",
+      "fileHash": "e98212f4",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "9a3b254f",
+      "fileHash": "0b5c9773",
       "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "715259ba",
+      "needsInterop": false
     },
     "i18next": {
       "src": "../../node_modules/i18next/dist/esm/i18next.js",
       "file": "i18next.js",
-      "fileHash": "3b72e714",
+      "fileHash": "d450fddc",
       "needsInterop": false
     },
     "react-i18next": {
       "src": "../../node_modules/react-i18next/dist/es/index.js",
       "file": "react-i18next.js",
-      "fileHash": "e7f01470",
+      "fileHash": "191709ad",
       "needsInterop": false
     },
     "i18next-browser-languagedetector": {
       "src": "../../node_modules/i18next-browser-languagedetector/dist/esm/i18nextBrowserLanguageDetector.js",
       "file": "i18next-browser-languagedetector.js",
-      "fileHash": "2465e07f",
-      "needsInterop": false
-    },
-    "react-router-dom": {
-      "src": "../../node_modules/react-router-dom/dist/index.mjs",
-      "file": "react-router-dom.js",
-      "fileHash": "e7b917d1",
+      "fileHash": "4a2f49e7",
       "needsInterop": false
     }
   },

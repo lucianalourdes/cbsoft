@@ -586,8 +586,8 @@
   line-height: 1.4;
 }
 
-.header-mega-menu__flyout a + a,
-.header-mega-menu__sublinks a + a {
+.header-mega-menu__flyout a+a,
+.header-mega-menu__sublinks a+a {
   border-top: 1px solid var(--line-soft);
 }
 
@@ -643,7 +643,7 @@
   /* On small screens the language switcher lives inside the mobile menu. */
   .site-header__nav,
   .site-header__register,
-  .site-header > .site-header__inner > .language-switcher {
+  .site-header>.site-header__inner>.language-switcher {
     display: none;
   }
 
@@ -722,6 +722,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .site-header,
   .wcall-side {
     transition: none;
@@ -1036,7 +1037,7 @@
 
 .home-hero__controls button:hover {
   background: #e60d7e2e;
-  
+
   transition: ease-in-out 0.2s;
 }
 
@@ -2132,6 +2133,8 @@ a.contrib-logo--puc-minas:hover {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--pink-deep);
+}
+
 .site-search__box {
   max-width: 56rem;
   margin: clamp(2rem, 4vw, 3rem) auto 0;
@@ -2319,6 +2322,8 @@ a.contrib-logo--puc-minas:hover {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--pink-deep);
+}
+
 .about-symposia li::marker {
   color: var(--pink);
 }
@@ -2339,6 +2344,8 @@ a.contrib-logo--puc-minas:hover {
   font-family: var(--font-sans);
   font-size: 0.9rem;
   color: var(--slate);
+}
+
 .about-back {
   display: inline-flex;
   align-items: center;
@@ -2364,6 +2371,8 @@ a.contrib-logo--puc-minas:hover {
   font-family: var(--font-sans);
   font-size: 0.7rem;
   letter-spacing: 0.12em;
+}
+
 .registration-cta .btn {
   padding: 1rem 2rem;
   font-size: 1rem;
@@ -2440,7 +2449,7 @@ a.contrib-logo--puc-minas:hover {
   color: var(--text-body);
 }
 
-.papers-list li > * {
+.papers-list li>* {
   display: block;
 }
 
@@ -2511,6 +2520,8 @@ a.contrib-logo--puc-minas:hover {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--purple);
+}
+
 .brand-id__photo figcaption::before {
   content: '';
   position: absolute;
@@ -2917,6 +2928,7 @@ a.contrib-logo--puc-minas:hover {
     transform: none;
   }
 }
+
 /* Confirmed campus address and locality page. */
 .venue-address {
   margin-bottom: 1.25rem;
