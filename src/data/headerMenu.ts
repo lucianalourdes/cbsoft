@@ -95,7 +95,7 @@ export const HEADER_MENUS: Record<HeaderMenuId, HeaderMenuDefinition> = {
                 },
                 {
                     titleKey: 'headerMenu.history.title',
-                    links: [link('history.previous', '#edicoes-anteriores')],
+                    links: [link('history.previous', '/edicoes-anteriores')],
                 },
             ],
             [

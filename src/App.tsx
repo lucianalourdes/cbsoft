@@ -10,6 +10,7 @@ import { RegistrationPage } from '@/pages/RegistrationPage';
 import { ConductPage } from '@/pages/ConductPage';
 import { VolunteersPage } from '@/pages/VolunteersPage';
 import { AcceptedPapersPage } from '@/pages/AcceptedPapersPage';
+import { PreviousEditionsPage } from '@/pages/PreviousEditionsPage';
 
 export function App() {
   return (
@@ -20,6 +21,7 @@ export function App() {
         <Route path="/" element={<Home />} />
         <Route path="/local" element={<LocationPage />} />
         <Route path="/sobre" element={<AboutPage />} />
+        <Route path="/edicoes-anteriores" element={<PreviousEditionsPage />} />
         <Route path="/inscricoes" element={<RegistrationPage />} />
         <Route path="/codigo-de-conduta" element={<ConductPage />} />
         <Route path="/voluntarios" element={<VolunteersPage />} />
