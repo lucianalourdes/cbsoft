@@ -326,16 +326,19 @@
     }
   },
   "footer": {
-    "promotedBy": "Promoted by the Brazilian Computer Society.",
-    "quickLinks": "Quick links",
-    "relatedEvents": "Related events",
-    "follow": "Follow the event",
-    "linkCfp": "Call for Papers",
-    "linkRegistration": "Registration",
-    "linkCommittee": "Organizing committee",
-    "linkProspectus": "Sponsorship prospectus",
-    "rights": "Brazilian Computer Society (SBC). All rights reserved.",
-    "location": "Belo Horizonte, MG — Brazil"
+    "rights": "All rights reserved",
+    "channels": "CBSoft contact and social media",
+    "channelLabel": "CBSoft on {{channel}}",
+    "emailLabel": "Email CBSoft",
+    "channelNames": {
+      "email": "email",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "x": "X",
+      "bluesky": "Bluesky",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
   },
   "headerMenu": {
     "event": {

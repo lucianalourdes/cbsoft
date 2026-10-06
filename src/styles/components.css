@@ -2156,7 +2156,7 @@ a.contrib-logo--puc-minas:hover {
 }
 
 .site-footer__link:hover {
-  color: #b43425;
+  color: var(--brand-purple);
   background-color: #ffffff;
 }
 

@@ -326,16 +326,19 @@
     }
   },
   "footer": {
-    "promotedBy": "Promovido pela Sociedade Brasileira de Computação.",
-    "quickLinks": "Links rápidos",
-    "relatedEvents": "Eventos coalocados",
-    "follow": "Acompanhe",
-    "linkCfp": "Call for Papers",
-    "linkRegistration": "Inscrições",
-    "linkCommittee": "Comitê organizador",
-    "linkProspectus": "Prospecto de patrocínio",
-    "rights": "Sociedade Brasileira de Computação (SBC). Todos os direitos reservados.",
-    "location": "Belo Horizonte, MG — Brasil"
+    "rights": "Todos os direitos reservados",
+    "channels": "Contato e redes sociais do CBSoft",
+    "channelLabel": "CBSoft no {{channel}}",
+    "emailLabel": "Enviar e-mail ao CBSoft",
+    "channelNames": {
+      "email": "e-mail",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "x": "X",
+      "bluesky": "Bluesky",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
   },
   "headerMenu": {
     "event": {
