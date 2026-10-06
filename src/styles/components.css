@@ -2103,6 +2103,87 @@ a.contrib-logo--puc-minas:hover {
   height: auto;
 }
 
+.site-footer {
+  color-scheme: light;
+  background-size: 200px;
+  border-top-width: 2px;
+  color: var(--brand-ink);
+  font-family: var(--font-sans);
+}
+
+.site-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  min-height: 7rem;
+  padding-block: 1.75rem;
+}
+
+.site-footer__copyright {
+  min-width: 0;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.site-footer__channels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer nav {
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.site-footer__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.25rem;
+  color: var(--brand-magenta);
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.site-footer__link:hover {
+  color: #b43425;
+  background-color: #ffffff;
+}
+
+.site-footer__link:focus-visible {
+  outline: 2px solid var(--brand-purple);
+  outline-offset: 2px;
+  background-color: #ffffff;
+}
+
+.site-footer__link svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media (max-width: 767px) {
+  .site-footer__inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding-block: 1.25rem;
+  }
+
+  .site-footer__channels {
+    justify-content: center;
+  }
+}
+
 /* ---------- Busca "Não encontrou o que procurava?" (home) ---------- */
 .site-search__intro {
   max-width: 44rem;
