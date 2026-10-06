@@ -43,8 +43,9 @@
 .btn-accent {
   color: #fff;
   box-shadow: 0 6px 16px -6px rgba(107, 44, 143, 0.45);
-  color: var(--pink);
+  color: var(--brand-magenta);
   border-color: var(--line);
+
   border-width: 0.15rem;
 }
 
@@ -1578,9 +1579,7 @@
 /* Unified panel: info + media read as one component. */
 .venue-panel {
   margin-top: 2.5rem;
-  border: 1px solid var(--line);
   border-radius: 1rem;
-  background: var(--surface);
   box-shadow: 0 1px 2px rgba(28, 19, 48, 0.04);
   overflow: hidden;
 }

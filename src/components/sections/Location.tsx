@@ -46,7 +46,7 @@ export function Location() {
             <div className="venue-info">
               <VenueDetails />
 
-              <Link to={VENUE.infoUrl} className="btn btn-accent venue-cta !text-white">
+              <Link to={VENUE.infoUrl} className="btn btn-accent venue-cta text-brand-magenta">
                 <span>{t('location.moreInfo')}</span>
                 <svg
                   className="venue-cta-arrow"
