@@ -64,7 +64,7 @@ const symposiumMenu = (id: 'sbmf' | 'sbcars' | 'sast'): HeaderMenuDefinition => 
         titleKey: `headerMenu.${id}.title`,
         links: [
             link(`${id}.call`, CALL_FOR_PAPERS_PATH),
-            link(`${id}.program`, '#agenda'),
+            //link(`${id}.program`, '#agenda'),
             link(`${id}.papers`, ACCEPTED_PAPERS_PATH),
         ],
     }]],
@@ -81,8 +81,8 @@ export const HEADER_MENUS: Record<HeaderMenuId, HeaderMenuDefinition> = {
                     titleKey: 'headerMenu.event.title',
                     links: [
                         link('event.about', '/sobre'),
-                        link('event.organization', '#comite'),
-                        link('event.speakers', '#palestrantes'),
+                        // link('event.organization', '#comite'),
+                        // link('event.speakers', '#palestrantes'),
                     ],
                 },
                 {
@@ -90,7 +90,7 @@ export const HEADER_MENUS: Record<HeaderMenuId, HeaderMenuDefinition> = {
                     links: [
                         link('guide.venue', '/local'),
                         link('guide.map', '/local#mapa'),
-                        link('guide.experiences', '#experiencias-bh'),
+                        // link('guide.experiences', '#experiencias-bh'),
                     ],
                 },
                 {
@@ -102,15 +102,15 @@ export const HEADER_MENUS: Record<HeaderMenuId, HeaderMenuDefinition> = {
                 {
                     titleKey: 'headerMenu.program.title',
                     links: [
-                        link('program.schedule', '#agenda'),
+                        //link('program.schedule', '#agenda'),
                         link('program.articles', ACCEPTED_PAPERS_PATH),
-                        link('program.special', '#eventos'),
+                        // link('program.special', '#eventos'),
                     ],
                 },
                 {
                     titleKey: 'headerMenu.participation.title',
                     links: [
-                        link('participation.volunteers', '/voluntarios'),
+                        // link('participation.volunteers', '/voluntarios'),
                         link('participation.conduct', '/codigo-de-conduta'),
                     ],
                 },
@@ -125,10 +125,10 @@ export const HEADER_MENUS: Record<HeaderMenuId, HeaderMenuDefinition> = {
                 titleKey: 'headerMenu.sbes.tracksTitle',
                 links: SBES_TRACKS.map((track) => sbesTrack(track.id)),
             },
-            {
+            /*{
                 titleKey: 'headerMenu.sbes.programTitle',
                 links: [link('sbes.program', '#agenda')],
-            },
+            },*/
         ]],
     },
     sbmf: symposiumMenu('sbmf'),
