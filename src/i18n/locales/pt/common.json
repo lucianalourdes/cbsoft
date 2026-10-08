@@ -626,5 +626,14 @@
     "generalMetaTitle": "Artigos Aceitos — CBSOFT'27",
     "generalEyebrow": "CBSoft 2027",
     "generalPending": "A lista de artigos aceitos será divulgada após a notificação dos autores."
+  },
+  "previousEditionsPage": {
+    "title": "Edições Anteriores",
+    "description": "Conheça a história do CBSoft e acesse os sites das edições anteriores do congresso.",
+    "online": "(Online)",
+    "visit": "Acessar edição",
+    "newTab": "(abre em uma nova aba)",
+    "metaTitle": "Edições Anteriores - CBSOFT'27",
+    "metaDescription": "Explore as edições anteriores do CBSoft, de 2010 a 2026, com seus locais e links para os sites de cada congresso."
   }
 }

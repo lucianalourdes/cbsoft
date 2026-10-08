@@ -118,7 +118,7 @@ export function Header() {
             aria-label={t('header.sbcAria')}
             tabIndex={sbcHidden ? -1 : undefined}
           >
-            <img src={IMAGES.sbc_logo} alt="" width={597} height={288} />
+            <img src={IMAGES.sbc_logo} alt="" width={1814} height={576} />
           </a>
         </div>
       </div>

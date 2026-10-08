@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 const PAGE_KEYS: Record<string, string> = {
   '/': 'homePage',
   '/sobre': 'aboutPage',
+  '/edicoes-anteriores': 'previousEditionsPage',
   '/workshops/chamada': 'workshopsCallPage',
 };
 

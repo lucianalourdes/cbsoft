@@ -626,5 +626,14 @@
     "generalMetaTitle": "Accepted Papers — CBSOFT'27",
     "generalEyebrow": "CBSoft 2027",
     "generalPending": "The list of accepted papers will be published after authors are notified."
+  },
+  "previousEditionsPage": {
+    "title": "Previous Editions",
+    "description": "Discover the history of CBSoft and visit the websites of previous conference editions.",
+    "online": "(Online)",
+    "visit": "Visit edition",
+    "newTab": "(opens in a new tab)",
+    "metaTitle": "Previous Editions - CBSOFT'27",
+    "metaDescription": "Explore previous CBSoft editions, from 2010 to 2026, with their locations and links to each conference website."
   }
 }
