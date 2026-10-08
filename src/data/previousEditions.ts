@@ -11,7 +11,7 @@ export interface PreviousEdition {
 export const PREVIOUS_EDITIONS: readonly PreviousEdition[] = [
   {
     "year": 2026,
-    "url": "https://cbsoft.sbc.org.br/2026/",
+    "url": "https://cbsoft.sbc.org.br/2026",
     "location": "São Paulo, São Paulo"
   },
   {
@@ -43,28 +43,28 @@ export const PREVIOUS_EDITIONS: readonly PreviousEdition[] = [
   },
   {
     "year": 2020,
-    "url": "https://cbsoft2020.imd.ufrn.br",
+    "url": "https://cbsoft.sbc.org.br/2020/",
     "location": "Natal, Rio Grande do Norte",
     "online": true
   },
   {
     "year": 2019,
-    "url": "http://cbsoft2019.ufba.br/",
+    "url": "https://cbsoft.sbc.org.br/2019/",
     "location": "Salvador, Bahia"
   },
   {
     "year": 2018,
-    "url": "http://cbsoft2018.icmc.usp.br/#/cbsoft",
+    "url": "https://cbsoft.sbc.org.br/2018/",
     "location": "São Carlos, São Paulo"
   },
   {
     "year": 2017,
-    "url": "http://www.lia.ufc.br/~cbsoft2017/",
+    "url": "https://cbsoft.sbc.org.br/2017/",
     "location": "Fortaleza, Ceará"
   },
   {
     "year": 2016,
-    "url": "http://cbsoft.org/cbsoft2016/vii-congresso-brasileiro-de-software-teoria-e-pratica-cbsoft-2016.html",
+    "url": "https://cbsoft.sbc.org.br/2016/",
     "location": "Maringá, Paraná"
   },
   {
@@ -79,22 +79,22 @@ export const PREVIOUS_EDITIONS: readonly PreviousEdition[] = [
   },
   {
     "year": 2013,
-    "url": "http://cbsoft2013.unb.br",
+    "url": "https://cbsoft.sbc.org.br/2013/",
     "location": "Brasília, Distrito Federal"
   },
   {
     "year": 2012,
-    "url": "https://www.facebook.com/cbsoft.natal/",
+    "url": "https://cbsoft.sbc.org.br/2012/",
     "location": "Natal, Rio Grande do Norte"
   },
   {
     "year": 2011,
-    "url": "http://www.each.usp.br/cbsoft2011/",
+    "url": "https://cbsoft.sbc.org.br/2011/",
     "location": "São Paulo"
   },
   {
     "year": 2010,
-    "url": "http://wiki.dcc.ufba.br/CBSOFT",
+    "url": "https://cbsoft.sbc.org.br/2010/",
     "location": "Salvador, Bahia"
   }
 ];
