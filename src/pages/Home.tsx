@@ -1,5 +1,4 @@
 import { Hero } from '@/components/sections/Hero';
-import { Agenda } from '@/components/sections/Agenda';
 import { About } from '@/components/sections/About';
 // import { CallForPapers } from '@/components/sections/CallForPapers';
 // import { Keynotes } from '@/components/sections/Keynotes';
@@ -14,7 +13,6 @@ export function Home() {
     <main id="top">
       <Hero />
       <About />
-      <Agenda />
       {/* <CallForPapers /> */}
       {/* <Keynotes /> */}
       {/* <Guests /> */}

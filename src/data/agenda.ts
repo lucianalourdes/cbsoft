@@ -95,7 +95,7 @@ function event(
     title: fill(tpl.title, acronym),
     description: fill(tpl.desc, acronym),
     displayDesc: tpl.displayDesc,
-    url: '#cfp',
+    url: '#agenda',
   };
 }
 

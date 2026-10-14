@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { useLang } from '@/hooks/useLang';
 import { pick } from '@/lib/localized';
 import { SYMPOSIA } from '@/data/symposia';
 import { AGENDA, formatAgendaDate, type AgendaEvent } from '@/data/agenda';
+import { CALL_FOR_PAPERS_PATH } from '@/data/headerMenu';
 import { AddToCalendar } from './AddToCalendar';
 
 const eventKey = (e: AgendaEvent) => `${e.symposium}-${e.kind}`;
@@ -28,13 +30,13 @@ export function SymposiumCarousel() {
 
       <div className="symp-slide">
         <div className="symp-left">
-          <h3 className="symp-title">{pick(symposium.name, lang)}</h3>
-          <a href="#eventos" className="symp-more">
+          <h3 className="symp-title" aria-live="polite">{pick(symposium.name, lang)}</h3>
+          <Link to="/sobre" className="symp-more">
             <span>{t('agenda.readMore')}</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path d="M12 5v14M5 12h14" />
             </svg>
-          </a>
+          </Link>
         </div>
         <div className="symp-right">
           <div className="cal-list">
@@ -82,9 +84,9 @@ export function SymposiumCarousel() {
             </svg>
           </button>
         </div>
-        <a href="#cfp" className="symp-alldates">
+        <Link to={CALL_FOR_PAPERS_PATH} className="symp-alldates">
           {t('agenda.allDates')}
-        </a>
+        </Link>
       </div>
     </div>
   );

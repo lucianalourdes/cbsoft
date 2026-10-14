@@ -1230,10 +1230,41 @@
   }
 }
 
-/* ---------- Agenda — carrossel de simpósios ---------- */
+/* ---------- Home: "O que é o CBSoft?" + simpósios ---------- */
+/* Anchors land below the fixed header instead of under it. */
+.home-about,
+.home-about__symposia {
+  scroll-margin-top: var(--site-header-offset, 7rem);
+}
+
+.home-about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
+}
+
+/* Text and carousel share one row; the card column is sized so the card
+   comes out roughly square. No fixed aspect ratio: it grows with content. */
+@media (min-width: 1024px) {
+  .home-about__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 34rem);
+    gap: clamp(3rem, 5vw, 6rem);
+    align-items: start;
+  }
+}
+
+/* On tablets the stacked card would stretch wide, so cap it. */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .home-about__symposia {
+    max-width: 36rem;
+  }
+}
+
+/* ---------- Carrossel de simpósios ---------- */
 .symp-card {
   position: relative;
-  margin-top: 3rem;
+  /* Room for the tab that sticks out above the card. */
+  margin-top: 1.25rem;
   padding: 2.75rem 2rem 1.5rem;
   border-radius: 1.5rem;
   background: var(--surface-alt);
@@ -1280,15 +1311,8 @@
 
 .symp-slide {
   display: grid;
-  gap: 2rem 3rem;
+  gap: 1.5rem;
   grid-template-columns: minmax(0, 1fr);
-}
-
-@media (min-width: 1024px) {
-  .symp-slide {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: start;
-  }
 }
 
 .symp-slide[hidden] {
@@ -1302,7 +1326,7 @@
 
 .symp-title {
   font-family: var(--font-display);
-  font-size: 1.65rem;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.15;
   color: var(--ink);
@@ -1311,7 +1335,7 @@
 
 @media (min-width: 768px) {
   .symp-title {
-    font-size: 2.05rem;
+    font-size: 1.75rem;
   }
 }
 
@@ -1319,7 +1343,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
   padding: 0.6rem 1.3rem;
   border-radius: 9999px;
   background: var(--surface);
@@ -1351,11 +1375,11 @@
 
 .symp-footer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 2rem;
-  padding-top: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .symp-nav {

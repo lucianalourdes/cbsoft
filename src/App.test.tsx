@@ -27,7 +27,7 @@ describe('App', () => {
     render(<App />);
     expect(
       screen.getAllByText(
-        'O Que é o CBSoft?',
+        'O que é o CBSoft?',
       ).length,
     ).toBeGreaterThan(0);
 
@@ -36,7 +36,7 @@ describe('App', () => {
     });
     expect(
       await screen.findAllByText(
-        'The main forum for Software Engineering & Development in Brazil',
+        'What is CBSoft?',
       ),
     ).not.toHaveLength(0);
     expect(document.documentElement.lang).toBe('en');

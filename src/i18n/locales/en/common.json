@@ -53,8 +53,8 @@
   },
   "about": {
     "eyebrow": "ABOUT",
-    "title": "The main forum for Software Engineering & Development in Brazil",
-    "p1": "Promoted by the Brazilian Computer Society (SBC), CBSOFT brings together, once a year, four national symposia into a single program. Researchers, graduate students and industry professionals share results, discuss open problems and build the research agenda for Software Engineering, Formal Methods, Reusable Architectures and Software Testing in Brazil.",
+    "title": "What is CBSoft?",
+    "p1": "The Brazilian Conference on Software: Theory and Practice (CBSoft) is held every year by the Brazilian Computer Society (SBC). Since 2010 it has brought together the Brazilian symposia in the software field, and it has become one of the main events of the Brazilian scientific community in Computing.",
     "p2": "In 2027 the congress arrives in Belo Horizonte, one of Brazil's most active innovation and startup hubs — with a program that mixes scientific tracks, an industry track, tutorials, tool demonstrations and a thesis & dissertation contest.",
     "statSymposia": "co-located symposia",
     "statYears": "years of history",
