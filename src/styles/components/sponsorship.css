@@ -1,0 +1,252 @@
+/* "Quem está contribuindo" sponsors section. */
+
+/* ---------- Quem está contribuindo ---------- */
+/* Partners sit as a quiet institutional grid — marks straight on the
+   page, hairline divisions, no cards or shadows. */
+.contrib-inst {
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.contrib-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(2.25rem, 5vw, 3.75rem);
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.contrib-row__label {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+.contrib-row__logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(3rem, 9vw, 7rem);
+}
+
+.contrib-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+a.contrib-logo {
+  transition: opacity 0.18s ease;
+}
+
+a.contrib-logo:hover {
+  opacity: 0.6;
+}
+
+.contrib-logo img {
+  width: auto;
+  height: clamp(5rem, 11vw, 8.5rem);
+  max-width: clamp(15rem, 40vw, 26rem);
+  object-fit: contain;
+}
+
+/* UFMG and SBC are square seals — nudged up so they read at the same
+   optical weight as the other marks. */
+.contrib-logo--ufmg img,
+.contrib-logo--sbc img {
+  height: clamp(6.5rem, 14vw, 10.5rem);
+}
+
+/* "Organização" row — UFMG and PUC Minas side by side, each following its
+   own brand manual.
+
+   UFMG: full mark at 180px (140px on tablets, 120px on phones — never less),
+   always width + height:auto. Clear area of 4x on every side, x being the
+   height of the bar under the "M" (6.15% of the mark's width).
+
+   PUC Minas (2025, p. 30): partner marks sit to the left of the brasão,
+   aligned on the base, at a distance equal to three letters "U" of the
+   logotype. U ≈ 12.3% of the brasão's width; the brasão is 0.727 as wide as
+   it is tall; never narrower than 18mm (≈68px).
+
+   Both distances are made the same: the brasão's height follows the UFMG
+   width (0.916 × width), so the gap is exactly 3U and exactly 4x. */
+.contrib-row--organizers {
+  --ufmg-w: 180px;
+  --ufmg-4x: calc(var(--ufmg-w) * 0.246);
+  --puc-h: calc(var(--ufmg-w) * 0.916);
+}
+
+.contrib-row--organizers .contrib-row__logos {
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  gap: var(--ufmg-4x);
+  /* Keep 4x free between the marks and the row label above. */
+  padding-top: var(--ufmg-4x);
+}
+
+.contrib-row--organizers .contrib-logo img {
+  display: block;
+  max-width: none;
+}
+
+.contrib-row--organizers .contrib-logo--puc-minas img {
+  width: auto;
+  height: var(--puc-h);
+}
+
+.contrib-row--organizers .contrib-logo--ufmg img {
+  width: var(--ufmg-w);
+  height: auto;
+  object-fit: contain;
+}
+
+/* UFMG: no effects on the mark — no hover fade — and the keyboard focus
+   ring is drawn outside its 4x clear area instead of inside it. */
+a.contrib-logo--ufmg:hover {
+  opacity: 1;
+}
+
+a.contrib-logo--ufmg:focus-visible {
+  outline-offset: var(--ufmg-4x);
+}
+
+@media (max-width: 768px) {
+  .contrib-row--organizers {
+    --ufmg-w: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contrib-row--organizers {
+    --ufmg-w: 120px;
+  }
+}
+
+/* Shown exactly as supplied: no fade on hover. */
+a.contrib-logo--puc-minas:hover {
+  opacity: 1;
+}
+
+.contrib-logo__fallback {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* Sponsorship call — an editorial horizontal division, not a boxed CTA. */
+.contrib-patron {
+  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  padding-top: clamp(2.75rem, 5vw, 3.75rem);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+}
+
+@media (min-width: 768px) {
+  .contrib-patron {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+}
+
+.contrib-patron__body {
+  max-width: 52ch;
+}
+
+.contrib-patron__kicker {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+.contrib-patron__title {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.contrib-patron__text {
+  margin: 0.85rem 0 0;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--slate);
+}
+
+.contrib-cta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  align-self: start;
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 1.35vw, 1.05rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--purple);
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--purple) 30%, transparent);
+  transition:
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+@media (min-width: 768px) {
+  .contrib-cta {
+    align-self: end;
+  }
+}
+
+.contrib-cta__arrow {
+  transition: transform 0.18s ease;
+}
+
+.contrib-cta:hover {
+  color: var(--pink-deep);
+  border-bottom-color: currentColor;
+}
+
+.contrib-cta:hover .contrib-cta__arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 640px) {
+  .contrib-row {
+    gap: 1.5rem;
+    padding-block: clamp(2.25rem, 9vw, 3.25rem);
+  }
+
+  .contrib-row__logos {
+    gap: clamp(2.5rem, 9vw, 3rem);
+  }
+
+  .contrib-logo img {
+    height: clamp(3.25rem, 15vw, 5rem);
+    max-width: 68vw;
+  }
+
+  .contrib-logo--ufmg img,
+  .contrib-logo--sbc img {
+    height: clamp(4.25rem, 19vw, 6.25rem);
+  }
+
+
+  .contrib-patron {
+    margin-top: clamp(2.5rem, 10vw, 3.5rem);
+    padding-top: clamp(2rem, 8vw, 2.75rem);
+  }
+}

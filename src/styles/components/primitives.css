@@ -1,0 +1,130 @@
+/* Shared component classes: buttons, tags, language switcher. */
+
+/* ---------- Component classes (kept as global CSS for 1:1 identity) ---------- */
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+  font-weight: 600;
+}
+
+.rule {
+  border-top: 1px solid var(--line);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.375rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.375rem;
+  border-radius: 9999px;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+  /* Long labels (e.g. "Submeter via JEMS / SBC OpenLibrary") must wrap
+     instead of forcing the page wider than the viewport on mobile. */
+  text-align: center;
+  text-wrap: balance;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-accent {
+  color: #fff;
+  box-shadow: 0 6px 16px -6px rgba(107, 44, 143, 0.45);
+  color: var(--brand-magenta);
+  border-color: var(--line);
+
+  border-width: 0.15rem;
+}
+
+.btn-accent:hover {
+  background-color: var(--pink);
+  color: var(--paper);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--purple);
+  border: 1.5px solid var(--purple);
+}
+
+.btn-outline:hover {
+  background: var(--purple);
+  color: #fff;
+}
+
+.tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--line);
+  color: var(--slate);
+}
+
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: clamp(0.5rem, 1.5vw, 2rem);
+}
+
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0.25rem;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+
+.language-toggle__flag {
+  display: block;
+  width: 2rem;
+  height: 1.375rem;
+  object-fit: cover;
+}
+
+.language-toggle:hover .language-toggle__flag {
+  opacity: 0.8;
+}
+
+.language-toggle:focus-visible {
+  outline: 3px solid var(--brand-purple);
+  outline-offset: 3px;
+}
+
+
+#mobile-menu {
+  transition:
+    max-height 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.avatar-ph {
+  background: var(--surface-alt);
+  border: 1px dashed var(--line);
+  color: var(--slate-soft);
+}
