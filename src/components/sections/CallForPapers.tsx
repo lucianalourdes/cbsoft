@@ -6,6 +6,7 @@ import { DataTable } from '@/components/ui/DataTable';
 import { useLang } from '@/hooks/useLang';
 import { pick } from '@/lib/localized';
 import { CFP_MILESTONES } from '@/data/cfp';
+import { PUBLICATION } from '@/data/publication';
 
 export function CallForPapers() {
   const { t } = useTranslation();
@@ -16,6 +17,7 @@ export function CallForPapers() {
     m.date ?? t('cfp.tbd'),
   ]);
   const strongRows = CFP_MILESTONES.map((m) => Boolean(m.strong));
+  const { guidelinesUrl, submissionUrl } = PUBLICATION.callForPapers;
 
   return (
     <Reveal id="cfp" className="py-20 md:py-28">
@@ -30,17 +32,22 @@ export function CallForPapers() {
               intro={t('cfp.intro')}
               introClassName="mt-4 leading-relaxed"
             />
+            {/* Each CTA appears only once its URL is set in PUBLICATION. */}
             <div className="flex flex-col gap-3 mt-7">
-              <Button variant="accent" href="#" className="!text-white justify-center" style={{ backgroundColor: 'var(--magenta)', color: 'var(--ink)' }}>
-                {t('cfp.guidelines')}
-              </Button>
-              <Button
-                href="#"
-                className="justify-center border"
-                style={{ borderColor: 'var(--line)', color: 'var(--ink)' }}
-              >
-                {t('cfp.submit')}
-              </Button>
+              {guidelinesUrl && (
+                <Button variant="accent" href={guidelinesUrl} className="!text-white justify-center" style={{ backgroundColor: 'var(--magenta)', color: 'var(--ink)' }}>
+                  {t('cfp.guidelines')}
+                </Button>
+              )}
+              {submissionUrl && (
+                <Button
+                  href={submissionUrl}
+                  className="justify-center border"
+                  style={{ borderColor: 'var(--line)', color: 'var(--ink)' }}
+                >
+                  {t('cfp.submit')}
+                </Button>
+              )}
             </div>
           </div>
 

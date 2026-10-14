@@ -2,10 +2,12 @@ import { useEffect } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { RegistrationFees } from '@/components/sections/Registration';
 import { BrandStripes } from '@/components/ui/BrandStripes';
-import { REGISTRATION_URL, SBC_URL } from '@/data/registration';
+import { SBC_URL } from '@/data/registration';
+import { PUBLICATION, registrationOpen } from '@/data/publication';
 
 export function RegistrationPage() {
   const { t } = useTranslation();
+  const open = registrationOpen();
 
   useEffect(() => {
     const previous = document.title;
@@ -25,10 +27,11 @@ export function RegistrationPage() {
             {t('registrationPage.title')}
           </h1>
 
-          {/* Until the SBC system opens, show the CTA as a disabled placeholder. */}
+          {/* "Em breve" until fees, categories and the SBC link are approved
+              in PUBLICATION.registration. */}
           <div className="registration-cta">
-            {REGISTRATION_URL ? (
-              <a className="btn btn-accent" href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">
+            {open ? (
+              <a className="btn btn-accent" href={PUBLICATION.registration.url!} target="_blank" rel="noopener noreferrer">
                 {t('registrationPage.cta')}
               </a>
             ) : (
@@ -48,16 +51,24 @@ export function RegistrationPage() {
               />
             </p>
             <p>{t('registrationPage.p2')}</p>
-            <p>
-              <Trans i18nKey="registrationPage.p3" components={{ b: <strong /> }} />
-            </p>
-            <p>{t('registrationPage.p4')}</p>
-            <p>
-              <Trans i18nKey="registrationPage.p5" components={{ b: <strong /> }} />
-            </p>
+            {open ? (
+              <>
+                <p>
+                  <Trans i18nKey="registrationPage.p3" components={{ b: <strong /> }} />
+                </p>
+                <p>{t('registrationPage.p4')}</p>
+                <p>
+                  <Trans i18nKey="registrationPage.p5" components={{ b: <strong /> }} />
+                </p>
+              </>
+            ) : (
+              <p className="registration-soon" role="note">
+                {t('registrationPage.soon')}
+              </p>
+            )}
           </div>
 
-          <RegistrationFees />
+          {open && <RegistrationFees />}
         </div>
       </section>
     </main>

@@ -9,23 +9,39 @@ export interface Symposium {
   /** MOD.01 … MOD.04 tag shown on the cards. */
   mod: string;
   accent: AccentToken;
+  /** Official name, without acronym or edition. Single source for every
+   *  page, menu and description that names the symposium. */
+  title: Localized;
+  /** 2027 edition: roman numeral (pt) and ordinal (en). Confirm with each
+   *  steering committee before launch. */
+  edition: Localized;
+  /** "Official name (ACRONYM)". */
   name: Localized;
   blurb: Localized;
 }
 
-export const SYMPOSIA: Symposium[] = [
+type SymposiumSource = Omit<Symposium, 'name'>;
+
+const withName = (s: SymposiumSource): Symposium => ({
+  ...s,
+  name: { pt: `${s.title.pt} (${s.acronym})`, en: `${s.title.en} (${s.acronym})` },
+});
+
+/** The four symposia co-located at CBSoft 2027 — the canonical list. */
+export const SYMPOSIA: Symposium[] = ([
   {
     id: 'sbes',
     acronym: 'SBES',
     mod: '01',
     accent: 'purple',
-    name: {
-      pt: 'Simpósio Brasileiro de Engenharia de Software (SBES)',
-      en: 'Brazilian Symposium on Software Engineering (SBES)',
+    title: {
+      pt: 'Simpósio Brasileiro de Engenharia de Software',
+      en: 'Brazilian Symposium on Software Engineering',
     },
+    edition: { pt: 'XLI', en: '41st' },
     blurb: {
-      pt: 'Simpósio Brasileiro de Engenharia de Software — trilha científica principal do congresso.',
-      en: 'Brazilian Symposium on Software Engineering — the flagship scientific track.',
+      pt: 'O principal evento de Engenharia de Software na América Latina.',
+      en: 'The leading Software Engineering event in Latin America.',
     },
   },
   {
@@ -33,13 +49,14 @@ export const SYMPOSIA: Symposium[] = [
     acronym: 'SBMF',
     mod: '02',
     accent: 'cyan',
-    name: {
-      pt: 'Simpósio Brasileiro de Métodos Formais (SBMF)',
-      en: 'Brazilian Symposium on Formal Methods (SBMF)',
+    title: {
+      pt: 'Simpósio Brasileiro de Métodos Formais',
+      en: 'Brazilian Symposium on Formal Methods',
     },
+    edition: { pt: 'XXX', en: '30th' },
     blurb: {
-      pt: 'Simpósio Brasileiro de Métodos Formais — especificação, verificação e semântica de software e sistemas.',
-      en: 'Brazilian Symposium on Formal Methods — specification, verification and semantics of software and systems.',
+      pt: 'Especificação, verificação e semântica de software e sistemas.',
+      en: 'Specification, verification and semantics of software and systems.',
     },
   },
   {
@@ -47,13 +64,14 @@ export const SYMPOSIA: Symposium[] = [
     acronym: 'SBCARS',
     mod: '03',
     accent: 'leaf',
-    name: {
-      pt: 'Simpósio Brasileiro de Componentes, Arquiteturas e Reutilização de Software (SBCARS)',
-      en: 'Brazilian Symposium on Components, Architectures and Reuse Systems (SBCARS)',
+    title: {
+      pt: 'Simpósio Brasileiro de Componentes, Arquiteturas e Reutilização de Software',
+      en: 'Brazilian Symposium on Software Components, Architectures, and Reuse',
     },
+    edition: { pt: 'XXI', en: '21st' },
     blurb: {
-      pt: 'Simpósio Brasileiro de Componentes, Arquiteturas e Reutilização de Software.',
-      en: 'Brazilian Symposium on Components, Architectures and Reuse Systems.',
+      pt: 'Linhas de produto, componentes, arquiteturas de software e reutilização.',
+      en: 'Product lines, components, software architectures and reuse.',
     },
   },
   {
@@ -61,16 +79,17 @@ export const SYMPOSIA: Symposium[] = [
     acronym: 'SAST',
     mod: '04',
     accent: 'pink',
-    name: {
-      pt: 'Simpósio Brasileiro de Testes Sistemático e Automatizado de Software (SAST)',
-      en: 'Brazilian Symposium on Systematic and Automated Software Testing (SAST)',
+    title: {
+      pt: 'Simpósio Brasileiro de Teste de Software Sistemático e Automatizado',
+      en: 'Brazilian Symposium on Systematic and Automated Software Testing',
     },
+    edition: { pt: 'XII', en: '12th' },
     blurb: {
-      pt: 'Simpósio Brasileiro de Testes Sistemático e Automatizado de Software.',
-      en: 'Brazilian Symposium on Systematic and Automated Software Testing.',
+      pt: 'Sistematização e automação da atividade de teste de software.',
+      en: 'Systematisation and automation of software testing.',
     },
   },
-];
+] satisfies SymposiumSource[]).map(withName);
 
 export const COMPLEMENTARY_TRACKS: Localized[] = [
   { pt: 'Trilha de Indústria', en: 'Industry Track' },

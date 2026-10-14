@@ -15,10 +15,10 @@ export const SEARCH_ENTRIES: SearchEntry[] = [
     href: '/inscricoes',
     title: { pt: 'Inscrições', en: 'Registration' },
     description: {
-      pt: 'Valores de inscrição, lotes e associação à SBC.',
-      en: 'Registration fees, rates and SBC membership.',
+      pt: 'Inscrições pelo sistema da SBC — em breve.',
+      en: 'Registration through the SBC system — coming soon.',
     },
-    keywords: ['inscrever', 'inscreva-se', 'valores', 'preço', 'lote', 'register', 'fees', 'price', 'combo'],
+    keywords: ['inscrição', 'inscrever', 'inscreva-se', 'valores', 'preço', 'lote', 'register', 'fees', 'price', 'combo'],
   },
   {
     href: '/workshops/chamada',

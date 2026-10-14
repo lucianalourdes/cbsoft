@@ -9,14 +9,15 @@ beforeEach(async () => {
 });
 
 describe('RegistrationPage', () => {
-  it('renders the four registration categories with fees pending', () => {
+  it('shows registration as coming soon while fees are not approved', () => {
     render(
       <MemoryRouter>
         <RegistrationPage />
       </MemoryRouter>,
     );
     expect(screen.getByRole('heading', { level: 1, name: 'Inscrições' })).toBeTruthy();
-    expect(screen.getByText('Estudante de Graduação (sócio SBC)')).toBeTruthy();
-    expect(screen.getAllByText('A definir').length).toBeGreaterThanOrEqual(12);
+    expect(screen.getByText('Inscrições em breve')).toBeTruthy();
+    expect(screen.queryByText('Estudante de Graduação (sócio SBC)')).toBeNull();
+    expect(screen.queryByRole('table')).toBeNull();
   });
 });

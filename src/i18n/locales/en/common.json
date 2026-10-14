@@ -65,6 +65,7 @@
     "title": "Registration",
     "cta": "Register here",
     "ctaSoon": "Registration opening soon",
+    "soon": "Registration will be handled through the SBC system. Dates, categories and fees will be published here once approved.",
     "p1": "The Brazilian Conference on Software (CBSoft) is held by the <sbc>Brazilian Computer Society (SBC)</sbc>. SBC is a non-profit civil association that brings together students, teachers, professionals, researchers and Computing enthusiasts from all over Brazil, and is the largest scientific society in the field in South America.",
     "p2": "Founded in 1978, SBC fosters scientific and technological development in the country, promoting digital inclusion, encouraging teaching, research and development in Computing in Brazil and contributing to the education of socially responsible Computing professionals.",
     "p3": "Registration fees for <b>CBSoft 2027</b> are listed below.",
@@ -548,7 +549,7 @@
   },
   "homePage": {
     "metaTitle": "CBSOFT'27 — Brazilian Conference on Software",
-    "metaDescription": "CBSOFT 2027, organized by the Brazilian Computer Society (SBC), brings together the SBES, SBLP, SBCARS and SAST symposia in Belo Horizonte, Brazil."
+    "metaDescription": "CBSOFT 2027, organized by the Brazilian Computer Society (SBC), brings together the SBES, SBMF, SBCARS and SAST symposia in Belo Horizonte, Brazil."
   },
   "conductPage": {
     "metaTitle": "Code of Conduct — CBSOFT'27",

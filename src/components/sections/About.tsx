@@ -1,16 +1,20 @@
 import { useTranslation } from 'react-i18next';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { SYMPOSIA } from '@/data/symposia';
+import { congressDays } from '@/data/publication';
 import { SymposiumCarousel } from './SymposiumCarousel';
 
 /** "O que é o CBSoft?" and the symposia carousel, side by side on desktop. */
 export function About() {
   const { t } = useTranslation();
 
+  // The days figure appears only once the congress dates are confirmed.
+  const days = congressDays();
   const stats = [
-    { value: '04', label: t('about.statSymposia') },
+    { value: String(SYMPOSIA.length).padStart(2, '0'), label: t('about.statSymposia') },
     { value: '15+', label: t('about.statYears') },
-    { value: 'X', label: t('about.statDays') },
+    ...(days ? [{ value: String(days).padStart(2, '0'), label: t('about.statDays') }] : []),
   ];
 
   return (
@@ -22,7 +26,10 @@ export function About() {
             {t('about.p1')}
           </p>
 
-          <dl className="grid grid-cols-3 gap-6 mt-10 pt-8 rule">
+          <dl
+            className="grid gap-6 mt-10 pt-8 rule"
+            style={{ gridTemplateColumns: `repeat(${stats.length}, minmax(0, 1fr))` }}
+          >
             {stats.map((stat) => (
               <div key={stat.label}>
                 <dt className="font-mono text-3xl font-semibold" style={{ color: 'var(--purple)' }}>

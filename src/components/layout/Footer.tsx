@@ -1,10 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { CONGRESS, SOCIAL_LINKS } from '@/data/config';
+import { SOCIAL_LINKS } from '@/data/config';
+import { ABOUT_CONGRESS } from '@/data/about';
 import { SocialIcon } from '@/components/ui/SocialIcon';
 
 export function Footer() {
   const { t } = useTranslation();
-  const year = CONGRESS.start.slice(0, 4);
+  const year = ABOUT_CONGRESS.year;
 
   const channels = SOCIAL_LINKS.filter((link) => {
     try {

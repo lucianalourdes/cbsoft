@@ -1,14 +1,3 @@
-/** Full-paper submission deadline the hero countdown targets (js/main.js). */
-export const COUNTDOWN_DEADLINE = '2027-03-15T23:59:59-03:00';
-
-export const CONGRESS = {
-  edition: 29,
-  city: 'Belo Horizonte',
-  state: 'Minas Gerais',
-  start: '2027-09-27',
-  end: '2027-10-01',
-} as const;
-
 export interface SocialLink {
   label: string;
   href: string;

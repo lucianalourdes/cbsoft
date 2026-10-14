@@ -65,6 +65,7 @@
     "title": "Inscrições",
     "cta": "Inscreva-se aqui",
     "ctaSoon": "Inscrições em breve",
+    "soon": "As inscrições serão feitas pelo sistema da SBC. Datas, categorias e valores serão divulgados aqui assim que forem aprovados.",
     "p1": "O Congresso Brasileiro de Software (CBSoft) é um evento realizado pela <sbc>Sociedade Brasileira de Computação (SBC)</sbc>. A SBC é uma associação civil sem fins lucrativos que reúne estudantes, professores, profissionais, pesquisadores e entusiastas em Computação de todo o Brasil, sendo a maior sociedade científica da área na América do Sul.",
     "p2": "Fundada em 1978, a SBC estimula o desenvolvimento científico e tecnológico no país, promovendo a inclusão digital, incentivando atividades de ensino, pesquisa e desenvolvimento em Computação no Brasil e contribuindo para a formação do profissional de Computação com responsabilidade social.",
     "p3": "Os valores de inscrição no <b>CBSoft 2027</b> estão listados a seguir.",
@@ -548,7 +549,7 @@
   },
   "homePage": {
     "metaTitle": "CBSOFT'27 — Congresso Brasileiro de Software",
-    "metaDescription": "CBSOFT 2027, promovido pela Sociedade Brasileira de Computação (SBC), reúne os simpósios SBES, SBLP, SBCARS e SAST em Belo Horizonte, MG."
+    "metaDescription": "CBSOFT 2027, promovido pela Sociedade Brasileira de Computação (SBC), reúne os simpósios SBES, SBMF, SBCARS e SAST em Belo Horizonte, MG."
   },
   "conductPage": {
     "metaTitle": "Código de Conduta — CBSOFT'27",

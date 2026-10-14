@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { useCountdown } from '@/hooks/useCountdown';
-import { COUNTDOWN_DEADLINE } from '@/data/config';
+import { PUBLICATION } from '@/data/publication';
 
 export function Countdown() {
   const { t } = useTranslation();
-  const { d, h, m, s } = useCountdown(COUNTDOWN_DEADLINE);
+  const { d, h, m, s } = useCountdown(PUBLICATION.countdown.target);
 
   const cells = [
     { value: d, label: t('hero.units.days') },

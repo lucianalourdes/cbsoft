@@ -2494,6 +2494,14 @@ a.contrib-logo--puc-minas:hover {
   color: var(--pink);
 }
 
+/* "Em breve" note shown instead of the fee table until it is approved. */
+.registration-soon {
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--pink);
+  border-radius: 0 0.5rem 0.5rem 0;
+  background: var(--surface-alt);
+}
+
 /* Voluntários (/voluntarios) — reuses the workshops-call layout. */
 .volunteers-layout {
   margin-top: clamp(2.5rem, 5vw, 3.5rem);
