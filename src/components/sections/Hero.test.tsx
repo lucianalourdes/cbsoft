@@ -115,16 +115,6 @@ describe('Hero carousel', () => {
     expect(currentPhoto()).toBe('Mostrar foto 2');
   });
 
-  it('allows an explicit pause and resume', () => {
-    render(<Hero />);
-    fireEvent.click(screen.getByRole('button', { name: 'Pausar' }));
-    advance();
-    expect(currentPhoto()).toBe('Mostrar foto 1');
-    fireEvent.click(screen.getByRole('button', { name: 'Reproduzir' }));
-    advance();
-    expect(currentPhoto()).toBe('Mostrar foto 2');
-  });
-
   it('pauses during touch or pointer interaction and resumes after release', () => {
     render(<Hero />);
     fireEvent.pointerDown(screen.getByRole('region', { name: 'Faltam' }));
@@ -140,7 +130,6 @@ describe('Hero carousel', () => {
     render(<Hero />);
     advance();
     expect(currentPhoto()).toBe('Mostrar foto 1');
-    expect((screen.getByRole('button', { name: 'Reproduzir' }) as HTMLButtonElement).disabled).toBe(true);
     fireEvent.click(screen.getByRole('button', { name: 'Próxima foto' }));
     expect(currentPhoto()).toBe('Mostrar foto 2');
     Object.defineProperty(motion, 'matches', { value: false });
@@ -175,6 +164,14 @@ describe('Hero carousel', () => {
     await act(async () => { await i18n.changeLanguage('en'); });
     expect(screen.getByRole('button', { name: 'Previous photo' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Next photo' })).toBeTruthy();
-    expect(screen.getByRole('button', { name: 'Pause' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Show photo 1' })).toBeTruthy();
+  });
+
+  it('no longer shows the CBSoft logo; the header carries the brand', () => {
+    const { container } = render(<Hero />);
+    expect(container.querySelector('.home-hero__logo')).toBeNull();
+    expect(container.querySelector('img[src*="logo"]')).toBeNull();
+    // The auxiliary wave graphic stays.
+    expect(container.querySelector('.home-hero__wave img')).not.toBeNull();
   });
 });

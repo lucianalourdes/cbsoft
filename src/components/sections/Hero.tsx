@@ -58,14 +58,6 @@ export function Hero() {
             </a>
           </div>
 
-          <img
-            className="home-hero__logo"
-            src={IMAGES.logo_text_white}
-            width={2059}
-            height={728}
-            alt={t('header.homeAria')}
-          />
-
           <div
             className="home-hero__controls"
             role="group"

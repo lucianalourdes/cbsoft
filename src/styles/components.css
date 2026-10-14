@@ -774,9 +774,17 @@
   opacity: 1;
 }
 
+/* Uniform wash plus a soft, deeper oval behind the countdown, text and
+   CTAs, so white text holds WCAG contrast even over bright sky or the
+   fountain spray, while the photo edges stay lighter. */
 .home-hero__shade {
   z-index: -2;
-  background: rgba(16, 9, 22, 0.40);
+  background:
+    radial-gradient(ellipse 75% 40% at 50% 56%,
+      rgba(16, 9, 22, 0.36) 0%,
+      rgba(16, 9, 22, 0.36) 50%,
+      rgba(16, 9, 22, 0) 100%),
+    rgba(16, 9, 22, 0.40);
 }
 
 /* The first grid line anchors the countdown's center at half the viewport.
@@ -936,12 +944,6 @@
   transform: translateY(0);
 }
 
-.home-hero__logo {
-  width: clamp(8.5rem, 10.938vw, 13.125rem);
-  height: auto;
-  object-fit: contain;
-}
-
 .home-hero__wave {
   position: absolute;
   z-index: 1;
@@ -1007,8 +1009,11 @@
   }
 }
 
-/* Native buttons provide keyboard activation and 44px touch targets. */
+/* Native buttons provide keyboard activation and 44px touch targets.
+   The extra top margin replaces the gap the removed hero logo used to
+   leave between the CTAs and the photo controls. */
 .home-hero__controls {
+  margin-top: clamp(0.5rem, 2vw, 1.5rem);
   display: flex;
   align-items: center;
   justify-content: center;
