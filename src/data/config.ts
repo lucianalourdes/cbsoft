@@ -83,6 +83,8 @@ export const IMAGES = {
   logo_text_white: asset('assets/images/logo-text-white.png'),
   logo_text_black: asset('assets/images/logo-text-black.png'),
   logo_text_mono: asset('assets/images/logo-text-mono.png'),
+  // Top line of logo-text.png: the manual's short typographic signature.
+  logo_wordmark: asset('assets/images/logo-wordmark.png'),
   praca: asset('assets/images/praca-liberdade.jpg'),
   praca2: asset('assets/images/praca-liberdade-2.jpg'),
   praca3: asset('assets/images/praca-liberdade-3.jpg'),

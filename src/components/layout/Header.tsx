@@ -131,10 +131,17 @@ export function Header() {
           onClick={closeAllMenus}
         >
           {/* Brand manual: the full logo needs at least 220px, which only wide
-              screens have room for. Smaller screens show just the symbol. */}
+              screens have room for. Smaller screens use the typographic-only
+              signature, as the manual prescribes below that size. */}
           <picture>
-            <source media="(min-width: 1280px)" srcSet={IMAGES.logo_horizontal} />
-            <img className="site-header__logo" src={IMAGES.grafismo_icon} alt="" />
+            <source media="(min-width: 1280px)" srcSet={IMAGES.logo_horizontal} width={5196} height={1802} />
+            <img
+              className="site-header__logo"
+              src={IMAGES.logo_wordmark}
+              alt=""
+              width={2059}
+              height={310}
+            />
           </picture>
         </Link>
 

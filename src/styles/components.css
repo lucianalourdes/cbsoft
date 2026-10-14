@@ -131,8 +131,13 @@
 
 
 :root {
-  /* Height of the "Realização: SBC" strip above the header's main bar. */
-  --sbc-strip-height: 4.75rem;
+  /* SBC logo height in the strip. SBC manual: the version with subtitle
+     stays legible down to 2cm wide (about 48px tall in this lockup). */
+  --sbc-logo-h: 3.5rem;
+  /* Height of the "Realização: SBC" strip: the logo plus its clear space.
+     SBC manual: X is the stem width of the "B" (about 5.2% of the logo's
+     height); the margin is 2X on top/right and 3X on bottom/left. */
+  --sbc-strip-height: calc(var(--sbc-logo-h) + 1.25rem);
 }
 
 .site-header {
@@ -160,16 +165,17 @@
   margin-top: var(--sbc-strip-height);
 }
 
+/* No divider line: it would cut through the CBSoft logo's clear space. */
 .site-header__sbc {
   height: var(--sbc-strip-height);
-  border-bottom: 1px solid var(--line-soft);
 }
 
+/* Right-aligned, so the SBC logo sits clear of the CBSoft logo below it. */
 .site-header__sbc-inner {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.2rem;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
   width: 100%;
   max-width: 120rem;
   height: 100%;
@@ -178,9 +184,10 @@
 }
 
 .site-header__sbc-label {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   line-height: 1;
   color: var(--slate);
+  white-space: nowrap;
 }
 
 .site-header__sbc-link {
@@ -192,7 +199,7 @@
 .site-header__sbc-link img {
   display: block;
   width: auto;
-  height: 2.75rem;
+  height: var(--sbc-logo-h);
 }
 
 .site-header__sbc+.site-header__inner {
@@ -209,14 +216,17 @@
   padding-inline: clamp(2rem, 6.25vw, 7.5rem);
 }
 
-/* Below 1280px the header shows only the logo symbol (see Header.tsx).
-   The nav sits after margin-left:auto, so this margin is the minimum gap. */
+/* Below 1280px the header shows the typographic-only signature (see
+   Header.tsx). Brand manual: clear space of 2X around the logo, X being the
+   width of its letter "O" (about 13.7% of the signature's width). The nav
+   sits after margin-left:auto, so this margin is the minimum gap. */
 .site-header__logo-link {
-  --logo-w: 3.5rem;
+  --logo-w: 9rem;
+  --logo-clear: calc(var(--logo-w) * 0.275);
   display: block;
   flex: none;
   width: var(--logo-w);
-  margin-right: 2rem;
+  margin-right: var(--logo-clear);
   line-height: 0;
 }
 
@@ -232,20 +242,19 @@
   outline: none;
 }
 
-/* Full logo from 1280px, never below the manual's 220px minimum. */
-/* Brand manual: clear space of 2X around the full logo, X being the width
-   of its letter "O" (about 8% of the logo's width). */
+/* Full logo from 1280px, never below the manual's 220px minimum. In the
+   full logo the "O" is about 8% of its width, so 2X is 16%. */
 @media (min-width: 1280px) {
   .site-header__logo-link {
-    --logo-w: clamp(13.75rem, 12.031vw, 14.438rem);
-    margin-right: calc(var(--logo-w) * 0.16);
+    --logo-w: clamp(13.75rem, 14vw, 17.5rem);
+    --logo-clear: calc(var(--logo-w) * 0.16);
   }
 }
 
 .site-header__nav {
   display: flex;
   align-items: center;
-  gap: clamp(0.5rem, 1.042vw, 1.25rem);
+  gap: clamp(0.875rem, 1.354vw, 1.75rem);
   margin-left: auto;
   white-space: nowrap;
 }
@@ -275,7 +284,8 @@
   background: transparent;
   color: #000;
   font-family: var(--font-sans);
-  font-size: clamp(0.8rem, 1.25vw, 1.5rem);
+  /* Kept below the logo's lettering so the brand leads the header. */
+  font-size: clamp(0.875rem, 0.885vw, 1.0625rem);
   font-weight: 400;
   line-height: 1.5;
   cursor: pointer;
@@ -285,8 +295,8 @@
 .site-header__nav-item img {
   display: block;
   flex: none;
-  width: clamp(0.75rem, 0.833vw, 1rem);
-  height: clamp(0.75rem, 0.833vw, 1rem);
+  width: clamp(0.75rem, 0.729vw, 0.875rem);
+  height: clamp(0.75rem, 0.729vw, 0.875rem);
   object-fit: contain;
   transition: transform 0.18s ease;
 }
@@ -308,11 +318,11 @@
   align-items: center;
   justify-content: center;
   flex: none;
-  height: clamp(2.75rem, 3.125vw, 3.75rem);
-  border-radius: clamp(0.625rem, 0.833vw, 1rem);
+  height: clamp(2.75rem, 2.5vw, 3rem);
+  border-radius: clamp(0.625rem, 0.625vw, 0.75rem);
   background: var(--brand-magenta);
   color: #fbfafc;
-  font-size: clamp(0.8rem, 1.25vw, 1.5rem);
+  font-size: clamp(0.875rem, 0.885vw, 1.0625rem);
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
@@ -320,8 +330,9 @@
 }
 
 .site-header__register {
-  width: clamp(8rem, 14.583vw, 17.5rem);
-  margin-left: clamp(1rem, 3.75vw, 4.5rem);
+  padding-inline: clamp(1.25rem, 1.667vw, 2rem);
+  margin-left: clamp(1rem, 1.667vw, 2rem);
+  white-space: nowrap;
 }
 
 .site-header__register:hover,
@@ -607,7 +618,7 @@
 
 @media (max-width: 1023px) {
   :root {
-    --sbc-strip-height: 3.75rem;
+    --sbc-logo-h: 3rem;
   }
 
   .site-header__inner,
@@ -615,12 +626,14 @@
     padding-inline: 1.25rem;
   }
 
-  .site-header__sbc-link img {
-    height: 2.1rem;
+  /* On narrow screens the SBC logo can sit above the signature, so keep
+     2X between them (strip padding plus this padding). */
+  .site-header__sbc+.site-header__inner {
+    padding-top: 1.25rem;
   }
 
   .site-header__logo-link {
-    --logo-w: 3.25rem;
+    --logo-w: 8.5rem;
   }
 
   /* On small screens the language switcher lives inside the mobile menu. */
