@@ -3,7 +3,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useLang } from '@/hooks/useLang';
 import { pick } from '@/lib/localized';
-import { BrandStripes } from '@/components/ui/BrandStripes';
+import { BrandBar } from '@/components/ui/BrandBar';
 import { ABOUT_CONGRESS, ABOUT_SYMPOSIA } from '@/data/about';
 import { SYMPOSIA, type SymposiumId } from '@/data/symposia';
 import {
@@ -158,7 +158,7 @@ export function WorkshopsCallPage() {
           <div className="wcall-layout">
             <div className="wcall-main">
               <h1 className="about-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar className="wcall-bar" />
                 {t('workshopsCallPage.contextTitle')}
               </h1>
               <div className="about-prose wcall-prose">
@@ -192,7 +192,7 @@ export function WorkshopsCallPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar className="wcall-bar" />
                 {t('workshopsCallPage.generalTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -214,7 +214,7 @@ export function WorkshopsCallPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar className="wcall-bar" />
                 {t('workshopsCallPage.submissionTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -227,7 +227,7 @@ export function WorkshopsCallPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar className="wcall-bar" />
                 {t('workshopsCallPage.preApprovedTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -248,7 +248,7 @@ export function WorkshopsCallPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar className="wcall-bar" />
                 {t('workshopsCallPage.ethicsTitle')}
               </h2>
               <div className="about-prose wcall-prose">

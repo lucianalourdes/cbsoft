@@ -62,6 +62,14 @@
   --logo-leaf: var(--brand-green);
   --logo-green: var(--brand-green);
 
+  /* Four-colour bar: the official colours in equal parts, in the logo's
+     stripe order. Use as linear-gradient(<angle>, var(--brand-bar-stops)). */
+  --brand-bar-stops:
+    var(--brand-green) 0 25%,
+    var(--brand-cyan) 25% 50%,
+    var(--brand-purple) 50% 75%,
+    var(--brand-magenta) 75% 100%;
+
   /* Fixed CTA gradient using official palette endpoints. */
   --grad-a: var(--brand-magenta);
   --grad-b: var(--brand-purple);
