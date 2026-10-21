@@ -1,0 +1,35 @@
+server {
+    listen 80;
+    server_name _;
+    root /usr/share/nginx/html;
+
+    # Redirecionamentos relativos (ex.: /cbsoft27 -> /cbsoft27/), para não
+    # vazar o host/porta interna do container quando estiver atrás de proxy.
+    absolute_redirect off;
+
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+    gzip_min_length 1024;
+
+    # SPA: qualquer rota desconhecida cai no index.html (React Router).
+    location ${VITE_BASE} {
+        try_files $uri $uri/ ${VITE_BASE}index.html;
+    }
+
+    # Arquivo inexistente em assets/ é 404 de verdade, não a home do SPA.
+    location ${VITE_BASE}assets/ {
+        try_files $uri =404;
+    }
+
+    # index.html nunca em cache, para novos deploys aparecerem na hora.
+    location = ${VITE_BASE}index.html {
+        add_header Cache-Control "no-cache";
+    }
+
+    # Bundles com hash gerados pelo Vite podem ficar em cache.
+    location ~* \.(?:js|css|woff2?|png|jpe?g|gif|svg|webp|ico)$ {
+        expires 7d;
+        access_log off;
+        try_files $uri =404;
+    }
+}
