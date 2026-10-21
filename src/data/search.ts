@@ -63,7 +63,7 @@ export const SEARCH_ENTRIES: SearchEntry[] = [
       pt: 'O congresso, seus simpósios, a identidade visual e a SBC.',
       en: 'The conference, its symposia, visual identity and SBC.',
     },
-    keywords: ['sobre', 'sbes', 'sbmf', 'sbcars', 'sast', 'simpósio', 'sbc', 'identidade', 'about', 'symposium'],
+    keywords: ['sobre', 'sbes', 'sblp', 'sbcars', 'sast', 'simpósio', 'sbc', 'identidade', 'about', 'symposium'],
   },
   {
     href: '#agenda',

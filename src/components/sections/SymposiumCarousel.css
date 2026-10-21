@@ -20,7 +20,7 @@
   --symp-accent: var(--purple);
 }
 
-.symp-card[data-symp='sbmf'] {
+.symp-card[data-symp='sblp'] {
   background: color-mix(in srgb, var(--cyan) 13%, var(--surface));
   --symp-accent: var(--cyan-deep);
 }

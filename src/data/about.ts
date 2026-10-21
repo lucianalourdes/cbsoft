@@ -35,9 +35,9 @@ const DESCRIPTIONS: Record<SymposiumId, Localized> = {
     pt: 'o principal evento de Engenharia de Software na América Latina',
     en: 'the leading Software Engineering event in Latin America',
   },
-  sbmf: {
-    pt: 'que reúne pesquisadores e profissionais interessados no desenvolvimento e na aplicação de métodos formais na construção de software e sistemas',
-    en: 'bringing together researchers and practitioners interested in developing and applying formal methods to build software and systems',
+  sblp: {
+    pt: 'que reúne pesquisadores e profissionais interessados no projeto, na implementação e na teoria de linguagens de programação',
+    en: 'bringing together researchers and practitioners interested in the design, implementation and theory of programming languages',
   },
   sbcars: {
     pt: 'que agrega tópicos como linhas de produto de software, desenvolvimento de software baseado em componentes, arquiteturas de software e reutilização',

@@ -1,6 +1,6 @@
 import type { Localized } from '@/lib/localized';
 
-export type SymposiumId = 'sbes' | 'sbmf' | 'sbcars' | 'sast';
+export type SymposiumId = 'sbes' | 'sblp' | 'sbcars' | 'sast';
 export type AccentToken = 'purple' | 'cyan' | 'leaf' | 'pink';
 
 export interface Symposium {
@@ -45,18 +45,18 @@ export const SYMPOSIA: Symposium[] = ([
     },
   },
   {
-    id: 'sbmf',
-    acronym: 'SBMF',
+    id: 'sblp',
+    acronym: 'SBLP',
     mod: '02',
     accent: 'cyan',
     title: {
-      pt: 'Simpósio Brasileiro de Métodos Formais',
-      en: 'Brazilian Symposium on Formal Methods',
+      pt: 'Simpósio Brasileiro de Linguagens de Programação',
+      en: 'Brazilian Symposium on Programming Languages',
     },
-    edition: { pt: 'XXX', en: '30th' },
+    edition: { pt: 'XXXI', en: '31st' },
     blurb: {
-      pt: 'Especificação, verificação e semântica de software e sistemas.',
-      en: 'Specification, verification and semantics of software and systems.',
+      pt: 'Projeto, implementação, semântica e análise de linguagens de programação.',
+      en: 'Design, implementation, semantics and analysis of programming languages.',
     },
   },
   {

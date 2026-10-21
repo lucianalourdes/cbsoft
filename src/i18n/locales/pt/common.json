@@ -2,7 +2,7 @@
   "nav": {
     "cbsoft": "CBSOFT'27",
     "sbes": "SBES",
-    "sbmf": "SBMF",
+    "sblp": "SBLP",
     "sbcars": "SBCARS",
     "sast": "SAST",
     "workshops": "WORKSHOPS",
@@ -453,19 +453,19 @@
       "trackCall": "Chamada de Trabalhos",
       "trackPapers": "Artigos Aceitos"
     },
-    "sbmf": {
-      "title": "SBMF",
+    "sblp": {
+      "title": "SBLP",
       "call": {
         "title": "Chamada de Trabalhos",
-        "description": "Orientações para submeter pesquisas em Métodos Formais."
+        "description": "Orientações para submeter pesquisas em Linguagens de Programação."
       },
       "program": {
         "title": "Programação",
-        "description": "Confira as sessões e atividades do SBMF."
+        "description": "Confira as sessões e atividades do SBLP."
       },
       "papers": {
         "title": "Artigos Aceitos",
-        "description": "Conheça os trabalhos selecionados para o SBMF."
+        "description": "Conheça os trabalhos selecionados para o SBLP."
       }
     },
     "sbcars": {
@@ -549,7 +549,7 @@
   },
   "homePage": {
     "metaTitle": "CBSOFT'27 — Congresso Brasileiro de Software",
-    "metaDescription": "CBSOFT 2027, promovido pela Sociedade Brasileira de Computação (SBC), reúne os simpósios SBES, SBMF, SBCARS e SAST em Belo Horizonte, MG."
+    "metaDescription": "CBSOFT 2027, promovido pela Sociedade Brasileira de Computação (SBC), reúne os simpósios SBES, SBLP, SBCARS e SAST em Belo Horizonte, MG."
   },
   "conductPage": {
     "metaTitle": "Código de Conduta — CBSOFT'27",

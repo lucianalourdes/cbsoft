@@ -2,7 +2,7 @@
   "nav": {
     "cbsoft": "CBSOFT'27",
     "sbes": "SBES",
-    "sbmf": "SBMF",
+    "sblp": "SBLP",
     "sbcars": "SBCARS",
     "sast": "SAST",
     "workshops": "WORKSHOPS",
@@ -453,19 +453,19 @@
       "trackCall": "Call for Papers",
       "trackPapers": "Accepted Papers"
     },
-    "sbmf": {
-      "title": "SBMF",
+    "sblp": {
+      "title": "SBLP",
       "call": {
         "title": "Call for Papers",
-        "description": "Guidelines for submitting Formal Methods research."
+        "description": "Guidelines for submitting Programming Languages research."
       },
       "program": {
         "title": "Schedule",
-        "description": "Explore SBMF sessions and activities."
+        "description": "Explore SBLP sessions and activities."
       },
       "papers": {
         "title": "Accepted Papers",
-        "description": "Discover the papers selected for SBMF."
+        "description": "Discover the papers selected for SBLP."
       }
     },
     "sbcars": {
@@ -549,7 +549,7 @@
   },
   "homePage": {
     "metaTitle": "CBSOFT'27 — Brazilian Conference on Software",
-    "metaDescription": "CBSOFT 2027, organized by the Brazilian Computer Society (SBC), brings together the SBES, SBMF, SBCARS and SAST symposia in Belo Horizonte, Brazil."
+    "metaDescription": "CBSOFT 2027, organized by the Brazilian Computer Society (SBC), brings together the SBES, SBLP, SBCARS and SAST symposia in Belo Horizonte, Brazil."
   },
   "conductPage": {
     "metaTitle": "Code of Conduct — CBSOFT'27",
