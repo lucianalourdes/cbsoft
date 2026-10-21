@@ -1,0 +1,114 @@
+/* ---------- Localização ---------- */
+/* Barely-there depth: two wide, low-opacity brand glows bleeding in
+   from the corners. Kept under ~6% so body text over it is unaffected. */
+.venue-section {
+  position: relative;
+  background:
+    radial-gradient(42rem 24rem at 88% -4%,
+      color-mix(in srgb, var(--pink) 6%, transparent),
+      transparent 70%),
+    radial-gradient(38rem 22rem at 0% 104%,
+      color-mix(in srgb, var(--purple) 6%, transparent),
+      transparent 70%);
+}
+@media (min-width: 1280px) {
+  .venue-section .container-xl {
+    max-width: 1360px;
+  }
+}
+
+/* Unified panel: info + media read as one component. */
+.venue-panel {
+  margin-top: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(28, 19, 48, 0.04);
+  overflow: hidden;
+}
+
+.venue-grid {
+  display: grid;
+}
+
+@media (min-width: 960px) {
+  .venue-grid {
+    grid-template-columns: 1.15fr 1fr;
+  }
+}
+
+.venue-info {
+  padding: 1.75rem;
+}
+
+.venue-media {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 1.75rem;
+  border-top: 1px solid var(--line-soft);
+  background: var(--surface-alt);
+}
+
+@media (min-width: 640px) {
+
+  .venue-info,
+  .venue-media {
+    padding: 2.25rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .venue-media {
+    border-top: 0;
+    border-left: 1px solid var(--line-soft);
+  }
+}
+
+.venue-video-cap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: 0.9rem;
+}
+
+.venue-video-org {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate-soft);
+}
+
+.venue-video-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.venue-source {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--purple);
+}
+
+.venue-source a,
+.yt-fallback,
+.venue-transit-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.venue-info,
+.venue-media,
+.venue-transit-body {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.venue-map-actions .btn,
+.venue-cta {
+  white-space: normal;
+  text-align: center;
+}

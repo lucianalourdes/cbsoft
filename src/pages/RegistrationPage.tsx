@@ -1,3 +1,9 @@
+import '@/styles/page-content.css';
+import '@/styles/links.css';
+import '@/components/ui/Button.css';
+
+import './RegistrationPage.css';
+
 import { useEffect } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { RegistrationFees } from '@/components/sections/Registration';

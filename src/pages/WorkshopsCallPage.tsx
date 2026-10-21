@@ -1,3 +1,9 @@
+import '@/styles/page-content.css';
+import '@/styles/call-layout.css';
+import '@/styles/links.css';
+
+import './WorkshopsCallPage.css';
+
 import { useEffect, type CSSProperties, type ReactNode } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';

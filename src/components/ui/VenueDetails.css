@@ -1,0 +1,118 @@
+/* Provisional-venue notice — informative, not an error state. */
+.venue-alert {
+  display: flex;
+  gap: 0.85rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--pink) 22%, var(--line));
+  border-left: 3px solid var(--pink);
+  border-radius: 0.6rem;
+  background: color-mix(in srgb, var(--pink) 5%, var(--surface));
+}
+
+.venue-alert-icon {
+  flex: none;
+  color: var(--pink-deep);
+}
+
+.venue-alert-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.venue-alert-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.venue-alert-text {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--slate);
+}
+
+.venue-subhead {
+  margin-top: 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-soft);
+}
+
+.venue-transit {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.venue-transit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: var(--surface);
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.venue-transit-item:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--pink) 32%, var(--line));
+  box-shadow: 0 8px 20px -14px rgba(28, 19, 48, 0.35);
+}
+
+.venue-transit-icon {
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.5rem;
+  background: var(--surface-alt);
+  color: var(--purple);
+}
+
+.venue-transit-icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.venue-transit-body {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.venue-transit-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.venue-transit-meta {
+  font-size: 0.8rem;
+  color: var(--slate);
+}
+
+/* Confirmed campus address and locality page. */
+.venue-address {
+  margin-bottom: 1.25rem;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.venue-transit-link {
+  margin-top: 0.45rem;
+  font-size: 0.8rem;
+  color: var(--purple);
+}

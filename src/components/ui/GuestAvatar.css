@@ -1,0 +1,23 @@
+.guest-avatar {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--surface-alt);
+  box-shadow: 0 18px 40px -20px rgba(28, 19, 48, 0.55);
+}
+
+@media (max-width: 640px) {
+
+  .guest-avatar {
+    font-size: 2rem;
+  }
+}

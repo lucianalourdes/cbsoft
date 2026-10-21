@@ -1,0 +1,156 @@
+.wcall-layout {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+@media (min-width: 1024px) {
+  .wcall-layout {
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    align-items: start;
+  }
+}
+
+.wcall-main {
+  min-width: 0;
+}
+
+/* ~72 characters per line for comfortable academic reading. */
+.wcall-prose {
+  max-width: 72ch;
+  color: var(--text-body);
+  margin-top: 1.25rem;
+}
+
+.wcall-h2 {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--line-soft);
+}
+
+.wcall-prose strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.wcall-list {
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.wcall-list li+li {
+  margin-top: 0.35rem;
+}
+
+.wcall-dates {
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+/* Both side cards (dates + organization) scroll together. */
+.wcall-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .wcall-side {
+    position: sticky;
+    /* Just below the fixed header; Header.tsx keeps the offset current. */
+    top: calc(var(--site-header-offset, 7rem) + 1.5rem);
+    transition: top 0.25s ease;
+  }
+}
+
+.wcall-dates__title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 1.1rem 1.5rem;
+  background: var(--brand-ink);
+  color: var(--brand-on);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.wcall-dates__title-icon {
+  display: inline-flex;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: none;
+}
+
+.wcall-dates__title-icon svg,
+.wcall-side__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Four-colour hairline in the logo's stripe order under the dark header. */
+.wcall-dates__title::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand-bar-stops));
+}
+
+/* Round icon badge leading each date / chair row. */
+.wcall-side__icon {
+  display: inline-flex;
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.5rem;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  color: var(--purple);
+}
+
+.wcall-dates__list {
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+}
+
+.wcall-dates__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.1rem 1.5rem;
+}
+
+.wcall-dates__item+.wcall-dates__item {
+  border-top: 1px solid var(--line-soft);
+}
+
+.wcall-dates__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.wcall-dates__label {
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+/* Date shown as a soft pill ("A definir" until confirmed). */
+.wcall-dates__date {
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--pink-deep);
+}

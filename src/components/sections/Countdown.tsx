@@ -1,3 +1,5 @@
+import './Countdown.css';
+
 import { useTranslation } from 'react-i18next';
 import { useCountdown } from '@/hooks/useCountdown';
 import { PUBLICATION } from '@/data/publication';

@@ -1,3 +1,5 @@
+import './GuestAvatar.css';
+
 import { useState } from 'react';
 import type { GuestTone } from '@/data/guests';
 

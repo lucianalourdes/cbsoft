@@ -1,0 +1,39 @@
+/* Voluntários (/voluntarios) — reuses the workshops-call layout. */
+.volunteers-layout {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.volunteers-dates {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  color: var(--text-body);
+  font-size: 1.05rem;
+}
+
+.volunteers-dates__row {
+  display: grid;
+  gap: 0.15rem 2rem;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--pink);
+  background: var(--paper);
+}
+
+@media (min-width: 640px) {
+  .volunteers-dates__row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
+
+.volunteers-dates__row dd {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.volunteers-closing {
+  margin-top: 2rem !important;
+}
+
+.wcall-list--ordered {
+  list-style: decimal;
+}

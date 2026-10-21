@@ -1,3 +1,5 @@
+import '@/styles/page-content.css';
+
 import { useEffect } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { BrandStripes } from '@/components/ui/BrandStripes';

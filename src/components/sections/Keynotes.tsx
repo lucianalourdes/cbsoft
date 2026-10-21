@@ -1,3 +1,5 @@
+import './Keynotes.css';
+
 import { useTranslation } from 'react-i18next';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';

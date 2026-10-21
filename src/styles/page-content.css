@@ -1,0 +1,146 @@
+.about-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+}
+
+/* ---------- About page (/sobre) ---------- */
+.about-page {
+  /* Comfortable measure for running paragraphs, narrower than the container. */
+  --about-measure: 66ch;
+}
+
+.about-section {
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.about-section+.about-section {
+  border-top: 1px solid var(--line-soft);
+}
+
+.about-eyebrow {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+}
+
+.about-h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3.2vw, 2.125rem);
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.about-prose {
+  max-width: var(--about-measure);
+  color: var(--slate);
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+.about-prose>*+* {
+  margin-top: 1.15rem;
+}
+
+/* Single "Sobre o CBSoft" section; clears the fixed site header. */
+.about-top {
+  padding-top: clamp(8rem, 14vw, 10rem);
+}
+
+.about-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  line-height: 1.08;
+  color: var(--ink);
+}
+
+.about-text {
+  /* Full container width, like the original CBSoft page. */
+  max-width: none;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  color: var(--text-body);
+}
+
+.about-highlight__name {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+}
+
+.about-text strong,
+.about-symposia strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.about-highlight__edition em {
+  font-style: normal;
+  color: var(--purple);
+}
+
+.about-highlight__roman {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--slate);
+}
+
+.about-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+.about-back:hover {
+  color: var(--pink-deep);
+}
+
+.about-highlight__k {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+.about-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-card,
+  .about-actcard {
+    transition: none;
+  }
+
+  .about-card:hover,
+  .about-actcard:hover {
+    transform: none;
+  }
+}

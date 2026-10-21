@@ -1,3 +1,5 @@
+import './SiteSearch.css';
+
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';

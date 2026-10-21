@@ -1,0 +1,47 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.375rem;
+  border-radius: 9999px;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+  /* Long labels (e.g. "Submeter via JEMS / SBC OpenLibrary") must wrap
+     instead of forcing the page wider than the viewport on mobile. */
+  text-align: center;
+  text-wrap: balance;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-accent {
+  color: #fff;
+  box-shadow: 0 6px 16px -6px rgba(107, 44, 143, 0.45);
+  color: var(--brand-magenta);
+  border-color: var(--line);
+
+  border-width: 0.15rem;
+}
+
+.btn-accent:hover {
+  background-color: var(--pink);
+  color: var(--paper);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--purple);
+  border: 1.5px solid var(--purple);
+}
+
+.btn-outline:hover {
+  background: var(--purple);
+  color: #fff;
+}

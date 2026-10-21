@@ -1,3 +1,5 @@
+import './AddToCalendar.css';
+
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLang } from '@/hooks/useLang';

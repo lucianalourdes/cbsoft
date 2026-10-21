@@ -1,3 +1,5 @@
+import './Hero.css';
+
 import { useTranslation } from 'react-i18next';
 import { IMAGES } from '@/data/config';
 import { useHeroCarousel } from '@/hooks/useHeroCarousel';

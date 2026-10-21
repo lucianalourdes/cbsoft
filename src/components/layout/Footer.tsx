@@ -1,3 +1,5 @@
+import './Footer.css';
+
 import { useTranslation } from 'react-i18next';
 import { SOCIAL_LINKS } from '@/data/config';
 import { ABOUT_CONGRESS } from '@/data/about';

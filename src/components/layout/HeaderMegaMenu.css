@@ -1,0 +1,277 @@
+/* ---------- Header mega menu ---------- */
+.header-mega-menu {
+  position: absolute;
+  z-index: 60;
+  top: calc(100% + 0.375rem);
+  width: clamp(34rem, 33.333vw, 40rem);
+  padding-top: 0.95rem;
+  color: #000;
+  white-space: normal;
+  animation: header-mega-menu-in 0.16s ease-out;
+}
+
+.header-mega-menu--cbsoft {
+  left: clamp(-3.2rem, -2.656vw, -1.7rem);
+}
+
+.header-mega-menu--tracks {
+  left: clamp(-3.2rem, -2.656vw, -1.7rem);
+  width: clamp(20rem, 22vw, 26rem);
+}
+
+.header-mega-menu--compact {
+  left: 50%;
+  width: clamp(18rem, 20vw, 24rem);
+  translate: -50% 0;
+}
+
+.header-mega-menu--more {
+  right: 0;
+  left: auto;
+  width: clamp(30rem, 33.333vw, 40rem);
+}
+
+.header-mega-menu__arrow {
+  position: absolute;
+  top: 0;
+  left: clamp(2.2rem, 3.229vw, 3.875rem);
+  width: 0;
+  height: 0;
+  border-right: 0.813rem solid transparent;
+  border-bottom: 1rem solid #fbfafc;
+  border-left: 0.813rem solid transparent;
+}
+
+.header-mega-menu--tracks .header-mega-menu__arrow {
+  left: clamp(2.2rem, 3.229vw, 3.875rem);
+}
+
+.header-mega-menu--compact .header-mega-menu__arrow {
+  left: calc(50% - 0.813rem);
+}
+
+.header-mega-menu--more .header-mega-menu__arrow {
+  right: 1.25rem;
+  left: auto;
+}
+
+.header-mega-menu__content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(1.5rem, 2.083vw, 2.5rem);
+  width: 100%;
+  max-height: calc(100dvh - var(--header-height) / 2 - 3.5rem);
+  padding: clamp(1.5rem, 2.135vw, 2.563rem) 1.25rem 2rem;
+  border-radius: 1rem;
+  background: #fbfafc;
+  box-shadow:
+    0 1.5rem 3.5rem rgba(23, 19, 27, 0.12),
+    0 0.35rem 1rem rgba(23, 19, 27, 0.07);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  overflow-wrap: break-word;
+}
+
+.header-mega-menu--cbsoft .header-mega-menu__content {
+  min-height: min(49.78rem, calc(100dvh - var(--header-height) / 2 - 3.5rem));
+  padding-bottom: clamp(2rem, 4.427vw, 5.313rem);
+}
+
+.header-mega-menu--compact .header-mega-menu__content,
+.header-mega-menu--tracks .header-mega-menu__content {
+  grid-template-columns: minmax(0, 1fr);
+  padding: 1.75rem;
+}
+
+.header-mega-menu__column {
+  min-width: 0;
+}
+
+.header-mega-menu__section+.header-mega-menu__section {
+  margin-top: 1.5rem;
+}
+
+.header-mega-menu__section h2 {
+  margin: 0 0 1rem;
+  color: var(--brand-magenta);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.header-mega-menu__links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header-mega-menu__links a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+  color: #000;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.header-mega-menu__links strong {
+  font-size: clamp(0.875rem, 0.833vw, 1rem);
+  font-weight: 400;
+  transition: color 0.15s ease;
+}
+
+.header-mega-menu__links span {
+  color: #84798a;
+  font-size: clamp(0.8125rem, 0.729vw, 0.875rem);
+  font-weight: 500;
+}
+
+.header-mega-menu__links a:hover strong,
+.header-mega-menu__links a:focus-visible strong {
+  color: var(--brand-magenta);
+}
+
+.header-mega-menu--tracks .header-mega-menu__links {
+  gap: 0.125rem;
+}
+
+.header-mega-menu__group-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0.6rem;
+  margin-inline: -0.6rem;
+  width: calc(100% + 1.2rem);
+  border-radius: 0.5rem;
+  color: #000;
+  line-height: 1.4;
+  text-align: left;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.header-mega-menu__group-trigger strong {
+  font-size: clamp(0.875rem, 0.833vw, 1rem);
+  font-weight: 400;
+}
+
+.header-mega-menu__group-trigger span {
+  flex: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #84798a;
+}
+
+.header-mega-menu__group-trigger:hover,
+.header-mega-menu__group-trigger:focus-visible,
+.header-mega-menu__group-trigger.is-open {
+  background: var(--surface-alt);
+  color: var(--brand-magenta);
+}
+
+.header-mega-menu__group-trigger.is-open span {
+  color: var(--brand-magenta);
+}
+
+/* Side panel with a track's links ("Chamada de Trabalhos", "Artigos Aceitos"). */
+.header-mega-menu__flyout {
+  position: absolute;
+  left: calc(100% + 0.5rem);
+  width: 15rem;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  background: #fbfafc;
+  box-shadow:
+    0 1.5rem 3.5rem rgba(23, 19, 27, 0.12),
+    0 0.35rem 1rem rgba(23, 19, 27, 0.07);
+  animation: header-mega-menu-in 0.12s ease-out;
+}
+
+.header-mega-menu__flyout a,
+.header-mega-menu__sublinks a {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  color: #000;
+  font-size: clamp(0.875rem, 0.833vw, 1rem);
+  line-height: 1.4;
+}
+
+.header-mega-menu__flyout a+a,
+.header-mega-menu__sublinks a+a {
+  border-top: 1px solid var(--line-soft);
+}
+
+.header-mega-menu__flyout a:hover,
+.header-mega-menu__flyout a:focus-visible,
+.header-mega-menu__sublinks a:hover,
+.header-mega-menu__sublinks a:focus-visible {
+  background: var(--surface-alt);
+  color: var(--brand-magenta);
+}
+
+/* Mobile: the links open inline under the track instead. */
+.header-mega-menu__sublinks {
+  margin: 0.25rem 0 0.5rem 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--line-soft);
+}
+
+@keyframes header-mega-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.45rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1023px) {
+
+  .header-mega-menu--mobile {
+    position: static;
+    inset: auto;
+    width: 100%;
+    padding: 0;
+    translate: none;
+    animation: none;
+  }
+
+  .header-mega-menu--mobile .header-mega-menu__content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    min-height: 0;
+    max-height: none;
+    padding: 1rem 0.75rem 1.5rem;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .header-mega-menu--mobile .header-mega-menu__links a {
+    padding-block: 0.25rem;
+  }
+
+  .header-mega-menu--mobile .header-mega-menu__links strong {
+    font-size: 1rem;
+  }
+
+  .header-mega-menu--mobile .header-mega-menu__links span {
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .header-mega-menu {
+    animation: none;
+  }
+}

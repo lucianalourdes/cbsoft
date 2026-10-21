@@ -1,3 +1,5 @@
+import './LanguageSwitcher.css';
+
 import { useTranslation } from 'react-i18next';
 import { useLang } from '@/hooks/useLang';
 

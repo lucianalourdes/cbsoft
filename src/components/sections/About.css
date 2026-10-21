@@ -1,0 +1,28 @@
+.rule {
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Home: "O que é o CBSoft?" + simpósios ---------- */
+/* Anchors land below the fixed header instead of under it. */
+.home-about,
+.home-about__symposia {
+  scroll-margin-top: var(--site-header-offset, 7rem);
+}
+
+.home-about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
+}
+@media (min-width: 1024px) {
+  .home-about__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 34rem);
+    gap: clamp(3rem, 5vw, 6rem);
+    align-items: start;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .home-about__symposia {
+    max-width: 36rem;
+  }
+}

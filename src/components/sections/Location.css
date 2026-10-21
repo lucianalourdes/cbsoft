@@ -1,0 +1,36 @@
+/* City line under the section title — pin icon + place. */
+.venue-place {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--slate);
+}
+
+.venue-place svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  color: var(--pink-deep);
+  flex: none;
+}
+
+/* CTA — identity gradient, arrow nudges on hover. */
+.venue-cta {
+  margin-top: 1.75rem;
+}
+
+.venue-cta .venue-cta-arrow {
+  width: 1.05rem;
+  height: 1.05rem;
+  transition: transform 0.15s ease;
+}
+
+.venue-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -12px rgba(107, 44, 143, 0.5);
+}
+
+.venue-cta:hover .venue-cta-arrow {
+  transform: translateX(3px);
+}

@@ -1,3 +1,5 @@
+import './Reveal.css';
+
 import type { HTMLAttributes } from 'react';
 import { useInView } from '@/hooks/useInView';
 

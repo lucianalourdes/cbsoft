@@ -1,3 +1,5 @@
+import './AboutSbc.css';
+
 import { Trans, useTranslation } from 'react-i18next';
 import { BrandStripes } from '@/components/ui/BrandStripes';
 import { SBC_MEMBERSHIP_URL, SBC_SPECIAL_COMMITTEES_URL } from '@/data/about';

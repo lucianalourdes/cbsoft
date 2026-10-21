@@ -1,3 +1,5 @@
+import './Button.css';
+
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
 
 type Variant = 'accent' | 'outline' | 'plain';

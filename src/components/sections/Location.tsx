@@ -1,3 +1,8 @@
+import '@/styles/venue.css';
+import '@/components/ui/Button.css';
+
+import './Location.css';
+
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Reveal } from '@/components/ui/Reveal';

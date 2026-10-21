@@ -1,0 +1,6 @@
+/* ---------- Convidados — carrossel ---------- */
+/* Contains the full-bleed track's sub-pixel overhang so it never adds
+   a horizontal scrollbar to the page. */
+.guests-section {
+  overflow-x: clip;
+}

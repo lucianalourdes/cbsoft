@@ -1,0 +1,29 @@
+/* Inscrições (/inscricoes) — reuses the about-page shell. */
+.registration-cta {
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+}
+
+.registration-cta .btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.registration-cta .btn.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.registration-cta .btn.is-disabled:hover {
+  background-color: transparent;
+  color: var(--pink);
+}
+
+/* "Em breve" note shown instead of the fee table until it is approved. */
+.registration-soon {
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--pink);
+  border-radius: 0 0.5rem 0.5rem 0;
+  background: var(--surface-alt);
+}

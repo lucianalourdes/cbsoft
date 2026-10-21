@@ -1,3 +1,7 @@
+import '@/styles/venue.css';
+
+import './YouTubeEmbed.css';
+
 import { useState } from 'react';
 
 interface YouTubeEmbedProps {

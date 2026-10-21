@@ -1,0 +1,5 @@
+.avatar-ph {
+  background: var(--surface-alt);
+  border: 1px dashed var(--line);
+  color: var(--slate-soft);
+}

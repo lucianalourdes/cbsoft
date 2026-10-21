@@ -1,0 +1,23 @@
+.venue-panel--page {
+  margin-top: 0;
+}
+
+.venue-map {
+  margin-top: 3rem;
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+  scroll-margin-top: 7rem;
+}
+
+.venue-map .about-prose {
+  margin-top: 1rem;
+}
+
+.venue-map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}

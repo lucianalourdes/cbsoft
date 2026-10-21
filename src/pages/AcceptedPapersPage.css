@@ -1,0 +1,39 @@
+/* Artigos Aceitos (/artigos-aceitos, /sbes/:track/artigos-aceitos) */
+.papers-title {
+  margin-top: 0.75rem;
+}
+
+.papers-pending {
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--pink);
+  background: var(--surface-alt);
+  color: var(--text-body);
+  font-size: 1.05rem;
+}
+
+.papers-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  padding-left: 1.5rem;
+  list-style: decimal;
+  color: var(--text-body);
+}
+
+.papers-list li>* {
+  display: block;
+}
+
+.papers-list strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.papers-tracks {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}

@@ -1,0 +1,6 @@
+.wcall-link {
+  color: var(--pink-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}

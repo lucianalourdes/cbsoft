@@ -138,3 +138,21 @@
 
   color-scheme: dark;
 }
+/* ---------- Header ---------- */
+
+
+:root {
+  /* SBC logo height in the strip. SBC manual: the version with subtitle
+     stays legible down to 2cm wide (about 48px tall in this lockup). */
+  --sbc-logo-h: 3.5rem;
+  /* Height of the "Realização: SBC" strip: the logo plus its clear space.
+     SBC manual: X is the stem width of the "B" (about 5.2% of the logo's
+     height); the margin is 2X on top/right and 3X on bottom/left. */
+  --sbc-strip-height: calc(var(--sbc-logo-h) + 1.25rem);
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --sbc-logo-h: 3rem;
+  }
+}

@@ -1,3 +1,8 @@
+import '@/styles/page-content.css';
+import '@/styles/venue.css';
+
+import './LocationPage.css';
+
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';

@@ -24,8 +24,8 @@ describe('HeaderMegaMenu — SBES tracks', () => {
     expect(container.textContent).not.toMatch(/Especial|40 Anos/);
   });
 
-  it('opens a flyout with the call and accepted papers of the hovered track', () => {
-    renderSbes();
+  it('opens a track flyout on hover and closes it when the menu scrolls', () => {
+    const { container } = renderSbes();
     const trigger = screen.getByRole('button', { name: /Trilha de Educação/ });
     fireEvent.mouseEnter(trigger);
     expect(trigger.getAttribute('aria-expanded')).toBe('true');
@@ -36,8 +36,9 @@ describe('HeaderMegaMenu — SBES tracks', () => {
     expect(links[0].getAttribute('href')).toBe('/workshops/chamada');
     expect(links[1].getAttribute('href')).toBe('/artigos-aceitos');
 
-    fireEvent.mouseEnter(screen.getByRole('link', { name: /Programação/ }));
+    fireEvent.scroll(container.querySelector('.header-mega-menu__content')!);
     expect(screen.queryByRole('group')).toBeNull();
+    expect(trigger.getAttribute('aria-expanded')).toBe('false');
   });
 
   it('expands the links inline on mobile', () => {

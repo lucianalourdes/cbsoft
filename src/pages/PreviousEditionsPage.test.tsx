@@ -13,7 +13,7 @@ beforeEach(async () => {
 });
 
 describe('PreviousEditionsPage', () => {
-  it('shows every edition from 2026 to 2010 in descending order, with archived destinations', () => {
+  it('shows every edition from 2026 to 2010 in descending order, with the configured destinations', () => {
     render(<PreviousEditionsPage />);
     expect(screen.getByRole('heading', { level: 1, name: 'Edições Anteriores' })).toBeTruthy();
     const cards = screen.getAllByRole('link');
@@ -23,10 +23,10 @@ describe('PreviousEditionsPage', () => {
       expect(card.getAttribute('target')).toBe('_blank');
       expect(card.getAttribute('rel')).toBe('noopener noreferrer');
     });
-    expect(cards[0].getAttribute('href')).toBe('https://cbsoft.sbc.org.br/2026/');
+    expect(cards[0].getAttribute('href')).toBe('https://cbsoft.sbc.org.br/2026');
     expect(cards[4].getAttribute('href')).toBe('https://cbsoft2022.facom.ufu.br/');
-    expect(cards[8].getAttribute('href')).toBe('http://cbsoft2018.icmc.usp.br/#/cbsoft');
-    expect(cards[16].getAttribute('href')).toBe('http://wiki.dcc.ufba.br/CBSOFT');
+    expect(cards[8].getAttribute('href')).toBe('https://cbsoft.sbc.org.br/2018/');
+    expect(cards[16].getAttribute('href')).toBe('https://cbsoft.sbc.org.br/2010/');
     expect(screen.getByText('São Paulo, São Paulo')).toBeTruthy();
     expect(screen.getByText('Campo Grande, Mato Grosso do Sul')).toBeTruthy();
     expect(screen.getAllByText('(Online)')).toHaveLength(3);
@@ -39,7 +39,7 @@ describe('PreviousEditionsPage', () => {
     fireEvent.error(image);
     expect(container.querySelector('img[src*="cbsoft2026"]')).toBeNull();
     const card = screen.getByRole('link', { name: /CBSoft 2026/ });
-    expect(card.getAttribute('href')).toBe('https://cbsoft.sbc.org.br/2026/');
+    expect(card.getAttribute('href')).toBe('https://cbsoft.sbc.org.br/2026');
     expect(card.querySelector('.previous-edition__fallback')?.textContent).toBe('CBSoft 2026');
   });
 

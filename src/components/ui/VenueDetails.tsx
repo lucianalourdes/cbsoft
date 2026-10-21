@@ -1,3 +1,7 @@
+import '@/styles/venue.css';
+
+import './VenueDetails.css';
+
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLang } from '@/hooks/useLang';

@@ -1,3 +1,7 @@
+import '@/styles/page-content.css';
+
+import './AboutPage.css';
+
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AboutSbc } from '@/components/sections/AboutSbc';
@@ -18,7 +22,7 @@ export function AboutPage() {
   // "…; " between items, "…; e" before the last one, "." at the end.
   const last = ABOUT_SYMPOSIA.length - 1;
   const listSeparator = (index: number) =>
-    index === last ? '.' : index === last - 1 ? t('aboutPage.listAnd') : ';';
+    index === last ? '.' : index === last - 1 ? `; ${t('aboutPage.listAnd')}` : ';';
 
   return (
     <main className="about-page" id="sobre-cbsoft">

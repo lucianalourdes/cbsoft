@@ -1,3 +1,7 @@
+import '@/styles/page-content.css';
+
+import './PreviousEditionsPage.css';
+
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrandStripes } from '@/components/ui/BrandStripes';

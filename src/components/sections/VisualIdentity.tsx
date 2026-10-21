@@ -1,3 +1,7 @@
+import '@/styles/page-content.css';
+
+import './VisualIdentity.css';
+
 import { useTranslation } from 'react-i18next';
 import { BrandStripes } from '@/components/ui/BrandStripes';
 import { IMAGES } from '@/data/config';

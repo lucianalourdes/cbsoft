@@ -1,3 +1,5 @@
+import './BrandStripes.css';
+
 import { IMAGES } from '@/data/config';
 
 interface BrandStripesProps {

@@ -1,0 +1,7 @@
+/* Official logo symbol above each heading (see BrandStripes). */
+.wcall-mark {
+  display: block;
+  width: auto;
+  height: 2.75rem;
+  margin-bottom: 0.85rem;
+}

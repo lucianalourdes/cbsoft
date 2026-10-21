@@ -1,3 +1,5 @@
+import './BrandBar.css';
+
 interface BrandBarProps {
   className?: string;
 }

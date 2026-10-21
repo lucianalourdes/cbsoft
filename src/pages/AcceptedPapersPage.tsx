@@ -1,3 +1,9 @@
+import '@/styles/page-content.css';
+import '@/styles/call-layout.css';
+import '@/styles/links.css';
+
+import './AcceptedPapersPage.css';
+
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';

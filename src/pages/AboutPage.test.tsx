@@ -30,6 +30,18 @@ describe('AboutPage', () => {
     expect(screen.getByText(/A programação do CBSoft incluirá/)).toBeTruthy();
   });
 
+  it('uses a spaced, localized conjunction in the English symposium list', async () => {
+    await i18n.changeLanguage('en');
+    const { container } = renderPage();
+    const items = container.querySelectorAll('.about-symposia li');
+
+    expect(items).toHaveLength(4);
+    expect(items[0].textContent).toMatch(/;$/);
+    expect(items[1].textContent).toMatch(/;$/);
+    expect(items[2].textContent).toMatch(/; and$/);
+    expect(items[3].textContent).toMatch(/\.$/);
+  });
+
   it('renders the visual identity section with the photo and logo', () => {
     renderPage();
     expect(
