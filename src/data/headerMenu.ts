@@ -1,7 +1,7 @@
 export type HeaderMenuId =
     | 'cbsoft'
     | 'sbes'
-    | 'sbmf'
+    | 'sblp'
     | 'sbcars'
     | 'sast'
     | 'workshops'
@@ -58,7 +58,7 @@ const sbesTrack = (id: SbesTrackId): HeaderMenuLink => ({
     ],
 });
 
-const symposiumMenu = (id: 'sbmf' | 'sbcars' | 'sast'): HeaderMenuDefinition => ({
+const symposiumMenu = (id: 'sblp' | 'sbcars' | 'sast'): HeaderMenuDefinition => ({
     variant: 'compact',
     columns: [[{
         titleKey: `headerMenu.${id}.title`,
@@ -131,7 +131,7 @@ export const HEADER_MENUS: Record<HeaderMenuId, HeaderMenuDefinition> = {
             },*/
         ]],
     },
-    sbmf: symposiumMenu('sbmf'),
+    sblp: symposiumMenu('sblp'),
     sbcars: symposiumMenu('sbcars'),
     sast: symposiumMenu('sast'),
     workshops: {
