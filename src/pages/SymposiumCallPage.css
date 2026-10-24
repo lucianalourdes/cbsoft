@@ -1,0 +1,62 @@
+/* Symposium call pages (/<symposium>/chamada) ----------------------------- */
+/* LaTeX snippets from the submission guidelines. */
+.scall-code {
+  max-width: 100%;
+  margin: 0;
+  padding: 0.85rem 1.1rem;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: var(--surface-alt);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* "Prazo final" tag under the date pill. */
+.scall-hard {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+/* Note under the dates list, e.g. "all deadlines are firm". */
+.scall-dates-note {
+  margin: 0;
+  padding: 0 1.5rem 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--slate);
+}
+
+/* Program committee as a two-column list of name + affiliation. */
+.scall-committee {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1rem 2rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scall-committee li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--line);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.scall-committee__name {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.scall-committee__affiliation {
+  color: var(--slate);
+}

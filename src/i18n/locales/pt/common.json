@@ -98,6 +98,19 @@
     "p3": "Para organização e divulgação de atividades, ações e eventos científicos, técnicos, educacionais e políticos, a SBC mantém uma estrutura de três tipos de Grupos Temáticos (GT), que são as Grandes Áreas (GA), as Comissões Especiais (CE) e os Grupos de Interesses (GI). Estes grupos reúnem associados com interesses comuns em subáreas da computação.",
     "p4": "Aqui, você está acessando o site do evento de uma das <b>Comissões Especiais (CE) da SBC</b>, que representa um grupo de associados da SBC que compartilham dos interesses e valores em determinada área da Computação. Associados vigentes podem se inscrever nas <lists>listas de e-mail das Comissões Especiais (CE)</lists> da área que deseja acompanhar. Se você ainda não é um associado ou deseja renovar sua associação à nossa comunidade <join>clique aqui</join> e venha fazer parte da maior e mais importante sociedade científica na área de computação da América Latina!"
   },
+  "symposiumCallPage": {
+    "metaTitle": "Chamada de Trabalhos — {{acronym}} — CBSOFT'27",
+    "metaDescription": "Confira a chamada de trabalhos ({{acronym}}) do CBSoft 2027: tópicos de interesse, diretrizes de submissão, datas importantes e organização.",
+    "eyebrow": "Chamada de Trabalhos",
+    "comingSoon": "A chamada de trabalhos do {{acronym}} {{year}} será divulgada em breve.",
+    "trackComingSoon": "{{track}} do SBES {{year}}: a chamada de trabalhos será divulgada em breve.",
+    "datesTitle": "Datas Importantes",
+    "tbd": "A definir",
+    "hardDeadline": "Prazo final (hard deadline)",
+    "organizationTitle": "Organização",
+    "chairsTitle": "Coordenadores do Comitê de Programa",
+    "committeeTitle": "Comitê de Programa"
+  },
   "workshopsCallPage": {
     "metaTitle": "Chamada de Trabalhos — Workshops — CBSOFT'27",
     "contextTitle": "Contexto e Objetivo",

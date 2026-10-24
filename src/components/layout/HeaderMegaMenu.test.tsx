@@ -33,7 +33,7 @@ describe('HeaderMegaMenu — SBES tracks', () => {
     const flyout = screen.getByRole('group', { name: 'Trilha de Educação' });
     const links = flyout.querySelectorAll('a');
     expect(links[0].textContent).toBe('Chamada de Trabalhos');
-    expect(links[0].getAttribute('href')).toBe('/workshops/chamada');
+    expect(links[0].getAttribute('href')).toBe('/sbes/educacao/chamada');
     expect(links[1].getAttribute('href')).toBe('/artigos-aceitos');
 
     fireEvent.scroll(container.querySelector('.header-mega-menu__content')!);

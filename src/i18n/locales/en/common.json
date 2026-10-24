@@ -98,6 +98,19 @@
     "p3": "To organise and promote scientific, technical, educational and political activities, actions and events, SBC maintains three types of Thematic Groups (GT): the Major Areas (GA), the Special Committees (CE) and the Interest Groups (GI). These groups bring together members with common interests in subfields of computing.",
     "p4": "You are visiting the website of an event of one of <b>SBC's Special Committees (CE)</b>, each representing a group of SBC members who share interests and values in a given area of Computing. Current members can subscribe to the <lists>Special Committees (CE) mailing lists</lists> for the area they wish to follow. If you are not yet a member or wish to renew your membership, <join>click here</join> and become part of the largest and most important scientific society in computing in Latin America!"
   },
+  "symposiumCallPage": {
+    "metaTitle": "Call for Papers — {{acronym}} — CBSOFT'27",
+    "metaDescription": "Read the call for papers ({{acronym}}) of CBSoft 2027: topics of interest, submission guidelines, important dates and organisation.",
+    "eyebrow": "Call for Papers",
+    "comingSoon": "The {{acronym}} {{year}} call for papers will be announced soon.",
+    "trackComingSoon": "{{track}}, SBES {{year}}: the call for papers will be announced soon.",
+    "datesTitle": "Important Dates",
+    "tbd": "TBD",
+    "hardDeadline": "Hard deadline",
+    "organizationTitle": "Organisation",
+    "chairsTitle": "Program Committee Chairs",
+    "committeeTitle": "Program Committee"
+  },
   "workshopsCallPage": {
     "metaTitle": "Call for Papers — Workshops — CBSOFT'27",
     "contextTitle": "Context and Goals",
