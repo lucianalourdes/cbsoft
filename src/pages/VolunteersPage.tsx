@@ -6,7 +6,7 @@ import './VolunteersPage.css';
 
 import { useEffect } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { BrandStripes } from '@/components/ui/BrandStripes';
+import { BrandBar } from '@/components/ui/BrandBar';
 import {
   VOLUNTEER_APPLICATION_FORM_URL,
   VOLUNTEER_COORDINATORS,
@@ -71,7 +71,7 @@ export function VolunteersPage() {
           <div className="wcall-layout volunteers-layout">
             <div className="wcall-main">
               <h2 className="about-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar />
                 {t('volunteersPage.presentationTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -81,7 +81,7 @@ export function VolunteersPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar />
                 {t('volunteersPage.benefitsTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -93,7 +93,7 @@ export function VolunteersPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar />
                 {t('volunteersPage.responsibilitiesTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -108,7 +108,7 @@ export function VolunteersPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar />
                 {t('volunteersPage.requirementsTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -120,7 +120,7 @@ export function VolunteersPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar />
                 {t('volunteersPage.procedureTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -139,7 +139,7 @@ export function VolunteersPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar />
                 {t('volunteersPage.datesSectionTitle')}
               </h2>
               <dl className="volunteers-dates">
@@ -152,7 +152,7 @@ export function VolunteersPage() {
               </dl>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar />
                 {t('volunteersPage.coordinationTitle')}
               </h2>
               <div className="about-prose wcall-prose">

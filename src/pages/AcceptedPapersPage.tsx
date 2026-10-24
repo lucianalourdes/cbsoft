@@ -7,7 +7,7 @@ import './AcceptedPapersPage.css';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
-import { BrandStripes } from '@/components/ui/BrandStripes';
+import { BrandBar } from '@/components/ui/BrandBar';
 import { SBES_TRACKS, acceptedPapersPath } from '@/data/sbesTracks';
 
 /** Accepted papers: the shared page (/artigos-aceitos) every menu link uses
@@ -63,7 +63,7 @@ export function AcceptedPapersPage() {
               )}
 
               <h2 className="about-h2 wcall-h2">
-                <BrandStripes className="wcall-mark" />
+                <BrandBar />
                 {t('acceptedPapersPage.otherTracks')}
               </h2>
               <ul className="papers-tracks">

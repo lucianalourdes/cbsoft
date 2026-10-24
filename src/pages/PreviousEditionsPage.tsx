@@ -4,7 +4,7 @@ import './PreviousEditionsPage.css';
 
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BrandStripes } from '@/components/ui/BrandStripes';
+import { BrandBar } from '@/components/ui/BrandBar';
 import { asset } from '@/data/config';
 import { PREVIOUS_EDITIONS, type PreviousEdition } from '@/data/previousEditions';
 
@@ -65,7 +65,7 @@ export function PreviousEditionsPage() {
     <main className="previous-editions-page" id="edicoes-anteriores">
       <section className="container-xl" aria-labelledby="previous-editions-title">
         <header className="previous-editions-page__heading">
-          <BrandStripes className="wcall-mark" />
+          <BrandBar />
           <h1 id="previous-editions-title" className="about-title">{t('previousEditionsPage.title')}</h1>
           <p>{t('previousEditionsPage.description')}</p>
         </header>

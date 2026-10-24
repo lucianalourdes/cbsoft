@@ -23,10 +23,6 @@
   color: var(--ink);
 }
 
-.wcall-bar {
-  margin-bottom: 1rem;
-}
-
 /* "18ª edição • Belo Horizonte — MG • 2027" highlight, with a vertical bar
    in the logo's four stripe colours. */
 .wcall-edition {

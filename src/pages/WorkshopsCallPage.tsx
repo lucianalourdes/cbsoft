@@ -164,7 +164,7 @@ export function WorkshopsCallPage() {
           <div className="wcall-layout">
             <div className="wcall-main">
               <h1 className="about-h2">
-                <BrandBar className="wcall-bar" />
+                <BrandBar />
                 {t('workshopsCallPage.contextTitle')}
               </h1>
               <div className="about-prose wcall-prose">
@@ -198,7 +198,7 @@ export function WorkshopsCallPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandBar className="wcall-bar" />
+                <BrandBar />
                 {t('workshopsCallPage.generalTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -220,7 +220,7 @@ export function WorkshopsCallPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandBar className="wcall-bar" />
+                <BrandBar />
                 {t('workshopsCallPage.submissionTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -233,7 +233,7 @@ export function WorkshopsCallPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandBar className="wcall-bar" />
+                <BrandBar />
                 {t('workshopsCallPage.preApprovedTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -254,7 +254,7 @@ export function WorkshopsCallPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandBar className="wcall-bar" />
+                <BrandBar />
                 {t('workshopsCallPage.ethicsTitle')}
               </h2>
               <div className="about-prose wcall-prose">
