@@ -2,7 +2,7 @@ import '@/styles/page-content.css';
 
 import { useEffect } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { BrandStripes } from '@/components/ui/BrandStripes';
+import { BrandBar } from '@/components/ui/BrandBar';
 
 export function ConductPage() {
   const { t } = useTranslation();
@@ -21,7 +21,7 @@ export function ConductPage() {
       <section className="about-section about-top" aria-labelledby="conduta-titulo">
         <div className="container-xl">
           <h1 id="conduta-titulo" className="about-title">
-            <BrandStripes className="wcall-mark" />
+            <BrandBar />
             {t('conductPage.title')}
           </h1>
           <div className="about-prose about-text">

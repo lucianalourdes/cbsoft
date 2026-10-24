@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { HEADER_MENUS, type HeaderMenuId } from '@/data/headerMenu';
 import { NAV_ITEMS } from '@/data/nav';
 import { IMAGES } from '@/data/config';
-import { useHideOnScrollDown } from '@/hooks/useHideOnScrollDown';
+import { useScrolledPastTop } from '@/hooks/useScrolledPastTop';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
 import { HeaderMegaMenu } from './HeaderMegaMenu';
 import { MobileMenu } from './MobileMenu';
@@ -20,9 +20,8 @@ export function Header() {
   const mobileTriggerRef = useRef<HTMLButtonElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const focusFirstLink = useRef(false);
-  const scrolledDown = useHideOnScrollDown();
-  // Keep the SBC strip in place while a menu is open, so nothing jumps.
-  const sbcHidden = scrolledDown && activeMenu === null && !mobileMenuOpen;
+  // The SBC strip only shows at the top of the page.
+  const sbcHidden = useScrolledPastTop();
 
   function cancelClose() {
     if (closeTimer.current !== null) {
@@ -108,7 +107,7 @@ export function Header() {
         }
       }}
     >
-      {/* "Realização: SBC" strip — slides away while scrolling down. */}
+      {/* "Realização: SBC" strip — slides away once the page scrolls. */}
       <div className="site-header__sbc" aria-hidden={sbcHidden || undefined}>
         <div className="site-header__sbc-inner">
           <span className="site-header__sbc-label">{t('header.organizedBy')}</span>
@@ -120,7 +119,7 @@ export function Header() {
             aria-label={t('header.sbcAria')}
             tabIndex={sbcHidden ? -1 : undefined}
           >
-            <img src={IMAGES.sbc_logo} alt="" width={1814} height={576} />
+            <img src={IMAGES.sbc_logo} alt="" width={597} height={288} />
           </a>
         </div>
       </div>

@@ -11,6 +11,10 @@ import { ConductPage } from '@/pages/ConductPage';
 import { VolunteersPage } from '@/pages/VolunteersPage';
 import { AcceptedPapersPage } from '@/pages/AcceptedPapersPage';
 import { PreviousEditionsPage } from '@/pages/PreviousEditionsPage';
+import { SymposiumCallPage } from '@/pages/SymposiumCallPage';
+import { SYMPOSIA } from '@/data/symposia';
+import { SBES_TRACKS } from '@/data/sbesTracks';
+import { sbesTrackCallPath, symposiumCallPath } from '@/data/symposiumCalls';
 
 export function App() {
   return (
@@ -28,6 +32,12 @@ export function App() {
         <Route path="/artigos-aceitos" element={<AcceptedPapersPage />} />
         <Route path="/sbes/:track/artigos-aceitos" element={<AcceptedPapersPage />} />
         <Route path="/workshops/chamada" element={<WorkshopsCallPage />} />
+        {SYMPOSIA.map(({ id }) => (
+          <Route key={id} path={symposiumCallPath(id)} element={<SymposiumCallPage id={id} />} />
+        ))}
+        {SBES_TRACKS.map(({ id }) => (
+          <Route key={id} path={sbesTrackCallPath(id)} element={<SymposiumCallPage id="sbes" track={id} />} />
+        ))}
       </Routes>
       <Footer />
     </BrowserRouter>

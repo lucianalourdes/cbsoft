@@ -6,10 +6,10 @@ import './WorkshopsCallPage.css';
 
 import { useEffect, type CSSProperties, type ReactNode } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { useLang } from '@/hooks/useLang';
 import { pick } from '@/lib/localized';
 import { BrandBar } from '@/components/ui/BrandBar';
+import { CalendarIcon, PeopleIcon, PersonIcon } from '@/components/ui/CallIcons';
 import { ABOUT_CONGRESS, ABOUT_SYMPOSIA } from '@/data/about';
 import { SYMPOSIA, type SymposiumId } from '@/data/symposia';
 import {
@@ -63,28 +63,6 @@ const SYMPOSIUM_ICONS: Record<SymposiumId, ReactNode> = {
     </svg>
   ),
 };
-
-/** Minimal line icons for the side cards. */
-const CalendarIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke}>
-    <rect x="3.5" y="5" width="17" height="15" rx="2.5" />
-    <path d="M3.5 10h17M8 3v4M16 3v4" />
-  </svg>
-);
-const PeopleIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke}>
-    <circle cx="9" cy="8.5" r="3" />
-    <path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" />
-    <circle cx="17" cy="9.5" r="2.3" />
-    <path d="M16 14.2c2.6.2 4.5 2 4.5 4.8" />
-  </svg>
-);
-const PersonIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke}>
-    <circle cx="12" cy="8.5" r="3.5" />
-    <path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6" />
-  </svg>
-);
 
 /** Bulleted list with optional nested items, as in the official call. */
 function ItemList({ items }: { items: SubmissionItem[] }) {
@@ -149,7 +127,6 @@ export function WorkshopsCallPage() {
         <div className="container-xl">
           <header className="wcall-intro">
             <p className="about-eyebrow">{t('workshopsCallPage.introEyebrow')}</p>
-            <p className="wcall-intro__tagline">{t('workshopsCallPage.introTagline')}</p>
             <p className="wcall-edition" aria-label={t('workshopsCallPage.editionAria')}>
               <span>{t('workshopsCallPage.edition')}</span>
               <span className="wcall-edition__dot" aria-hidden="true">•</span>
@@ -164,7 +141,7 @@ export function WorkshopsCallPage() {
           <div className="wcall-layout">
             <div className="wcall-main">
               <h1 className="about-h2">
-                <BrandBar className="wcall-bar" />
+                <BrandBar />
                 {t('workshopsCallPage.contextTitle')}
               </h1>
               <div className="about-prose wcall-prose">
@@ -198,7 +175,7 @@ export function WorkshopsCallPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandBar className="wcall-bar" />
+                <BrandBar />
                 {t('workshopsCallPage.generalTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -220,7 +197,7 @@ export function WorkshopsCallPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandBar className="wcall-bar" />
+                <BrandBar />
                 {t('workshopsCallPage.submissionTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -233,7 +210,7 @@ export function WorkshopsCallPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandBar className="wcall-bar" />
+                <BrandBar />
                 {t('workshopsCallPage.preApprovedTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -254,7 +231,7 @@ export function WorkshopsCallPage() {
               </div>
 
               <h2 className="about-h2 wcall-h2">
-                <BrandBar className="wcall-bar" />
+                <BrandBar />
                 {t('workshopsCallPage.ethicsTitle')}
               </h2>
               <div className="about-prose wcall-prose">
@@ -338,11 +315,6 @@ export function WorkshopsCallPage() {
               </aside>
             </div>
           </div>
-
-          <Link to="/" className="about-back">
-            <span aria-hidden="true">&larr;</span>
-            {t('workshopsCallPage.backHome')}
-          </Link>
         </div>
       </section>
     </main>

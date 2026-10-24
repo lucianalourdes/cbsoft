@@ -76,16 +76,8 @@
   padding-bottom: clamp(5rem, 12svh, 8rem);
 }
 
-.home-hero__description {
-  max-width: 46ch;
-  margin: 0 auto;
-  font-size: clamp(0.9rem, 1vw, 1.075rem);
-  line-height: 1.6;
-  color: #fff;
-}
-
-/* Actions sit as one row directly under the support text, so they read
-   as part of the countdown block rather than a stray stack. */
+/* The CTA sits directly under the countdown, so it reads as part of that
+   block rather than a stray element. */
 .home-hero__actions {
   display: flex;
   flex-wrap: wrap;
@@ -96,7 +88,6 @@
   width: 100%;
 }
 
-.home-hero__button,
 .home-hero__button_2 {
   display: inline-flex;
   align-items: center;
@@ -115,36 +106,16 @@
 }
 
 /* Deeper magenta keeps white CTA text above 4.5:1 contrast. */
-.home-hero__button {
+.home-hero__button_2 {
   background: #a9075d;
   color: #fff;
   font-weight: 600;
   box-shadow: 0 10px 26px rgba(92, 8, 59, 0.3);
 }
 
-.home-hero__button:hover {
+.home-hero__button_2:hover {
   background: #8b064d;
   box-shadow: 0 12px 30px rgba(92, 8, 59, 0.4);
-  transform: translateY(-1px);
-}
-
-.home-hero__button:active {
-  transform: translateY(0);
-}
-
-/* Secondary — quiet glass outline so the hierarchy stays clear. */
-.home-hero__button_2 {
-  background: rgba(5, 9, 32, 0.18);
-  color: #fff;
-  font-weight: 500;
-  border: 1.5px solid rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-
-.home-hero__button_2:hover {
-  background: rgba(16, 9, 22, 0.3);
-  border-color: #fff;
   transform: translateY(-1px);
 }
 
@@ -182,7 +153,6 @@
     margin-top: 0.25rem;
   }
 
-  .home-hero__button,
   .home-hero__button_2 {
     width: 100%;
     max-width: 22rem;

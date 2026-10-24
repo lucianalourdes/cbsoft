@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AboutSbc } from '@/components/sections/AboutSbc';
 import { VisualIdentity } from '@/components/sections/VisualIdentity';
-import { BrandStripes } from '@/components/ui/BrandStripes';
+import { BrandBar } from '@/components/ui/BrandBar';
 import { useLang } from '@/hooks/useLang';
 import { pick } from '@/lib/localized';
 import { ABOUT_SYMPOSIA } from '@/data/about';
@@ -30,7 +30,7 @@ export function AboutPage() {
       <section className="about-section about-top" aria-labelledby="sobre-titulo">
         <div className="container-xl">
           <h1 id="sobre-titulo" className="about-title">
-            <BrandStripes className="wcall-mark" />
+            <BrandBar />
             {t('aboutPage.title')}
           </h1>
           <div className="about-prose about-text">

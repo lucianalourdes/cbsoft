@@ -18,6 +18,9 @@ const ROUTES = [
   '/voluntarios',
   '/artigos-aceitos',
   '/workshops/chamada',
+  '/sbes/pesquisa/chamada',
+  '/sbes/educacao/chamada',
+  '/sast/chamada',
 ];
 
 function renderAt(path: string) {

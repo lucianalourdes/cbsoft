@@ -8,6 +8,7 @@ export type HeaderMenuId =
     | 'more';
 
 import { SBES_TRACKS, type SbesTrackId } from './sbesTracks';
+import { sbesTrackCallPath, symposiumCallPath } from './symposiumCalls';
 
 export interface HeaderMenuSubLink {
     href: string;
@@ -41,8 +42,8 @@ const link = (key: string, href: string, external = false): HeaderMenuLink => ({
     external,
 });
 
-/** Every "Chamada de Trabalhos" link points here for now — the only call
- *  page so far. Swap in per-symposium/track pages once they exist. */
+/** Calls for papers of the whole congress; each symposium also has its own
+ *  page (symposiumCallPath). */
 export const CALL_FOR_PAPERS_PATH = '/workshops/chamada';
 
 /** Likewise, every "Artigos Aceitos" link shares one page for now; the
@@ -51,9 +52,9 @@ export const ACCEPTED_PAPERS_PATH = '/artigos-aceitos';
 
 /** An SBES track: its call for papers and its accepted-papers page. */
 const sbesTrack = (id: SbesTrackId): HeaderMenuLink => ({
-    ...link(`sbes.tracks.${id}`, CALL_FOR_PAPERS_PATH),
+    ...link(`sbes.tracks.${id}`, sbesTrackCallPath(id)),
     children: [
-        { href: CALL_FOR_PAPERS_PATH, titleKey: 'headerMenu.sbes.trackCall' },
+        { href: sbesTrackCallPath(id), titleKey: 'headerMenu.sbes.trackCall' },
         { href: ACCEPTED_PAPERS_PATH, titleKey: 'headerMenu.sbes.trackPapers' },
     ],
 });
@@ -63,7 +64,7 @@ const symposiumMenu = (id: 'sblp' | 'sbcars' | 'sast'): HeaderMenuDefinition => 
     columns: [[{
         titleKey: `headerMenu.${id}.title`,
         links: [
-            link(`${id}.call`, CALL_FOR_PAPERS_PATH),
+            link(`${id}.call`, symposiumCallPath(id)),
             //link(`${id}.program`, '#agenda'),
             link(`${id}.papers`, ACCEPTED_PAPERS_PATH),
         ],

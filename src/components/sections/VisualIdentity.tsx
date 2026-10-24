@@ -3,7 +3,7 @@ import '@/styles/page-content.css';
 import './VisualIdentity.css';
 
 import { useTranslation } from 'react-i18next';
-import { BrandStripes } from '@/components/ui/BrandStripes';
+import { BrandBar } from '@/components/ui/BrandBar';
 import { IMAGES } from '@/data/config';
 
 /** "Identidade Visual do CBSOFT 2027" — a short tour of the brand manual:
@@ -15,7 +15,7 @@ export function VisualIdentity() {
     <section className="about-section brand-id" aria-labelledby="identidade-visual-titulo">
       <div className="container-xl">
         <h2 id="identidade-visual-titulo" className="about-h2">
-          <BrandStripes className="wcall-mark" />
+          <BrandBar />
           {t('visualIdentity.title')}
         </h2>
         <p className="about-prose brand-id__intro">{t('visualIdentity.intro')}</p>

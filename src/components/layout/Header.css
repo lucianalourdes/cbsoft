@@ -18,8 +18,8 @@
   transition: transform 0.25s ease;
 }
 
-/* Scrolling down slides the whole header up by the strip's height, so only
-   the main bar stays on screen; scrolling up brings the strip back. */
+/* Once the page scrolls, the whole header slides up by the strip's height,
+   so only the main bar stays on screen; back at the top the strip returns. */
 .site-header.is-sbc-hidden {
   transform: translateY(calc(-1 * var(--sbc-strip-height)));
 }
@@ -30,28 +30,29 @@
   margin-top: var(--sbc-strip-height);
 }
 
-/* No divider line: it would cut through the CBSoft logo's clear space. */
 .site-header__sbc {
   height: var(--sbc-strip-height);
+  border-bottom: 1px solid color-mix(in srgb, var(--pink) 15%, transparent);
 }
 
-/* Right-aligned, so the SBC logo sits clear of the CBSoft logo below it. */
+/* "Realização:" label stacked above the SBC logo, left-aligned. */
 .site-header__sbc-inner {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.75rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.375rem;
   width: 100%;
   max-width: 120rem;
   height: 100%;
   margin-inline: auto;
-  padding-inline: clamp(2rem, 6.25vw, 7.5rem);
+  padding-inline: 1.5rem;
 }
 
 .site-header__sbc-label {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   line-height: 1;
-  color: var(--slate);
+  color: var(--ink);
   white-space: nowrap;
 }
 

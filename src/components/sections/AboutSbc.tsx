@@ -1,7 +1,7 @@
 import './AboutSbc.css';
 
 import { Trans, useTranslation } from 'react-i18next';
-import { BrandStripes } from '@/components/ui/BrandStripes';
+import { BrandBar } from '@/components/ui/BrandBar';
 import { SBC_MEMBERSHIP_URL, SBC_SPECIAL_COMMITTEES_URL } from '@/data/about';
 
 const externalLink = (href: string) => (
@@ -16,7 +16,7 @@ export function AboutSbc() {
     <section className="about-section" aria-labelledby="sobre-sbc-titulo">
       <div className="container-xl">
         <h2 id="sobre-sbc-titulo" className="about-h2">
-          <BrandStripes className="wcall-mark" />
+          <BrandBar />
           {t('aboutSbc.title')}
         </h2>
         <div className="about-prose about-text">

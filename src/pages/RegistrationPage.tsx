@@ -7,7 +7,7 @@ import './RegistrationPage.css';
 import { useEffect } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { RegistrationFees } from '@/components/sections/Registration';
-import { BrandStripes } from '@/components/ui/BrandStripes';
+import { BrandBar } from '@/components/ui/BrandBar';
 import { SBC_URL } from '@/data/registration';
 import { PUBLICATION, registrationOpen } from '@/data/publication';
 
@@ -29,7 +29,7 @@ export function RegistrationPage() {
       <section className="about-section about-top" aria-labelledby="inscricoes-titulo">
         <div className="container-xl">
           <h1 id="inscricoes-titulo" className="about-title">
-            <BrandStripes className="wcall-mark" />
+            <BrandBar />
             {t('registrationPage.title')}
           </h1>
 
