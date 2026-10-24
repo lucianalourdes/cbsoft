@@ -6,7 +6,6 @@ import './WorkshopsCallPage.css';
 
 import { useEffect, type CSSProperties, type ReactNode } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { useLang } from '@/hooks/useLang';
 import { pick } from '@/lib/localized';
 import { BrandBar } from '@/components/ui/BrandBar';
@@ -338,11 +337,6 @@ export function WorkshopsCallPage() {
               </aside>
             </div>
           </div>
-
-          <Link to="/" className="about-back">
-            <span aria-hidden="true">&larr;</span>
-            {t('workshopsCallPage.backHome')}
-          </Link>
         </div>
       </section>
     </main>

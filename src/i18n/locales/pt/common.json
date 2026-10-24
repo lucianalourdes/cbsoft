@@ -77,7 +77,6 @@
     "p2": "Em 2027, a XVIII edição do CBSoft será realizada presencialmente em Belo Horizonte, Minas Gerais. As datas oficiais do evento ainda serão definidas. A edição integra quatro eventos tradicionais realizados anualmente pela comunidade brasileira em Engenharia de Software:",
     "activitiesLead": "A programação do CBSoft incluirá sessões técnicas com apresentações de artigos científicos, palestras proferidas por pesquisadores brasileiros e estrangeiros de renome nacional e internacional, painéis de discussão, workshops, e demonstrações de ferramentas.",
     "activitiesClosing": "Todas essas diversas atividades de interesse da comunidade de Engenharia de Software e de áreas relacionadas ao desenvolvimento de sistemas de software direcionam-se para a difusão do conhecimento e discussão de questões importantes relacionadas à pesquisa, desenvolvimento e inovação, tanto no Brasil quanto no mundo.",
-    "backHome": "Voltar para a página inicial",
     "metaDescription": "Conheça o CBSoft, o Congresso Brasileiro de Software: Teoria e Prática, seus simpósios integrados e as atividades da edição de 2027 em Belo Horizonte.",
     "listAnd": "e",
     "program": "A programação do CBSoft incluirá sessões técnicas com apresentações de artigos científicos, palestras proferidas por pesquisadores brasileiros e estrangeiros de renome nacional e internacional, painéis de discussão, workshops, e demonstrações de ferramentas. Todas essas diversas atividades de interesse da comunidade de Engenharia de Software e de áreas relacionadas ao desenvolvimento de sistemas de software direcionam-se para a difusão do conhecimento e discussão de questões importantes relacionadas à pesquisa, desenvolvimento e inovação, tanto no Brasil quanto no mundo."
@@ -112,7 +111,6 @@
       "finalVersion": "Versão final dos artigos (para Chairs de Workshops)"
     },
     "tbd": "A definir",
-    "backHome": "Voltar para a página inicial",
     "generalTitle": "Informações Gerais",
     "generalIntro": "A seleção de workshops para o CBSoft 2027 será baseada nas propostas submetidas. As propostas serão avaliadas considerando:",
     "criteria": [
@@ -292,8 +290,7 @@
     "mapDescription": "Use o endereço do campus como destino no Google Maps. A rota depende do seu ponto de partida. A entrada, o prédio e as salas do evento ainda serão confirmados.",
     "directions": "Traçar rota no Google Maps ↗",
     "openMap": "Abrir mapa do campus ↗",
-    "officialLocation": "Conferir endereço no site oficial da PUC Minas ↗",
-    "backHome": "Voltar para a página inicial"
+    "officialLocation": "Conferir endereço no site oficial da PUC Minas ↗"
   },
   "committee": {
     "eyebrow": "COMITÊ ORGANIZADOR",

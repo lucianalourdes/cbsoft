@@ -5,7 +5,7 @@ import './LocationPage.css';
 
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { VenueDetails } from '@/components/ui/VenueDetails';
 import { YouTubeEmbed } from '@/components/ui/YouTubeEmbed';
 import { Button } from '@/components/ui/Button';
@@ -81,9 +81,6 @@ export function LocationPage() {
               </p>
             </section>
           )}
-          <Link to="/" className="about-back">
-            <span aria-hidden="true">&larr;</span> {t('locationPage.backHome')}
-          </Link>
         </div>
       </section>
     </main>
