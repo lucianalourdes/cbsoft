@@ -148,7 +148,6 @@ export function WorkshopsCallPage() {
         <div className="container-xl">
           <header className="wcall-intro">
             <p className="about-eyebrow">{t('workshopsCallPage.introEyebrow')}</p>
-            <p className="wcall-intro__tagline">{t('workshopsCallPage.introTagline')}</p>
             <p className="wcall-edition" aria-label={t('workshopsCallPage.editionAria')}>
               <span>{t('workshopsCallPage.edition')}</span>
               <span className="wcall-edition__dot" aria-hidden="true">•</span>

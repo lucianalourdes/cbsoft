@@ -11,18 +11,6 @@
   border-bottom: 1px solid var(--line-soft);
 }
 
-.wcall-intro__tagline {
-  max-width: 44ch;
-  margin: 1rem 0 0;
-  padding-left: 1rem;
-  border-left: 3px solid var(--pink);
-  font-family: var(--font-display);
-  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
-  font-weight: 500;
-  line-height: 1.35;
-  color: var(--ink);
-}
-
 /* "18ª edição • Belo Horizonte — MG • 2027" highlight, with a vertical bar
    in the logo's four stripe colours. */
 .wcall-edition {
