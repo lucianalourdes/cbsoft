@@ -23,8 +23,6 @@
   },
   "hero": {
     "countdownTitle": "Coming in",
-    "launchDescription": "Register to learn more about the launch",
-    "learnMore": "Learn more",
     "countdownAria": "Time remaining until the submission deadline",
     "units": {
       "days": "Days",

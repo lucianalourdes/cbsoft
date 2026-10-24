@@ -46,15 +46,7 @@ export function Hero() {
         <Countdown />
 
         <div className="home-hero__details">
-          <p className="home-hero__description">
-            {t('hero.launchDescription')}
-          </p>
-
           <div className="home-hero__actions">
-            <a className="home-hero__button" href="#sobre">
-              {t('hero.learnMore')}
-            </a>
-
             <a className="home-hero__button_2" href="#patrocinio">
               {t('sponsorship.cta.sponsor.title')}
             </a>

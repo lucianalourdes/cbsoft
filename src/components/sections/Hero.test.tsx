@@ -36,7 +36,7 @@ function photos() {
 }
 
 describe('Hero carousel', () => {
-  it('prioritizes only the first decorative image and preserves the timer and CTAs', () => {
+  it('prioritizes only the first decorative image and preserves the timer and sponsor CTA', () => {
     render(<Hero />);
     expect(photos()).toHaveLength(1);
     expect(photos()[0].getAttribute('src')).toContain('praca-liberdade.jpg');
@@ -45,7 +45,6 @@ describe('Hero carousel', () => {
     expect(photos()[0].alt).toBe('');
     expect(photos()[0].parentElement?.getAttribute('aria-hidden')).toBe('true');
     expect(screen.getByRole('timer')).toBeTruthy();
-    expect(screen.getByRole('link', { name: 'Saiba mais' }).getAttribute('href')).toBe('#sobre');
     expect(screen.getByRole('link', { name: 'Seja nosso patrocinador' }).getAttribute('href')).toBe('#patrocinio');
   });
 
@@ -99,9 +98,9 @@ describe('Hero carousel', () => {
     expect(currentPhoto()).toBe('Mostrar foto 2');
   });
 
-  it('pauses while a CTA or control has focus, including focus moving inside the hero', () => {
+  it('pauses while the CTA or a control has focus, including focus moving inside the hero', () => {
     render(<Hero />);
-    const link = screen.getByRole('link', { name: 'Saiba mais' });
+    const link = screen.getByRole('link', { name: 'Seja nosso patrocinador' });
     const next = screen.getByRole('button', { name: 'Próxima foto' });
     fireEvent.focus(link);
     advance();

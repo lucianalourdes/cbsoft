@@ -23,8 +23,6 @@
   },
   "hero": {
     "countdownTitle": "Faltam",
-    "launchDescription": "Inscreva-se para saber mais sobre o lançamento",
-    "learnMore": "Saiba mais",
     "countdownAria": "Tempo restante até o prazo de submissão",
     "units": {
       "days": "Dias",
