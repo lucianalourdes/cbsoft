@@ -1,7 +1,7 @@
 import { afterEach } from 'vitest';
 import { cleanup } from '@testing-library/react';
 
-// The app mounts <BrowserRouter basename={BASE_URL}> and BASE_URL is "/cbsoft/"
+// The app mounts <BrowserRouter basename={BASE_URL}> and BASE_URL is "/cbsoft27/"
 // under Vite's config. Align jsdom's location so route "/" matches in tests.
 window.history.replaceState(null, '', import.meta.env.BASE_URL);
 

@@ -12,7 +12,7 @@ Aplicação **Vite + React + TypeScript**, com internacionalização PT/EN
 
 ```bash
 npm install       # instala dependências
-npm run dev       # servidor de desenvolvimento (http://localhost:5173/cbsoft/)
+npm run dev       # servidor de desenvolvimento (http://localhost:5173/cbsoft27/)
 npm run build     # type-check + build de produção em dist/
 npm run preview   # serve o build de dist/
 npm run lint      # ESLint
@@ -44,8 +44,13 @@ src/
   bilíngues usam o par `{ pt, en }` (`Localized` em `src/lib/localized.ts`).
 - **Prazo do contador regressivo**: `COUNTDOWN_DEADLINE` em `src/data/config.ts`.
 
-## Deploy (GitHub Pages)
+## Deploy
 
-`.github/workflows/deploy.yml` faz build e publica `dist/` a cada push na `main`.
-O `base` do Vite é `/cbsoft/` (project page). Para domínio próprio, defina
+O site oficial fica em https://icei.pucminas.br/cbsoft27/, e o `base` padrão do
+Vite é `/cbsoft27/`. Para outro caminho, defina `VITE_BASE` no build.
+
+### GitHub Pages
+
+`.github/workflows/deploy.yml` faz build e publica `dist/` a cada push na `main`,
+com `VITE_BASE=/cbsoft/` (project page). Para domínio próprio, defina
 `VITE_BASE=/` no workflow.
