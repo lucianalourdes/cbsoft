@@ -82,7 +82,7 @@ export const HEADER_MENUS: Record<HeaderMenuId, HeaderMenuDefinition> = {
                     titleKey: 'headerMenu.event.title',
                     links: [
                         link('event.about', '/sobre'),
-                        // link('event.organization', '#comite'),
+                        link('event.organization', '/organizacao'),
                         // link('event.speakers', '#palestrantes'),
                     ],
                 },
@@ -91,6 +91,7 @@ export const HEADER_MENUS: Record<HeaderMenuId, HeaderMenuDefinition> = {
                     links: [
                         link('guide.venue', '/local'),
                         link('guide.map', '/local#mapa'),
+                        link('guide.accommodation', '/acomodacoes'),
                         // link('guide.experiences', '#experiencias-bh'),
                     ],
                 },

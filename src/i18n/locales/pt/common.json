@@ -101,7 +101,6 @@
   "symposiumCallPage": {
     "metaTitle": "Chamada de Trabalhos — {{acronym}} — CBSOFT'27",
     "metaDescription": "Confira a chamada de trabalhos ({{acronym}}) do CBSoft 2027: tópicos de interesse, diretrizes de submissão, datas importantes e organização.",
-    "eyebrow": "Chamada de Trabalhos",
     "comingSoon": "A chamada de trabalhos do {{acronym}} {{year}} será divulgada em breve.",
     "trackComingSoon": "{{track}} do SBES {{year}}: a chamada de trabalhos será divulgada em breve.",
     "datesTitle": "Datas Importantes",
@@ -113,6 +112,7 @@
   },
   "workshopsCallPage": {
     "metaTitle": "Chamada de Trabalhos — Workshops — CBSOFT'27",
+    "title": "Chamada de Workshops",
     "contextTitle": "Contexto e Objetivo",
     "contextP1": "O Congresso Brasileiro de Software: Teoria e Prática (CBSoft) é um evento promovido anualmente pela Sociedade Brasileira de Computação (SBC), com o objetivo de promover a troca de experiências entre pesquisadores e profissionais da indústria e da academia sobre pesquisas recentes, tendências e inovações em software. Realizado desde 2010 como um evento agregador dos simpósios brasileiros promovidos pela SBC na área de software, o CBSoft tornou-se um dos principais eventos da comunidade de Computação no Brasil.",
     "contextP2": "Em 2027, a décima oitava edição do CBSoft será realizada presencialmente em Belo Horizonte (MG), com datas a definir, integrando quatro eventos anuais tradicionais:",
@@ -231,9 +231,6 @@
     "ethics": "Todos os trabalhos submetidos devem estar em conformidade com o <a>Código de Conduta para Autores em Publicações da Sociedade Brasileira de Computação (SBC)</a>.",
     "organizationTitle": "Organização",
     "chairsTitle": "Coordenadores do Comitê de Workshops",
-    "edition": "18ª edição",
-    "editionAria": "Destaques do CBSoft 2027",
-    "introEyebrow": "Workshops — CBSoft 2027",
     "metaDescription": "Confira a chamada de trabalhos dos workshops do CBSOFT 2027, com orientações para propostas, submissões, critérios de seleção e datas importantes."
   },
   "events": {
@@ -314,10 +311,20 @@
     "chairTbc": "coordenação a confirmar",
     "tbc": "a confirmar"
   },
+  "accommodationPage": {
+    "metaTitle": "Acomodações — CBSOFT'27",
+    "metaDescription": "Informações de hospedagem do CBSOFT 2027, em Belo Horizonte, a serem divulgadas.",
+    "title": "Acomodações",
+    "pending": "Acomodações a serem divulgadas"
+  },
+  "organizationPage": {
+    "metaTitle": "Organização — CBSOFT'27",
+    "metaDescription": "Conheça as instituições e a equipe que organizam o CBSOFT 2027, em Belo Horizonte.",
+    "title": "Organização"
+  },
   "sponsorship": {
     "eyebrow": "QUEM ESTÁ CONTRIBUINDO",
     "title": "Quem está contribuindo",
-    "intro": "O CBSOFT 2027 é organizado pela PUC Minas e pela UFMG, com realização da Sociedade Brasileira de Computação. As cotas de patrocínio e apoio estão abertas.",
     "organization": "Organização",
     "realization": "Realização",
     "support": "Patrocínio e apoio",
@@ -376,7 +383,7 @@
       },
       "accommodation": {
         "title": "Acomodações",
-        "description": "Explore opções de hospedagem em Belo Horizonte."
+        "description": "Opções de hospedagem em Belo Horizonte, a serem divulgadas."
       },
       "social": {
         "title": "Eventos Sociais",

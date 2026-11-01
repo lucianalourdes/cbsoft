@@ -52,7 +52,12 @@
 
 /* Single "Sobre o CBSoft" section; clears the fixed site header. */
 .about-top {
-  padding-top: clamp(8rem, 14vw, 10rem);
+  padding-top: clamp(9rem, 14vw, 12rem);
+}
+
+/* /organizacao#comite lands below the fixed header. */
+#comite {
+  scroll-margin-top: var(--site-header-offset, 7rem);
 }
 
 .about-title {

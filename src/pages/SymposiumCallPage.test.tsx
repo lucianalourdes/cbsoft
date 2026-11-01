@@ -77,7 +77,7 @@ describe('SymposiumCallPage', () => {
   it('shows the SBES Research Track call under the track name', () => {
     const call = SBES_TRACK_CALLS.research!;
     const { container } = renderPage('sbes', 'research');
-    expect(screen.getByRole('heading', { level: 1, name: 'Trilha de Pesquisa' })).toBeTruthy();
+    expect(screen.getByRole('heading', { level: 1, name: 'SBES — Trilha de Pesquisa' })).toBeTruthy();
     for (const section of call.sections) {
       expect(screen.getByRole('heading', { level: 2, name: section.title.pt })).toBeTruthy();
     }
@@ -88,7 +88,7 @@ describe('SymposiumCallPage', () => {
   it('shows the SBES Education Track call with the shared SBES sections', () => {
     const call = SBES_TRACK_CALLS.education!;
     const { container } = renderPage('sbes', 'education');
-    expect(screen.getByRole('heading', { level: 1, name: 'Trilha de Educação' })).toBeTruthy();
+    expect(screen.getByRole('heading', { level: 1, name: 'SBES — Trilha de Educação' })).toBeTruthy();
     for (const section of call.sections) {
       expect(screen.getByRole('heading', { level: 2, name: section.title.pt })).toBeTruthy();
     }

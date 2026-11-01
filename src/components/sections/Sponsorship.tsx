@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { asset } from '@/data/config';
+import { asset, CONTACT_EMAIL } from '@/data/config';
 import { ORGANIZERS, REALIZATION, type OrgEntry } from '@/data/sponsors';
 
 /** A single partner mark, sitting directly on the page — no card, no frame.
@@ -56,36 +56,34 @@ function Row({
   );
 }
 
+/** Organização + Realização marks, also shown on the /organizacao page. */
+export function PartnerRows() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="contrib-inst">
+      <Row
+        label={t('sponsorship.organization')}
+        entries={ORGANIZERS}
+        modifier="organizers"
+      />
+      <Row label={t('sponsorship.realization')} entries={REALIZATION} />
+    </div>
+  );
+}
+
 export function Sponsorship() {
   const { t } = useTranslation();
 
   return (
     <Reveal id="patrocinio" className="py-20 md:py-28">
       <div className="container-xl">
-        <div className="grid md:grid-cols-12 gap-10 md:gap-16">
-          <SectionHeading
-            className="md:col-span-5"
-            titleClassName="text-4xl md:text-5xl"
-            title={t('sponsorship.title')}
-          />
-          <div className="md:col-span-7">
-            <p
-              className="text-lg md:text-xl leading-relaxed"
-              style={{ color: 'var(--slate)' }}
-            >
-              {t('sponsorship.intro')}
-            </p>
-          </div>
-        </div>
+        <SectionHeading
+          titleClassName="text-sm md:text-base uppercase tracking-[.04em]"
+          title={t('sponsorship.title')}
+        />
 
-        <div className="contrib-inst">
-          <Row
-            label={t('sponsorship.organization')}
-            entries={ORGANIZERS}
-            modifier="organizers"
-          />
-          <Row label={t('sponsorship.realization')} entries={REALIZATION} />
-        </div>
+        <PartnerRows />
 
         <div className="contrib-patron">
           <div className="contrib-patron__body">
@@ -93,7 +91,7 @@ export function Sponsorship() {
             <p className="contrib-patron__title">{t('sponsorship.cta.sponsor.title')}</p>
             <p className="contrib-patron__text">{t('sponsorship.cta.sponsor.text')}</p>
           </div>
-          <a href="#comite" className="contrib-cta">
+          <a href={`mailto:${CONTACT_EMAIL}`} className="contrib-cta">
             {t('sponsorship.cta.action')}
             <span className="contrib-cta__arrow" aria-hidden="true">
               →

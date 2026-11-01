@@ -74,6 +74,8 @@ export function SymposiumCallPage({ id, track }: SymposiumCallPageProps) {
   const symposium = SYMPOSIA.find((item) => item.id === id)!;
   const call = track ? SBES_TRACK_CALLS[track] : SYMPOSIUM_CALLS[id];
   const title = track ? t(`headerMenu.sbes.tracks.${track}.title`) : pick(symposium.name, lang);
+  // A track's name alone doesn't say which symposium it belongs to.
+  const heading = track ? `${symposium.acronym} — ${title}` : title;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -83,26 +85,11 @@ export function SymposiumCallPage({ id, track }: SymposiumCallPageProps) {
     <main className="about-page" id={`${id}-chamada`}>
       <section className="about-section wcall-top">
         <div className="container-xl">
-          <header className="wcall-intro">
-            <p className="about-eyebrow">{t('symposiumCallPage.eyebrow')}</p>
-            <p className="wcall-edition">
-              <span>
-                {pick(symposium.edition, lang)} {symposium.acronym}
-              </span>
-              <span className="wcall-edition__dot" aria-hidden="true">•</span>
-              <span>
-                {ABOUT_CONGRESS.city} — {ABOUT_CONGRESS.state}
-              </span>
-              <span className="wcall-edition__dot" aria-hidden="true">•</span>
-              <span>{ABOUT_CONGRESS.year}</span>
-            </p>
-          </header>
-
           {!call ? (
             <div className="wcall-main">
               <h1 className="about-h2">
                 <BrandBar />
-                {title}
+                {heading}
               </h1>
               <div className="about-prose wcall-prose">
                 <p>
@@ -120,7 +107,7 @@ export function SymposiumCallPage({ id, track }: SymposiumCallPageProps) {
               <div className="wcall-main">
                 <h1 className="about-h2">
                   <BrandBar />
-                  {title}
+                  {heading}
                 </h1>
                 <div className="about-prose wcall-prose">
                   {call.intro.map((paragraph) => (

@@ -8,6 +8,8 @@ import { WorkshopsCallPage } from '@/pages/WorkshopsCallPage';
 import { PageMetadata } from '@/components/layout/PageMetadata';
 import { RegistrationPage } from '@/pages/RegistrationPage';
 import { ConductPage } from '@/pages/ConductPage';
+import { AccommodationPage } from '@/pages/AccommodationPage';
+import { OrganizationPage } from '@/pages/OrganizationPage';
 import { VolunteersPage } from '@/pages/VolunteersPage';
 import { AcceptedPapersPage } from '@/pages/AcceptedPapersPage';
 import { PreviousEditionsPage } from '@/pages/PreviousEditionsPage';
@@ -24,10 +26,12 @@ export function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/local" element={<LocationPage />} />
+        <Route path="/acomodacoes" element={<AccommodationPage />} />
         <Route path="/sobre" element={<AboutPage />} />
         <Route path="/edicoes-anteriores" element={<PreviousEditionsPage />} />
         <Route path="/inscricoes" element={<RegistrationPage />} />
         <Route path="/codigo-de-conduta" element={<ConductPage />} />
+        <Route path="/organizacao" element={<OrganizationPage />} />
         <Route path="/voluntarios" element={<VolunteersPage />} />
         <Route path="/artigos-aceitos" element={<AcceptedPapersPage />} />
         <Route path="/sbes/:track/artigos-aceitos" element={<AcceptedPapersPage />} />

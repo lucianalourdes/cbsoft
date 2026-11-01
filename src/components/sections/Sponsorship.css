@@ -1,8 +1,14 @@
 /* ---------- Quem está contribuindo ---------- */
 /* Partners sit as a quiet institutional grid — marks straight on the
    page, hairline divisions, no cards or shadows. */
+/* The title leads straight into the first row, so that row drops its top
+   padding and this margin alone separates them. */
 .contrib-inst {
-  margin-top: clamp(3rem, 6vw, 5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.contrib-inst>.contrib-row:first-child {
+  padding-top: 0;
 }
 
 .contrib-row {
@@ -10,18 +16,23 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(2.25rem, 5vw, 3.75rem);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   padding-block: clamp(3.5rem, 7vw, 5.5rem);
 }
 
+/* Small caps, larger than the section title, so each row reads as its own
+   heading over the marks. */
 .contrib-row__label {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--purple);
+  font-size: clamp(1.375rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  font-variant-caps: small-caps;
+  /* Ronzino has no small-caps glyphs and base.css turns synthesis off. */
+  font-synthesis-small-caps: auto;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  color: var(--ink);
 }
 
 .contrib-row__logos {
@@ -224,7 +235,7 @@ a.contrib-logo--puc-minas:hover {
 
 @media (max-width: 640px) {
   .contrib-row {
-    gap: 1.5rem;
+    gap: 1.25rem;
     padding-block: clamp(2.25rem, 9vw, 3.25rem);
   }
 

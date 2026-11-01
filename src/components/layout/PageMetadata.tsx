@@ -8,6 +8,8 @@ import { sbesTrackCallPath, symposiumCallPath } from '@/data/symposiumCalls';
 const PAGE_KEYS: Record<string, string> = {
   '/': 'homePage',
   '/sobre': 'aboutPage',
+  '/acomodacoes': 'accommodationPage',
+  '/organizacao': 'organizationPage',
   '/edicoes-anteriores': 'previousEditionsPage',
   '/workshops/chamada': 'workshopsCallPage',
 };
