@@ -67,8 +67,8 @@ export function Header() {
   }, []);
 
   // Publish how far the fixed header reaches down the viewport (main bar,
-  // plus the SBC strip while it is shown) as --site-header-offset, so sticky
-  // content such as the call-page sidebars can stop just below it. Measured
+  // plus the SBC strip while it is shown) as --site-header-offset, so content
+  // such as scroll targets can stop just below it. Measured
   // from the main bar, not the header box, so an open mega menu is ignored.
   useEffect(() => {
     const header = headerRef.current;

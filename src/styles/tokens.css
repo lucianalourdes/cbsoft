@@ -149,10 +149,13 @@
      SBC manual: X is the stem width of the "B" (about 5.2% of the logo's
      height); the margin is 2X on top/right and 3X on bottom/left. */
   --sbc-strip-height: calc(var(--sbc-logo-h) + 2.75rem);
+  /* Shared side padding, so the SBC logo and the CBSoft logo line up. */
+  --header-gutter: clamp(1.5rem, 5vw, 7.5rem);
 }
 
 @media (max-width: 1023px) {
   :root {
     --sbc-logo-h: 3.5rem;
+    --header-gutter: 1.25rem;
   }
 }

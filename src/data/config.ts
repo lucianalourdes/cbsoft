@@ -11,6 +11,9 @@ export interface SocialLink {
   | 'github';
 }
 
+/** Contato oficial do comitê, informado pela organização. */
+export const CONTACT_EMAIL = 'cbsoft27@pucminas.br';
+
 // Adicione o e-mail somente quando o contato de 2027 for confirmado.
 export const SOCIAL_LINKS: SocialLink[] = [
   {

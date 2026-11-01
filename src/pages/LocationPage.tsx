@@ -35,7 +35,7 @@ export function LocationPage() {
 
   return (
     <main className="about-page location-page" id="local-evento">
-      <section className="about-section about-header">
+      <section className="about-section about-top">
         <div className="container-xl">
           <p className="about-eyebrow">{t('location.eyebrow')}</p>
           <h1 className="about-title">{t('locationPage.title')}</h1>

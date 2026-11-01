@@ -1,46 +1,6 @@
 /* Call pages have no page header, so clear the fixed site header directly. */
 .wcall-top {
-  padding-top: clamp(8rem, 14vw, 10rem);
-}
-
-/* Short opening between the site header and the page content. */
-.wcall-intro {
-  margin-bottom: clamp(1.75rem, 3vw, 2.25rem);
-  padding-bottom: clamp(1.5rem, 3vw, 2rem);
-  border-bottom: 1px solid var(--line-soft);
-}
-
-/* "18ª edição • Belo Horizonte — MG • 2027" highlight, with a vertical bar
-   in the logo's four stripe colours. */
-.wcall-edition {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem 0.75rem;
-  width: fit-content;
-  max-width: 100%;
-  margin: 1.75rem 0 0;
-  position: relative;
-  overflow: hidden;
-  padding: 0.85rem 1.25rem 0.85rem 1.5rem;
-  border-radius: 0.75rem;
-  background: var(--surface-alt);
-  font-family: var(--font-display);
-  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.wcall-edition::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 4px;
-  background: linear-gradient(180deg, var(--brand-bar-stops));
-}
-
-.wcall-edition__dot {
-  color: var(--pink);
+  padding-top: clamp(9rem, 14vw, 12rem);
 }
 
 .wcall-layout {
@@ -72,6 +32,16 @@
   border-top: 1px solid var(--line-soft);
 }
 
+/* First section heading right under the page title, so no divider. */
+.wcall-subtitle {
+  margin: clamp(1.25rem, 2.5vw, 1.75rem) 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
 .wcall-prose strong {
   color: var(--ink);
   font-weight: 600;
@@ -93,20 +63,11 @@
   overflow: hidden;
 }
 
-/* Both side cards (dates + organization) scroll together. */
+/* Side cards (dates + organization) scroll with the page, not sticky. */
 .wcall-side {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-}
-
-@media (min-width: 1024px) {
-  .wcall-side {
-    position: sticky;
-    /* Just below the fixed header; Header.tsx keeps the offset current. */
-    top: calc(var(--site-header-offset, 7rem) + 1.5rem);
-    transition: top 0.25s ease;
-  }
 }
 
 .wcall-dates__title {

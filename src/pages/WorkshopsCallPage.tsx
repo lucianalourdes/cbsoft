@@ -10,7 +10,7 @@ import { useLang } from '@/hooks/useLang';
 import { pick } from '@/lib/localized';
 import { BrandBar } from '@/components/ui/BrandBar';
 import { CalendarIcon, PeopleIcon, PersonIcon } from '@/components/ui/CallIcons';
-import { ABOUT_CONGRESS, ABOUT_SYMPOSIA } from '@/data/about';
+import { ABOUT_SYMPOSIA } from '@/data/about';
 import { SYMPOSIA, type SymposiumId } from '@/data/symposia';
 import {
   SBC_AUTHOR_CONDUCT_URL,
@@ -125,25 +125,13 @@ export function WorkshopsCallPage() {
     <main className="about-page" id="workshops-chamada">
       <section className="about-section wcall-top">
         <div className="container-xl">
-          <header className="wcall-intro">
-            <p className="about-eyebrow">{t('workshopsCallPage.introEyebrow')}</p>
-            <p className="wcall-edition" aria-label={t('workshopsCallPage.editionAria')}>
-              <span>{t('workshopsCallPage.edition')}</span>
-              <span className="wcall-edition__dot" aria-hidden="true">•</span>
-              <span>
-                {ABOUT_CONGRESS.city} — {ABOUT_CONGRESS.state}
-              </span>
-              <span className="wcall-edition__dot" aria-hidden="true">•</span>
-              <span>{ABOUT_CONGRESS.year}</span>
-            </p>
-          </header>
-
           <div className="wcall-layout">
             <div className="wcall-main">
               <h1 className="about-h2">
                 <BrandBar />
-                {t('workshopsCallPage.contextTitle')}
+                {t('workshopsCallPage.title')}
               </h1>
+              <h2 className="wcall-subtitle">{t('workshopsCallPage.contextTitle')}</h2>
               <div className="about-prose wcall-prose">
                 <p>{t('workshopsCallPage.contextP1')}</p>
                 <p>{t('workshopsCallPage.contextP2')}</p>

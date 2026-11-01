@@ -101,7 +101,6 @@
   "symposiumCallPage": {
     "metaTitle": "Call for Papers — {{acronym}} — CBSOFT'27",
     "metaDescription": "Read the call for papers ({{acronym}}) of CBSoft 2027: topics of interest, submission guidelines, important dates and organisation.",
-    "eyebrow": "Call for Papers",
     "comingSoon": "The {{acronym}} {{year}} call for papers will be announced soon.",
     "trackComingSoon": "{{track}}, SBES {{year}}: the call for papers will be announced soon.",
     "datesTitle": "Important Dates",
@@ -113,6 +112,7 @@
   },
   "workshopsCallPage": {
     "metaTitle": "Call for Papers — Workshops — CBSOFT'27",
+    "title": "Call for Workshops",
     "contextTitle": "Context and Goals",
     "contextP1": "The Brazilian Congress on Software: Theory and Practice (CBSoft) is an annual event promoted by the Brazilian Computer Society (SBC) to foster the exchange of experiences among researchers and practitioners from industry and academia on recent research, trends and innovations in software. Held since 2010 as an umbrella event for the Brazilian symposia promoted by SBC in the software area, CBSoft has become one of the main events of the Computing community in Brazil.",
     "contextP2": "In 2027, the eighteenth edition of CBSoft will be held in person in Belo Horizonte (MG), with dates to be announced, bringing together four traditional annual events:",
@@ -231,9 +231,6 @@
     "ethics": "All submitted papers must comply with the <a>Code of Conduct for Authors in Publications of the Brazilian Computer Society (SBC)</a>.",
     "organizationTitle": "Organization",
     "chairsTitle": "Workshops Committee Chairs",
-    "edition": "18th edition",
-    "editionAria": "CBSoft 2027 highlights",
-    "introEyebrow": "Workshops — CBSoft 2027",
     "metaDescription": "Explore the call for papers for the CBSOFT 2027 workshops, including proposal and submission guidelines, selection criteria and important dates."
   },
   "events": {
@@ -314,10 +311,20 @@
     "chairTbc": "chair to be confirmed",
     "tbc": "to be confirmed"
   },
+  "accommodationPage": {
+    "metaTitle": "Accommodation — CBSOFT'27",
+    "metaDescription": "Accommodation information for CBSOFT 2027 in Belo Horizonte, to be announced.",
+    "title": "Accommodation",
+    "pending": "Accommodation to be announced"
+  },
+  "organizationPage": {
+    "metaTitle": "Organization — CBSOFT'27",
+    "metaDescription": "Meet the institutions and the team organizing CBSOFT 2027 in Belo Horizonte.",
+    "title": "Organization"
+  },
   "sponsorship": {
     "eyebrow": "WHO IS CONTRIBUTING",
     "title": "Who is contributing",
-    "intro": "CBSOFT 2027 is organised by PUC Minas and UFMG and promoted by the Brazilian Computer Society. Sponsorship and support packages are open.",
     "organization": "Organisation",
     "realization": "Promoted by",
     "support": "Sponsorship & support",
@@ -376,7 +383,7 @@
       },
       "accommodation": {
         "title": "Accommodation",
-        "description": "Explore places to stay in Belo Horizonte."
+        "description": "Places to stay in Belo Horizonte, to be announced."
       },
       "social": {
         "title": "Social Events",

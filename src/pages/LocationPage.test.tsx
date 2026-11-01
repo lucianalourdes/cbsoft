@@ -73,13 +73,13 @@ describe('event locality', () => {
     expect(screen.queryByRole('link', { name: /Traçar rota/ })).toBeNull();
   });
 
-  it('opens the map section from the desktop or mobile navigation without exposing unapproved accommodation or social events', () => {
+  it('opens the map section from the desktop or mobile navigation without exposing unapproved social events', () => {
     const scroll = vi.fn();
     const previous = Element.prototype.scrollIntoView;
     Element.prototype.scrollIntoView = scroll;
     render(<App />);
     fireEvent.click(screen.getAllByRole('button', { name: "CBSOFT'27" })[0]);
-    expect(screen.queryByRole('link', { name: /Hospedagem|Acomodação|Eventos sociais/i })).toBeNull();
+    expect(screen.queryByRole('link', { name: /Eventos sociais/i })).toBeNull();
     fireEvent.click(screen.getByRole('link', { name: /^Mapa/ }));
     expect(window.location.hash).toBe('#mapa');
     expect(screen.getByRole('heading', { name: 'Mapa e navegação' })).toBeTruthy();

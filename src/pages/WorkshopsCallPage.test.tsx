@@ -37,8 +37,8 @@ describe('WorkshopsCallPage', () => {
     await act(async () => { await i18n.changeLanguage(lang); });
     renderPage();
     const call = strings.workshopsCallPage;
-    expect(screen.getByRole('heading', { level: 1, name: call.contextTitle })).toBeTruthy();
-    for (const title of [call.generalTitle, call.submissionTitle, call.preApprovedTitle, call.ethicsTitle]) {
+    expect(screen.getByRole('heading', { level: 1, name: call.title })).toBeTruthy();
+    for (const title of [call.contextTitle, call.generalTitle, call.submissionTitle, call.preApprovedTitle, call.ethicsTitle]) {
       expect(screen.getByRole('heading', { level: 2, name: title })).toBeTruthy();
     }
   });
