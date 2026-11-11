@@ -96,7 +96,7 @@
   margin: 0 0 1rem;
   color: var(--brand-magenta);
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.5px;
@@ -120,14 +120,14 @@
 }
 
 .header-mega-menu__links strong {
-  font-size: clamp(0.875rem, 0.833vw, 1rem);
+  font-size: clamp(1rem, 0.85rem + 0.25vw, 1.125rem);
   font-weight: 400;
   transition: color 0.15s ease;
 }
 
 .header-mega-menu__links span {
   color: #84798a;
-  font-size: clamp(0.8125rem, 0.729vw, 0.875rem);
+  font-size: clamp(0.875rem, 0.75rem + 0.2vw, 1rem);
   font-weight: 500;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .header-mega-menu__group-trigger strong {
-  font-size: clamp(0.875rem, 0.833vw, 1rem);
+  font-size: clamp(1rem, 0.85rem + 0.25vw, 1.125rem);
   font-weight: 400;
 }
 
@@ -198,7 +198,7 @@
   padding: 0.6rem 0.75rem;
   border-radius: 0.5rem;
   color: #000;
-  font-size: clamp(0.875rem, 0.833vw, 1rem);
+  font-size: clamp(1rem, 0.85rem + 0.25vw, 1.125rem);
   line-height: 1.4;
 }
 
