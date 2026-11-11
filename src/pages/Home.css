@@ -1,0 +1,35 @@
+.home > .reveal {
+  position: relative;
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  scroll-margin-top: var(--site-header-offset, 7rem);
+}
+
+.home > .reveal + .reveal::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand-bar-stops));
+  pointer-events: none;
+}
+
+.home > .home-about,
+.home > #patrocinio {
+  background: var(--paper);
+}
+
+.home > .venue-section {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--brand-cyan) 14%, var(--paper)),
+    color-mix(in srgb, var(--brand-cyan) 7%, var(--paper))
+  );
+}
+
+.home > .site-search {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--brand-purple) 12%, var(--paper)),
+    color-mix(in srgb, var(--brand-magenta) 6%, var(--paper))
+  );
+}

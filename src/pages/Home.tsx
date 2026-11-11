@@ -7,10 +7,11 @@ import { Location } from '@/components/sections/Location';
 // import { Committee } from '@/components/sections/Committee';
 import { Sponsorship } from '@/components/sections/Sponsorship';
 import { SiteSearch } from '@/components/sections/SiteSearch';
+import './Home.css';
 
 export function Home() {
   return (
-    <main id="top">
+    <main id="top" className="home">
       <Hero />
       <About />
       {/* <CallForPapers /> */}
