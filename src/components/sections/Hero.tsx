@@ -3,6 +3,7 @@ import './Hero.css';
 import { useTranslation } from 'react-i18next';
 import { IMAGES } from '@/data/config';
 import { useHeroCarousel } from '@/hooks/useHeroCarousel';
+import { useHeroWave } from '@/hooks/useHeroWave';
 import { Countdown } from './Countdown';
 
 const PHOTOS = [IMAGES.praca, IMAGES.praca2, IMAGES.praca3];
@@ -10,10 +11,12 @@ const PHOTOS = [IMAGES.praca, IMAGES.praca2, IMAGES.praca3];
 export function Hero() {
   const { t } = useTranslation();
   const carousel = useHeroCarousel(PHOTOS.length);
+  const heroRef = useHeroWave(carousel.reducedMotion);
   const controlsDisabled = carousel.failed.length >= PHOTOS.length - 1;
 
   return (
     <section
+      ref={heroRef}
       className="home-hero"
       aria-labelledby="hero-countdown-title"
       onMouseEnter={() => carousel.setHovered(true)}
