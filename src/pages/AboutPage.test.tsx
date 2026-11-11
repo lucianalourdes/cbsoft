@@ -63,11 +63,11 @@ describe('AboutPage', () => {
     );
   });
 
-  it('presents the 2027 edition without confirmed dates', () => {
+  it('presents the 2027 edition with the confirmed congress period', () => {
     const { container } = renderPage();
     const text = container.textContent ?? '';
     expect(text).toMatch(/XVIII edição do CBSoft/);
     expect(text).toMatch(/Belo Horizonte/);
-    expect(text).not.toMatch(/27 de setembro|1º de outubro|outubro de 2027/i);
+    expect(text).toContain('de 27 de setembro a 1 de outubro');
   });
 });

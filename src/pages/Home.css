@@ -18,14 +18,7 @@
   background: var(--paper);
 }
 
-.home > .venue-section {
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--brand-cyan) 14%, var(--paper)),
-    color-mix(in srgb, var(--brand-cyan) 7%, var(--paper))
-  );
-}
-
+.home > .venue-section,
 .home > .site-search {
   background: linear-gradient(
     180deg,

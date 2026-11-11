@@ -6,7 +6,6 @@ import './Location.css';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Reveal } from '@/components/ui/Reveal';
-import { SectionHeading } from '@/components/ui/SectionHeading';
 import { VenueDetails } from '@/components/ui/VenueDetails';
 import { YouTubeEmbed } from '@/components/ui/YouTubeEmbed';
 import { useLang } from '@/hooks/useLang';
@@ -33,50 +32,36 @@ export function Location() {
   const lang = useLang();
 
   return (
-    <Reveal id="local" className="venue-section py-20 md:py-28">
-      <div className="container-xl">
-        <SectionHeading
-          number="05"
-          eyebrow={t('location.eyebrow')}
-          title={VENUE.name ? pick(VENUE.name, lang) : t('location.unconfirmed')}
-          titleClassName="text-2xl md:text-3xl max-w-md"
-        />
-        <p className="venue-place">
-          {PinIcon}
-          <span>{t('location.city')}</span>
-        </p>
+    <Reveal id="local" className="venue-section home-location py-20 md:py-28" aria-labelledby="home-location-title">
+      <div className="container-xl home-location__grid">
+        <div className="home-location__content">
+          <p className="home-location__badge">
+            {PinIcon}
+            <span>{t('location.eyebrow')}</span>
+          </p>
+          <h2 id="home-location-title" className="home-location__title">
+            {VENUE.name ? pick(VENUE.name, lang) : t('location.unconfirmed')}
+          </h2>
+          <p className="home-location__city">{t('location.city')}</p>
 
-        <div className="venue-panel">
-          <div className="venue-grid">
-            <div className="venue-info">
-              <VenueDetails />
+          <VenueDetails compact />
 
-              <Link to={VENUE.infoUrl} className="btn btn-accent venue-cta text-brand-magenta">
-                <span>{t('location.moreInfo')}</span>
-                <svg
-                  className="venue-cta-arrow"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                  {...stroke}
-                >
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
-              </Link>
-            </div>
-
-            <figure className="venue-media">
-              <YouTubeEmbed
-                id={VENUE.video.id}
-                title={t('location.videoTitle')}
-                playAria={t('location.playAria')}
-                fallbackLabel={t('location.videoFallback')}
-              />
-              <figcaption className="venue-video-cap">
-                <span className="venue-video-title">{t('location.videoTitle')}</span>
-              </figcaption>
-            </figure>
-          </div>
+          <Link to={VENUE.infoUrl} className="btn home-location__cta">
+            <span>{t('location.moreInfo')}</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke}>
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+          </Link>
         </div>
+
+        <figure className="home-location__media">
+          <YouTubeEmbed
+            id={VENUE.video.id}
+            title={t('location.videoTitle')}
+            playAria={t('location.playAria')}
+            fallbackLabel={t('location.videoFallback')}
+          />
+        </figure>
       </div>
     </Reveal>
   );

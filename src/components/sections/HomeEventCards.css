@@ -1,0 +1,122 @@
+.home-event-cards {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 29rem;
+  margin-top: 1.75rem;
+}
+
+.home-event-card {
+  --card-accent: var(--cyan-deep);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--card-accent) 25%, var(--line));
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--card-accent) 5%, var(--surface));
+  color: var(--ink);
+}
+
+.home-event-card--date {
+  --card-accent: var(--pink-deep);
+  display: block;
+  padding: 0;
+}
+
+.home-event-card--pending,
+.home-event-card__trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+}
+
+.home-event-card__icon {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--card-accent);
+}
+
+.home-event-card__body {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.home-event-card__label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--card-accent);
+}
+
+.home-event-card__value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.home-event-card__note {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--slate);
+}
+
+.home-event-card__arrow,
+.home-event-card__chevron {
+  flex: none;
+  margin-left: auto;
+  color: var(--card-accent);
+}
+
+.home-event-card__chevron {
+  width: 1rem;
+  height: 1rem;
+}
+
+a.home-event-card:hover,
+.home-event-card__trigger:hover {
+  background: color-mix(in srgb, var(--card-accent) 10%, var(--surface));
+}
+
+.home-event-card__trigger {
+  border-radius: inherit;
+  list-style: none;
+  cursor: pointer;
+}
+
+.home-event-card__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.home-event-card[open] .home-event-card__chevron {
+  transform: rotate(180deg);
+}
+
+.home-event-card__calendars {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0 1rem 0.75rem;
+  padding: 0.5rem 0 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.home-event-card__calendars a {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--card-accent);
+}
+
+.home-event-card__calendars a:hover {
+  background: var(--surface);
+}

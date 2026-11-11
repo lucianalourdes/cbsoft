@@ -42,10 +42,11 @@ const TRANSIT_ICONS: Record<TransitIcon, ReactNode> = {
   ),
 };
 
-export function VenueDetails() {
+export function VenueDetails({ compact = false }: { compact?: boolean }) {
   const { t } = useTranslation();
   const lang = useLang();
   const confirmed = Boolean(VENUE.name && VENUE.address);
+  const TransitHeading = compact ? 'h3' : 'h2';
 
   return (
     <>
@@ -65,7 +66,7 @@ export function VenueDetails() {
       </div>
       {confirmed && (
         <>
-          <h2 className="venue-subhead">{t('location.transitHeading')}</h2>
+          <TransitHeading className={compact ? 'sr-only' : 'venue-subhead'}>{t('location.transitHeading')}</TransitHeading>
           <ul className="venue-transit">
             {VENUE.transit.map((option) => (
               <li key={option.id}>
@@ -73,17 +74,21 @@ export function VenueDetails() {
                   <span className="venue-transit-icon" aria-hidden="true">{TRANSIT_ICONS[option.icon]}</span>
                   <span className="venue-transit-body">
                     <span className="venue-transit-name">{pick(option.name, lang)}</span>
-                    <span className="venue-transit-meta">{pick(option.meta, lang)}</span>
+                    {!compact && <span className="venue-transit-meta">{pick(option.meta, lang)}</span>}
                     <span className="venue-transit-link">{t('location.consultTransport')}</span>
                   </span>
                 </a>
               </li>
             ))}
           </ul>
-          <p className="venue-source">
-            <a href={VENUE.transitSourceUrl} target="_blank" rel="noopener noreferrer">{t('location.transitSource')}</a>
-          </p>
-          <p className="venue-alert-text">{t('location.transitNote')}</p>
+          {!compact && (
+            <>
+              <p className="venue-source">
+                <a href={VENUE.transitSourceUrl} target="_blank" rel="noopener noreferrer">{t('location.transitSource')}</a>
+              </p>
+              <p className="venue-alert-text">{t('location.transitNote')}</p>
+            </>
+          )}
         </>
       )}
     </>
