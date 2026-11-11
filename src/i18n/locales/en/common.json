@@ -56,7 +56,11 @@
     "p2": "In 2027 the congress arrives in Belo Horizonte, one of Brazil's most active innovation and startup hubs — with a program that mixes scientific tracks, an industry track, tutorials, tool demonstrations and a thesis & dissertation contest.",
     "statSymposia": "co-located symposia",
     "statYears": "years of history",
-    "statDays": "days of program"
+    "statDays": "days of program",
+    "locationLabel": "Location",
+    "dateLabel": "Event dates",
+    "calendarPending": "Calendar available once dates and venue are confirmed.",
+    "calendarTitle": "CBSoft {{year}} — Brazilian Conference on Software: Theory and Practice"
   },
   "registrationPage": {
     "metaTitle": "Registration — CBSOFT'27",
@@ -74,7 +78,7 @@
     "metaTitle": "About CBSoft — CBSOFT'27",
     "title": "About CBSoft",
     "p1": "The Brazilian Conference on Software: Theory and Practice (CBSoft) is held annually by the Brazilian Computer Society (SBC) to foster and encourage the exchange of experiences among researchers and professionals from industry and academia on the latest practical and theoretical research, trends and innovations in software. Held since 2010 as the umbrella event for the Brazilian software symposia promoted by SBC, CBSoft has become one of the leading events of the Brazilian scientific community in Computing.",
-    "p2": "In 2027, the XVIII edition of CBSoft will be held in person in Belo Horizonte, Minas Gerais. The official dates of the event are yet to be defined. This edition brings together four traditional events held annually by the Brazilian Software Engineering community:",
+    "p2": "In 2027, the XVIII edition of CBSoft will be held in person in Belo Horizonte, Minas Gerais, from September 27 to October 1. This edition brings together four traditional events held annually by the Brazilian Software Engineering community:",
     "activitiesLead": "The CBSoft program includes technical sessions with scientific paper presentations, keynotes by renowned Brazilian and international researchers, panel discussions, workshops, and tool demonstrations.",
     "activitiesClosing": "All of these activities, of interest to the Software Engineering community and related areas of software systems development, aim to disseminate knowledge and discuss important questions related to research, development and innovation, both in Brazil and worldwide.",
     "metaDescription": "Learn about CBSoft, the Brazilian Conference on Software: Theory and Practice, its integrated symposia and the activities of the 2027 edition in Belo Horizonte.",
@@ -115,7 +119,7 @@
     "title": "Call for Workshops",
     "contextTitle": "Context and Goals",
     "contextP1": "The Brazilian Congress on Software: Theory and Practice (CBSoft) is an annual event promoted by the Brazilian Computer Society (SBC) to foster the exchange of experiences among researchers and practitioners from industry and academia on recent research, trends and innovations in software. Held since 2010 as an umbrella event for the Brazilian symposia promoted by SBC in the software area, CBSoft has become one of the main events of the Computing community in Brazil.",
-    "contextP2": "In 2027, the eighteenth edition of CBSoft will be held in person in Belo Horizonte (MG), with dates to be announced, bringing together four traditional annual events:",
+    "contextP2": "In 2027, the eighteenth edition of CBSoft will be held in person in Belo Horizonte (MG), from September 27 to October 1, bringing together four traditional annual events:",
     "contextP3": "In addition, CBSoft includes workshops related to the topics of these events. The goal is to create a space where members of academia and industry can exchange and discuss experiences and ideas. Workshops traditionally held at CBSoft may be promoted to pre-approved workshops (see details below).",
     "datesTitle": "Important Dates",
     "milestones": {

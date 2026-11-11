@@ -1,5 +1,6 @@
 /* ---------- Hero ---------- */
 .home-hero {
+  --hero-wave-height: clamp(12rem, 28vw, 25rem);
   position: relative;
   min-height: 100svh;
   /* Vertical overflow stays visible (the countdown hangs below the hero);
@@ -10,6 +11,17 @@
   isolation: isolate;
   background: #40516c;
   color: #fff;
+}
+
+.home-hero::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset-inline: 0;
+  bottom: -1px;
+  height: clamp(10rem, 22vw, 20rem);
+  background: linear-gradient(to bottom, transparent 0%, var(--paper) 100%);
+  pointer-events: none;
 }
 
 .home-hero__photos,
@@ -73,7 +85,7 @@
   gap: clamp(1rem, 2vw, 1.5rem);
   width: 100%;
   padding-top: clamp(5rem, 8vw, 7rem);
-  padding-bottom: clamp(5rem, 12svh, 8rem);
+  padding-bottom: calc(var(--hero-wave-height) + 2rem);
 }
 
 /* The CTA sits directly under the countdown, so it reads as part of that
@@ -129,7 +141,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  height: 16rem;
+  height: var(--hero-wave-height);
   overflow: hidden;
   line-height: 0;
   pointer-events: none;
@@ -138,7 +150,18 @@
 .home-hero__wave img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: fill;
+  transform-origin: center bottom;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-hero__wave img {
+    width: 280%;
+    max-width: none;
+    margin-left: -90%;
+    transform: translate3d(calc(31% - var(--hero-wave-progress, 0) * 62%), 0, 0);
+  }
 }
 
 @media (max-width: 640px) {
@@ -158,13 +181,6 @@
     max-width: 22rem;
   }
 
-  .home-hero__wave {
-    left: 50%;
-    right: auto;
-    width: 42.5rem;
-    height: auto;
-    transform: translateX(-50%);
-  }
 }
 
 /* Native buttons provide keyboard activation and 44px touch targets.
@@ -230,5 +246,9 @@
 @media (prefers-reduced-motion: reduce) {
   .home-hero__photo {
     transition: none;
+  }
+
+  .home-hero__wave img {
+    transform: none;
   }
 }

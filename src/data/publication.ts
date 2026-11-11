@@ -21,8 +21,8 @@ export const PUBLICATION = {
   /** Congress dates. While `null`, pages say "a definir" and the
    *  "dias de programação" figure is hidden. ISO 'YYYY-MM-DD'. */
   dates: {
-    start: null as string | null,
-    end: null as string | null,
+    start: '2027-09-27' as string | null,
+    end: '2027-10-01' as string | null,
   },
 
   /** Registration stays "Em breve" until dates, categories, fees and the

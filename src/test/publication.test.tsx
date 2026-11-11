@@ -104,8 +104,15 @@ describe('publication guard', () => {
   });
 
   it('hides the congress length while the dates are pending', () => {
-    const { container } = renderAt('/');
-    expect(congressDays()).toBeNull();
-    expect(container.textContent).not.toContain(pt.about.statDays);
+    const saved = { ...PUBLICATION.dates };
+    PUBLICATION.dates.start = null;
+    PUBLICATION.dates.end = null;
+    try {
+      const { container } = renderAt('/');
+      expect(congressDays()).toBeNull();
+      expect(container.textContent).not.toContain(pt.about.statDays);
+    } finally {
+      Object.assign(PUBLICATION.dates, saved);
+    }
   });
 });
