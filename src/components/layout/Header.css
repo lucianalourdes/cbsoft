@@ -120,7 +120,7 @@
 .site-header__nav {
   display: flex;
   align-items: center;
-  gap: clamp(0.875rem, 1.354vw, 1.75rem);
+  gap: clamp(0.75rem, 1.1vw, 1.5rem);
   margin-left: auto;
   white-space: nowrap;
 }
@@ -150,8 +150,7 @@
   background: transparent;
   color: #000;
   font-family: var(--font-sans);
-  /* Kept well below the logo's lettering so the brand leads the header. */
-  font-size: clamp(0.875rem, 0.4rem + 0.5vw, 1rem);
+  font-size: clamp(1rem, 0.75rem + 0.4vw, 1.25rem);
   font-weight: 400;
   line-height: 1.5;
   cursor: pointer;
@@ -170,8 +169,12 @@
 .site-header__nav-item:hover,
 .site-header__nav-item:focus-visible,
 .site-header__nav-item.is-active,
-.site-header__mega-root--cbsoft>.site-header__nav-item {
+.site-header__nav-item.is-current {
   color: var(--brand-magenta);
+}
+
+.site-header__nav-item.is-current {
+  font-weight: 700;
 }
 
 .site-header__nav-item.is-active img {
@@ -188,7 +191,7 @@
   border-radius: clamp(0.5rem, 0.5vw, 0.625rem);
   background: var(--brand-magenta);
   color: #fbfafc;
-  font-size: clamp(0.875rem, 0.4rem + 0.5vw, 1rem);
+  font-size: clamp(1rem, 0.75rem + 0.4vw, 1.25rem);
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
@@ -240,6 +243,12 @@
 
 .site-header__mobile-toggle.is-open span:nth-child(3) {
   transform: translateY(-0.44rem) rotate(-45deg);
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .site-header {
+    --header-gutter: 1.5rem;
+  }
 }
 
 @media (max-width: 1023px) {

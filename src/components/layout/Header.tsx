@@ -2,9 +2,9 @@ import './Header.css';
 
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { HEADER_MENUS, type HeaderMenuId } from '@/data/headerMenu';
-import { NAV_ITEMS } from '@/data/nav';
+import { getCurrentHeaderMenu, NAV_ITEMS } from '@/data/nav';
 import { IMAGES } from '@/data/config';
 import { useScrolledPastTop } from '@/hooks/useScrolledPastTop';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
@@ -14,6 +14,8 @@ import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function Header() {
   const { t } = useTranslation();
+  const { pathname } = useLocation();
+  const currentMenu = getCurrentHeaderMenu(pathname);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<HeaderMenuId | null>(null);
   const headerRef = useRef<HTMLElement>(null);
@@ -184,7 +186,8 @@ export function Header() {
                 <button
                   id={`header-trigger-${item.id}`}
                   type="button"
-                  className={`site-header__nav-item${open ? ' is-active' : ''}`}
+                  className={`site-header__nav-item${open ? ' is-active' : ''}${currentMenu === item.id ? ' is-current' : ''}`}
+                  aria-current={currentMenu === item.id ? 'location' : undefined}
                   aria-expanded={open}
                   aria-controls={`header-mega-menu-${item.id}`}
                   onClick={() => {
